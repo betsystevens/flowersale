@@ -8,14 +8,6 @@ class FlowerGroups extends Component {
       flowers: [
         {
           id: 0,
-          name: 'Alyssum Mixed',
-          image: 'assets/images/alyssumMixed750x563.jpg',
-          container: 'flat',
-          price: '17.00',
-          description: 'Carefee, low, spreading plants grown for their flowers and are useful in containers or for edging flower beds. Sweet Alyssum thrives in full sun or parial shade and prefers consistently moist, well-drained soil. Water regularly, expecially if grown in hanging baskets or continers.'
-        },
-        {
-          id: 1,
           name: 'Hanging Baskets',
           image: 'assets/images/petuniaPinkPurpleHB750x500.jpg',
           container: 'hb',
@@ -23,12 +15,20 @@ class FlowerGroups extends Component {
           description: 'Our 10-inch flower baskets of unbeatable quality, regularly sell out. Never disappointing, these spectacular baskets keep customers coming back year after year. The wave petunias and ivy geraniums are unrivaled in their beauty and quality.',
         },
         {
-          id: 2,
+          id: 1,
           name: 'Herbs and Tomatoes',
           image: 'assets/images/basilHerb720x480.jpg',
           container: '4 inch pot',
           price: '3.00 and 4.00',
-          description: 'Selection of the most popular herbs and tomato varieties in 4 inch pots'
+          description: 'Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.'
+        },
+        {
+          id: 2,
+          name: 'Alyssum Mixed',
+          image: 'assets/images/alyssumMixed750x563.jpg',
+          container: 'flat',
+          price: '17.00',
+          description: 'Carefree, low, spreading plants grown for their flowers and are useful in containers or for edging flower beds. Sweet Alyssum thrives in full sun or partial shade and prefers consistently moist, well-drained soil. Water regularly, especially if grown in hanging baskets or containers.'
         },
         {
           id: 3,
@@ -36,7 +36,7 @@ class FlowerGroups extends Component {
           image: 'assets/images/potatoVine750x499.jpg',
           container: '4 inch pot',
           price: '4.00',
-          description: 'Versatile plants to grow in containers and flower beds. These are loved for their colorful foliage and leaf shapes. They grow fast and fill space quickly adding interest wherever they are placed.'
+          description: 'Versatile plants to grow in containers and flower beds. These are loved for their colorful foliage and leaf shapes. They grow fast and fill space quickly, adding interest wherever they are placed.'
         }
       ],
     };
