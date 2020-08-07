@@ -3,6 +3,7 @@ import { Navbar, NavbarBrand } from 'reactstrap';
 import FlowerGroups from './components/FlowerGroupsComponent';
 import './App.css';
 import { FLOWERS } from './shared/flowers';
+import FlowerCarousel from './components/FlowerCarousel';
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
             <NavbarBrand href="/">Flowers For Sale</NavbarBrand>
           </div>
         </Navbar>
+        <FlowerCarousel />
         <FlowerGroups flowers={this.state.flowers}/>
       </div>
     );
