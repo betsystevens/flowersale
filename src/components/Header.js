@@ -7,19 +7,19 @@ function Header(props) {
     <div>
       <Navbar dark expand="sm">
         <div className="container">
-          <NavbarBrand href="/">Flowers For Sale</NavbarBrand>
+          <NavbarBrand href="/">BS Plant Sale</NavbarBrand>
           <Nav navbar navbar-default className="mr-auto">
             <NavItem>
-              <NavLink className="nav-link px-4" href='/flats'>Flats</NavLink>
+              <NavLink className="nav-link px-4" href='/hb'>Hanging Baskets</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link px-4" href='/hb'>Hanging Baskets</NavLink>
+              <NavLink className="nav-link px-4" href='/flats'>Flats</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="nav-link px-4" href='/pots'>Potted Plants</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link px-4" href='/tomatoes'>Tomatoes & Herbs</NavLink>
+              <NavLink className="nav-link px-4" href='/tomatoes'>Herbs & Tomatoes</NavLink>
             </NavItem>
           </Nav>    
         </div>
