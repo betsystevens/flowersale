@@ -1,0 +1,10 @@
+.jumbotron {
+  margin: 0px auto;
+  background: #9575CD;
+  color: floralwhite;
+  background: url('/assets/images/shared/purple-fountain-grass1024x512.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
