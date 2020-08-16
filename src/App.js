@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './components/Header';
 import FlowerGroups from './components/FlowerGroups';
-import { FLOWERS } from './shared/flowers';
-import { FLATS } from './shared/flats';
 import FlowerCards from './components/FlowerCards';
 import FlowerCarousel from './components/FlowerCarousel';
+import { FLOWERS } from './shared/flowers';
+import { FLATS } from './shared/flats';
 import './App.css';
 
 class App extends Component {
@@ -18,11 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Flowers For Sale</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <FlowerCarousel />
         <FlowerGroups flowers={this.state.flowers}/>
         <FlowerCards flats={this.state.flats}/>
