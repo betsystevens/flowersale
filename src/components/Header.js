@@ -5,7 +5,7 @@ function Header(props) {
 
   return (
     <div>
-      <Navbar dark expand="md" color="primary">
+      <Navbar dark expand="sm">
         <div className="container">
           <NavbarBrand href="/">Flowers For Sale</NavbarBrand>
           <Nav navbar navbar-default className="mr-auto">
