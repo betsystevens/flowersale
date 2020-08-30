@@ -19,7 +19,7 @@ function Header(props) {
               <NavLink className="nav-link px-4" href='/pots'>Potted Plants</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="nav-link px-4" href='/tomatoes'>Herbs & Tomatoes</NavLink>
+              <NavLink className="nav-link px-4" href='/herbs'>Herbs & Tomatoes</NavLink>
             </NavItem>
           </Nav>    
         </div>
