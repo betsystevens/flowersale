@@ -1,23 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import FlowerGroups from './components/FlowerGroups';
-import FlowerCards from './components/FlowerCards';
-import { FLOWERS } from './shared/flowers';
-import { FLATS } from './shared/flats';
+import Main from './components/Main';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App(props) {
-  const data = {
-    flowers : FLOWERS,
-    flats : FLATS
-  }
     return (
+      <BrowserRouter>
       <div className="App">
-        <Header />
-        <FlowerGroups flowers={data.flowers}/>
-        <FlowerCards flats={data.flats}/>
+        <Main />
       </div>
+      </BrowserRouter>
     );
   }
 
