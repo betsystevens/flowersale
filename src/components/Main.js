@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from  './Header';
 import FlowerGroups from './FlowerGroups';
-import FlowerCards from './FlowerCards';
+import FlowerCards2 from './FlowerCards2';
 import { FLOWERS } from '../shared/flowers';
 import { FLATS } from '../shared/flats';
 
@@ -26,7 +26,7 @@ function Main(props) {
       <Header />
       <Switch>
         <Route path="/home" component={HomePage} />
-        <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} />} />
+        <Route exact path="/flats" component={() => <FlowerCards2 flats={data.flats} />} />
         <Redirect to="/home" />
       </Switch>
     </div>
