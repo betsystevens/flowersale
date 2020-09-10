@@ -1,8 +1,9 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Header from  './Header';
+import Hero from  './Hero';
 import FlowerGroups from './FlowerGroups';
-import FlowerCards2 from './FlowerCards2';
+import FlowerCards from './FlowerCards';
 import { FLOWERS } from '../shared/flowers';
 import { FLATS } from '../shared/flats';
 
@@ -17,7 +18,10 @@ function Main(props) {
 
   const HomePage = () => {
     return(
-      <FlowerGroups flowers={data.flowers} />
+      <div>
+        <Hero />
+        <FlowerGroups flowers={data.flowers} />
+      </div>
     )
   }
   return (
@@ -26,7 +30,7 @@ function Main(props) {
       <Header />
       <Switch>
         <Route path="/home" component={HomePage} />
-        <Route exact path="/flats" component={() => <FlowerCards2 flats={data.flats} />} />
+        <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} />} />
         <Redirect to="/home" />
       </Switch>
     </div>

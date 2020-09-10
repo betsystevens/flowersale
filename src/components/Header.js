@@ -14,12 +14,6 @@ function Header(props) {
           <li><a href="/">Herbs & Tomatoes</a></li>
         </ul>
       </nav> 
-
-      <div className="hero">
-        <div className="flex-center">
-              <h1>2021 Plant Sale</h1>
-        </div>
-      </div>
     </div>
   )
 }
