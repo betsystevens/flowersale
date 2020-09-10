@@ -1,35 +1,28 @@
 import React from 'react';
-import { 
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardText,
-  CardBody,
-  CardTitle
-} from 'reactstrap';
 
-function FlowerCards (props) {
-  
+function FlowerCards2(props) {
   const flatCards = props.flats.map((flat) => {
-    return ( 
-      <div className="col-12 col-md-3 m-1">
-        <Card key={flat.id}>
-          <CardImg width="100%" src={flat.image} alt={flat.name} />
-          <CardBody>
-            <CardTitle>{flat.name}</CardTitle>
-          </CardBody>
-        </Card>
+    return (
+      <div>
+        <div key={flat.id} className="board">
+          <div className="board-header">
+            <img src={flat.image} alt={flat.name} />
+          </div>
+          <div className="board-body">
+            <h2 className="board-title">{flat.name}</h2>
+            <h3>{flat.variety}</h3>  
+            <p className="board-text">{flat.description}</p>
+          </div>
+        </div>
       </div>
     );
   });
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
+    <div className="flex-center">
        {flatCards}
-      </div>
     </div>
   );
 }
 
-export default FlowerCards;
+export default FlowerCards2;
