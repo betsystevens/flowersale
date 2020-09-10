@@ -1,15 +1,105 @@
-.jumbotron {
-  margin: 0px auto;
-  padding:100px 30px 70px 30px;
+* {
+  box-sizing: border-box;
+}
+/* Scaffolding
+  =============== */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 1rem; }
+  
+  body {
+    margin: 0;
+    color: #404040;
+    background: white;
+    font-size: 1rem; }
+
+  p,
+  ol,
+  ul,
+  dl,
+  table {
+    margin: 0 0 1.5rem 0; }
+
+  ul li ul {
+    margin-bottom: 0; }
+
+  ol li ol {
+    margin-bottom: 0; }
+
+  ul {
+    list-style-type: none; }
+
+a:link,
+a:visited {
+  color: #222;
+  text-decoration: none; }
+a:hover {
+  color: floralwhite;
+  text-decoration: none; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0 0 1.5rem 0;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    color: #404040; 
+    color: floralwhite;}
+  
+  h1 {
+    font-size: 2.5rem; }
+  
+  h2 {
+    font-size: 1.5rem; }
+  
+  h3 {
+    font-size: 1.25rem; }
+  
+  h4 {
+    font-size: 1.1rem; }
+  
+  h5 {
+    font-size: 1rem; }
+  
+/* nav
+   ===*/
+
+   nav {
+    background-attachment: fixed;
+    background-color: #7e4e7e;
+    margin: 0;
+  }
+  nav * {
+    margin-bottom: 0;
+  }
+  nav li {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color:  floralwhite;
+  }
+  nav li.logo a:link,
+  nav li.logo a:visited,
+  nav li.logo a:hover {
+    font-size: 1.2rem;
+    color: floralwhite;
+  }
+  
+
+.hero {
+  margin: 0 auto;
+  padding: 100px 30px 70px 30px;
   background: #9575CD;
   color: floralwhite;
   background: url('/assets/images/shared/purple-fountain-grass1024x512.jpg');
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; 
 }
-
 .navbar {
   background-color: #4d884d;
   background-color: #264026;
@@ -19,6 +109,39 @@
 
   z-index: 10;
 }
+
+
+/* flex 
+   =====*/
+   .flex {
+    display: flex;
+  }
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
 
 /* Board
   ======= */

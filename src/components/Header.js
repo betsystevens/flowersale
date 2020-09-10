@@ -1,41 +1,27 @@
 import React from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Jumbotron } from 'reactstrap';
 
 function Header(props) {
-
   return (
     <div>
-      <Navbar dark expand="sm">
-        <div className="container">
-          <NavbarBrand href="/">BS Plant Sale</NavbarBrand>
-          <Nav navbar navbar-default className="mr-auto">
-            <NavItem>
-              <NavLink className="nav-link px-4" href='/hb'>Hanging Baskets</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="nav-link px-4" href='/flats'>Flats</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="nav-link px-4" href='/pots'>Potted Plants</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="nav-link px-4" href='/herbs'>Herbs & Tomatoes</NavLink>
-            </NavItem>
-          </Nav>    
-        </div>
-      </Navbar>
-      <Jumbotron>
-        <div className="container">
-          <div className="row row-header">
-            <div className="col-12 col-sm-6">
+      <nav className="flex-between">
+        <ul className="flex">
+          <li className="logo"><a href="/">BS Plant Sale</a></li>
+        </ul>
+        <ul class="flex">
+          <li><a href="/">Hanging Baskets</a></li>
+          <li><a href="/flats">Flats</a></li>
+          <li><a href="/">Potted Plants</a></li>
+          <li><a href="/">Herbs & Tomatoes</a></li>
+        </ul>
+      </nav> 
+
+      <div className="hero">
+        <div className="flex-center">
               <h1>2021 Plant Sale</h1>
-              <p>Orders due March 10, 2021</p>
-            </div>
-          </div>
         </div>
-      </Jumbotron>
+      </div>
     </div>
-  );
+  )
 }
 
 export default Header;
