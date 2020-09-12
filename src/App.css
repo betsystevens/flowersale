@@ -136,7 +136,32 @@ a:hover {
     justify-content: center;
     align-items: center;
   }
-  
+  /* band  (what bootstrap calls media)
+ ======*/
+.outer {
+  margin: 50px 75px;
+}
+.band {
+  display: flex;
+  padding: 20px;
+  margin: 30px;
+}
+.band img {
+  width: 225px;
+  height: 150px;
+  flex-shrink: 0;
+  /* flex: 0 0 225px; */
+}
+.band.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.band-body {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
 
 
 
