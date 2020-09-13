@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FlowerCards2(props) {
+function FlowerCards(props) {
   const flatCards = props.flats.map((flat) => {
     return (
       <div>
@@ -25,4 +25,4 @@ function FlowerCards2(props) {
   );
 }
 
-export default FlowerCards2;
+export default FlowerCards;
