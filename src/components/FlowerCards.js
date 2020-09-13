@@ -4,14 +4,14 @@ function FlowerCards2(props) {
   const flatCards = props.flats.map((flat) => {
     return (
       <div>
-        <div key={flat.id} className="board">
-          <div className="board-header">
+        <div key={flat.id} className="card">
+          <div className="card-header">
             <img src={flat.image} alt={flat.name} />
           </div>
-          <div className="board-body">
-            <h2 className="board-title">{flat.name}</h2>
+          <div className="card-body">
+            <h2 className="card-title">{flat.name}</h2>
             <h3>{flat.variety}</h3>  
-            <p className="board-text">{flat.description}</p>
+            <p className="card-text">{flat.description}</p>
           </div>
         </div>
       </div>
