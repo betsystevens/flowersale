@@ -3,7 +3,7 @@ export const FLATS =
   {
     id: 1,
     name: 'Alyssum',
-    variety: 'Mixed',
+    variety: ['white', 'purple', 'mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/alyssumMixed512x138.jpg'
@@ -11,167 +11,95 @@ export const FLATS =
   {
     id: 2,
     name: 'Begonia',
-    variety: 'Pink Bronze Leaf',
+    variety: ['white', 'red', 'pink', 'mixed', 'pink bronze leaf', 'red bronze leaf'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/begoniaBronzeLeafPink512x384.jpg'
   },
   {
     id: 3,
-    name: 'Begonia',
-    variety: 'Red',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/begoniaRed512x384.jpg'
-  },
-  {
-    id: 4,
-    name: 'Begonia',
-    variety: 'Red Bronze Leaf',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/begoniaRedBronzeLeaf512x384.jpg'
-  },
-  {
-    id: 5,
     name: 'Coleus',
-    variety: 'Scarlet',
+    variety: ['scarlet','mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/coleusScarlet512x384.jpg'
   },
   {
-    id: 6,
-    name: 'Coleus',
-    variety: 'Mixed',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/coleusWizardMix512x384.jpg'
-  },
-  {
-    id: 7,
+    id: 4,
     name: 'Dahlia',
-    variety: 'Mixed',
+    variety: ['mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/dahliaMixed512x384.jpg'
   },
   {
-    id: 8,
+    id: 5,
     name: 'Dianthus',
-    variety: 'Red',
+    variety: ['red','mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/dianthusRed512x384.jpg'
   },
   {
-    id: 9,
+    id: 6,
     name: 'Dusty Miller',
-    variety: 'Silver',
+    variety: ['silver'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/dustyMiller512x384.jpg'
   },
   {
-    id: 10,
+    id: 7,
     name: 'Impatiens',
-    variety: 'Mixed',
+    variety: ['white','red','salmon','violet','hot pink','mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/impatiensPastelMix512x384.jpg'
   },
   {
-    id: 11,
-    name: 'Impatiens',
-    variety: 'Red',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/impatiensRed512x384.jpg'
-  },
-  {
-    id: 12,
-    name: 'Impatiens',
-    variety: 'White',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/impatiensWhite512x384.jpg'
-  },
-  {
-    id: 13,
+    id: 8,
     name: 'Marigold',
-    variety: 'Mixed',
+    variety: ['Yellow', 'Orange', 'Bi-color'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/marigoldMixed512x384.jpg'
   },
   {
-    id: 14,
-    name: 'Marigold',
-    variety: 'Yellow',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/marigoldYellow512x384.jpg'
-  },
-  {
-    id: 15,
+    id: 9,
     name: 'Petunia',
-    variety: 'Mixed',
+    variety: ['Midnight Blue','Pink','Red','White','Yellow','Mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/petuniaMixed512x384.jpg'
   },
   {
-    id: 16,
-    name: 'Petunia',
-    variety: 'White',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/petuniaWhite512x384.jpg'
-  },
-  {
-    id: 17,
+    id: 10,
     name: 'Salvia',
-    variety: 'Red',
+    variety: ['Blue','Red'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/salviaRed512x384.jpg'
   },
   {
-    id: 18,
-    name: 'Salvia',
-    variety: 'Victoria Blue',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/salviaVictoriaBlue512x384.jpg'
-  },
-  {
-    id: 19,
+    id: 11,
     name: 'Snap Dragons',
-    variety: 'Dwarf',
+    variety: ['dwarf mixed','tall mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/snapDragonMix512x384.jpg'
   },
   {
-    id: 20,
-    name: 'Snap Dragons',
-    variety: 'Tall',
-    container: 'flat',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/snapDragonsTall512x384.jpg'
-  },
-  {
-    id: 21,
+    id: 12,
     name: 'Vinca',
-    variety: 'Mixed',
+    variety: ['red','white','lavendar','mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/vincaMixed512x384.jpg'
   },
   {
-    id: 22,
+    id: 13,
     name: 'Zinnia',
-    variety: 'Mixed',
+    variety: ['mixed'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/zinniaMixed512x384.jpg'
