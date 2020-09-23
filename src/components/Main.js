@@ -4,6 +4,7 @@ import Header from  './Header';
 import Hero from  './Hero';
 import FlowerGroups from './FlowerGroups';
 import FlowerCards from './FlowerCards';
+import Radios from './Radios';
 import { FLOWERS } from '../shared/flowers';
 import { FLATS } from '../shared/flats';
 
@@ -31,6 +32,7 @@ function Main(props) {
       <Switch>
         <Route path="/home" component={HomePage} />
         <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} />} />
+        <Route exact path="/test" component={Radios} />
         <Redirect to="/home" />
       </Switch>
     </div>

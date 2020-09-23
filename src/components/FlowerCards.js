@@ -1,4 +1,5 @@
 import React from 'react';
+import Radios from './Radios';
 
 function FlowerCards(props) {
   const flatCards = props.flats.map((flat) => {
@@ -10,7 +11,7 @@ function FlowerCards(props) {
           </div>
           <div className="card-body">
             <h2 className="card-title">{flat.name}</h2>
-            <h3>{flat.variety}</h3>  
+            <Radios values={flat.variety} />
             <p className="card-text">{flat.description}</p>
           </div>
         </div>
