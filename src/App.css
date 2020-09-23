@@ -105,6 +105,11 @@ a:hover {
 .hero h1{
   color: floralwhite;
 }
+/* margins
+  ========*/
+.mb-1 {
+  margin-bottom: 1rem;
+}
 
 /* flex 
    =====*/
