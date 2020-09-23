@@ -7,7 +7,7 @@ function Header(props) {
         <ul className="flex">
           <li className="logo"><a href="/">BS Plant Sale</a></li>
         </ul>
-        <ul class="flex">
+        <ul className="flex">
           <li><a href="/">Hanging Baskets</a></li>
           <li><a href="/flats">Flats</a></li>
           <li><a href="/">Potted Plants</a></li>
