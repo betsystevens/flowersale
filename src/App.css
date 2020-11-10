@@ -205,3 +205,26 @@ a:hover {
   text-align: center; }
 .card-footer.right {
   text-align: right; }
+
+.container {
+	border: 1px solid green;
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 15px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridlabel {
+  grid-column-start: 1;
+  justify-self: end;
+}
+
+.gridinput {
+  grid-column-start: 2;
+  /* grid-column-end: 2; */
+}

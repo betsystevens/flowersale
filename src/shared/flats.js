@@ -5,7 +5,7 @@ export const FLATS =
     name: 'Alyssum',
     variety: ['white', 'purple', 'mixed'],
     container: 'flat',
-    description: 'Lorem ipsum dolor dolor dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     image: '/assets/images/flats/alyssumMixed512x138.jpg'
   },
   {
