@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { baseUrl } from './config';
 
-export default function useItems(collType) {
+export default function useItems(endpoint) {
     const [items, setItems] = useState([]);
 
     async function getData() {
-        const response = await fetch("http://localhost:3000/" + collType);
+        const response = await fetch(baseUrl + endpoint);
         const data = await response.json();
         setItems(data);
     }
 
     useEffect(() => {
         getData();
-    }, [collType]);
+    }, [endpoint]);
 
-    return items;
+    return (Array.isArray(items)) ? items : [items];
 }

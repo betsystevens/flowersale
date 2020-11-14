@@ -1,40 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useInput } from '../shared/inputHook';
+import { postData } from '../shared/postData';
 
 function FlowerForm() {
-   const [fname, setFName ] = useState('');
-   const [variety, setVariety ] = useState('');
-   const [container, setContainer ] = useState('flat');
-   const [description, setDescription ] = useState('');
-   
-   function handleInputChange(event) {
-       const target = event.target;
-       const name = target.name;
-       const value = target.value;
+    const { value:fname, bind:bindfname, reset:resetfname } = useInput('');
+    const { value:variety, bind:bindvariety, reset:resetvariety } = useInput('');
+    const { value:container, bind:bindcontainer, reset:resetcontainer } = useInput('');
+    const { value:imagename, bind:bindimagename, reset:resetimagename } = useInput('');
+    const { value:description, bind:binddescription, reset:resetdescription } = useInput('');
 
-       if (name === 'fname') { setFName(value) };
-       if (name === 'variety') { setVariety(value) };
-       if (name === 'container') { setContainer(value) };
-       if (name === 'description') { setDescription(value) };
-   }
-   function saveFlower() {
-       alert("Current values: " + "fname: " + fname + ", variety: " + variety + ", container: " + container);
-   }
-   return (
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        alert(`Submitting Name ${fname}, ${variety} ${container} ${description}`);
+        postData("flowers", {
+            "name": fname,
+            "variety": [variety],
+            "container": container,
+            "image": imagename,
+            "description": description
+        });
+        resetfname();
+        resetvariety();
+        resetcontainer();
+        resetdescription();
+        resetimagename();
+    }
+
+    return (
         <div>
-            <form>
-                <div class="container">
-                    <label className="gridlabel">Name:</label>
-                    <input name="fname" type="text" value={fname} onChange={handleInputChange} />
-                    <label className="gridlabel">Variety:</label>
-                    <input name="variety" type="text" value={variety} onChange={handleInputChange} />
-                    <label className="gridlabel">Container:</label>
-                    <input name="container" type="text" value={container} onChange={handleInputChange} />
-                    <label className="gridlabel">Description:</label>
-                    <input name="container" type="textarea" value={description} onChange={handleInputChange} />
-                    <button className="gridinput" onClick={saveFlower}>Submit</button>
-                </div>
+            <form onSubmit={handleSubmit}>
+                <label>Name:</label>
+                <input type="text" {...bindfname} />
+                <label>Variety:</label>
+                <input type="text" {...bindvariety} />
+                <label>Container:</label>
+                <input name="container" type="text" {...bindcontainer} />
+                <label>Image name:</label>
+                <input name="description" type="text" {...bindimagename} />
+                <label>Description:</label>
+                <textarea name="description" rows="7" {...binddescription} />
+                <input type="submit" value="Submit" />
             </form>
-       </div>
-   );
+        </div>
+    );
 }
 export default FlowerForm;

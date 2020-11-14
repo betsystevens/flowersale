@@ -206,25 +206,63 @@ a:hover {
 .card-footer.right {
   text-align: right; }
 
-.container {
+form {
 	border: 1px solid green;
   display: grid;
-  grid-template-columns: 10% auto;
-  grid-row-gap: 20px;
-  grid-column-gap: 15px;
+  /* grid-template-columns: 5% auto; */
+  /* grid-template-columns: 400px 1fr; */
+  grid-template-columns: 100px 600px;
+  grid-gap: 16px;
   /* background-color: #2196f3; */
   padding: 10px;
-  height: 40vh;
+  height: 60vh;
   justify-content: center;
   align-items: center;
 }
 
-.gridlabel {
-  grid-column-start: 1;
+label {
+  grid-column: 1 / 2;
   justify-self: end;
 }
 
-.gridinput {
-  grid-column-start: 2;
-  /* grid-column-end: 2; */
+input, textarea, button {
+  grid-column: 2 / 3;
+}
+
+/* img{
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+} */
+
+.progessBar{
+  height: 1rem;
+  width: 0%;
+  background-color: rgb(68, 212, 231);
+  color: white;
+  padding:2px
+}
+
+.file-upload{
+
+  box-shadow: 2px 2px 2px 2px #ccc;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+/* input , div , button{
+  margin-top: 2rem;
+} */
+
+.upbutton {
+   width: 5rem;
+   padding: .5rem;
+   background-color: #2767e9;
+   color: aliceblue;
+   font-size: 1rem;
+   cursor: pointer;
 }

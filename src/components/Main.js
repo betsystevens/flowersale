@@ -9,7 +9,7 @@ import FlowerForm from './FlowerForm';
 import Radios from './Radios';
 import { FLOWERS } from '../shared/flowers';
 import { FLATS } from '../shared/flats';
-
+import FileUpload from './FileUpload';
 import '../App.css';
 
 function Main(props) {
@@ -36,6 +36,7 @@ function Main(props) {
         <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} />} />
         <Route exact path="/flowerdatabase" component={() => <FlowerDatabase/>} />
         <Route exact path="/flowerform" component={() => <FlowerForm/>} />
+        <Route exact path="/uploadImage" component={() => <FileUpload/>} />
         <Route exact path="/test" component={Radios} />
         <Redirect to="/home" />
       </Switch>
