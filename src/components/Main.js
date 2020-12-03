@@ -31,7 +31,7 @@ function Main(props) {
       <Header />
       <Switch>
         <Route path="/home" component={HomePage} />
-        <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} />} />
+        <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} flowers={data.flowers} />} />
         <Route exact path="/test" component={Radios} />
         <Redirect to="/home" />
       </Switch>
