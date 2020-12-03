@@ -1,5 +1,8 @@
 import React from 'react';
 
+/* from FlowerCards.js */
+/* <Radios values={flat.variety} /> */
+
 function Radios(props) {
   
   const radioButtons = props.values.map((value) => {
