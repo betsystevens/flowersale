@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FCard2(props) {
+function FlowerCards(props) {
   const flatInfo = props.flowers.filter((flower) => flower.container === 'flat')
   const price = flatInfo[0].price
   const flatCards = props.flats.map((flat) => {
