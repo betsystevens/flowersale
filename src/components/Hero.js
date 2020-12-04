@@ -4,7 +4,7 @@ function Hero(props) {
   return (
     <div className="hero">
       <div className="flex-center">
-          <h1>[Placeholder  Year] Plant Sale</h1>
+          <p className="text-5xl font-semibold">[Placeholder  Year] Plant Sale</p>
       </div>
     </div>
   )
