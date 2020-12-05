@@ -7,8 +7,8 @@ function FlowerGroups(props) {
       <div key={flower.id} className="band shadow">
           <img src={flower.image} alt={flower.name} />
           <div className="band-body">
-            <h3>{flower.name}</h3>
-            <p>{flower.description}</p>
+            <p className="pt-2 text-xl font-semibold">{flower.name}</p>
+            <p className="pt-4">{flower.description}</p>
           </div>
       </div>
     );
