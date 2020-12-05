@@ -14,7 +14,7 @@ export const FLATS =
     variety: ['white', 'red', 'pink', 'mixed', 'pink bronze leaf', 'red bronze leaf'],
     container: 'flat',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-    image: '/assets/images/flats/begoniaBronzeLeafPink512x384.jpg'
+    image: '/assets/images/flats/begoniaPinkBronzeLeaf512x384.jpg'
   },
   {
     id: 3,
