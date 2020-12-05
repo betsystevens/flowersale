@@ -28,13 +28,15 @@ function Main(props) {
   return (
 
     <div>
-      <Header />
-      <Switch>
-        <Route path="/home" component={HomePage} />
-        <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} flowers={data.flowers} />} />
-        <Route exact path="/test" component={Radios} />
-        <Redirect to="/home" />
-      </Switch>
+      <React.StrictMode>
+        <Header />
+        <Switch>
+          <Route path="/home" component={HomePage} />
+          <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} flowers={data.flowers} />} />
+          <Route exact path="/test" component={Radios} />
+          <Redirect to="/home" />
+        </Switch>
+      </React.StrictMode>
     </div>
   )
 }
