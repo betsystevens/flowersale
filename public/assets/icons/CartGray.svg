@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="523px" height="181px" viewBox="0 0 523 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Cart</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="border-designs" transform="translate(-67.000000, -738.000000)">
+            <g id="Cart" transform="translate(67.000000, 749.000000)">
+                <path d="M-2.84217094e-13,-2.84217094e-14 C42.9487476,-2.84217094e-14 64.4231214,-2.84217094e-14 64.4231214,-2.84217094e-14 C64.4231214,-2.84217094e-14 87.7807909,38.386954 134.49613,115.160862 L251.455998,115.160862 L273.932052,37.9585469" id="Path-2" stroke="#979797" stroke-width="22" fill-rule="nonzero"></path>
+                <circle id="Oval" stroke="#979797" fill="#979797" fill-rule="nonzero" cx="233" cy="152" r="17"></circle>
+                <circle id="Oval-Copy" stroke="#979797" fill="#979797" fill-rule="nonzero" cx="151" cy="152" r="17"></circle>
+                <polygon id="Triangle" stroke="#979797" fill="#979797" fill-rule="nonzero" transform="translate(494.000000, 98.000000) scale(1, -1) translate(-494.000000, -98.000000) " points="494 81 522 115 466 115"></polygon>
+                <text font-family="LucidaGrande-Bold, Lucida Grande" font-size="72" font-weight="bold" fill="#979797">
+                    <tspan x="301.234375" y="122">Cart</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
