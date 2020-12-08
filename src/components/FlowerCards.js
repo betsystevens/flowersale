@@ -18,7 +18,7 @@ function FlowerCards(props) {
           <div className="p-2 flex flex-col items-center">
             <p className="font-extrabold text-lg">{flat.name}</p>
             <p className="pt-1">{`${varietyDetails}`}</p>
-            <p className="pt-1">{`Price - ${price}`}</p>
+            <p className="pt-1">{`Price - $${price}`}</p>
             <p className="pt-1">{`${containerDetails}`}</p>
           </div>
           <div className="flex flex-col items-center w-full p-4 pb-7">
