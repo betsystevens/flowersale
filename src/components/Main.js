@@ -5,8 +5,10 @@ import Hero from  './Hero';
 import FlowerGroups from './FlowerGroups';
 import FlowerCards from './FlowerCards';
 import Radios from './Radios';
+import FlowerDetails from './FlowerDetails';
 import { FLOWERS } from '../shared/flowers';
 import { FLATS } from '../shared/flats';
+import { FLATS2 } from '../shared/flats2';
 
 import '../App.css';
 
@@ -14,7 +16,8 @@ function Main(props) {
 
   const data = {
     flowers : FLOWERS,
-    flats : FLATS
+    flats : FLATS,
+    flats2 : FLATS2
   }
 
   const HomePage = () => {
@@ -25,6 +28,7 @@ function Main(props) {
       </div>
     )
   }
+
   return (
 
     <div>
@@ -33,6 +37,15 @@ function Main(props) {
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route exact path="/flats" component={() => <FlowerCards flats={data.flats} flowers={data.flowers} />} />
+          <Route 
+            exact path="/flats/:flowerId" 
+            render={ ({match}) => (
+              <FlowerDetails 
+                flower={data.flats2[match.params.flowerId]}
+                flowerGroup={data.flowers.filter(flower => flower.container.name === 'flat')}
+              />
+            )}
+          />
           <Route exact path="/test" component={Radios} />
           <Redirect to="/home" />
         </Switch>
