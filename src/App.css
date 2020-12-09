@@ -173,3 +173,13 @@ a:hover {
   /* style below may be a desired alternative */
   /* border-image: url('./shared/border-diamond-lilac.png') 30 repeat; */
 }
+
+.gridDetailWrapper {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 300px 275px 150px;
+}
+.spanRows {
+  grid-column: 3;
+  grid-row: 1 / 4;
+}
