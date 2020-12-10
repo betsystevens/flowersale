@@ -10,16 +10,24 @@ function BigImage(props) {
 class FlowerDetails extends React.Component  {
   state = {
     imageId: 0,
-    variety: {}
+    selectedImageId: 0,
   }
   handleMouseEnter = (index) => {
-    console.log(index);
     this.setState({ imageId: index })
+  }
+  handleMouseLeave = () => {
+    this.setState({ imageId: this.state.selectedImageId })
+  }
+  handleClick = (index) => {
+    this.setState({ selectedImageId: index})
   }
 
   thumbnails = this.props.flower.variety.map((variety, index) => {
     return (
-    <div key={index} onMouseEnter={() => this.handleMouseEnter(index)} >
+    <div key={index} 
+      onMouseEnter={() => this.handleMouseEnter(index)} 
+      onMouseLeave={() => this.handleMouseLeave()} 
+      onClick={() => this.handleClick(index)} >
       <img src={variety.image} alt={variety.name} className="w-20 p-1"/>
     </div>
     )
