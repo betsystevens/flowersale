@@ -24,7 +24,7 @@ function FlowerCards(props) {
           </div>
           <div className="flex flex-col items-center w-full p-4 pb-7">
             <Link to={`/flats/${flat.id}`} >
-              <button  className="px-8 pb-2 hover:bg-purple-100 fancy-button">
+              <button  className="px-8 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
                 {buttonText}
               </button>
             </Link>
