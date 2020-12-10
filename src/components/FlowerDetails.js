@@ -48,7 +48,7 @@ class FlowerDetails extends React.Component  {
         </div>
         <BigImage flower={{image: variety[this.state.imageId].image, name: this.props.flower.name}} />
         <div>
-          <p className="topRow">{`Variety: ${variety[0].name}` }</p>
+          <p className="topRow">{`Variety: ${variety[this.state.imageId].name}` }</p>
           <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
             {this.thumbnails}
           </div>
