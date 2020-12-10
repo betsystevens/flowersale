@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 function BigImage(props) {
   return (
-    <img className="w-96" src={props.flower.image} alt={props.flower.name} />
+    <img 
+      src={props.flower.image} 
+      alt={props.flower.name} 
+      className="p-1.5 shadow-md rounded-md w-96" />
   )
 }
 class FlowerDetails extends React.Component  {
@@ -28,7 +31,10 @@ class FlowerDetails extends React.Component  {
       onMouseEnter={() => this.handleMouseEnter(index)} 
       onMouseLeave={() => this.handleMouseLeave()} 
       onClick={() => this.handleClick(index)} >
-      <img src={variety.image} alt={variety.name} className="w-20 p-1"/>
+      <img 
+          src={variety.image} 
+          alt={variety.name} 
+          className="shadow-md rounded-md p-1 w-20"/>
     </div>
     )
   })
