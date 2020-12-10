@@ -42,7 +42,7 @@ function Main(props) {
             render={ ({match}) => (
               <FlowerDetails 
                 flower={data.flats2[match.params.flowerId]}
-                flowerGroup={data.flowers.filter(flower => flower.container.name === 'flat')}
+                flowerGroup={data.flowers.filter(flower => flower.container.name === 'flat')[0]}
               />
             )}
           />
