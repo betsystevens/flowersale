@@ -1,7 +1,7 @@
 export const FLATS =
 [
   {
-    id: 1,
+    id: 0,
     name: 'Alyssum',
     variety: ['white', 'purple', 'mixed'],
     container: 'flat',
@@ -9,7 +9,7 @@ export const FLATS =
     image: '/assets/images/flats/alyssumMixed512x138.jpg'
   },
   {
-    id: 2,
+    id: 1,
     name: 'Begonia',
     variety: ['white', 'red', 'pink', 'mixed', 'pink bronze leaf', 'red bronze leaf'],
     container: 'flat',
@@ -17,7 +17,7 @@ export const FLATS =
     image: '/assets/images/flats/begoniaPinkBronzeLeaf512x384.jpg'
   },
   {
-    id: 3,
+    id: 2,
     name: 'Coleus',
     variety: ['scarlet','mixed'],
     container: 'flat',
@@ -25,7 +25,7 @@ export const FLATS =
     image: '/assets/images/flats/coleusScarlet512x384.jpg'
   },
   {
-    id: 4,
+    id: 3,
     name: 'Dahlia',
     variety: ['mixed'],
     container: 'flat',
@@ -33,7 +33,7 @@ export const FLATS =
     image: '/assets/images/flats/dahliaMixed512x384.jpg'
   },
   {
-    id: 5,
+    id: 4,
     name: 'Dianthus',
     variety: ['red','mixed'],
     container: 'flat',
@@ -41,7 +41,7 @@ export const FLATS =
     image: '/assets/images/flats/dianthusRed512x384.jpg'
   },
   {
-    id: 6,
+    id: 5,
     name: 'Dusty Miller',
     variety: ['silver'],
     container: 'flat',
@@ -49,7 +49,7 @@ export const FLATS =
     image: '/assets/images/flats/dustyMiller512x384.jpg'
   },
   {
-    id: 7,
+    id: 6,
     name: 'Impatiens',
     variety: ['white','red','salmon','violet','hot pink','mixed'],
     container: 'flat',
@@ -57,7 +57,7 @@ export const FLATS =
     image: '/assets/images/flats/impatiensPastelMix512x384.jpg'
   },
   {
-    id: 8,
+    id: 7,
     name: 'Marigold',
     variety: ['Yellow', 'Orange', 'Bi-color'],
     container: 'flat',
@@ -65,7 +65,7 @@ export const FLATS =
     image: '/assets/images/flats/marigoldMixed512x384.jpg'
   },
   {
-    id: 9,
+    id: 8,
     name: 'Petunia',
     variety: ['Midnight Blue','Pink','Red','White','Yellow','Mixed'],
     container: 'flat',
@@ -73,7 +73,7 @@ export const FLATS =
     image: '/assets/images/flats/petuniaMixed512x384.jpg'
   },
   {
-    id: 10,
+    id: 9,
     name: 'Salvia',
     variety: ['Blue','Red'],
     container: 'flat',
@@ -81,7 +81,7 @@ export const FLATS =
     image: '/assets/images/flats/salviaRed512x384.jpg'
   },
   {
-    id: 11,
+    id: 10,
     name: 'Snap Dragons',
     variety: ['dwarf mixed','tall mixed'],
     container: 'flat',
@@ -89,7 +89,7 @@ export const FLATS =
     image: '/assets/images/flats/snapDragonMix512x384.jpg'
   },
   {
-    id: 12,
+    id: 11,
     name: 'Vinca',
     variety: ['red','white','lavendar','mixed'],
     container: 'flat',
@@ -97,7 +97,7 @@ export const FLATS =
     image: '/assets/images/flats/vincaMixed512x384.jpg'
   },
   {
-    id: 13,
+    id: 12,
     name: 'Zinnia',
     variety: ['mixed'],
     container: 'flat',

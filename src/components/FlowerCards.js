@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function FlowerCards(props) {
   const flatDetails = props.flowers.filter((flower) => flower.container.name === 'flat')
@@ -22,9 +23,11 @@ function FlowerCards(props) {
             <p className="pt-1">{`${containerDetails}`}</p>
           </div>
           <div className="flex flex-col items-center w-full p-4 pb-7">
-            <button className="px-8 pb-2 hover:bg-purple-100 fancy-button">
-              {buttonText}
-            </button>
+            <Link to={`/flats/${flat.id}`} >
+              <button  className="px-8 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
+                {buttonText}
+              </button>
+            </Link>
           </div>
         </div>
       </div>
