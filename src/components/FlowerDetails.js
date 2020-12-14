@@ -8,7 +8,7 @@ function AddToCart(props) {
         <img
           src="/assets/icons/Cart64x40.svg"
           alt="shopping cart"
-          className="inline-block m-auto px-2 mr-1 h-3/4 bg-gray-50"
+          className="inline-block m-auto px-2 mr-1 h-3/4 "
         ></img>
         Add To Cart
       </button>
