@@ -1,6 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+function AddToCart(props) {
+  return (
+    <div className="inline-block relative">
+      <button className="border-2 border-gray-200 bg-gray-100 rounded h-7 pr-2 mt-6 ml-6 text-sm">
+        <img
+          src="/assets/icons/Cart64x40.svg"
+          alt="shopping cart"
+          className="inline-block m-auto px-2 mr-1 h-3/4 bg-gray-50"
+        ></img>
+        Add To Cart
+      </button>
+    </div>
+  );
+}
 function Quantity(props) {
   return (
     <div className="mt-6">
@@ -115,13 +129,14 @@ class FlowerDetails extends React.Component {
             <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
               {this.thumbnails}
             </div>
-            <div>
+            <div className="flex">
               <Quantity
                 quantity={this.state.quantity}
                 handleOnChange={(e) => this.handleOnChange(e)}
                 handleMinus={() => this.handleMinus()}
                 handlePlus={() => this.handlePlus()}
               />
+              <AddToCart />
             </div>
           </div>
         </div>
