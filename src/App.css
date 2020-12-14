@@ -3,106 +3,121 @@
 }
 /* Scaffolding
   =============== */
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1rem; }
-  
-  body {
-    margin: 0;
-    color: #404040;
-    background: white;
-    font-size: 1rem; }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  p,
-  ol,
-  ul,
-  dl,
-  table {
-    margin: 0 0 1.5rem 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
 
-  ul li ul {
-    margin-bottom: 0; }
+body {
+  margin: 0;
+  color: #404040;
+  background: white;
+  font-size: 1rem;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+p,
+ol,
+ul,
+dl,
+table {
+  margin: 0 0 1.5rem 0;
+}
 
-  ol li ol {
-    margin-bottom: 0; }
+ul li ul {
+  margin-bottom: 0;
+}
 
-  ul {
-    list-style-type: none; }
+ol li ol {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+}
 
 a:link,
 a:visited {
   color: #222;
-  text-decoration: none; }
+  text-decoration: none;
+}
 a:hover {
   color: floralwhite;
-  text-decoration: none; }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin: 0 0 1.5rem 0;
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    line-height: 1.2;
-    color: #404040;} 
-  
-  h1 {
-    font-size: 2.5rem; }
-  
-  h2 {
-    font-size: 1.5rem; }
-  
-  h3 {
-    font-size: 1.25rem; }
-  
-  h4 {
-    font-size: 1.1rem; }
-  
-  h5 {
-    font-size: 1rem; }
-  
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.2;
+  color: #404040;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
 /* nav
    ===*/
 
-   nav {
-    background-attachment: fixed;
-    background-color: #7e4e7e;
-    margin: 0;
-  }
-  nav * {
-    margin-bottom: 0;
-  }
-  nav li {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    color:  floralwhite;
-  }
-  nav li.logo a:link,
-  nav li.logo a:visited,
-  nav li.logo a:hover {
-    font-size: 1.2rem;
-    color: floralwhite;
-  }
-  
+nav {
+  background-attachment: fixed;
+  background-color: #7e4e7e;
+  margin: 0;
+}
+nav * {
+  margin-bottom: 0;
+}
+nav li {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: floralwhite;
+}
+nav li.logo a:link,
+nav li.logo a:visited,
+nav li.logo a:hover {
+  font-size: 1.2rem;
+  color: floralwhite;
+}
 
 .hero {
   margin: 0 auto;
   padding: 100px 30px 70px 30px;
-  background: #9575CD;
+  background: #9575cd;
   color: floralwhite;
-  background: url('/assets/images/shared/purple-fountain-grass1024x512.jpg');
+  background: url("/assets/images/shared/purple-fountain-grass1024x512.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 }
-.hero h1{
+.hero h1 {
   color: floralwhite;
 }
 /* margins
@@ -113,35 +128,35 @@ a:hover {
 
 /* flex 
    =====*/
-   .flex {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .flex-evenly {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .flex-between {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flex-right {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  /* band  (what bootstrap calls media)
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* band  (what bootstrap calls media)
  ======*/
 .outer {
   margin: 50px 75px;
@@ -158,7 +173,7 @@ a:hover {
   /* flex: 0 0 225px; */
 }
 .band.shadow {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .band-body {
   display: flex;
@@ -169,7 +184,7 @@ a:hover {
 
 .fancy-button {
   border: 10px solid transparent;
-  border-image: url('./shared/border-diamond-lilac.png') 22 stretch;
+  border-image: url("./shared/border-diamond-lilac.png") 22 stretch;
   /* style below may be a desired alternative */
   /* border-image: url('./shared/border-diamond-lilac.png') 30 repeat; */
 }
@@ -182,4 +197,36 @@ a:hover {
 .spanRows {
   grid-column: 3;
   grid-row: 1 / 4;
+}
+
+/* quantity styles */
+.minus {
+  background-image: url(/assets/icons/minus.svg);
+  position: absolute;
+  top: 30%;
+  left: 8%;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plus {
+  background-image: url(/assets/icons/plus.svg);
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* remove spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* remove spinner */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
