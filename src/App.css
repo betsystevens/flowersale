@@ -202,23 +202,19 @@ nav li.logo a:hover {
 /* quantity styles */
 .minus {
   background-image: url(/assets/icons/minus.svg);
-  position: absolute;
-  top: 30%;
-  left: 8%;
-  width: 0.6rem;
-  height: 0.6rem;
   background-position: center;
-  background-repeat: no-repeat;
+  top: 45%;
+  left: 25%;
+  width: 50%;
+  height: 10%;
 }
 .plus {
   background-image: url(/assets/icons/plus.svg);
-  position: absolute;
-  top: 30%;
-  right: 8%;
-  width: 0.6rem;
-  height: 0.6rem;
   background-position: center;
-  background-repeat: no-repeat;
+  top: 25%;
+  right: 25%;
+  width: 50%;
+  height: 50%;
 }
 /* remove spinner */
 input::-webkit-outer-spin-button,
