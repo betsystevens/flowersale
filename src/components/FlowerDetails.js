@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AddedToCart from "./AddedToCart";
 
 function AddToCart(props) {
   return (
     <div className="inline-block relative">
-      <button className="border-2 border-gray-200 bg-gray-100 rounded h-7 pr-2 mt-6 ml-6 text-sm">
+      <button
+        onClick={props.showAddedModal}
+        className="border-2 border-gray-200 bg-gray-100 rounded 
+                        h-7 pr-2 mt-6 ml-6 text-sm
+                        hover:text-purple-500"
+      >
         <img
           src="/assets/icons/Cart64x40.svg"
           alt="shopping cart"
@@ -53,6 +59,13 @@ class FlowerDetails extends React.Component {
     imageId: 0,
     selectedImageId: 0,
     quantity: 0,
+    show: false,
+  };
+  showAddedModal = (e) => {
+    this.setState({
+      show: true,
+    });
+    console.log("showAddedToCart");
   };
   isValidNumber = (entry) => {
     const pattern = /^[0-9][0-9]?$/;
@@ -142,10 +155,11 @@ class FlowerDetails extends React.Component {
                 handleMinus={() => this.handleMinus()}
                 handlePlus={() => this.handlePlus()}
               />
-              <AddToCart />
+              <AddToCart showAddedModal={(e) => this.showAddedModal(e)} />
             </div>
           </div>
         </div>
+        <AddedToCart show={this.state.show} />
       </div>
     );
   }
