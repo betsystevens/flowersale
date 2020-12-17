@@ -7,12 +7,13 @@ function AddedToCart(props) {
   }
   return (
     <div className={display}>
-      <div className="fixed left-1/4 top-20 m-auto w-1/2 h-auto shadow bg-white px-8 py-4">
+      <div className="fixed left-1/4 top-20 m-auto w-1/2 h-auto shadow bg-purple-50 px-8 py-4">
         <div className="flex justify-end m-auto">
           <img
+            onClick={props.closeAddedModal}
             src="/assets/icons/cross3px.svg"
             alt="close icon"
-            class="w-6 h-6 pt-1"
+            class="w-6 h-6 pt-1 cursor-pointer"
           />
         </div>
         <div class="m-auto py-4 flex flex-col items-center">
@@ -20,7 +21,7 @@ function AddedToCart(props) {
           <img
             src="/assets/images/flats/petuniaYellow512x384.jpg"
             alt="yellow petunia"
-            class="my-4 w-36 shadow-lg border-4 border-white"
+            class="my-4 w-40 shadow-lg border-4 border-white"
           />
           <p class="mt-1 text-2xl">Petunia</p>
           <p class="mt-1.5 text-sm">Variety: Yellow</p>

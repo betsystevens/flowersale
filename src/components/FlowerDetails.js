@@ -67,6 +67,12 @@ class FlowerDetails extends React.Component {
     });
     console.log("showAddedToCart");
   };
+  closeAddedModal = (e) => {
+    this.setState({
+      show: false,
+    });
+    console.log("closeAddedToCart");
+  };
   isValidNumber = (entry) => {
     const pattern = /^[0-9][0-9]?$/;
     return pattern.test(entry);
@@ -159,7 +165,10 @@ class FlowerDetails extends React.Component {
             </div>
           </div>
         </div>
-        <AddedToCart show={this.state.show} />
+        <AddedToCart
+          show={this.state.show}
+          closeAddedModal={(e) => this.closeAddedModal(e)}
+        />
       </div>
     );
   }
