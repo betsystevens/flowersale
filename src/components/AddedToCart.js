@@ -7,7 +7,7 @@ function AddedToCart(props) {
   }
   return (
     <div className={display}>
-      <div className="fixed left-1/4 top-20 m-auto w-1/2 h-auto shadow bg-purple-50 px-8 py-4">
+      <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">
         <div className="flex justify-end m-auto">
           <img
             onClick={props.closeAddedModal}

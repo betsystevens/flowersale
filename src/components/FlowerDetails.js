@@ -123,9 +123,13 @@ class FlowerDetails extends React.Component {
   render() {
     const { name, variety } = this.props.flower;
     const { container, price } = this.props.flowerGroup;
+    const opacity = this.state.show
+      ? "gridDetailWrapper opacity-10"
+      : "gridDetailWrapper opacity-100";
     return (
       <div className="mt-16 ml-16">
-        <div className="gridDetailWrapper">
+        {/* <div className="gridDetailWrapper"> */}
+        <div className={opacity}>
           <div>
             <p className="font-extrabold text-lg">{name}</p>
             <p className="pt-2">{`Flat - ${container.description}`}</p>
