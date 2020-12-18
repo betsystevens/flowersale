@@ -38,7 +38,7 @@ function Main(props) {
             exact
             path="/flats"
             component={() => (
-              <FlowerCards flats={data.flats} flowers={data.flowers} />
+              <FlowerCards flats={data.flats2} flowers={data.flowers} />
             )}
           />
           <Route
