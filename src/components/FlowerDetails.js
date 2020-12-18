@@ -171,6 +171,10 @@ class FlowerDetails extends React.Component {
           open={this.state.open}
           closeAddedModal={(e) => this.closeAddedModal(e)}
           quantity={this.state.quantity}
+          image={variety[this.state.selectedImageId].image}
+          name={this.props.flower.name}
+          variety={variety[this.state.selectedImageId].name}
+          price={price}
         />
       </div>
     );
