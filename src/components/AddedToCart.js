@@ -1,5 +1,9 @@
 import React from "react";
 
+// modal component when 'add to cart' is clicke
+// displays selected flower and quantity
+// toggle from hidden and not hidden in parent state variable
+
 function AddedToCart(props) {
   let display = "";
   if (!props.open) {
