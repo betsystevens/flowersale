@@ -2,7 +2,7 @@ import React from "react";
 
 function AddedToCart(props) {
   let display = "";
-  if (!props.show) {
+  if (!props.open) {
     display = "hidden";
   }
   return (
@@ -26,7 +26,7 @@ function AddedToCart(props) {
           <p class="mt-1 text-2xl">Petunia</p>
           <p class="mt-1.5 text-sm">Variety: Yellow</p>
           <p class="mt-1 text-sm">$17.00 per flat</p>
-          <p class="mt-5 text-lg">Quantity: 3</p>
+          <p class="mt-5 text-lg">Quantity: {props.quantity}</p>
           <p class="py-1 text-lg">$54.00</p>
           <button class="my-3 py-1 px-4 text-sm rounded border-2 border-purple-500">
             Checkout

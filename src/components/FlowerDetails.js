@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AddedToCart from "./AddedToCart";
 
+// 'Add to Cart' button with cart icon
 function AddToCart(props) {
   return (
     <div className="inline-block relative">
       <button
-        onClick={props.showAddedModal}
+        onClick={props.openAddedModal}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 mt-6 ml-6 text-sm
                         hover:text-purple-500"
@@ -59,19 +60,17 @@ class FlowerDetails extends React.Component {
     imageId: 0,
     selectedImageId: 0,
     quantity: 0,
-    show: false,
+    open: false,
   };
-  showAddedModal = (e) => {
+  openAddedModal = (e) => {
     this.setState({
-      show: true,
+      open: true,
     });
-    console.log("showAddedToCart");
   };
   closeAddedModal = (e) => {
     this.setState({
-      show: false,
+      open: false,
     });
-    console.log("closeAddedToCart");
   };
   isValidNumber = (entry) => {
     const pattern = /^[0-9][0-9]?$/;
@@ -123,12 +122,11 @@ class FlowerDetails extends React.Component {
   render() {
     const { name, variety } = this.props.flower;
     const { container, price } = this.props.flowerGroup;
-    const opacity = this.state.show
-      ? "gridDetailWrapper opacity-10"
+    const opacity = this.state.open
+      ? "gridDetailWrapper opacity-50"
       : "gridDetailWrapper opacity-100";
     return (
       <div className="mt-16 ml-16">
-        {/* <div className="gridDetailWrapper"> */}
         <div className={opacity}>
           <div>
             <p className="font-extrabold text-lg">{name}</p>
@@ -165,13 +163,14 @@ class FlowerDetails extends React.Component {
                 handleMinus={() => this.handleMinus()}
                 handlePlus={() => this.handlePlus()}
               />
-              <AddToCart showAddedModal={(e) => this.showAddedModal(e)} />
+              <AddToCart openAddedModal={(e) => this.openAddedModal(e)} />
             </div>
           </div>
         </div>
         <AddedToCart
-          show={this.state.show}
+          open={this.state.open}
           closeAddedModal={(e) => this.closeAddedModal(e)}
+          quantity={this.state.quantity}
         />
       </div>
     );
