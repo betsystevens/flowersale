@@ -25,11 +25,10 @@ function ActionButton(props) {
 }
 function FlowerCards(props) {
   const cards = props.flowers.map((flower) => {
-    const variety = flower.variety[0].name;
-    const image = flower.variety[0].image;
+    const { name, image } = flower.variety[0];
     const varietyCount = flower.variety.length;
     const varietyCountOrName =
-      varietyCount === 1 ? flower.variety[0].name : `${varietyCount} varieties`;
+      varietyCount === 1 ? name : `${varietyCount} varieties`;
     const openModal = () => {
       props.updateState(image, flower.name, varietyCountOrName, props.price);
       props.toggleModal();
@@ -38,7 +37,7 @@ function FlowerCards(props) {
       <div>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <div>
-            <img className="px-4 pt-4 pb-6" src={image} alt={variety} />
+            <img className="px-4 pt-4 pb-6" src={image} alt={name} />
           </div>
           <div className="p-2 flex flex-col items-center">
             <p className="font-extrabold text-lg">{flower.name}</p>

@@ -15,7 +15,7 @@ function AddedToCart(props) {
       <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">
         <div className="flex justify-end m-auto">
           <img
-            onClick={props.closeAddedModal}
+            onClick={props.toggleModal}
             src="/assets/icons/cross3px.svg"
             alt="close icon"
             className="w-6 h-6 pt-1 cursor-pointer"

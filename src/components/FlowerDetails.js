@@ -7,7 +7,7 @@ function AddToCart(props) {
   return (
     <div className="inline-block relative">
       <button
-        onClick={props.openAddedModal}
+        onClick={props.toggleModal}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 mt-6 ml-6 text-sm
                         hover:text-purple-500"
@@ -55,6 +55,31 @@ function BigImage(props) {
     />
   );
 }
+
+function Thumbnails(props) {
+  const thumbnails = props.flower.variety.map((variety, index) => {
+    return (
+      <div
+        key={index}
+        onMouseEnter={() => props.onMouseEnter(index)}
+        onMouseLeave={() => props.onMouseLeave()}
+        onClick={() => props.onClick(index)}
+      >
+        <img
+          src={variety.image}
+          alt={variety.name}
+          className="shadow-md rounded-md p-1 w-20"
+        />
+      </div>
+    );
+  });
+  return (
+    <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
+      {thumbnails}
+    </div>
+  );
+}
+
 class FlowerDetails extends React.Component {
   state = {
     imageId: 0,
@@ -62,14 +87,9 @@ class FlowerDetails extends React.Component {
     quantity: 0,
     open: false,
   };
-  openAddedModal = (e) => {
+  toggleModal = () => {
     this.setState({
-      open: true,
-    });
-  };
-  closeAddedModal = (e) => {
-    this.setState({
-      open: false,
+      open: !this.state.open,
     });
   };
   isValidNumber = (entry) => {
@@ -101,23 +121,6 @@ class FlowerDetails extends React.Component {
   handleClick = (index) => {
     this.setState({ selectedImageId: index });
   };
-
-  thumbnails = this.props.flower.variety.map((variety, index) => {
-    return (
-      <div
-        key={index}
-        onMouseEnter={() => this.handleMouseEnter(index)}
-        onMouseLeave={() => this.handleMouseLeave()}
-        onClick={() => this.handleClick(index)}
-      >
-        <img
-          src={variety.image}
-          alt={variety.name}
-          className="shadow-md rounded-md p-1 w-20"
-        />
-      </div>
-    );
-  });
 
   render() {
     const { name, variety } = this.props.flower;
@@ -153,9 +156,12 @@ class FlowerDetails extends React.Component {
           />
           <div>
             <p className="topRow">{`Variety: ${variety[this.state.imageId].name}`}</p>
-            <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
-              {this.thumbnails}
-            </div>
+            <Thumbnails
+              flower={this.props.flower}
+              onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
+              onClick={this.handleClick}
+            />
             <div className="flex">
               <Quantity
                 quantity={this.state.quantity}
@@ -163,13 +169,13 @@ class FlowerDetails extends React.Component {
                 handleMinus={() => this.handleMinus()}
                 handlePlus={() => this.handlePlus()}
               />
-              <AddToCart openAddedModal={(e) => this.openAddedModal(e)} />
+              <AddToCart toggleModal={(e) => this.toggleModal(e)} />
             </div>
           </div>
         </div>
         <AddedToCart
           open={this.state.open}
-          closeAddedModal={(e) => this.closeAddedModal(e)}
+          toggleModal={(e) => this.toggleModal(e)}
           quantity={this.state.quantity}
           image={variety[this.state.selectedImageId].image}
           name={this.props.flower.name}
