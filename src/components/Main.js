@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import Hero from "./Hero";
 import FlowerGroups from "./FlowerGroups";
-import FlowerCards from "./FlowerCards";
+import FlowerCardsContainer from "./FlowerCardsContainer";
 import Radios from "./Radios";
 import FlowerDetails from "./FlowerDetails";
 import { FLOWERS } from "../shared/flowers";
@@ -38,7 +38,10 @@ function Main(props) {
             exact
             path="/flats"
             component={() => (
-              <FlowerCards flats={data.flats2} flowers={data.flowers} />
+              <FlowerCardsContainer
+                flats={data.flats2}
+                containers={data.flowers}
+              />
             )}
           />
           <Route
