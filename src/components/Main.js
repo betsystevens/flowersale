@@ -6,6 +6,7 @@ import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import Radios from "./Radios";
 import FlowerDetails from "./FlowerDetails";
+import Cart from "./Cart";
 import { FLOWERS } from "../shared/flowers";
 import { FLATS } from "../shared/flats";
 import { FLATS2 } from "../shared/flats2";
@@ -34,6 +35,7 @@ function Main(props) {
         <Header />
         <Switch>
           <Route path="/home" component={HomePage} />
+          <Route path="/cart" component={Cart} />
           <Route
             exact
             path="/flats"
