@@ -38,7 +38,7 @@ function AddedToCart(props) {
           <button className="my-3 py-1 px-4 text-sm rounded border-2 border-purple-500">
             Checkout
           </button>
-          <a href="#" class="mt-3">
+          <a href="#" className="mt-3">
             continue shopping
           </a>
         </div>
