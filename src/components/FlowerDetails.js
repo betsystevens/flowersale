@@ -141,7 +141,7 @@ class FlowerDetails extends React.Component {
               <Link to={`/`} className="mt-36">
                 <p className="underline hover:text-purple-500">Checkout</p>
               </Link>
-              <Link to={`/flats`} className="mt-16">
+              <Link to={this.props.breadCrumb} className="mt-16">
                 <p className="underline hover:text-purple-500">
                   Continue Shopping
                 </p>

@@ -55,6 +55,7 @@ function Main(props) {
                     (flower) => flower.container.name === "flat"
                   )[0]
                 }
+                breadCrumb={"/flats"}
               />
             )}
           />
