@@ -1,6 +1,6 @@
 import React from "react";
 
-// modal component when 'add to cart' is clicke
+// modal component when 'add to cart' is clicked
 // displays selected flower and quantity
 // toggle from hidden and not hidden in parent state variable
 
@@ -9,7 +9,6 @@ function AddedToCart(props) {
   if (!props.open) {
     display = "hidden";
   }
-  console.log(props.image);
   const total = (props.quantity * props.price).toFixed(2);
   return (
     <div className={display}>
@@ -26,8 +25,7 @@ function AddedToCart(props) {
           <p className="font-medium text-2xl">Added to Cart!</p>
           <img
             src={props.image}
-            // src="/assets/images/flats/petuniaYellow512x384.jpg"
-            alt="yellow petunia"
+            alt={props.name}
             className="my-4 w-40 shadow-lg border-4 border-white"
           />
           <p className="mt-1 text-2xl">{props.name}</p>
