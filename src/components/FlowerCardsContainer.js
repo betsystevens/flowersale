@@ -38,7 +38,7 @@ function FlowerCardsContainer(props) {
       />
       <AddedToCart
         open={open}
-        closeAddedModal={() => toggleModal()}
+        toggleModal={() => toggleModal()}
         quantity={1}
         image={image}
         name={name}
