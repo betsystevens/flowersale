@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AddedToCart from "./AddedToCart";
+import Quantity from "./Quantity";
 
 // 'Add to Cart' button with cart icon
 function AddToCart(props) {
@@ -19,30 +20,6 @@ function AddToCart(props) {
         ></img>
         Add To Cart
       </button>
-    </div>
-  );
-}
-function Quantity(props) {
-  return (
-    <div className="mt-6">
-      <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
-        <div onClick={props.handleMinus} className="relative h-full w-1/3">
-          <div className="minus absolute"></div>
-        </div>
-        <div className="relative h-full w-1/3">
-          <input
-            className="w-full h-full bg-gray-50 text-center font-mono font-thin text-sm"
-            type="number"
-            min="0"
-            max="99"
-            value={props.quantity}
-            onChange={props.handleOnChange}
-          ></input>
-        </div>
-        <div onClick={props.handlePlus} className="relative h-full w-1/3">
-          <div className="plus absolute"></div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -84,7 +61,7 @@ class FlowerDetails extends React.Component {
   state = {
     imageId: 0,
     selectedImageId: 0,
-    quantity: 0,
+    quantity: 1,
     open: false,
   };
   toggleModal = () => {
