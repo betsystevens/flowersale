@@ -199,6 +199,13 @@ nav li.logo a:hover {
   grid-row: 1 / 4;
 }
 
+.cartGrid {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: 80px 200px 80px;
+  grid-template-rows: 30px 40px 25px;
+}
+
 /* quantity styles */
 .minus {
   background-image: url(/assets/icons/minus.svg);

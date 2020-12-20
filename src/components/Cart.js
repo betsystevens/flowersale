@@ -4,8 +4,8 @@ import Quantity from "./Quantity";
 function Cart(props) {
   return (
     <div className="bg-gray-100 flex flex-col h-screen">
-      <div className="mt-12">
-        <div className="m-auto flex justify-between w-11/12 h-20 bg-white">
+      <div className="mt-12 m-auto w-11/12 h-28 bg-white">
+        <div className="flex items-center justify-between">
           <p className="pl-8 text-4xl text-gray-700 font-semibold p-4">
             Shopping Cart
           </p>
@@ -16,14 +16,21 @@ function Cart(props) {
           />
         </div>
       </div>
-      <div className="mt-10">
-        <div className="m-auto flex flex-col w-11/12 bg-white">
-          <img className="w-24 h-20 bg-green-500"></img>
-          <p>Alyssum: Purple</p>
-          <p>price</p>
-          <p>$17.00</p>
-          <Quantity />
-          <button>Remove</button>
+      {/* card */}
+      <div className="mt-10 m-auto pl-8 py-8 flex items-center w-11/12 bg-white">
+        <img className="w-44 h-32 bg-green-500 border-8 border-gray-50 shadow-2xl"></img>
+        <div className="mx-8 cartGrid">
+          <div className="col-span-2 flex items-center">
+            <p className="text-xl">Alyssum: Purple</p>
+          </div>
+          <button className="text-xs text-left underline ">Remove</button>
+          <p className="text-xs self-end">Price</p>
+          <div className="row-span-2 justify-self-center self-end">
+            <Quantity />
+          </div>
+          <p className="text-xs self-end">Total</p>
+          <p className="text-xl">$17.00</p>
+          <p className="text-xl">$54.00</p>
         </div>
       </div>
     </div>
