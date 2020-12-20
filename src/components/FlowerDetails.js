@@ -10,7 +10,7 @@ function AddToCart(props) {
       <button
         onClick={props.toggleModal}
         className="border-2 border-gray-200 bg-gray-100 rounded 
-                        h-7 pr-2 mt-6 ml-6 text-sm
+                        h-7 pr-2 ml-6 text-sm
                         hover:text-purple-500"
       >
         <img
@@ -139,7 +139,7 @@ class FlowerDetails extends React.Component {
               onMouseLeave={this.handleMouseLeave}
               onClick={this.handleClick}
             />
-            <div className="flex">
+            <div className="flex pt-6">
               <Quantity
                 quantity={this.state.quantity}
                 handleOnChange={(e) => this.handleOnChange(e)}
