@@ -12,7 +12,7 @@ function Cart(props) {
           </p>
           <img
             className="pt-6 pr-20 h-16"
-            src="/assets/icons/cartGray.svg"
+            src="/assets/icons/CartGray.svg"
             alt="cart"
           />
         </div>
