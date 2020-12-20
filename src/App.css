@@ -202,7 +202,7 @@ nav li.logo a:hover {
 .cartGrid {
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: 80px 200px 80px;
+  grid-template-columns: 60px 220px 80px;
   grid-template-rows: 30px 40px 25px;
 }
 
