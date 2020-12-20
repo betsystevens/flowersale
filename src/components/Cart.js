@@ -18,7 +18,12 @@ function Cart(props) {
       </div>
       {/* card */}
       <div className="mt-10 m-auto pl-8 py-8 flex items-center w-11/12 bg-white">
-        <img className="w-44 h-32 bg-green-500 border-8 border-gray-50 shadow-2xl"></img>
+        <img
+          className="w-48 border-8 border-gray-50 shadow-2xl"
+          src="/assets/images/flats/dahliaMixed512x384.jpg"
+          alt="flower"
+        ></img>
+
         <div className="mx-8 cartGrid">
           <div className="col-span-2 flex items-center">
             <p className="text-xl">Alyssum: Purple</p>
