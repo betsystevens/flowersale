@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Header from "./Header";
+import Nav from "./Nav";
 import Hero from "./Hero";
 import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
@@ -19,6 +19,26 @@ function Main(props) {
     flats: FLATS,
     flats2: FLATS2,
   };
+  const cart = {};
+  const sampleCart = {
+    alyssum: {
+      flat: { white: { quantity: 3, price: 1700, image: "assets/alyssum" } },
+    },
+    dahlia: {
+      flat: { mixed: { quantity: 1, price: 1700, image: "assets/dahlia" } },
+    },
+    petunia: {
+      flat: { red: { quantity: 1, price: 1700, image: "assets/petunia" } },
+    },
+  };
+  const sampleCart2 = {
+    name: "alyssum",
+    container: "flat",
+    variety: "white",
+    quantity: 1,
+    price: 1700,
+    image: "assets/alyssum",
+  };
 
   const HomePage = () => {
     return (
@@ -32,7 +52,7 @@ function Main(props) {
   return (
     <div>
       <React.StrictMode>
-        <Header />
+        <Nav />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route path="/cart" component={Cart} />

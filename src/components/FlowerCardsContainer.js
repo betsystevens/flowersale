@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlowerCards from "./FlowerCards";
-import AddedToCart from "./AddedToCart";
+import AddedToCartModal from "./AddedToCartModal";
 
 function FlowerCardsContainer(props) {
   const flatDetails = props.containers.filter(
@@ -36,7 +36,8 @@ function FlowerCardsContainer(props) {
         updateState={updateState}
         toggleModal={() => toggleModal()}
       />
-      <AddedToCart
+      {/* modal initially hidden */}
+      <AddedToCartModal
         open={open}
         toggleModal={() => toggleModal()}
         quantity={1}

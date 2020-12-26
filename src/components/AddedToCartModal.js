@@ -4,7 +4,7 @@ import React from "react";
 // displays selected flower and quantity
 // toggle from hidden and not hidden in parent state variable
 
-function AddedToCart(props) {
+function AddedToCartModal(props) {
   let display = "";
   if (!props.open) {
     display = "hidden";
@@ -36,9 +36,6 @@ function AddedToCart(props) {
           <button className="my-3 py-1 px-4 text-sm rounded border-2 border-purple-500">
             Checkout
           </button>
-          {/* <a href="#" className="mt-3 hover:text-purple-500"> */}
-          {/* continue shopping */}
-          {/* </a> */}
           <button onClick={props.toggleModal} className="hover:text-purple-500">
             continue shopping
           </button>
@@ -48,4 +45,4 @@ function AddedToCart(props) {
   );
 }
 
-export default AddedToCart;
+export default AddedToCartModal;

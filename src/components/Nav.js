@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header(props) {
+function Nav(props) {
   return (
     <div>
       <nav className="flex-between">
@@ -37,4 +37,4 @@ function Header(props) {
   );
 }
 
-export default Header;
+export default Nav;

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AddedToCart from "./AddedToCart";
+import AddedToCartModal from "./AddedToCartModal";
 import Quantity from "./Quantity";
+import BigImage from "./BigImage";
+import Thumbnails from "./Thumbnails";
 
 // 'Add to Cart' button with cart icon
-function AddToCart(props) {
+function AddToCartButton(props) {
   return (
     <div className="inline-block relative">
       <button
@@ -23,39 +25,6 @@ function AddToCart(props) {
     </div>
   );
 }
-function BigImage(props) {
-  return (
-    <img
-      src={props.flower.image}
-      alt={props.flower.name}
-      className="p-1.5 shadow-md rounded-md w-96"
-    />
-  );
-}
-
-function Thumbnails(props) {
-  const thumbnails = props.flower.variety.map((variety, index) => {
-    return (
-      <div
-        key={index}
-        onMouseEnter={() => props.onMouseEnter(index)}
-        onMouseLeave={() => props.onMouseLeave()}
-        onClick={() => props.onClick(index)}
-      >
-        <img
-          src={variety.image}
-          alt={variety.name}
-          className="shadow-md rounded-md p-1 w-20"
-        />
-      </div>
-    );
-  });
-  return (
-    <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
-      {thumbnails}
-    </div>
-  );
-}
 
 class FlowerDetails extends React.Component {
   state = {
@@ -69,6 +38,7 @@ class FlowerDetails extends React.Component {
       open: !this.state.open,
     });
   };
+  // functions for handling quantity changes
   isValidNumber = (entry) => {
     const pattern = /^[0-9][0-9]?$/;
     return pattern.test(entry);
@@ -78,7 +48,6 @@ class FlowerDetails extends React.Component {
       this.setState({ quantity: Number(event.target.value) });
     } else this.setState({ quantity: "" });
   };
-
   handlePlus = () => {
     if (this.state.quantity < 99) {
       this.setState({ quantity: Number(this.state.quantity) + 1 });
@@ -89,6 +58,7 @@ class FlowerDetails extends React.Component {
       this.setState({ quantity: Number(this.state.quantity) - 1 });
     }
   };
+  // functions for handling hover/click on images
   handleMouseEnter = (index) => {
     this.setState({ imageId: index });
   };
@@ -146,11 +116,11 @@ class FlowerDetails extends React.Component {
                 handleMinus={() => this.handleMinus()}
                 handlePlus={() => this.handlePlus()}
               />
-              <AddToCart toggleModal={(e) => this.toggleModal(e)} />
+              <AddToCartButton toggleModal={(e) => this.toggleModal(e)} />
             </div>
           </div>
         </div>
-        <AddedToCart
+        <AddedToCartModal
           open={this.state.open}
           toggleModal={(e) => this.toggleModal(e)}
           quantity={this.state.quantity}
@@ -163,5 +133,4 @@ class FlowerDetails extends React.Component {
     );
   }
 }
-
 export default FlowerDetails;
