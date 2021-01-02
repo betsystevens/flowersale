@@ -26,6 +26,29 @@ function AddToCartButton(props) {
   );
 }
 
+function NameDescription(props) {
+  return (
+    <div>
+      <p className="font-extrabold text-lg">{props.name}</p>
+      <p className="pt-2">{`Flat - ${props.description}`}</p>
+    </div>
+  );
+}
+function CheckoutOrContinue(props) {
+  return (
+    <div className="spanRows">
+      <div className="flex flex-col">
+        <Link to={`/`} className="mt-36">
+          <p className="underline hover:text-purple-500">Checkout</p>
+        </Link>
+        <Link to={props.breadCrumb} className="mt-16">
+          <p className="underline hover:text-purple-500">Continue Shopping</p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 class FlowerDetails extends React.Component {
   state = {
     imageId: 0,
@@ -78,23 +101,9 @@ class FlowerDetails extends React.Component {
     return (
       <div className="mt-16 ml-16">
         <div className={opacity}>
-          <div>
-            <p className="font-extrabold text-lg">{name}</p>
-            <p className="pt-2">{`Flat - ${container.description}`}</p>
-          </div>
+          <NameDescription name={name} description={container.description} />
           <p className="pt-10">{`Price: $${price}`}</p>
-          <div className="spanRows">
-            <div className="flex flex-col">
-              <Link to={`/`} className="mt-36">
-                <p className="underline hover:text-purple-500">Checkout</p>
-              </Link>
-              <Link to={this.props.breadCrumb} className="mt-16">
-                <p className="underline hover:text-purple-500">
-                  Continue Shopping
-                </p>
-              </Link>
-            </div>
-          </div>
+          <CheckoutOrContinue breadCrumb={this.props.breadCrumb} />
           <BigImage
             flower={{
               image: variety[this.state.imageId].image,

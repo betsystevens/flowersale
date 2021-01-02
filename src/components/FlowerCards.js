@@ -34,7 +34,7 @@ function FlowerCards(props) {
       props.toggleModal();
     };
     return (
-      <div>
+      <div key={flower.id}>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <div>
             <img className="px-4 pt-4 pb-6" src={image} alt={name} />

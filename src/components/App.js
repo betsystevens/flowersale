@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
+import FlowerDetails2 from "./FlowerDetails2";
 import Cart from "./Cart";
 import { FLOWERS } from "../shared/flowers";
 import { FLATS2 } from "../shared/flats2";
@@ -47,7 +48,7 @@ function App(props) {
             exact
             path="/flats/:flowerId"
             render={({ match }) => (
-              <FlowerDetails
+              <FlowerDetails2
                 flower={data.flats2[match.params.flowerId]}
                 flowerGroup={
                   data.flowers.filter(
@@ -56,6 +57,16 @@ function App(props) {
                 }
                 breadCrumb={"/flats"}
               />
+              /*
+              <FlowerDetails
+                flower={data.flats2[match.params.flowerId]}
+                flowerGroup={
+                  data.flowers.filter(
+                    (flower) => flower.container.name === "flat"
+                  )[0]
+                }
+                breadCrumb={"/flats"}
+              /> */
             )}
           />
           <Redirect to="/home" />
