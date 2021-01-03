@@ -23,6 +23,7 @@ npm-debug.log*
 yarn-debug.log* yarn-error.log*
 
 # my notes & setup
+src/components/componentGroups.js
 seescandies/
 notes.md
 .vscode

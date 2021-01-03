@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Nav from "./Nav";
 import Hero from "./Hero";
@@ -12,12 +12,26 @@ import { FLATS2 } from "../shared/flats2";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
-function App(props) {
+function App() {
   const data = {
     flowers: FLOWERS,
     flats2: FLATS2,
   };
+  const [cart, setCart] = useState({});
+  const [quantity, setQuantity] = useState(0);
+  const [hoverId, setHoverId] = useState(0);
+  const [selectedId, setSelectedId] = useState(0);
 
+  // functions for handling hover/click on images
+  const handleMouseEnter = (index) => {
+    setHoverId(index);
+  };
+  const handleMouseLeave = () => {
+    setHoverId(selectedId);
+  };
+  const handleClick = (index) => {
+    setSelectedId(index);
+  };
   const HomePage = () => {
     return (
       <div>
@@ -56,6 +70,11 @@ function App(props) {
                   )[0]
                 }
                 breadCrumb={"/flats"}
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
+                handleClick={handleClick}
+                hoverId={hoverId}
+                selectedId={selectedId}
               />
               /*
               <FlowerDetails

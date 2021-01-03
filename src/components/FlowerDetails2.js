@@ -50,8 +50,10 @@ function AddToCartButton(props) {
 export default function FlowerDetails2(props) {
   const { name, variety } = props.flower;
   const { container, price } = props.flowerGroup;
-  const [imageId, setImageId] = useState(0);
-  const [selectedImageId, setSelectedImageId] = useState(0);
+  /*
+  const [hoverId, setHoverId] = useState(0);
+  const [selectedId, setSelectedId] = useState(0);
+  */
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const opacity = open
@@ -83,16 +85,17 @@ export default function FlowerDetails2(props) {
     }
   };
   // functions for handling hover/click on images
+  /*
   const handleMouseEnter = (index) => {
-    setImageId(index);
+    setHoverId(index);
   };
   const handleMouseLeave = () => {
-    setImageId(selectedImageId);
+    setHoverId(selectedId);
   };
   const handleClick = (index) => {
-    setSelectedImageId(index);
+    setSelectedId(index);
   };
-
+  */
   return (
     <div className="mt-16 ml-16">
       <div className={opacity}>
@@ -101,17 +104,17 @@ export default function FlowerDetails2(props) {
         <CheckoutOrContinue breadCrumb={props.breadCrumb} />
         <BigImage
           flower={{
-            image: variety[imageId].image,
+            image: variety[props.hoverId].image,
             name: name,
           }}
         />
         <div>
-          <p className="topRow">{`Variety: ${variety[imageId].name}`}</p>
+          <p className="topRow">{`Variety: ${variety[props.hoverId].name}`}</p>
           <Thumbnails
             flower={props.flower}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={handleClick}
+            onMouseEnter={props.handleMouseEnter}
+            onMouseLeave={props.handleMouseLeave}
+            onClick={props.handleClick}
           />
           <div className="flex pt-6">
             <Quantity
@@ -128,9 +131,9 @@ export default function FlowerDetails2(props) {
         open={open}
         toggleModal={(e) => toggleModal(e)}
         quantity={quantity}
-        image={variety[selectedImageId].image}
+        image={variety[props.selectedId].image}
         name={name}
-        variety={variety[selectedImageId].name}
+        variety={variety[props.selectedId].name}
         price={price}
       />
     </div>
