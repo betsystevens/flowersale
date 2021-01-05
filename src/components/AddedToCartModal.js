@@ -1,4 +1,5 @@
 import React from "react";
+// import React, { useEffect } from "react";
 
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity

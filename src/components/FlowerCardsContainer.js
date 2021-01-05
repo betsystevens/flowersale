@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FlowerCards from "./FlowerCards";
 import AddedToCartModal from "./AddedToCartModal";
 
@@ -17,6 +17,12 @@ function FlowerCardsContainer(props) {
     variety,
     price,
   };
+  useEffect(() => {
+    /* reset state variables */
+    props.setQuantity(1);
+    props.setHoverId(0);
+    props.setSelectedId(0);
+  });
   function toggleModal() {
     setOpen(!open);
   }

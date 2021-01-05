@@ -2,6 +2,18 @@ import React from "react";
 import Quantity from "./Quantity";
 
 function Cart(props) {
+  const { cart, name, quantity, fooTest } = props;
+  console.log(`Cart:fooTest - ${fooTest}`);
+  console.log(`Cart:name - ${name}`);
+  console.log(`Cart:quantity - ${quantity}`);
+  console.log(`Cart:cart - ${cart}`);
+  for (const flower in cart) {
+    console.log(`Flower - ${flower}`);
+    /*
+    for (const variety in flower) {
+      console.log(`${flower} - ${variety} - ${variety["quantity"]}`);
+    }*/
+  }
   return (
     <div className="bg-gray-100 h-screen pt-12">
       <div className="m-auto w-11/12 flex flex-col">
