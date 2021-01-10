@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Nav(props) {
   return (
@@ -6,30 +7,40 @@ function Nav(props) {
       <nav className="flex-between">
         <ul className="flex">
           <li className="logo">
-            <a href="/">BS Plant Sale</a>
+            <NavLink to="/" exact>
+              BS Plant Sale
+            </NavLink>
           </li>
         </ul>
         <ul className="flex">
           <li>
-            <a href="/">Hanging Baskets</a>
+            <NavLink to="/" exact>
+              Hanging Baskets
+            </NavLink>
           </li>
           <li>
-            <a href="/flats">Flats</a>
+            <NavLink to="/flats" exact>
+              Flats
+            </NavLink>
           </li>
           <li>
-            <a href="/">Potted Plants</a>
+            <NavLink to="/" exact>
+              Potted Plants
+            </NavLink>
           </li>
           <li>
-            <a href="/">Herbs & Tomatoes</a>
+            <NavLink to="/" exact>
+              Herbs & Tomatoes
+            </NavLink>
           </li>
           <li>
-            <a href="/cart">
+            <NavLink to="/cart" exact>
               <img
                 className="h-8 cursor-pointer"
                 src="/assets/icons/CartWhite.svg"
                 alt="cart"
               />
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

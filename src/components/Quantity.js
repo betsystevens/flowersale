@@ -14,8 +14,8 @@ function Quantity(props) {
             type="number"
             min="0"
             max="99"
-            value={props.quantity}
             onChange={props.handleOnChange}
+            value={props.quantity}
           ></input>
         </div>
         <div onClick={props.handlePlus} className="relative h-full w-1/3">

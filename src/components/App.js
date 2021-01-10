@@ -11,51 +11,57 @@ import { FLATS2 } from "../shared/flats2";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
-function App(props) {
+function App() {
   const data = {
     flowers: FLOWERS,
     flats2: FLATS2,
   };
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
-  const [fooTest, setFooTest] = useState(99);
 
   // functions to update cart
   const updateCart = () => {
-    console.log(`${name} - ${quantity}`);
+    // get variety from data file
     const flowerObj = data.flats2.filter((flower) => flower.name === name)[0];
     const variety = flowerObj.variety[selectedId].name;
-    console.log(variety);
-    // const cartCopy = cart;
-    // stringify for deep copy
-    const cartCopy = JSON.parse(JSON.stringify(cart));
+    console.log(`Add to cart: ${name} - ${variety} - ${quantity}`);
+    const flower = cart.filter(
+      (item) => item.name === name && item.variety === variety
+    );
+    if (flower.length) {
+      console.log(
+        `Match - ${flower[0].name} - ${flower[0].variety} - ${flower[0].quantity}`
+      );
+      let newQuantity = flower[0].quantity + quantity;
+      console.log(`newQuantity - ${newQuantity}`);
+      let itemNoChange = cart.filter(
+        (item) => !(item.name === name && item.variety === variety)
+      );
+      console.log(itemNoChange);
+      setCart(
+        itemNoChange.concat({
+          name: name,
+          variety: variety,
+          quantity: newQuantity,
+        })
+      );
+    } else {
+      console.log(`adding flower - ${name} - ${variety} - ${quantity}`);
+      console.log(
+        JSON.stringify({ name: name, variety: variety, quantity: quantity })
+      );
+      setCart(
+        cart.concat({ name: name, variety: variety, quantity: quantity })
+      );
+    }
+
     // 1. check for flower in cart
     // 2. if flower in cart then update quantity
     // 3. if flower not in cart add
-    const item = cartCopy[name] && cartCopy[name][variety];
-    if (item) cartCopy[name][variety]["quantity"] = quantity;
-    else {
-      /* flower exists with different variety */
-      if (cartCopy[name]) {
-        cartCopy[name][variety] = { quantity: quantity };
-      } else {
-        cartCopy[name] = {
-          [variety]: {
-            quantity: quantity,
-          },
-        };
-      }
-    }
-    console.log("cartCopy -------");
-    console.log(cartCopy);
-    console.log("cart-------");
     console.log(cart);
-    setCart(cartCopy);
-
-    setFooTest(33);
   };
   // functions for handling quantity changes
   const isValidNumber = (entry) => {
@@ -63,6 +69,7 @@ function App(props) {
     return pattern.test(entry);
   };
   const handleOnChange = (event) => {
+    console.log("hello from handleOnChage!");
     if (isValidNumber(event.target.value)) {
       setQuantity(Number(event.target.value));
     } else setQuantity("");
@@ -98,21 +105,14 @@ function App(props) {
 
   return (
     <div>
-      <Nav />
       <BrowserRouter>
+        <Nav />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route
             exact
             path="/cart"
-            render={() => (
-              <Cart
-                cart={cart}
-                quantity={quantity}
-                name={name}
-                fooTest={fooTest}
-              />
-            )}
+            render={() => <Cart cart={cart} handleOnChange={handleOnChange} />}
           />
           <Route
             exact

@@ -86,9 +86,9 @@ export default function FlowerDetails(props) {
           <div className="flex pt-6">
             <Quantity
               quantity={props.quantity}
-              handleOnChange={(e) => props.handleOnChange(e)}
-              handleMinus={props.handleMinus}
-              handlePlus={props.handlePlus}
+              handleOnChange={props.handleOnChange}
+              handleMinus={(e) => props.handleMinus(e)}
+              handlePlus={(e) => props.handlePlus(e)}
             />
             <AddToCartButton toggleModal={toggleModal} />
           </div>
