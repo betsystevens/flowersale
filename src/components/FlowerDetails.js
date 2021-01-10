@@ -50,7 +50,7 @@ function AddToCartButton(props) {
 export default function FlowerDetails(props) {
   const { name, variety } = props.flower;
   useEffect(() => {
-    props.setName(name);
+    props.setFlowerName(name);
   });
   const { container, price } = props.flowerGroup;
 

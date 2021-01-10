@@ -17,7 +17,7 @@ function App() {
     flats2: FLATS2,
   };
   const [cart, setCart] = useState([]);
-  const [name, setName] = useState("");
+  const [flowerName, setFlowerName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
@@ -25,43 +25,33 @@ function App() {
   // functions to update cart
   const updateCart = () => {
     // get variety from data file
-    const flowerObj = data.flats2.filter((flower) => flower.name === name)[0];
+    const flowerObj = data.flats2.filter(
+      (flower) => flower.name === flowerName
+    )[0];
     const variety = flowerObj.variety[selectedId].name;
-    console.log(`Add to cart: ${name} - ${variety} - ${quantity}`);
     const flower = cart.filter(
-      (item) => item.name === name && item.variety === variety
+      (item) => item.name === flowerName && item.variety === variety
     );
+    // 1. check for flower in cart
+    // 2. if flower in cart then update quantity
     if (flower.length) {
-      console.log(
-        `Match - ${flower[0].name} - ${flower[0].variety} - ${flower[0].quantity}`
-      );
       let newQuantity = flower[0].quantity + quantity;
-      console.log(`newQuantity - ${newQuantity}`);
-      let itemNoChange = cart.filter(
-        (item) => !(item.name === name && item.variety === variety)
+      let itemsNotChanging = cart.filter(
+        (item) => !(item.name === flowerName && item.variety === variety)
       );
-      console.log(itemNoChange);
       setCart(
-        itemNoChange.concat({
-          name: name,
+        itemsNotChanging.concat({
+          name: flowerName,
           variety: variety,
           quantity: newQuantity,
         })
       );
     } else {
-      console.log(`adding flower - ${name} - ${variety} - ${quantity}`);
-      console.log(
-        JSON.stringify({ name: name, variety: variety, quantity: quantity })
-      );
+      // 3. if flower not in cart add
       setCart(
-        cart.concat({ name: name, variety: variety, quantity: quantity })
+        cart.concat({ name: flowerName, variety: variety, quantity: quantity })
       );
     }
-
-    // 1. check for flower in cart
-    // 2. if flower in cart then update quantity
-    // 3. if flower not in cart add
-    console.log(cart);
   };
   // functions for handling quantity changes
   const isValidNumber = (entry) => {
@@ -69,7 +59,6 @@ function App() {
     return pattern.test(entry);
   };
   const handleOnChange = (event) => {
-    console.log("hello from handleOnChage!");
     if (isValidNumber(event.target.value)) {
       setQuantity(Number(event.target.value));
     } else setQuantity("");
@@ -141,7 +130,7 @@ function App() {
                 breadCrumb={"/flats"}
                 quantity={quantity}
                 setQuantity={setQuantity}
-                setName={setName}
+                setFlowerName={setFlowerName}
                 handleOnChange={handleOnChange}
                 handleMinus={handleMinus}
                 handlePlus={handlePlus}
