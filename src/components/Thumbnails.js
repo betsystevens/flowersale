@@ -1,7 +1,8 @@
 import React from "react";
+import { FLATS } from "../shared/flats";
 
 function Thumbnails(props) {
-  const thumbnails = props.flower.variety.map((variety, index) => {
+  const thumbnails = FLATS[props.flowerId].variety.map((variety, index) => {
     return (
       <div
         key={index}

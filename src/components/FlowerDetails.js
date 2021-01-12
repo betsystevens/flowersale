@@ -5,6 +5,7 @@ import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
 import { FLOWERS } from "../shared/flowers";
+import { FLATS } from "../shared/flats";
 
 function NameDescription(props) {
   return (
@@ -49,7 +50,11 @@ function AddToCartButton(props) {
   );
 }
 export default function FlowerDetails(props) {
-  const { name, variety } = props.flower;
+  // flower={data.flats[match.params.flowerId]}
+  console.log(props.flowerId);
+  debugger;
+  const name = FLATS[props.flowerId].name;
+  const variety = FLATS[props.flowerId].variety;
   useEffect(() => {
     props.setFlowerName(name);
   });
@@ -78,7 +83,7 @@ export default function FlowerDetails(props) {
         <div>
           <p className="topRow">{`Variety: ${variety[props.hoverId].name}`}</p>
           <Thumbnails
-            flower={props.flower}
+            flowerId={props.flowerId}
             onMouseEnter={props.handleMouseEnter}
             onMouseLeave={props.handleMouseLeave}
             onClick={props.handleClick}

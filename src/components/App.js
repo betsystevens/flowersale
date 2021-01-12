@@ -106,7 +106,6 @@ function App() {
             path="/flats"
             render={() => (
               <FlowerCardsContainer
-                flats={data.flats}
                 setQuantity={setQuantity}
                 setHoverId={setHoverId}
                 setSelectedId={setSelectedId}
@@ -118,7 +117,7 @@ function App() {
             path="/flats/:flowerId"
             render={({ match }) => (
               <FlowerDetails
-                flower={data.flats[match.params.flowerId]}
+                flowerId={match.params.flowerId}
                 breadCrumb={"/flats"}
                 quantity={quantity}
                 setQuantity={setQuantity}
