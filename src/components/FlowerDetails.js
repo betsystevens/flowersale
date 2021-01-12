@@ -49,8 +49,6 @@ function AddToCartButton(props) {
   );
 }
 export default function FlowerDetails(props) {
-  console.log(props.flowerId);
-  debugger;
   const name = FLATS[props.flowerId].name;
   const variety = FLATS[props.flowerId].variety;
   useEffect(() => {
@@ -87,9 +85,7 @@ export default function FlowerDetails(props) {
           <div className="flex pt-6">
             <Quantity
               quantity={props.quantity}
-              handleOnChange={props.handleOnChange}
-              handleMinus={props.handleMinus}
-              handlePlus={props.handlePlus}
+              quantityHandlers={props.quantityHandlers}
             />
             <AddToCartButton toggleModal={toggleModal} />
           </div>

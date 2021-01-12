@@ -14,7 +14,7 @@ function CartImage({ name, variety }) {
     ></img>
   );
 }
-function CartBody({ name, variety, quantity, handleOnChange }) {
+function CartBody({ name, variety, quantity, quantityHandlers }) {
   let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
   let price = group.container.price;
   const total = ((quantity * price) / 100).toFixed(2);
@@ -23,7 +23,7 @@ function CartBody({ name, variety, quantity, handleOnChange }) {
       <FlowerName name={name} variety={variety} />
       <button className="text-xs text-left underline ">Remove</button>
       <p className="text-xs self-end">Price</p>
-      <CartQuantity quantity={quantity} handleOnChange={handleOnChange} />
+      <CartQuantity quantity={quantity} quantityHandlers={quantityHandlers} />
       <p className="text-xs self-end">Total</p>
       <p className="text-xl">$17.00</p>
       <p className="text-xl">${total}</p>
@@ -39,11 +39,11 @@ function FlowerName({ name, variety }) {
     </div>
   );
 }
-function CartQuantity({ quantity, handleOnChange }) {
+function CartQuantity({ quantity, quantityHandlers }) {
   return (
     <div className="row-span-2 justify-self-center self-end flex ">
       <p className="text-xl pr-4">Qty:</p>
-      <Quantity quantity={quantity} handleOnChange={handleOnChange} />
+      <Quantity quantity={quantity} quantityHandlers={quantityHandlers} />
     </div>
   );
 }
@@ -71,7 +71,7 @@ function Cart(props) {
           name={flower.name}
           variety={flower.variety}
           quantity={flower.quantity}
-          handleOnChange={props.handleOnChange}
+          quantityHandlers={props.quantityHandlers}
         />
       </div>
     );
