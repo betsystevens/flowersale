@@ -7,11 +7,11 @@ import AddedToCartModal from "./AddedToCartModal";
 import { FLOWERS } from "../shared/flowers";
 import { FLATS } from "../shared/flats";
 
-function NameDescription(props) {
+function NameDescription({ name, description }) {
   return (
     <div>
-      <p className="font-extrabold text-lg">{props.name}</p>
-      <p className="pt-2">{`Flat - ${props.description}`}</p>
+      <p className="font-extrabold text-lg">{name}</p>
+      <p className="pt-2">{`Flat - ${description}`}</p>
     </div>
   );
 }
@@ -29,11 +29,11 @@ function CheckoutOrContinue(props) {
     </div>
   );
 }
-function AddToCartButton(props) {
+function AddToCartButton({ toggleModal }) {
   return (
     <div className="inline-block relative">
       <button
-        onClick={(e) => props.toggleModal(e)}
+        onClick={(e) => toggleModal(e)}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 ml-6 text-sm
                         hover:text-purple-500"
@@ -49,15 +49,15 @@ function AddToCartButton(props) {
   );
 }
 export default function FlowerDetails(props) {
-  const name = FLATS[props.flowerId].name;
+  // export default function FlowerDetails( { flowerId, setFlowerName, updateCart, breadCrumb, hoverId, imageHandlers, quantityHandlers, selectedId, quantity }) {
   const variety = FLATS[props.flowerId].variety;
+  const name = FLATS[props.flowerId].name;
   useEffect(() => {
     props.setFlowerName(name);
   });
-  const flowerGroup = FLOWERS.filter(
+  const container = FLOWERS.filter(
     (flower) => flower.container.name === "flat"
-  )[0];
-  const { container } = flowerGroup;
+  )[0].container;
   const price = container.price;
 
   const [open, setOpen] = useState(false);

@@ -1,6 +1,5 @@
 import React from "react";
 import { FLOWERS } from "../shared/flowers";
-// import React, { useEffect } from "react";
 
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity
@@ -12,8 +11,8 @@ function AddedToCartModal(props) {
     display = "hidden";
   }
   let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
-  let price = group.container.price;
-  const total = ((props.quantity * price) / 100).toFixed(2);
+  let price = (group.container.price / 100).toFixed(2);
+  const total = (props.quantity * price).toFixed(2);
   return (
     <div className={display}>
       <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">
@@ -34,7 +33,7 @@ function AddedToCartModal(props) {
           />
           <p className="mt-1 text-2xl">{props.name}</p>
           <p className="mt-1.5 text-sm">Variety: {props.variety}</p>
-          <p className="mt-1 text-sm">$17.00 per flat</p>
+          <p className="mt-1 text-sm">${price} per flat</p>
           <p className="mt-5 text-lg">Quantity: {props.quantity}</p>
           <p className="py-1 text-lg">${total}</p>
           <button className="my-3 py-1 px-4 text-sm rounded border-2 border-purple-500">

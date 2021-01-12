@@ -16,8 +16,8 @@ function CartImage({ name, variety }) {
 }
 function CartBody({ name, variety, quantity, quantityHandlers }) {
   let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
-  let price = group.container.price;
-  const total = ((quantity * price) / 100).toFixed(2);
+  let price = (group.container.price / 100).toFixed(2);
+  const total = (quantity * price).toFixed(2);
   return (
     <div className="mx-8 cartGrid">
       <FlowerName name={name} variety={variety} />
@@ -25,7 +25,7 @@ function CartBody({ name, variety, quantity, quantityHandlers }) {
       <p className="text-xs self-end">Price</p>
       <CartQuantity quantity={quantity} quantityHandlers={quantityHandlers} />
       <p className="text-xs self-end">Total</p>
-      <p className="text-xl">$17.00</p>
+      <p className="text-xl">${price}</p>
       <p className="text-xl">${total}</p>
     </div>
   );
