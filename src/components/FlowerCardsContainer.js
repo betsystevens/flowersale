@@ -36,7 +36,6 @@ function FlowerCardsContainer(props) {
   return (
     <div>
       <FlowerCards
-        flowers={props.flats}
         price={flatDetails[0].container.price}
         containerDescription={flatDetails[0].container.description}
         flowerInfo={flowerInfo}
