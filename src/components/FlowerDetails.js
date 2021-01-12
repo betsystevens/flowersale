@@ -4,6 +4,7 @@ import Quantity from "./Quantity";
 import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
+import { FLOWERS } from "../shared/flowers";
 
 function NameDescription(props) {
   return (
@@ -52,7 +53,10 @@ export default function FlowerDetails(props) {
   useEffect(() => {
     props.setFlowerName(name);
   });
-  const { container } = props.flowerGroup;
+  const flowerGroup = FLOWERS.filter(
+    (flower) => flower.container.name === "flat"
+  )[0];
+  const { container } = flowerGroup;
   const price = container.price;
 
   const [open, setOpen] = useState(false);

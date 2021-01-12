@@ -6,14 +6,12 @@ import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
-import { FLOWERS } from "../shared/flowers";
 import { FLATS2 } from "../shared/flats2";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
   const data = {
-    flowers: FLOWERS,
     flats2: FLATS2,
   };
   const [cart, setCart] = useState([]);
@@ -121,11 +119,6 @@ function App() {
             render={({ match }) => (
               <FlowerDetails
                 flower={data.flats2[match.params.flowerId]}
-                flowerGroup={
-                  data.flowers.filter(
-                    (flower) => flower.container.name === "flat"
-                  )[0]
-                }
                 breadCrumb={"/flats"}
                 quantity={quantity}
                 setQuantity={setQuantity}
