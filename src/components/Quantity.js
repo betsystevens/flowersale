@@ -1,11 +1,13 @@
 import React from "react";
 
-function Quantity(props) {
+function Quantity({ quantity, quantityHandlers }) {
   return (
-    // <div className="mt-6">
     <div className="">
       <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
-        <div onClick={props.handleMinus} className="relative h-full w-1/3">
+        <div
+          onClick={quantityHandlers.handleMinus}
+          className="relative h-full w-1/3"
+        >
           <div className="minus absolute"></div>
         </div>
         <div className="relative h-full w-1/3">
@@ -14,11 +16,14 @@ function Quantity(props) {
             type="number"
             min="0"
             max="99"
-            onChange={props.handleOnChange}
-            value={props.quantity}
+            onChange={quantityHandlers.handleOnChange}
+            value={quantity}
           ></input>
         </div>
-        <div onClick={props.handlePlus} className="relative h-full w-1/3">
+        <div
+          onClick={quantityHandlers.handlePlus}
+          className="relative h-full w-1/3"
+        >
           <div className="plus absolute"></div>
         </div>
       </div>

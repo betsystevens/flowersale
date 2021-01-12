@@ -57,20 +57,22 @@ function App() {
     const pattern = /^[0-9][0-9]?$/;
     return pattern.test(entry);
   };
-  const handleOnChange = (event) => {
-    if (isValidNumber(event.target.value)) {
-      setQuantity(Number(event.target.value));
-    } else setQuantity("");
-  };
-  const handlePlus = () => {
-    if (quantity < 99) {
-      setQuantity(Number(quantity) + 1);
-    }
-  };
-  const handleMinus = () => {
-    if (quantity > 0) {
-      setQuantity(Number(quantity) - 1);
-    }
+  const quantityHandlers = {
+    handleOnChange(event) {
+      if (isValidNumber(event.target.value)) {
+        setQuantity(Number(event.target.value));
+      } else setQuantity("");
+    },
+    handlePlus() {
+      if (quantity < 99) {
+        setQuantity(Number(quantity) + 1);
+      }
+    },
+    handleMinus() {
+      if (quantity > 0) {
+        setQuantity(Number(quantity) - 1);
+      }
+    },
   };
   // functions for handling hover/click on images
   const imageHandlers = {
@@ -102,7 +104,9 @@ function App() {
           <Route
             exact
             path="/cart"
-            render={() => <Cart cart={cart} handleOnChange={handleOnChange} />}
+            render={() => (
+              <Cart cart={cart} quantityHandlers={quantityHandlers} />
+            )}
           />
           <Route
             exact
@@ -128,9 +132,7 @@ function App() {
                 selectedId={selectedId}
                 updateCart={updateCart}
                 setFlowerName={setFlowerName}
-                handleOnChange={handleOnChange}
-                handleMinus={handleMinus}
-                handlePlus={handlePlus}
+                quantityHandlers={quantityHandlers}
                 imageHandlers={imageHandlers}
               />
             )}
