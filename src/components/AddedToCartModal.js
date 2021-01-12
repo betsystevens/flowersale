@@ -1,4 +1,5 @@
 import React from "react";
+import { FLOWERS } from "../shared/flowers";
 // import React, { useEffect } from "react";
 
 // modal component when 'add to cart' is clicked
@@ -10,7 +11,9 @@ function AddedToCartModal(props) {
   if (!props.open) {
     display = "hidden";
   }
-  const total = (props.quantity * props.price).toFixed(2);
+  let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
+  let price = group.container.price;
+  const total = ((props.quantity * price) / 100).toFixed(2);
   return (
     <div className={display}>
       <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">

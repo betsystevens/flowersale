@@ -42,7 +42,9 @@ function FlowerCards(props) {
           <div className="p-2 flex flex-col items-center">
             <p className="font-extrabold text-lg">{flower.name}</p>
             <p className="pt-1">{`${varietyCountOrName}`}</p>
-            <p className="pt-1">{`Price - $${props.price}`}</p>
+            <p className="pt-1">{`Price - $${(props.price / 100).toFixed(
+              2
+            )}`}</p>
             <p className="pt-1">{`${props.containerDescription}`}</p>
           </div>
           <div className="flex flex-col items-center w-full p-4 pb-7">

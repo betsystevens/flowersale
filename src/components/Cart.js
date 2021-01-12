@@ -1,6 +1,7 @@
 import React from "react";
 import Quantity from "./Quantity";
 import { FLATS2 } from "../shared/flats2";
+import { FLOWERS } from "../shared/flowers";
 
 function CartImage({ name, variety }) {
   let flower = FLATS2.filter((obj) => obj.name === name)[0];
@@ -9,12 +10,13 @@ function CartImage({ name, variety }) {
     <img
       className="w-48 border-8 border-gray-50 shadow-2xl"
       src={image}
-      alt="flower"
+      alt={name}
     ></img>
   );
 }
 function CartBody({ name, variety, quantity, handleOnChange }) {
-  const price = 1700;
+  let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
+  let price = group.container.price;
   const total = ((quantity * price) / 100).toFixed(2);
   return (
     <div className="mx-8 cartGrid">

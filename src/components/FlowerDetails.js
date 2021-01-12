@@ -52,7 +52,8 @@ export default function FlowerDetails(props) {
   useEffect(() => {
     props.setFlowerName(name);
   });
-  const { container, price } = props.flowerGroup;
+  const { container } = props.flowerGroup;
+  const price = container.price;
 
   const [open, setOpen] = useState(false);
   const opacity = open
@@ -67,14 +68,9 @@ export default function FlowerDetails(props) {
     <div className="mt-16 ml-16">
       <div className={opacity}>
         <NameDescription name={name} description={container.description} />
-        <p className="pt-10">{`Price: $${price}`}</p>
+        <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
         <CheckoutOrContinue breadCrumb={props.breadCrumb} />
-        <BigImage
-          flower={{
-            image: variety[props.hoverId].image,
-            name: name,
-          }}
-        />
+        <BigImage image={variety[props.hoverId].image} name={name} />
         <div>
           <p className="topRow">{`Variety: ${variety[props.hoverId].name}`}</p>
           <Thumbnails

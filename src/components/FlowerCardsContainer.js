@@ -36,7 +36,7 @@ function FlowerCardsContainer(props) {
     <div>
       <FlowerCards
         flowers={props.flats}
-        price={flatDetails[0].price}
+        price={flatDetails[0].container.price}
         containerDescription={flatDetails[0].container.description}
         flowerInfo={flowerInfo}
         updateState={updateState}
