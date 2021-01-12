@@ -87,7 +87,7 @@ function App() {
     return (
       <div>
         <Hero />
-        <FlowerGroups flowers={data.flowers} />
+        <FlowerGroups />
       </div>
     );
   };
