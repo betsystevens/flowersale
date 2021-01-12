@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FLATS2 } from "../shared/flats2";
+import { FLATS } from "../shared/flats";
 
 function ActionButton(props) {
   if (props.varietyCount === 1) {
@@ -25,7 +25,7 @@ function ActionButton(props) {
   }
 }
 function FlowerCards(props) {
-  const cards = FLATS2.map((flower) => {
+  const cards = FLATS.map((flower) => {
     const { name, image } = flower.variety[0];
     const varietyCount = flower.variety.length;
     const varietyCountOrName =

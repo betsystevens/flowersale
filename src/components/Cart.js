@@ -1,10 +1,10 @@
 import React from "react";
 import Quantity from "./Quantity";
-import { FLATS2 } from "../shared/flats2";
+import { FLATS } from "../shared/flats";
 import { FLOWERS } from "../shared/flowers";
 
 function CartImage({ name, variety }) {
-  let flower = FLATS2.filter((obj) => obj.name === name)[0];
+  let flower = FLATS.filter((obj) => obj.name === name)[0];
   let image = flower.variety.filter((obj) => obj.name === variety)[0].image;
   return (
     <img

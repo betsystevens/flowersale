@@ -6,13 +6,13 @@ import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
-import { FLATS2 } from "../shared/flats2";
+import { FLATS } from "../shared/flats";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
   const data = {
-    flats2: FLATS2,
+    flats: FLATS,
   };
   const [cart, setCart] = useState([]);
   const [flowerName, setFlowerName] = useState("");
@@ -23,7 +23,7 @@ function App() {
   // functions to update cart
   const updateCart = () => {
     // get variety from data file
-    const flowerObj = data.flats2.filter(
+    const flowerObj = data.flats.filter(
       (flower) => flower.name === flowerName
     )[0];
     const variety = flowerObj.variety[selectedId].name;
@@ -106,7 +106,7 @@ function App() {
             path="/flats"
             render={() => (
               <FlowerCardsContainer
-                flats={data.flats2}
+                flats={data.flats}
                 setQuantity={setQuantity}
                 setHoverId={setHoverId}
                 setSelectedId={setSelectedId}
@@ -118,7 +118,7 @@ function App() {
             path="/flats/:flowerId"
             render={({ match }) => (
               <FlowerDetails
-                flower={data.flats2[match.params.flowerId]}
+                flower={data.flats[match.params.flowerId]}
                 breadCrumb={"/flats"}
                 quantity={quantity}
                 setQuantity={setQuantity}
