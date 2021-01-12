@@ -11,6 +11,7 @@ import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
+  let flowerGroup = "flats";
   const data = {
     flats: FLATS,
   };
@@ -21,6 +22,9 @@ function App() {
   const [selectedId, setSelectedId] = useState(0);
 
   // functions to update cart
+  // 1. check for flower in cart
+  // 2. if flower in cart then update quantity
+  // 3. if flower not in cart add
   const updateCart = () => {
     // get variety from data file
     const flowerObj = data.flats.filter(
@@ -30,8 +34,6 @@ function App() {
     const flower = cart.filter(
       (item) => item.name === flowerName && item.variety === variety
     );
-    // 1. check for flower in cart
-    // 2. if flower in cart then update quantity
     if (flower.length) {
       let newQuantity = flower[0].quantity + quantity;
       let itemsNotChanging = cart.filter(
@@ -45,7 +47,6 @@ function App() {
         })
       );
     } else {
-      // 3. if flower not in cart add
       setCart(
         cart.concat({ name: flowerName, variety: variety, quantity: quantity })
       );
@@ -72,14 +73,16 @@ function App() {
     }
   };
   // functions for handling hover/click on images
-  const handleMouseEnter = (index) => {
-    setHoverId(index);
-  };
-  const handleMouseLeave = () => {
-    setHoverId(selectedId);
-  };
-  const handleClick = (index) => {
-    setSelectedId(index);
+  const imageHandlers = {
+    handleMouseEnter(index) {
+      setHoverId(index);
+    },
+    handleMouseLeave() {
+      setHoverId(selectedId);
+    },
+    handleClick(index) {
+      setSelectedId(index);
+    },
   };
   const HomePage = () => {
     return (
@@ -103,7 +106,7 @@ function App() {
           />
           <Route
             exact
-            path="/flats"
+            path={`/${flowerGroup}`}
             render={() => (
               <FlowerCardsContainer
                 setQuantity={setQuantity}
@@ -114,23 +117,21 @@ function App() {
           />
           <Route
             exact
-            path="/flats/:flowerId"
+            path={`/${flowerGroup}/:flowerId`}
             render={({ match }) => (
               <FlowerDetails
                 flowerId={match.params.flowerId}
                 breadCrumb={"/flats"}
                 quantity={quantity}
                 setQuantity={setQuantity}
+                hoverId={hoverId}
+                selectedId={selectedId}
+                updateCart={updateCart}
                 setFlowerName={setFlowerName}
                 handleOnChange={handleOnChange}
                 handleMinus={handleMinus}
                 handlePlus={handlePlus}
-                handleMouseEnter={handleMouseEnter}
-                handleMouseLeave={handleMouseLeave}
-                handleClick={handleClick}
-                hoverId={hoverId}
-                selectedId={selectedId}
-                updateCart={updateCart}
+                imageHandlers={imageHandlers}
               />
             )}
           />

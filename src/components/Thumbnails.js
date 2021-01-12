@@ -1,14 +1,14 @@
 import React from "react";
 import { FLATS } from "../shared/flats";
 
-function Thumbnails(props) {
-  const thumbnails = FLATS[props.flowerId].variety.map((variety, index) => {
+function Thumbnails({ flowerId, imageHandlers }) {
+  const thumbnails = FLATS[flowerId].variety.map((variety, index) => {
     return (
       <div
         key={index}
-        onMouseEnter={() => props.onMouseEnter(index)}
-        onMouseLeave={() => props.onMouseLeave()}
-        onClick={() => props.onClick(index)}
+        onClick={() => imageHandlers.handleClick(index)}
+        onMouseEnter={() => imageHandlers.handleMouseEnter(index)}
+        onMouseLeave={imageHandlers.handleMouseLeave}
       >
         <img
           src={variety.image}

@@ -29,7 +29,6 @@ function CheckoutOrContinue(props) {
     </div>
   );
 }
-// 'Add to Cart' button with cart icon
 function AddToCartButton(props) {
   return (
     <div className="inline-block relative">
@@ -50,7 +49,6 @@ function AddToCartButton(props) {
   );
 }
 export default function FlowerDetails(props) {
-  // flower={data.flats[match.params.flowerId]}
   console.log(props.flowerId);
   debugger;
   const name = FLATS[props.flowerId].name;
@@ -84,16 +82,14 @@ export default function FlowerDetails(props) {
           <p className="topRow">{`Variety: ${variety[props.hoverId].name}`}</p>
           <Thumbnails
             flowerId={props.flowerId}
-            onMouseEnter={props.handleMouseEnter}
-            onMouseLeave={props.handleMouseLeave}
-            onClick={props.handleClick}
+            imageHandlers={props.imageHandlers}
           />
           <div className="flex pt-6">
             <Quantity
               quantity={props.quantity}
               handleOnChange={props.handleOnChange}
-              handleMinus={(e) => props.handleMinus(e)}
-              handlePlus={(e) => props.handlePlus(e)}
+              handleMinus={props.handleMinus}
+              handlePlus={props.handlePlus}
             />
             <AddToCartButton toggleModal={toggleModal} />
           </div>
