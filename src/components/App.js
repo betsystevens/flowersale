@@ -109,7 +109,6 @@ function App() {
             render={() => (
               <FlowerCardsContainer
                 flats={data.flats2}
-                containers={data.flowers}
                 setQuantity={setQuantity}
                 setHoverId={setHoverId}
                 setSelectedId={setSelectedId}

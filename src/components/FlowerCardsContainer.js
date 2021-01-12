@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import FlowerCards from "./FlowerCards";
 import AddedToCartModal from "./AddedToCartModal";
+import { FLOWERS } from "../shared/flowers";
 
 function FlowerCardsContainer(props) {
-  const flatDetails = props.containers.filter(
+  const flatDetails = FLOWERS.filter(
     (container) => container.container.name === "flat"
   );
   const [open, setOpen] = useState(false);
