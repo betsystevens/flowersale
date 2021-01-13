@@ -14,7 +14,7 @@ function CartImage({ name, variety }) {
     ></img>
   );
 }
-function CartBody({ name, variety, quantity, quantityHandlers }) {
+function CartBody({ name, variety, quantity, setQuantity }) {
   let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
   let price = (group.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
@@ -23,7 +23,7 @@ function CartBody({ name, variety, quantity, quantityHandlers }) {
       <FlowerName name={name} variety={variety} />
       <button className="text-xs text-left underline ">Remove</button>
       <p className="text-xs self-end">Price</p>
-      <CartQuantity quantity={quantity} quantityHandlers={quantityHandlers} />
+      <CartQuantity quantity={quantity} setQuantity={setQuantity} />
       <p className="text-xs self-end">Total</p>
       <p className="text-xl">${price}</p>
       <p className="text-xl">${total}</p>
@@ -39,16 +39,16 @@ function FlowerName({ name, variety }) {
     </div>
   );
 }
-function CartQuantity({ quantity, quantityHandlers }) {
+function CartQuantity({ quantity, setQuantity }) {
   return (
     <div className="row-span-2 justify-self-center self-end flex ">
       <p className="text-xl pr-4">Qty:</p>
-      <Quantity quantity={quantity} quantityHandlers={quantityHandlers} />
+      <Quantity quantity={quantity} setQuantity={setQuantity} />
     </div>
   );
 }
 function Cart(props) {
-  const { cart } = props;
+  const { cart, setQuantity } = props;
 
   cart.forEach((item) => console.log(item));
   cart.sort((a, b) =>
@@ -71,7 +71,7 @@ function Cart(props) {
           name={flower.name}
           variety={flower.variety}
           quantity={flower.quantity}
-          quantityHandlers={props.quantityHandlers}
+          setQuantity={setQuantity}
         />
       </div>
     );

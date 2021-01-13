@@ -52,28 +52,6 @@ function App() {
       );
     }
   };
-  // functions for handling quantity changes
-  const isValidNumber = (entry) => {
-    const pattern = /^[0-9][0-9]?$/;
-    return pattern.test(entry);
-  };
-  const quantityHandlers = {
-    handleOnChange(event) {
-      if (isValidNumber(event.target.value)) {
-        setQuantity(Number(event.target.value));
-      } else setQuantity("");
-    },
-    handlePlus() {
-      if (quantity < 99) {
-        setQuantity(Number(quantity) + 1);
-      }
-    },
-    handleMinus() {
-      if (quantity > 0) {
-        setQuantity(Number(quantity) - 1);
-      }
-    },
-  };
   // functions for handling hover/click on images
   const imageHandlers = {
     handleMouseEnter(index) {
@@ -105,7 +83,8 @@ function App() {
             exact
             path="/cart"
             render={() => (
-              <Cart cart={cart} quantityHandlers={quantityHandlers} />
+              // <Cart cart={cart} quantityHandlers={quantityHandlers} />
+              <Cart cart={cart} setQuantity={setQuantity} />
             )}
           />
           <Route
@@ -132,7 +111,7 @@ function App() {
                 selectedId={selectedId}
                 updateCart={updateCart}
                 setFlowerName={setFlowerName}
-                quantityHandlers={quantityHandlers}
+                // quantityHandlers={quantityHandlers}
                 imageHandlers={imageHandlers}
               />
             )}

@@ -49,7 +49,6 @@ function AddToCartButton({ toggleModal }) {
   );
 }
 export default function FlowerDetails(props) {
-  // export default function FlowerDetails( { flowerId, setFlowerName, updateCart, breadCrumb, hoverId, imageHandlers, quantityHandlers, selectedId, quantity }) {
   const variety = FLATS[props.flowerId].variety;
   const name = FLATS[props.flowerId].name;
   useEffect(() => {
@@ -85,7 +84,7 @@ export default function FlowerDetails(props) {
           <div className="flex pt-6">
             <Quantity
               quantity={props.quantity}
-              quantityHandlers={props.quantityHandlers}
+              setQuantity={props.setQuantity}
             />
             <AddToCartButton toggleModal={toggleModal} />
           </div>
