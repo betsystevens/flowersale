@@ -6,63 +6,45 @@ import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
-import { FLATS } from "../shared/flats";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
   let flowerGroup = "flats";
-  const data = {
-    flats: FLATS,
-  };
   const [cart, setCart] = useState([]);
-  const [flowerName, setFlowerName] = useState("");
-  const [quantity, setQuantity] = useState(1);
-  const [hoverId, setHoverId] = useState(0);
-  const [selectedId, setSelectedId] = useState(0);
 
   // functions to update cart
-  // 1. check for flower in cart
-  // 2. if flower in cart then update quantity
-  // 3. if flower not in cart add
-  const updateCart = () => {
-    // get variety from data file
-    const flowerObj = data.flats.filter(
-      (flower) => flower.name === flowerName
-    )[0];
-    const variety = flowerObj.variety[selectedId].name;
+  const getFlowerFromCart = (name, variety) => {
     const flower = cart.filter(
-      (item) => item.name === flowerName && item.variety === variety
+      (item) => item.name === name && item.variety === variety
     );
+    return flower;
+  };
+  const updateFlowerInCart = (name, variety, quantity) => {
+    let itemsNotChanging = cart.filter(
+      (item) => !(item.name === name && item.variety === variety)
+    );
+    setCart(
+      itemsNotChanging.concat({
+        name: name,
+        variety: variety,
+        quantity: quantity,
+      })
+    );
+  };
+  const updateCart = (name, variety, quantity) => {
+    const flower = getFlowerFromCart(name, variety);
     if (flower.length) {
-      let newQuantity = flower[0].quantity + quantity;
-      let itemsNotChanging = cart.filter(
-        (item) => !(item.name === flowerName && item.variety === variety)
-      );
-      setCart(
-        itemsNotChanging.concat({
-          name: flowerName,
-          variety: variety,
-          quantity: newQuantity,
-        })
-      );
+      const newQuantity = flower[0].quantity + quantity;
+      updateFlowerInCart(name, variety, newQuantity);
     } else {
       setCart(
-        cart.concat({ name: flowerName, variety: variety, quantity: quantity })
+        cart.concat({ name: name, variety: variety, quantity: quantity })
       );
     }
   };
-  // functions for handling hover/click on images
-  const imageHandlers = {
-    handleMouseEnter(index) {
-      setHoverId(index);
-    },
-    handleMouseLeave() {
-      setHoverId(selectedId);
-    },
-    handleClick(index) {
-      setSelectedId(index);
-    },
+  const removeFlowerFromCart = (name, variety, qty) => {
+    console.log(`remove ${name} ${variety}, ${qty}`);
   };
   const HomePage = () => {
     return (
@@ -83,20 +65,17 @@ function App() {
             exact
             path="/cart"
             render={() => (
-              // <Cart cart={cart} quantityHandlers={quantityHandlers} />
-              <Cart cart={cart} setQuantity={setQuantity} />
+              <Cart
+                cart={cart}
+                updateFlowerInCart={updateFlowerInCart}
+                removeFlowerFromCart={removeFlowerFromCart}
+              />
             )}
           />
           <Route
             exact
             path={`/${flowerGroup}`}
-            render={() => (
-              <FlowerCardsContainer
-                setQuantity={setQuantity}
-                setHoverId={setHoverId}
-                setSelectedId={setSelectedId}
-              />
-            )}
+            render={() => <FlowerCardsContainer />}
           />
           <Route
             exact
@@ -104,15 +83,8 @@ function App() {
             render={({ match }) => (
               <FlowerDetails
                 flowerId={match.params.flowerId}
-                breadCrumb={"/flats"}
-                quantity={quantity}
-                setQuantity={setQuantity}
-                hoverId={hoverId}
-                selectedId={selectedId}
                 updateCart={updateCart}
-                setFlowerName={setFlowerName}
-                // quantityHandlers={quantityHandlers}
-                imageHandlers={imageHandlers}
+                breadCrumb={"/flats"}
               />
             )}
           />

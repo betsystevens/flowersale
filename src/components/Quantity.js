@@ -1,26 +1,23 @@
 import React from "react";
 
-function Quantity({ quantity, setQuantity }) {
+function Quantity({ quantity, callback }) {
   const isValidNumber = (entry) => {
     const pattern = /^[0-9][0-9]?$/;
     return pattern.test(entry);
   };
   const handleOnChange = (event) => {
-    console.log(`onChange: ${quantity}`);
     if (isValidNumber(event.target.value)) {
-      setQuantity(Number(event.target.value));
-    } else setQuantity("");
+      callback(Number(event.target.value));
+    } else callback("");
   };
   const handlePlus = () => {
-    console.log(`Plus: ${quantity}`);
     if (quantity < 99) {
-      setQuantity(Number(quantity) + 1);
+      callback(Number(quantity) + 1);
     }
   };
   const handleMinus = () => {
-    console.log(`Minus: ${quantity}`);
     if (quantity > 0) {
-      setQuantity(Number(quantity) - 1);
+      callback(Number(quantity) - 1);
     }
   };
   return (
