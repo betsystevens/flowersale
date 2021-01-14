@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Quantity from "./Quantity";
 import { FLATS } from "../shared/flats";
 import { FLOWERS } from "../shared/flowers";
@@ -14,43 +14,59 @@ function CartImage({ name, variety }) {
     ></img>
   );
 }
-function CartBody({ name, variety, quantity, quantityHandlers }) {
+function CartBody({
+  name,
+  variety,
+  orderQuantity,
+  updateFlowerInCart,
+  removeFlowerFromCart,
+}) {
+  function Title({ name, variety }) {
+    return (
+      <div className="col-span-2 flex items-center">
+        <p className="text-xl">
+          {name}: {variety}
+        </p>
+      </div>
+    );
+  }
+  const [quantity, setQuantity] = useState(orderQuantity);
   let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
   let price = (group.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
+  function quantityHandler(qty) {
+    updateFlowerInCart(name, variety, qty);
+    setQuantity(qty);
+  }
+
   return (
     <div className="mx-8 cartGrid">
-      <FlowerName name={name} variety={variety} />
-      <button className="text-xs text-left underline ">Remove</button>
-      <p className="text-xs self-end">Price</p>
-      <CartQuantity quantity={quantity} quantityHandlers={quantityHandlers} />
+      <Title name={name} variety={variety} />
+      <button
+        className="text-xs text-left underline "
+        onClick={() => removeFlowerFromCart(name, variety, quantity)}
+      >
+        Remove
+      </button>
+      <p className="text-xs self-end"> Price</p>
+      <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
       <p className="text-xs self-end">Total</p>
       <p className="text-xl">${price}</p>
       <p className="text-xl">${total}</p>
     </div>
   );
 }
-function FlowerName({ name, variety }) {
+function CartQuantity({ quantity, quantityHandler }) {
   return (
-    <div className="col-span-2 flex items-center">
-      <p className="text-xl">
-        {name}: {variety}
-      </p>
-    </div>
-  );
-}
-function CartQuantity({ quantity, quantityHandlers }) {
-  return (
-    <div className="row-span-2 justify-self-center self-end flex ">
+    <div className="row-span-2 justify-self-center self-end flex">
       <p className="text-xl pr-4">Qty:</p>
-      <Quantity quantity={quantity} quantityHandlers={quantityHandlers} />
+      <Quantity quantity={quantity} callback={quantityHandler} />
     </div>
   );
 }
 function Cart(props) {
-  const { cart } = props;
+  const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
 
-  cart.forEach((item) => console.log(item));
   cart.sort((a, b) =>
     a.name < b.name
       ? -1
@@ -70,8 +86,9 @@ function Cart(props) {
         <CartBody
           name={flower.name}
           variety={flower.variety}
-          quantity={flower.quantity}
-          quantityHandlers={props.quantityHandlers}
+          orderQuantity={flower.quantity}
+          updateFlowerInCart={updateFlowerInCart}
+          removeFlowerFromCart={removeFlowerFromCart}
         />
       </div>
     );
@@ -91,7 +108,7 @@ function Cart(props) {
           />
         </div>
 
-        {/* card */}
+        {/* cards */}
         {items}
       </div>
     </div>

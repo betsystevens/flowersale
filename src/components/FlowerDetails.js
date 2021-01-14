@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import BigImage from "./BigImage";
@@ -49,12 +49,35 @@ function AddToCartButton({ toggleModal }) {
   );
 }
 export default function FlowerDetails(props) {
-  // export default function FlowerDetails( { flowerId, setFlowerName, updateCart, breadCrumb, hoverId, imageHandlers, quantityHandlers, selectedId, quantity }) {
-  const variety = FLATS[props.flowerId].variety;
-  const name = FLATS[props.flowerId].name;
-  useEffect(() => {
-    props.setFlowerName(name);
-  });
+  const { flowerId } = props;
+  const variety = FLATS[flowerId].variety;
+  const name = FLATS[flowerId].name;
+
+  const [hoverId, setHoverId] = useState(0);
+  const [selectedId, setSelectedId] = useState(0);
+  const [hoverVariety, setHoverVariety] = useState("");
+  const [selectedVariety, setSelectedVariety] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
+  const imageHandlers = {
+    handleMouseEnter(index) {
+      const varietyName = variety[index].name;
+      setHoverVariety(varietyName);
+      setHoverId(index);
+    },
+    handleMouseLeave() {
+      setHoverVariety(selectedVariety);
+      setHoverId(selectedId);
+    },
+    handleClick(index) {
+      const varietyName = variety[index].name;
+      setSelectedVariety(varietyName);
+      setSelectedId(index);
+    },
+  };
+  function quantityHandler(qty) {
+    setQuantity(qty);
+  }
   const container = FLOWERS.filter(
     (flower) => flower.container.name === "flat"
   )[0].container;
@@ -66,7 +89,9 @@ export default function FlowerDetails(props) {
     : "gridDetailWrapper opacity-100";
   const toggleModal = (e) => {
     e.target.blur();
-    if (!open) props.updateCart();
+    if (!open) {
+      props.updateCart(name, variety[selectedId].name, quantity);
+    }
     setOpen(!open);
   };
   return (
@@ -75,18 +100,12 @@ export default function FlowerDetails(props) {
         <NameDescription name={name} description={container.description} />
         <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
         <CheckoutOrContinue breadCrumb={props.breadCrumb} />
-        <BigImage image={variety[props.hoverId].image} name={name} />
+        <BigImage image={variety[hoverId].image} name={name} />
         <div>
-          <p className="topRow">{`Variety: ${variety[props.hoverId].name}`}</p>
-          <Thumbnails
-            flowerId={props.flowerId}
-            imageHandlers={props.imageHandlers}
-          />
+          <p className="topRow">{`Variety: ${variety[hoverId].name}`}</p>
+          <Thumbnails flowerId={flowerId} imageHandlers={imageHandlers} />
           <div className="flex pt-6">
-            <Quantity
-              quantity={props.quantity}
-              quantityHandlers={props.quantityHandlers}
-            />
+            <Quantity quantity={quantity} callback={quantityHandler} />
             <AddToCartButton toggleModal={toggleModal} />
           </div>
         </div>
@@ -94,10 +113,10 @@ export default function FlowerDetails(props) {
       <AddedToCartModal
         open={open}
         toggleModal={(e) => toggleModal(e)}
-        quantity={props.quantity}
-        image={variety[props.selectedId].image}
+        quantity={quantity}
+        image={variety[selectedId].image}
         name={name}
-        variety={variety[props.selectedId].name}
+        variety={variety[selectedId].name}
         price={price}
       />
     </div>

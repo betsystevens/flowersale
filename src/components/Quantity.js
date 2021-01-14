@@ -1,13 +1,29 @@
 import React from "react";
 
-function Quantity({ quantity, quantityHandlers }) {
+function Quantity({ quantity, callback }) {
+  const isValidNumber = (entry) => {
+    const pattern = /^[0-9][0-9]?$/;
+    return pattern.test(entry);
+  };
+  const handleOnChange = (event) => {
+    if (isValidNumber(event.target.value)) {
+      callback(Number(event.target.value));
+    } else callback("");
+  };
+  const handlePlus = () => {
+    if (quantity < 99) {
+      callback(Number(quantity) + 1);
+    }
+  };
+  const handleMinus = () => {
+    if (quantity > 0) {
+      callback(Number(quantity) - 1);
+    }
+  };
   return (
     <div className="">
       <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
-        <div
-          onClick={quantityHandlers.handleMinus}
-          className="relative h-full w-1/3"
-        >
+        <div onClick={handleMinus} className="relative h-full w-1/3">
           <div className="minus absolute"></div>
         </div>
         <div className="relative h-full w-1/3">
@@ -16,14 +32,11 @@ function Quantity({ quantity, quantityHandlers }) {
             type="number"
             min="0"
             max="99"
-            onChange={quantityHandlers.handleOnChange}
+            onChange={handleOnChange}
             value={quantity}
           ></input>
         </div>
-        <div
-          onClick={quantityHandlers.handlePlus}
-          className="relative h-full w-1/3"
-        >
+        <div onClick={handlePlus} className="relative h-full w-1/3">
           <div className="plus absolute"></div>
         </div>
       </div>
