@@ -117,7 +117,6 @@ export default function FlowerDetails(props) {
         image={variety[selectedId].image}
         name={name}
         variety={variety[selectedId].name}
-        price={price}
       />
     </div>
   );

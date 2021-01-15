@@ -11,26 +11,22 @@ function FlowerCardsContainer() {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
-  const [price, setPrice] = useState("");
   const flowerInfo = {
     image,
     name,
     variety,
-    price,
   };
   function toggleModal() {
     setOpen(!open);
   }
-  function updateState(image, name, variety, price) {
+  function updateState(image, name, variety) {
     setImage(image);
     setName(name);
     setVariety(variety);
-    setPrice(price);
   }
   return (
     <div>
       <FlowerCards
-        price={flatDetails[0].container.price}
         containerDescription={flatDetails[0].container.description}
         flowerInfo={flowerInfo}
         updateState={updateState}
@@ -44,7 +40,6 @@ function FlowerCardsContainer() {
         image={image}
         name={name}
         variety={variety}
-        price={price}
       />
     </div>
   );
