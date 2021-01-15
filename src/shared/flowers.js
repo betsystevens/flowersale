@@ -1,4 +1,5 @@
 export const FLOWERS = [
+  // const FLOWERS = [
   {
     id: 0,
     name: "Hanging Baskets",
@@ -48,3 +49,5 @@ export const FLOWERS = [
       "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.",
   },
 ];
+
+// module.exports.FLOWERS = FLOWERS;
