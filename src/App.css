@@ -184,7 +184,7 @@ nav li.logo a:hover {
 
 .fancy-button {
   border: 10px solid transparent;
-  border-image: url("./shared/border-diamond-lilac.png") 22 stretch;
+  border-image: url("./shared/assets/border-diamond-lilac.png") 22 stretch;
   /* style below may be a desired alternative */
   /* border-image: url('./shared/border-diamond-lilac.png') 30 repeat; */
 }
