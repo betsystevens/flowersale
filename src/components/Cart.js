@@ -64,8 +64,34 @@ function CartQuantity({ quantity, quantityHandler }) {
     </div>
   );
 }
+function getPrice(container) {
+  let price = FLOWERS.filter((obj) => obj.container.name === container)[0]
+    .container.price;
+  return price;
+}
+function getItemsCount(cart) {
+  let count = cart.reduce((accumulator, item) => {
+    return accumulator + item.quantity;
+  }, 0);
+  return count;
+}
+function getSubtotal(cart) {
+  let subTotal = 0;
+  cart.forEach((flower) => {
+    let price = getPrice("flat");
+    console.log(price);
+    subTotal = subTotal + flower.quantity * getPrice("flat");
+  });
+  return subTotal;
+}
 function Cart(props) {
   const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
+  let qtySum = 0;
+  let subTotal = 0;
+  if (cart.length) {
+    qtySum = getItemsCount(cart);
+    subTotal = (getSubtotal(cart) / 100).toFixed(2);
+  }
 
   cart.sort((a, b) =>
     a.name < b.name
@@ -80,7 +106,7 @@ function Cart(props) {
     return (
       <div
         key={key}
-        className="mt-10 m-auto pl-8 py-8 flex items-center w-full bg-white"
+        className="pl-8 py-8 mb-2 shadow-lg flex items-center bg-white"
       >
         <CartImage name={flower.name} variety={flower.variety} />
         <CartBody
@@ -90,6 +116,7 @@ function Cart(props) {
           updateFlowerInCart={updateFlowerInCart}
           removeFlowerFromCart={removeFlowerFromCart}
         />
+        <hr></hr>
       </div>
     );
   });
@@ -97,19 +124,34 @@ function Cart(props) {
     <div className="bg-gray-100 h-screen pt-12">
       <div className="m-auto w-11/12 flex flex-col">
         {/* header */}
-        <div className="h-28 flex items-center justify-between bg-white">
+        <div className="h-28 mb-10 flex items-center justify-center bg-white">
           <p className="pl-8 text-4xl text-gray-700 font-semibold p-4">
             Shopping Cart
           </p>
-          <img
-            className="pt-6 pr-20 h-16"
-            src="/assets/icons/CartGray.svg"
-            alt="cart"
-          />
         </div>
-
         {/* cards */}
-        {items}
+        <div className="flex justify-between ">
+          <div>{items}</div>
+          <div className="flex flex-col justify-around items-center w-1/3 h-60 text-center text-xl bg-white">
+            <img
+              className="pt-6 h-16"
+              // src="/assets/icons/CartGray.svg"
+              src="/assets/icons/Cart64x40.svg"
+              alt="cart"
+            />
+            <p>
+              Subtotal ({qtySum} items){" "}
+              <span className="font-semibold">${subTotal}</span>
+            </p>
+            <button
+              className="border-2 border-gray-200 bg-gray-100 rounded 
+                        h-8 px-2 ml-6 text-sm
+                        hover:text-purple-500"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
