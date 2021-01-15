@@ -19,7 +19,7 @@ function Nav(props) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/flats" exact>
+            <NavLink to="/flat" exact>
               Flats
             </NavLink>
           </li>

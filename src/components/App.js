@@ -10,7 +10,7 @@ import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
-  let flowerGroup = "flats";
+  let flowerGroup = "flat";
   const [cart, setCart] = useState([]);
 
   // functions to update cart
@@ -84,7 +84,7 @@ function App() {
               <FlowerDetails
                 flowerId={match.params.flowerId}
                 updateCart={updateCart}
-                breadCrumb={"/flats"}
+                breadCrumb={"/flat"}
               />
             )}
           />
