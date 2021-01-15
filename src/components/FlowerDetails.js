@@ -19,7 +19,7 @@ function CheckoutOrContinue(props) {
   return (
     <div className="spanRows">
       <div className="flex flex-col">
-        <Link to={`/`} className="mt-36">
+        <Link to={`/cart`} className="mt-36">
           <p className="underline hover:text-purple-500">Checkout</p>
         </Link>
         <Link to={props.breadCrumb} className="mt-16">
