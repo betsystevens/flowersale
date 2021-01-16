@@ -20,6 +20,9 @@ function FlowerCardsContainer({ updateCart }) {
   function toggleModal() {
     setOpen(!open);
   }
+  function checkOutHandler() {
+    setOpen(!open);
+  }
   return (
     <div>
       <FlowerCards
@@ -32,6 +35,7 @@ function FlowerCardsContainer({ updateCart }) {
       <AddedToCartModal
         open={open}
         toggleModal={() => toggleModal()}
+        checkOutHandler={checkOutHandler}
         quantity={1}
         image={image}
         name={name}

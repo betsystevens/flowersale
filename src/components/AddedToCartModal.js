@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FLOWERS } from "../shared/flowers";
 
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity
 // toggle from hidden and not hidden in parent state variable
-
 function AddedToCartModal(props) {
   let display = "";
   if (!props.open) {
@@ -35,11 +35,18 @@ function AddedToCartModal(props) {
           <p className="mt-1.5 text-sm">Variety: {props.variety}</p>
           <p className="mt-1 text-sm">${price} per flat</p>
           <p className="mt-5 text-lg">Quantity: {props.quantity}</p>
-          <p className="py-1 text-lg">${total}</p>
-          <button className="my-3 py-1 px-4 text-sm rounded border-2 border-purple-500">
-            Checkout
-          </button>
-          <button onClick={props.toggleModal} className="hover:text-purple-500">
+          <p className="py-1 mb-3 text-lg">${total}</p>
+
+          <Link to="/cart">
+            <p className="py-1 px-4 text-sm rounded border-2 border-purple-500 hover:bg-purple-500">
+              Checkout
+            </p>
+          </Link>
+
+          <button
+            onClick={props.toggleModal}
+            className="py-1 hover:text-purple-500"
+          >
             continue shopping
           </button>
         </div>
