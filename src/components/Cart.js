@@ -123,24 +123,17 @@ function Cart(props) {
   return (
     <div className="bg-gray-100 h-screen pt-12">
       <div className="m-auto w-11/12 flex flex-col">
-        {/* header */}
-        <div className="h-28 mb-10 flex items-center justify-center bg-white">
-          <p className="pl-8 text-4xl text-gray-700 font-semibold p-4">
-            Shopping Cart
-          </p>
-        </div>
         {/* cards */}
         <div className="flex justify-between ">
           <div>{items}</div>
           <div className="flex flex-col justify-around items-center w-1/3 h-60 text-center text-xl bg-white">
             <img
               className="pt-6 h-16"
-              // src="/assets/icons/CartGray.svg"
               src="/assets/icons/Cart64x40.svg"
               alt="cart"
             />
             <p>
-              Subtotal ({qtySum} items){" "}
+              Subtotal ({qtySum} items):{" "}
               <span className="font-semibold">${subTotal}</span>
             </p>
             <button
