@@ -75,7 +75,7 @@ function App() {
           <Route
             exact
             path={`/${flowerGroup}`}
-            render={() => <FlowerCardsContainer />}
+            render={() => <FlowerCardsContainer updateCart={updateCart} />}
           />
           <Route
             exact
