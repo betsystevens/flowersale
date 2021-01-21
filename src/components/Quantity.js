@@ -2,7 +2,7 @@ import React from "react";
 
 function Quantity({ quantity, callback }) {
   const isValidNumber = (entry) => {
-    const pattern = /^[0-9][0-9]?$/;
+    const pattern = /^[1-9][0-9]?$/;
     return pattern.test(entry);
   };
   const handleOnChange = (event) => {
@@ -16,7 +16,7 @@ function Quantity({ quantity, callback }) {
     }
   };
   const handleMinus = () => {
-    if (quantity > 0) {
+    if (quantity > 1) {
       callback(Number(quantity) - 1);
     }
   };
@@ -30,7 +30,7 @@ function Quantity({ quantity, callback }) {
           <input
             className="w-full h-full bg-gray-50 text-center font-mono font-thin text-sm"
             type="number"
-            min="0"
+            min="1"
             max="99"
             onChange={handleOnChange}
             value={quantity}

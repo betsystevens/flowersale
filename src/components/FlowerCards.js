@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FLATS } from "../shared/flats";
-import { getPrice } from "../utils/utilities";
-import { FLOWERS } from "../shared/flowers";
+import {
+  getPrice,
+  getContainerDescription,
+  getFlowerFile,
+} from "../utils/utilities";
 
 function ActionButton(props) {
   if (props.varietyCount === 1) {
@@ -18,7 +20,7 @@ function ActionButton(props) {
     );
   } else {
     return (
-      <Link to={`/flat/${props.flatId}`}>
+      <Link to={`/${props.flowerGroup}/${props.flowerId}`}>
         <button className="px-8 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
           View Options
         </button>
@@ -27,13 +29,12 @@ function ActionButton(props) {
   }
 }
 function FlowerCards(props) {
-  const container = "flat"; // will be passed in later...
-  const price = (getPrice(container) / 100).toFixed(2);
-  const containerDescription = FLOWERS.filter(
-    (group) => group.container.name === container
-  )[0].container.description;
+  const container = props.flowerGroup;
+  const flowerFile = getFlowerFile(container);
 
-  const cards = FLATS.map((flower) => {
+  const cards = flowerFile.map((flower) => {
+    const price = (getPrice(container) / 100).toFixed(2);
+    const containerDescription = getContainerDescription(container);
     const name = flower.name;
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
@@ -41,8 +42,8 @@ function FlowerCards(props) {
     const varietyCountOrName =
       varietyCount === 1 ? variety : `${varietyCount} varieties`;
     const addToCart = () => {
-      props.updateState(image, name, varietyCountOrName);
-      props.updateCart(name, variety, 1);
+      props.updateAddedModalState(image, name, varietyCountOrName, container);
+      props.updateCart(name, variety, container, 1);
       props.toggleModal();
     };
     return (
@@ -61,7 +62,8 @@ function FlowerCards(props) {
             <ActionButton
               varietyCount={varietyCount}
               addToCart={addToCart}
-              flatId={flower.id}
+              flowerId={flower.id}
+              flowerGroup={container}
             />
           </div>
         </div>

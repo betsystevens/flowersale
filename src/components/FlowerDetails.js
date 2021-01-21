@@ -5,7 +5,7 @@ import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
 import { FLOWERS } from "../shared/flowers";
-import { FLATS } from "../shared/flats";
+import { getFlowerFile } from "../utils/utilities";
 
 function NameDescription({ name, description }) {
   return (
@@ -49,9 +49,13 @@ function AddToCartButton({ toggleModal }) {
   );
 }
 export default function FlowerDetails(props) {
-  const { flowerId } = props;
-  const variety = FLATS[flowerId].variety;
-  const name = FLATS[flowerId].name;
+  const { flowerId, path } = props;
+  const flowerGroup = path.match(/[a-z]+/)[0];
+  const breadCrumb = "/" + flowerGroup;
+  const flowerFile = getFlowerFile(flowerGroup);
+
+  const variety = flowerFile[flowerId].variety;
+  const name = flowerFile[flowerId].name;
 
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
@@ -79,7 +83,7 @@ export default function FlowerDetails(props) {
     setQuantity(qty);
   }
   const container = FLOWERS.filter(
-    (flower) => flower.container.name === "flat"
+    (flower) => flower.container.name === flowerGroup
   )[0].container;
   const price = container.price;
 
@@ -90,7 +94,7 @@ export default function FlowerDetails(props) {
   const toggleModal = (e) => {
     e.target.blur();
     if (!open) {
-      props.updateCart(name, variety[selectedId].name, quantity);
+      props.updateCart(name, variety[selectedId].name, flowerGroup, quantity);
     }
     setOpen(!open);
   };
@@ -99,11 +103,15 @@ export default function FlowerDetails(props) {
       <div className={opacity}>
         <NameDescription name={name} description={container.description} />
         <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
-        <CheckoutOrContinue breadCrumb={props.breadCrumb} />
+        <CheckoutOrContinue breadCrumb={breadCrumb} />
         <BigImage image={variety[hoverId].image} name={name} />
         <div>
           <p className="topRow">{`Variety: ${variety[hoverId].name}`}</p>
-          <Thumbnails flowerId={flowerId} imageHandlers={imageHandlers} />
+          <Thumbnails
+            flowerId={flowerId}
+            flowerFile={flowerFile}
+            imageHandlers={imageHandlers}
+          />
           <div className="flex pt-6">
             <Quantity quantity={quantity} callback={quantityHandler} />
             <AddToCartButton toggleModal={toggleModal} />
@@ -117,6 +125,7 @@ export default function FlowerDetails(props) {
         image={variety[selectedId].image}
         name={name}
         variety={variety[selectedId].name}
+        container={flowerGroup}
       />
     </div>
   );

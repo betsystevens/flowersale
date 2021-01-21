@@ -10,7 +10,9 @@ function AddedToCartModal(props) {
   if (!props.open) {
     display = "hidden";
   }
-  let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
+  let group = FLOWERS.filter(
+    (obj) => obj.container.name === props.container
+  )[0];
   let price = (group.container.price / 100).toFixed(2);
   const total = (props.quantity * price).toFixed(2);
   return (

@@ -14,7 +14,7 @@ function Nav(props) {
         </ul>
         <ul className="flex">
           <li>
-            <NavLink to="/" exact>
+            <NavLink to="/hb" exact>
               Hanging Baskets
             </NavLink>
           </li>

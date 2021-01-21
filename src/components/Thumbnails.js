@@ -1,7 +1,6 @@
 import React from "react";
-import { FLATS } from "../shared/flats";
 
-function Thumbnails({ flowerId, imageHandlers }) {
+function Thumbnails({ flowerId, flowerFile, imageHandlers }) {
   const onClick = (index) => {
     imageHandlers.handleClick(index);
   };
@@ -11,7 +10,7 @@ function Thumbnails({ flowerId, imageHandlers }) {
   const mouseLeave = () => {
     imageHandlers.handleMouseLeave();
   };
-  const thumbnails = FLATS[flowerId].variety.map((variety, index) => {
+  const thumbnails = flowerFile[flowerId].variety.map((variety, index) => {
     return (
       <div
         key={index}

@@ -2,32 +2,33 @@ import React, { useState } from "react";
 import FlowerCards from "./FlowerCards";
 import AddedToCartModal from "./AddedToCartModal";
 
-function FlowerCardsContainer({ updateCart }) {
+function FlowerCardsContainer({ updateCart, path }) {
+  let flowerGroup = path.substring(1);
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
+  const [container, setContainer] = useState(flowerGroup);
   const flowerInfo = {
     image,
     name,
     variety,
+    container,
   };
-  function updateState(image, name, variety) {
+  function updateAddedModalState(image, name, variety, container) {
     setImage(image);
     setName(name);
     setVariety(variety);
+    setContainer(container);
   }
   function toggleModal() {
-    setOpen(!open);
-  }
-  function checkOutHandler() {
     setOpen(!open);
   }
   return (
     <div>
       <FlowerCards
-        flowerInfo={flowerInfo}
-        updateState={updateState}
+        flowerGroup={flowerGroup}
+        updateAddedModalState={updateAddedModalState}
         updateCart={updateCart}
         toggleModal={() => toggleModal()}
       />
@@ -35,11 +36,11 @@ function FlowerCardsContainer({ updateCart }) {
       <AddedToCartModal
         open={open}
         toggleModal={() => toggleModal()}
-        checkOutHandler={checkOutHandler}
         quantity={1}
         image={image}
         name={name}
         variety={variety}
+        container={flowerGroup}
       />
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Quantity from "./Quantity";
-import { FLATS } from "../shared/flats";
 import { FLOWERS } from "../shared/flowers";
+import { allFlowersFile } from "../utils/utilities";
 
 function CartImage({ name, variety }) {
-  let flower = FLATS.filter((obj) => obj.name === name)[0];
+  let flower = allFlowersFile().filter((obj) => obj.name === name)[0];
   let image = flower.variety.filter((obj) => obj.name === variety)[0].image;
   return (
     <img
@@ -17,6 +17,7 @@ function CartImage({ name, variety }) {
 function CartBody({
   name,
   variety,
+  container,
   orderQuantity,
   updateFlowerInCart,
   removeFlowerFromCart,
@@ -31,11 +32,12 @@ function CartBody({
     );
   }
   const [quantity, setQuantity] = useState(orderQuantity);
-  let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
+  // let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
+  let group = FLOWERS.filter((obj) => obj.container.name === container)[0];
   let price = (group.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
-    updateFlowerInCart(name, variety, qty);
+    updateFlowerInCart(name, variety, container, qty);
     setQuantity(qty);
   }
 
@@ -78,9 +80,8 @@ function getItemsCount(cart) {
 function getSubtotal(cart) {
   let subTotal = 0;
   cart.forEach((flower) => {
-    let price = getPrice("flat");
-    console.log(price);
-    subTotal = subTotal + flower.quantity * getPrice("flat");
+    let price = getPrice(flower.container);
+    subTotal = subTotal + flower.quantity * price;
   });
   return subTotal;
 }
@@ -88,6 +89,7 @@ function Cart(props) {
   const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
   let qtySum = 0;
   let subTotal = 0;
+  debugger;
   if (cart.length) {
     qtySum = getItemsCount(cart);
     subTotal = (getSubtotal(cart) / 100).toFixed(2);
@@ -112,6 +114,7 @@ function Cart(props) {
         <CartBody
           name={flower.name}
           variety={flower.variety}
+          container={flower.container}
           orderQuantity={flower.quantity}
           updateFlowerInCart={updateFlowerInCart}
           removeFlowerFromCart={removeFlowerFromCart}

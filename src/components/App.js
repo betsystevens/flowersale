@@ -10,41 +10,54 @@ import "../App.css";
 import "tailwindcss/tailwind.css";
 
 function App() {
-  let flowerGroup = "flat";
   const [cart, setCart] = useState([]);
 
-  // functions to update cart
-  const getFlowerFromCart = (name, variety) => {
+  // flower to update
+  const getFlowerFromCart = (name, variety, container) => {
     const flower = cart.filter(
-      (item) => item.name === name && item.variety === variety
+      (item) =>
+        item.name === name &&
+        item.variety === variety &&
+        item.container === container
     );
     return flower;
   };
-  const updateFlowerInCart = (name, variety, quantity) => {
-    let itemsNotChanging = cart.filter(
-      (item) => !(item.name === name && item.variety === variety)
+  const updateFlowerInCart = (name, variety, container, quantity) => {
+    // filter out flower to update
+    let flowersNotChanging = cart.filter(
+      (item) =>
+        !(item.name === name && item.variety === variety && item.container)
     );
+    // add back in flower with updated properties
     setCart(
-      itemsNotChanging.concat({
+      flowersNotChanging.concat({
         name: name,
         variety: variety,
+        container: container,
         quantity: quantity,
       })
     );
   };
-  const updateCart = (name, variety, quantity) => {
-    const flower = getFlowerFromCart(name, variety);
+  const updateCart = (name, variety, container, quantity) => {
+    const flower = getFlowerFromCart(name, variety, container);
+    // flower in cart, update it
     if (flower.length) {
       const newQuantity = flower[0].quantity + quantity;
-      updateFlowerInCart(name, variety, newQuantity);
+      updateFlowerInCart(name, variety, container, newQuantity);
     } else {
+      // flwower not in cart, add it
       setCart(
-        cart.concat({ name: name, variety: variety, quantity: quantity })
+        cart.concat({
+          name: name,
+          variety: variety,
+          container: container,
+          quantity: quantity,
+        })
       );
     }
   };
-  const removeFlowerFromCart = (name, variety, qty) => {
-    console.log(`remove ${name} ${variety}, ${qty}`);
+  const removeFlowerFromCart = (name, variety, container, qty) => {
+    console.log(`remove ${name}, ${variety}, ${container}, ${qty}`);
   };
   const HomePage = () => {
     return (
@@ -74,17 +87,19 @@ function App() {
           />
           <Route
             exact
-            path={`/${flowerGroup}`}
-            render={() => <FlowerCardsContainer updateCart={updateCart} />}
+            path={["/flat", "/hb"]}
+            render={({ match }) => (
+              <FlowerCardsContainer updateCart={updateCart} path={match.path} />
+            )}
           />
           <Route
             exact
-            path={`/${flowerGroup}/:flowerId`}
+            path={[`/flat/:flowerId`, `/hb/:flowerId`]}
             render={({ match }) => (
               <FlowerDetails
                 flowerId={match.params.flowerId}
                 updateCart={updateCart}
-                breadCrumb={"/flat"}
+                path={match.path}
               />
             )}
           />
