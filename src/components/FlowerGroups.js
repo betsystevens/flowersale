@@ -1,9 +1,10 @@
 import React from "react";
-import { FLOWERS } from "../shared/flowers";
+// import { FLOWERS } from "../shared/flowers";
+import { GROUPS } from "../shared/groups";
 
 // component lays out top level groups of flowers, hb, flats, pots, herbs
 function FlowerGroups() {
-  const group = FLOWERS.map((flower) => {
+  const group = GROUPS.map((flower) => {
     return (
       <div key={flower.id} className="band shadow">
         <img src={flower.image} alt={flower.name} />
