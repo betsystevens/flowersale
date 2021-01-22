@@ -215,7 +215,7 @@ export const ALLFLOWERS = [
   {
     id: 13,
     name: "Combo Basket",
-    container: "hb",
+    container: "combo hb",
     description: "Lorem ipsum",
     variety: [
       {

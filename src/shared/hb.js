@@ -2,7 +2,7 @@ export const HB = [
   {
     id: 0,
     name: "Combo Basket",
-    container: "hb",
+    container: "combo hb",
     description: "Lorem ipsum",
     variety: [
       {
