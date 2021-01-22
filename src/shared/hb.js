@@ -37,6 +37,7 @@ export const HB = [
   {
     id: 2,
     name: "Dragon Wing Begonia",
+    container: "hb",
     variety: [
       {
         name: "red",
