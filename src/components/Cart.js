@@ -89,7 +89,6 @@ function Cart(props) {
   const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
   let qtySum = 0;
   let subTotal = 0;
-  debugger;
   if (cart.length) {
     qtySum = getItemsCount(cart);
     subTotal = (getSubtotal(cart) / 100).toFixed(2);

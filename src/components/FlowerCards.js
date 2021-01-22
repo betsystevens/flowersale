@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ALLFLOWERS } from "../shared/allFlowers";
 import {
   getPrice,
   getContainerDescription,
@@ -30,8 +31,10 @@ function ActionButton(props) {
 }
 function FlowerCards(props) {
   const container = props.flowerGroup;
-  const flowerFile = getFlowerFile(container);
+  // const flowerFile = getFlowerFile(container);
+  const all = ALLFLOWERS;
 
+  const flowerFile = all.filter((flower) => flower.container === container);
   const cards = flowerFile.map((flower) => {
     const price = (getPrice(container) / 100).toFixed(2);
     const containerDescription = getContainerDescription(container);

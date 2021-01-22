@@ -97,6 +97,7 @@ function App() {
             path={[`/flat/:flowerId`, `/hb/:flowerId`]}
             render={({ match }) => (
               <FlowerDetails
+                foo={() => console.log(match.params.flowerId)}
                 flowerId={match.params.flowerId}
                 updateCart={updateCart}
                 path={match.path}

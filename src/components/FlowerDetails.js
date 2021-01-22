@@ -5,7 +5,7 @@ import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
 import { FLOWERS } from "../shared/flowers";
-import { getFlowerFile } from "../utils/utilities";
+import { ALLFLOWERS } from "../shared/allFlowers";
 
 function NameDescription({ name, description }) {
   return (
@@ -52,10 +52,11 @@ export default function FlowerDetails(props) {
   const { flowerId, path } = props;
   const flowerGroup = path.match(/[a-z]+/)[0];
   const breadCrumb = "/" + flowerGroup;
-  const flowerFile = getFlowerFile(flowerGroup);
+  const all = ALLFLOWERS;
+  const flower = all.filter((flower) => flower.id === Number(flowerId))[0];
 
-  const variety = flowerFile[flowerId].variety;
-  const name = flowerFile[flowerId].name;
+  const variety = flower.variety;
+  const name = flower.name;
 
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
@@ -109,7 +110,7 @@ export default function FlowerDetails(props) {
           <p className="topRow">{`Variety: ${variety[hoverId].name}`}</p>
           <Thumbnails
             flowerId={flowerId}
-            flowerFile={flowerFile}
+            flower={flower}
             imageHandlers={imageHandlers}
           />
           <div className="flex pt-6">
