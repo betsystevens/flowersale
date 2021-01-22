@@ -1,4 +1,4 @@
-import { FLOWERS } from "../shared/flowers";
+import { PRICING } from "../shared/pricing";
 // const { FLOWERS } = require("../shared/flowers");
 import { FLATS } from "../shared/flats";
 import { HB } from "../shared/hb";
@@ -9,12 +9,12 @@ const allFlowersFile = () => {
   return allFlowers;
 };
 const getPrice = (container) => {
-  return FLOWERS.filter(
+  return PRICING.filter(
     (flowerGroup) => flowerGroup.container.name === container
   )[0].container.price;
 };
 const getContainerDescription = (container) => {
-  return FLOWERS.filter(
+  return PRICING.filter(
     (flowerGroup) => flowerGroup.container.name === container
   )[0].container.description;
 };

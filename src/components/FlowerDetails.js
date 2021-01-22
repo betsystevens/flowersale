@@ -4,7 +4,7 @@ import Quantity from "./Quantity";
 import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
-import { FLOWERS } from "../shared/flowers";
+import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
 
 function NameDescription({ name, description }) {
@@ -57,6 +57,7 @@ export default function FlowerDetails(props) {
 
   const variety = flower.variety;
   const name = flower.name;
+  const newContainer = flower.container;
 
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
@@ -83,8 +84,8 @@ export default function FlowerDetails(props) {
   function quantityHandler(qty) {
     setQuantity(qty);
   }
-  const container = FLOWERS.filter(
-    (flower) => flower.container.name === flowerGroup
+  const container = PRICING.filter(
+    (flower) => flower.container.name === newContainer
   )[0].container;
   const price = container.price;
 
@@ -95,7 +96,7 @@ export default function FlowerDetails(props) {
   const toggleModal = (e) => {
     e.target.blur();
     if (!open) {
-      props.updateCart(name, variety[selectedId].name, flowerGroup, quantity);
+      props.updateCart(name, variety[selectedId].name, newContainer, quantity);
     }
     setOpen(!open);
   };
@@ -126,7 +127,7 @@ export default function FlowerDetails(props) {
         image={variety[selectedId].image}
         name={name}
         variety={variety[selectedId].name}
-        container={flowerGroup}
+        container={newContainer}
       />
     </div>
   );

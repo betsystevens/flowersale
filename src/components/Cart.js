@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Quantity from "./Quantity";
-import { FLOWERS } from "../shared/flowers";
-import { allFlowersFile } from "../utils/utilities";
+import { PRICING } from "../shared/pricing";
+import { ALLFLOWERS } from "../shared/allFlowers";
 
 function CartImage({ name, variety }) {
-  let flower = allFlowersFile().filter((obj) => obj.name === name)[0];
-  let image = flower.variety.filter((obj) => obj.name === variety)[0].image;
+  let flower = ALLFLOWERS.filter((flower) => flower.name === name)[0];
+  let image = flower.variety.filter((flower) => flower.name === variety)[0]
+    .image;
   return (
     <img
       className="w-48 border-8 border-gray-50 shadow-2xl"
@@ -32,8 +33,7 @@ function CartBody({
     );
   }
   const [quantity, setQuantity] = useState(orderQuantity);
-  // let group = FLOWERS.filter((obj) => obj.container.name === "flat")[0];
-  let group = FLOWERS.filter((obj) => obj.container.name === container)[0];
+  let group = PRICING.filter((obj) => obj.container.name === container)[0];
   let price = (group.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
@@ -67,7 +67,7 @@ function CartQuantity({ quantity, quantityHandler }) {
   );
 }
 function getPrice(container) {
-  let price = FLOWERS.filter((obj) => obj.container.name === container)[0]
+  let price = PRICING.filter((obj) => obj.container.name === container)[0]
     .container.price;
   return price;
 }

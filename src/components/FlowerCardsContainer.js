@@ -8,7 +8,8 @@ function FlowerCardsContainer({ updateCart, path }) {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
-  const [container, setContainer] = useState(flowerGroup);
+  // const [container, setContainer] = useState(flowerGroup);
+  const [container, setContainer] = useState("");
   const flowerInfo = {
     image,
     name,
@@ -40,7 +41,7 @@ function FlowerCardsContainer({ updateCart, path }) {
         image={image}
         name={name}
         variety={variety}
-        container={flowerGroup}
+        container={container}
       />
     </div>
   );

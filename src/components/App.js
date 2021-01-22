@@ -40,12 +40,12 @@ function App() {
   };
   const updateCart = (name, variety, container, quantity) => {
     const flower = getFlowerFromCart(name, variety, container);
-    // flower in cart, update it
+    // flower is in cart, update it
     if (flower.length) {
       const newQuantity = flower[0].quantity + quantity;
       updateFlowerInCart(name, variety, container, newQuantity);
     } else {
-      // flwower not in cart, add it
+      // flwower is not in cart, add it
       setCart(
         cart.concat({
           name: name,
@@ -87,17 +87,21 @@ function App() {
           />
           <Route
             exact
-            path={["/flat", "/hb"]}
+            path={["/flat", "/hb", "/pot", "/herbTomato"]}
             render={({ match }) => (
               <FlowerCardsContainer updateCart={updateCart} path={match.path} />
             )}
           />
           <Route
             exact
-            path={[`/flat/:flowerId`, `/hb/:flowerId`]}
+            path={[
+              `/flat/:flowerId`,
+              `/hb/:flowerId`,
+              `/pot/:flowerId`,
+              `/herbTomato/:flowerId`,
+            ]}
             render={({ match }) => (
               <FlowerDetails
-                foo={() => console.log(match.params.flowerId)}
                 flowerId={match.params.flowerId}
                 updateCart={updateCart}
                 path={match.path}
