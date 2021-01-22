@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ALLFLOWERS } from "../shared/allFlowers";
-import {
-  getPrice,
-  getContainerDescription,
-  getFlowerFile,
-} from "../utils/utilities";
+import { getPrice, getContainerDescription } from "../utils/utilities";
 
 function ActionButton(props) {
   if (props.varietyCount === 1) {
@@ -30,14 +26,15 @@ function ActionButton(props) {
   }
 }
 function FlowerCards(props) {
-  const container = props.flowerGroup;
-  // const flowerFile = getFlowerFile(container);
-  const all = ALLFLOWERS;
+  const containerGroup = props.flowerGroup;
 
-  const flowerFile = all.filter((flower) => flower.container === container);
+  const flowerFile = ALLFLOWERS.filter(
+    (flower) => flower.group === containerGroup
+  );
   const cards = flowerFile.map((flower) => {
-    const price = (getPrice(container) / 100).toFixed(2);
-    const containerDescription = getContainerDescription(container);
+    const price = (getPrice(flower.container) / 100).toFixed(2);
+    const containerDescription = getContainerDescription(flower.container);
+    const container = flower.container;
     const name = flower.name;
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
@@ -66,7 +63,7 @@ function FlowerCards(props) {
               varietyCount={varietyCount}
               addToCart={addToCart}
               flowerId={flower.id}
-              flowerGroup={container}
+              flowerGroup={containerGroup}
             />
           </div>
         </div>

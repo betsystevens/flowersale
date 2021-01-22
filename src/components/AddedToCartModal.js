@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FLOWERS } from "../shared/flowers";
+import { PRICING } from "../shared/pricing";
 
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity
@@ -10,11 +10,16 @@ function AddedToCartModal(props) {
   if (!props.open) {
     display = "hidden";
   }
-  let group = FLOWERS.filter(
-    (obj) => obj.container.name === props.container
-  )[0];
-  let price = (group.container.price / 100).toFixed(2);
-  const total = (props.quantity * price).toFixed(2);
+
+  let price;
+  let total;
+  if (props.name) {
+    let group = PRICING.filter(
+      (group) => group.container.name === props.container
+    )[0];
+    price = (group.container.price / 100).toFixed(2);
+    total = (props.quantity * price).toFixed(2);
+  }
   return (
     <div className={display}>
       <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">

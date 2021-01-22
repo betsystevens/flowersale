@@ -1,5 +1,4 @@
 import React from "react";
-// import { FLOWERS } from "../shared/flowers";
 import { GROUPS } from "../shared/groups";
 
 // component lays out top level groups of flowers, hb, flats, pots, herbs

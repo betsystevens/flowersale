@@ -2,6 +2,8 @@ export const ALLFLOWERS = [
   {
     id: 0,
     name: "Alyssum",
+    container: "flat",
+    group: "flat",
     variety: [
       { name: "mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },
       { name: "white", image: "/assets/images/flats/alyssumWhite512x384.jpg" },
@@ -10,7 +12,6 @@ export const ALLFLOWERS = [
         image: "/assets/images/flats/allysumPurple512x384.jpg",
       },
     ],
-    container: "flat",
     description:
       "Lorem ipsum dolor dolor dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
   },
@@ -18,6 +19,7 @@ export const ALLFLOWERS = [
     id: 1,
     name: "Begonia",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -39,6 +41,7 @@ export const ALLFLOWERS = [
     id: 2,
     name: "Coleus",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -56,6 +59,7 @@ export const ALLFLOWERS = [
     id: 3,
     name: "Dahlia",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -66,6 +70,7 @@ export const ALLFLOWERS = [
     id: 4,
     name: "Dianthus",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -77,6 +82,7 @@ export const ALLFLOWERS = [
     id: 5,
     name: "Dusty Miller",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -87,6 +93,7 @@ export const ALLFLOWERS = [
     id: 6,
     name: "Impatiens",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -117,6 +124,7 @@ export const ALLFLOWERS = [
     id: 7,
     name: "Marigold",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -138,6 +146,7 @@ export const ALLFLOWERS = [
     id: 8,
     name: "Petunia",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -159,6 +168,7 @@ export const ALLFLOWERS = [
     id: 9,
     name: "Salvia",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -173,6 +183,7 @@ export const ALLFLOWERS = [
     id: 10,
     name: "Snap Dragons",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -190,6 +201,7 @@ export const ALLFLOWERS = [
     id: 11,
     name: "Vinca",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -206,6 +218,7 @@ export const ALLFLOWERS = [
     id: 12,
     name: "Zinnia",
     container: "flat",
+    group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
@@ -216,6 +229,7 @@ export const ALLFLOWERS = [
     id: 13,
     name: "Combo Basket",
     container: "combo hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -238,6 +252,7 @@ export const ALLFLOWERS = [
     // name: "Double Rosebud Impatiens",
     name: "Dbl Rosebud Impatiens",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       { name: "pink", image: "/assets/images/hb/dblRosebudPinkHB512x384.jpg" },
@@ -251,6 +266,7 @@ export const ALLFLOWERS = [
     id: 15,
     name: "Dragon Wing Begonia",
     container: "hb",
+    group: "hb",
     variety: [
       {
         name: "red",
@@ -262,6 +278,7 @@ export const ALLFLOWERS = [
     id: 16,
     name: "Fuschia",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -278,6 +295,7 @@ export const ALLFLOWERS = [
     id: 17,
     name: "Illumination Begonia",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -290,6 +308,7 @@ export const ALLFLOWERS = [
     id: 18,
     name: "Impatiens",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       { name: "mixed", image: "/assets/images/hb/impatiensMixedHB512x384.jpg" },
@@ -301,6 +320,7 @@ export const ALLFLOWERS = [
     id: 19,
     name: "Ivy Gernanium",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -319,6 +339,7 @@ export const ALLFLOWERS = [
     id: 20,
     name: "Million Bells",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -340,6 +361,7 @@ export const ALLFLOWERS = [
     id: 21,
     name: "Petunia",
     container: "hb",
+    group: "hb",
     description: "Lorem ipsum",
     variety: [
       {
@@ -363,6 +385,179 @@ export const ALLFLOWERS = [
       {
         name: "sky blue",
         image: "/assets/images/hb/petuniaSkyBlueHB512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 22,
+    name: "Better Boy",
+    container: "tomato 4 inch",
+    group: "herbTomato",
+    description: "The crown jewel of any home garden",
+    variety: [
+      {
+        name: "tomato",
+        image: "/assets/images/pots/betterBoy512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 23,
+    name: "Cherry",
+    container: "tomato 4 inch",
+    group: "herbTomato",
+    description: "The crown jewel of any home garden",
+    variety: [
+      {
+        name: "tomato",
+        image: "/assets/images/pots/cherry512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 24,
+    name: "Cherry",
+    container: "tomato 4 inch",
+    group: "herbTomato",
+    description: "The crown jewel of any home garden",
+    variety: [
+      {
+        name: "tomato",
+        image: "/assets/images/pots/grape512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 25,
+    name: "Roma",
+    container: "tomato 4 inch",
+    group: "herbTomato",
+    description: "The crown jewel of any home garden",
+    variety: [
+      {
+        name: "tomato",
+        image: "/assets/images/pots/roma512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 26,
+    name: "Baisl",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/basil512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 27,
+    name: "Chives",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/chives512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 28,
+    name: "Cilantro",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/cilantro512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 29,
+    name: "Oregano",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/oregano512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 30,
+    name: "Parsley",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/parsley512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 31,
+    name: "Rosemary",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [
+      {
+        name: "Herb",
+        image: "/assets/images/pots/rosemary512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 32,
+    name: "Sweet Potato Vine",
+    container: "accent 4 inch",
+    group: "pot",
+    description: "Foilage plants to add interest to your garden",
+    variety: [
+      {
+        name: "blackie",
+        image: "/assets/images/pots/potatoVine512x384.jpg",
+      },
+      {
+        name: "lime",
+        image: "/assets/images/pots/potatoVine512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 33,
+    name: "Vinca Vine",
+    container: "accent 4 inch",
+    group: "pot",
+    description: "Foilage plants to accent your flowering plants",
+    variety: [
+      {
+        name: "accent plant",
+        image: "/assets/images/pots/vincaVine512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 34,
+    name: "Spikes",
+    container: "accent 4 inch",
+    group: "pot",
+    description: "Foilage plants to accent your flowering plants",
+    variety: [
+      {
+        name: "spikes",
+        image: "/assets/images/pots/spikes512x384.jpg",
       },
     ],
   },

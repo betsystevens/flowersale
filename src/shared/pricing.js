@@ -1,22 +1,20 @@
-export const FLOWERS = [
+export const PRICING = [
   // const FLOWERS = [
   {
     id: 0,
     name: "Hanging Baskets",
-    image: "assets/images/hb/petuniaPinkPurpleHB750x500.jpg",
+    group: "hb",
     container: {
       name: "hb",
       description: "10-inch green basket",
       price: 2400,
       wholesale: 1500,
     },
-    description:
-      "Our 10-inch flower baskets are of unbeatable quality. They regularly sell out every year. Never disappointing, these spectacular baskets keep customers coming back year after year. The wave petunias and ivy geraniums are unrivaled in their beauty and quality.",
   },
   {
     id: 1,
     name: "Flats",
-    image: "assets/images/flats/alyssumMixed750x563.jpg",
+    group: "flat",
     container: {
       name: "flat",
       description: "36 plants per flat",
@@ -29,12 +27,12 @@ export const FLOWERS = [
   {
     id: 2,
     name: "Combo Hanging Baskets",
-    image: "",
+    group: "hb",
     container: {
       name: "combo hb",
       description: "12-inch green basket",
       price: 3000,
-      price: 2000,
+      wholesale: 2000,
     },
     description:
       "12 inch hanging baskets with 3 different flowers of complimentary colors",
@@ -42,7 +40,7 @@ export const FLOWERS = [
   {
     id: 3,
     name: "Accent Plants",
-    image: "assets/images/pots/potatoVine750x499.jpg",
+    group: "pot",
     container: {
       name: "accent 4 inch",
       description: "4 inch pot",
@@ -55,12 +53,25 @@ export const FLOWERS = [
   {
     id: 4,
     name: "Herbs",
-    image: "assets/images/pots/basilHerb720x480.jpg",
+    group: "herbTomato",
     container: {
       name: "herb 4 inch",
       description: "4 inch pot",
       price: 400,
-      price: 275,
+      wholesale: 275,
+    },
+    description:
+      "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.",
+  },
+  {
+    id: 5,
+    name: "Tomatoes",
+    group: "herbTomato",
+    container: {
+      name: "tomato 4 inch",
+      description: "4 inch pot",
+      price: 300,
+      wholesale: 175,
     },
     description:
       "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.",

@@ -24,12 +24,12 @@ function Nav(props) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" exact>
+            <NavLink to="/pot" exact>
               Potted Plants
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" exact>
+            <NavLink to="/herbTomato" exact>
               Herbs & Tomatoes
             </NavLink>
           </li>
