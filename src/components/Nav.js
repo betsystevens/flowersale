@@ -14,22 +14,22 @@ function Nav(props) {
         </ul>
         <ul className="flex">
           <li>
-            <NavLink to="/hb" exact>
+            <NavLink to="/hb" exact className="hover:text-gray-50">
               Hanging Baskets
             </NavLink>
           </li>
           <li>
-            <NavLink to="/flat" exact>
+            <NavLink to="/flat" exact className="hover:text-gray-50">
               Flats
             </NavLink>
           </li>
           <li>
-            <NavLink to="/pot" exact>
+            <NavLink to="/pot" exact className="hover:text-gray-50">
               Potted Plants
             </NavLink>
           </li>
           <li>
-            <NavLink to="/herbTomato" exact>
+            <NavLink to="/herbTomato" exact className="hover:text-gray-50">
               Herbs & Tomatoes
             </NavLink>
           </li>
