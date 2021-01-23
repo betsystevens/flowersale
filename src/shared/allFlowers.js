@@ -249,7 +249,6 @@ export const ALLFLOWERS = [
   },
   {
     id: 14,
-    // name: "Double Rosebud Impatiens",
     name: "Dbl Rosebud Impatiens",
     container: "hb",
     group: "hb",
@@ -318,17 +317,17 @@ export const ALLFLOWERS = [
   },
   {
     id: 19,
-    name: "Ivy Gernanium",
+    name: "Ivy Geranium",
     container: "hb",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
+      { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
+      { name: "pink", image: "/assets/images/hb/ivyGeraniumPinkHB512x384.jpg" },
       {
         name: "lavender",
         image: "/assets/images/hb/ivyGeraniumLavenderHB512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/hb/ivyGeraniumPinkHB512x384.jpg" },
-      { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
       {
         name: "salmon",
         image: "/assets/images/hb/ivyGeraniumSalmonHB512x384.jpg",
@@ -395,10 +394,7 @@ export const ALLFLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      {
-        name: "tomato",
-        image: "/assets/images/pots/betterBoy512x384.jpg",
-      },
+      { name: "tomato", image: "/assets/images/pots/betterBoy512x384.jpg" },
     ],
   },
   {
@@ -408,135 +404,195 @@ export const ALLFLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      {
-        name: "tomato",
-        image: "/assets/images/pots/cherry512x384.jpg",
-      },
+      { name: "tomato", image: "/assets/images/pots/cherry512x384.jpg" },
     ],
   },
   {
     id: 24,
-    name: "Cherry",
+    name: "Early Girl",
     container: "tomato 4 inch",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      {
-        name: "tomato",
-        image: "/assets/images/pots/grape512x384.jpg",
-      },
+      { name: "tomato", image: "/assets/images/pots/earlyGirl512x384.jpg" },
     ],
   },
   {
     id: 25,
-    name: "Roma",
+    name: "Grape",
     container: "tomato 4 inch",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      {
-        name: "tomato",
-        image: "/assets/images/pots/roma512x384.jpg",
-      },
+      { name: "tomato", image: "/assets/images/pots/grape512x384.jpg" },
     ],
   },
   {
     id: 26,
-    name: "Baisl",
-    container: "herb 4 inch",
+    name: "Roma",
+    container: "tomato 4 inch",
     group: "herbTomato",
-    description: "Fresh herbs grown in your own garden is heaven on earth",
-    variety: [
-      {
-        name: "Herb",
-        image: "/assets/images/pots/basil512x384.jpg",
-      },
-    ],
+    description: "The crown jewel of any home garden",
+    variety: [{ name: "tomato", image: "/assets/images/pots/roma512x384.jpg" }],
   },
   {
     id: 27,
-    name: "Chives",
-    container: "herb 4 inch",
+    name: "Super Steak",
+    container: "tomato 4 inch",
     group: "herbTomato",
-    description: "Fresh herbs grown in your own garden is heaven on earth",
+    description: "The crown jewel of any home garden",
     variety: [
-      {
-        name: "Herb",
-        image: "/assets/images/pots/chives512x384.jpg",
-      },
+      { name: "tomato", image: "/assets/images/pots/superSteak512x384.jpg" },
     ],
   },
   {
     id: 28,
+    name: "Gallon Patio Pot",
+    container: "tomato gallon",
+    group: "herbTomato",
+    description: "One gallon patio pot",
+    variety: [
+      { name: "tomato", image: "/assets/images/pots/superSteak512x384.jpg" },
+    ],
+  },
+  {
+    id: 29,
+    name: "Basil",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [{ name: "Herb", image: "/assets/images/pots/basil512x384.jpg" }],
+  },
+  {
+    id: 30,
+    name: "Chives",
+    container: "herb 4 inch",
+    group: "herbTomato",
+    description: "Fresh herbs grown in your own garden is heaven on earth",
+    variety: [{ name: "Herb", image: "/assets/images/pots/chives512x384.jpg" }],
+  },
+  {
+    id: 31,
     name: "Cilantro",
     container: "herb 4 inch",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      {
-        name: "Herb",
-        image: "/assets/images/pots/cilantro512x384.jpg",
-      },
+      { name: "Herb", image: "/assets/images/pots/cilantro512x384.jpg" },
     ],
   },
   {
-    id: 29,
+    id: 32,
     name: "Oregano",
     container: "herb 4 inch",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      {
-        name: "Herb",
-        image: "/assets/images/pots/oregano512x384.jpg",
-      },
+      { name: "Herb", image: "/assets/images/pots/oregano512x384.jpg" },
     ],
   },
   {
-    id: 30,
+    id: 33,
     name: "Parsley",
     container: "herb 4 inch",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      {
-        name: "Herb",
-        image: "/assets/images/pots/parsley512x384.jpg",
-      },
+      { name: "Herb", image: "/assets/images/pots/parsley512x384.jpg" },
     ],
   },
   {
-    id: 31,
+    id: 34,
     name: "Rosemary",
     container: "herb 4 inch",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
+      { name: "Herb", image: "/assets/images/pots/rosemary512x384.jpg" },
+    ],
+  },
+  {
+    id: 35,
+    name: "Marguerite Daisy",
+    container: "flower 6 inch",
+    group: "pot",
+    description: "Foilage plants to accent your flowering plants",
+    variety: [
       {
-        name: "Herb",
-        image: "/assets/images/pots/rosemary512x384.jpg",
+        name: "yellow",
+        image: "/assets/images/pots/margueriteDaisy512x384.jpg",
       },
     ],
   },
   {
-    id: 32,
+    id: 36,
+    name: "Geranium",
+    container: "flower 4.5 inch",
+    group: "pot",
+    description: "red, white, pink, salmon, violet/fuschia",
+    variety: [
+      { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
+      {
+        name: "white",
+        image: "/assets/images/pots/geraniumWhite512x384.jpg",
+      },
+      { name: "pink", image: "/assets/images/pots/geraniumPink512x384.jpg" },
+      {
+        name: "salmon",
+        image: "/assets/images/hb/ivyGeraniumSalmonHB512x384.jpg",
+      },
+      {
+        name: "violet/fuschia",
+        image: "/assets/images/pots/geraniumVioletFuschia512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 37,
+    name: "Purple Fountain Grass",
+    container: "grass gallon",
+    group: "pot",
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, odit?",
+    variety: [
+      {
+        name: "purple",
+        image: "/assets/images/pots/fountainGrassPurple512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 38,
+    name: "Patio Pots",
+    container: "patio pot",
+    group: "pot",
+    description: "Geraniums, Spikes and Two Trailing Proven Winners",
+    variety: [
+      {
+        name: "salmon",
+        image: "/assets/images/pots/patioPotSalmon512x384.jpg",
+      },
+      { name: "pink", image: "/assets/images/pots/patioPotPink512x384.jpg" },
+      { name: "red", image: "/assets/images/pots/patioPotRed512x384.jpg" },
+      {
+        name: "violet",
+        image: "/assets/images/pots/patioPotViolet512x384.jpg",
+      },
+    ],
+  },
+  {
+    id: 39,
     name: "Sweet Potato Vine",
     container: "accent 4 inch",
     group: "pot",
     description: "Foilage plants to add interest to your garden",
     variety: [
-      {
-        name: "blackie",
-        image: "/assets/images/pots/potatoVine512x384.jpg",
-      },
-      {
-        name: "lime",
-        image: "/assets/images/pots/potatoVine512x384.jpg",
-      },
+      { name: "blackie", image: "/assets/images/pots/potatoVine512x384.jpg" },
+      { name: "lime", image: "/assets/images/pots/potatoVine512x384.jpg" },
     ],
   },
   {
-    id: 33,
+    id: 40,
     name: "Vinca Vine",
     container: "accent 4 inch",
     group: "pot",
@@ -549,16 +605,13 @@ export const ALLFLOWERS = [
     ],
   },
   {
-    id: 34,
+    id: 41,
     name: "Spikes",
     container: "accent 4 inch",
     group: "pot",
     description: "Foilage plants to accent your flowering plants",
     variety: [
-      {
-        name: "spikes",
-        image: "/assets/images/pots/spikes512x384.jpg",
-      },
+      { name: "spikes", image: "/assets/images/pots/spikes512x384.jpg" },
     ],
   },
 ];
