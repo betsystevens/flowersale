@@ -41,8 +41,10 @@ function CartBody({
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
     console.log(name, variety, container, qty);
-    updateFlowerInCart(name, variety, container, qty);
-    if (qty) setQuantity(qty);
+    if (qty) {
+      updateFlowerInCart(name, variety, container, qty);
+      setQuantity(qty);
+    }
   }
 
   return (
@@ -84,7 +86,7 @@ function getItemsCount(cart) {
   }, 0);
   return count;
 }
-function getSubtotal(cart) {
+function computeSubtotal(cart) {
   let subTotal = 0;
   cart.forEach((flower) => {
     let price = getPrice(flower.container);
@@ -92,17 +94,35 @@ function getSubtotal(cart) {
   });
   return subTotal;
 }
+function CartSubtotal({ cart }) {
+  let qtySum = 0;
+  let subTotal = 0;
+  if (cart.length) {
+    qtySum = getItemsCount(cart);
+    subTotal = (computeSubtotal(cart) / 100).toFixed(2);
+  }
+  return (
+    <div className="flex flex-col justify-around items-center w-1/3 h-60 text-center text-xl bg-white">
+      <img className="pt-6 h-16" src="/assets/icons/Cart64x40.svg" alt="cart" />
+      <p>
+        Subtotal ({qtySum} items):{" "}
+        <span className="font-semibold">${subTotal}</span>
+      </p>
+      <button
+        className="border-2 border-gray-200 bg-gray-100 rounded 
+              h-8 px-2 ml-6 text-sm
+              hover:text-purple-500"
+      >
+        Checkout
+      </button>
+    </div>
+  );
+}
 function Cart(props) {
   const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
   useEffect(() => {
     document.title = `Flower Sale - Cart`;
   });
-  let qtySum = 0;
-  let subTotal = 0;
-  if (cart.length) {
-    qtySum = getItemsCount(cart);
-    subTotal = (getSubtotal(cart) / 100).toFixed(2);
-  }
 
   cart.sort((a, b) =>
     a.container < b.container
@@ -146,24 +166,7 @@ function Cart(props) {
         {/* cards */}
         <div className="flex justify-between ">
           <div>{items}</div>
-          <div className="flex flex-col justify-around items-center w-1/3 h-60 text-center text-xl bg-white">
-            <img
-              className="pt-6 h-16"
-              src="/assets/icons/Cart64x40.svg"
-              alt="cart"
-            />
-            <p>
-              Subtotal ({qtySum} items):{" "}
-              <span className="font-semibold">${subTotal}</span>
-            </p>
-            <button
-              className="border-2 border-gray-200 bg-gray-100 rounded 
-                        h-8 px-2 ml-6 text-sm
-                        hover:text-purple-500"
-            >
-              Checkout
-            </button>
-          </div>
+          <CartSubtotal cart={cart} />
         </div>
       </div>
     </div>
