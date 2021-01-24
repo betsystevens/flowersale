@@ -26,7 +26,7 @@ export const GROUPS = [
   {
     id: 3,
     name: "Herbs and Tomatoes",
-    group: "pot",
+    group: "herbTomato",
     image: "assets/images/pots/basilHerb720x480.jpg",
     description:
       "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.",
