@@ -22,12 +22,25 @@ function App() {
     );
     return flower;
   };
-  const updateFlowerInCart = (name, variety, container, quantity) => {
-    // filter out flower to update
-    let flowersNotChanging = cart.filter(
+
+  const itemsNotChanging = (name, variety, container) => {
+    let keepers = cart.filter(
       (item) =>
-        !(item.name === name && item.variety === variety && item.container)
+        !(
+          item.name === name &&
+          item.variety === variety &&
+          item.container === container
+        )
     );
+    return keepers;
+  };
+
+  const updateFlowerInCart = (name, variety, container, quantity) => {
+    // comes from cart, quantity is overwritten
+    // filter out flower to update
+    console.log(name, variety, container, quantity);
+    let flowersNotChanging = itemsNotChanging(name, variety, container);
+    console.log(flowersNotChanging);
     // add back in flower with updated properties
     setCart(
       flowersNotChanging.concat({
@@ -39,11 +52,21 @@ function App() {
     );
   };
   const updateCart = (name, variety, container, quantity) => {
+    // comes from flower cards and detail, quantity is added if flower exists
     const flower = getFlowerFromCart(name, variety, container);
     // flower is in cart, update it
     if (flower.length) {
       const newQuantity = flower[0].quantity + quantity;
-      updateFlowerInCart(name, variety, container, newQuantity);
+      // updateFlowerInCart(name, variety, container, newQuantity);
+      let flowersNotChanging = itemsNotChanging(name, variety, container);
+      setCart(
+        flowersNotChanging.concat({
+          name: name,
+          variety: variety,
+          container: container,
+          quantity: newQuantity,
+        })
+      );
     } else {
       // flwower is not in cart, add it
       setCart(
@@ -56,8 +79,11 @@ function App() {
       );
     }
   };
-  const removeFlowerFromCart = (name, variety, container, qty) => {
-    console.log(`remove ${name}, ${variety}, ${container}, ${qty}`);
+  const removeFlowerFromCart = (e, name, variety, container, quantity) => {
+    e.target.blur();
+    console.log(`remove ${name}, ${variety}, ${container}, ${quantity}`);
+    let flowersNotChanging = itemsNotChanging(name, variety, container);
+    setCart(flowersNotChanging);
   };
   const HomePage = () => {
     useEffect(() => {
