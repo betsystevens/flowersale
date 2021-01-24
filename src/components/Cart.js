@@ -38,7 +38,7 @@ function CartBody({
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
     updateFlowerInCart(name, variety, container, qty);
-    setQuantity(qty);
+    if (qty) setQuantity(qty);
   }
 
   return (

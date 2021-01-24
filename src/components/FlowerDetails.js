@@ -82,7 +82,7 @@ export default function FlowerDetails(props) {
     },
   };
   function quantityHandler(qty) {
-    setQuantity(qty);
+    if (qty) setQuantity(qty);
   }
   const container = PRICING.filter(
     (flower) => flower.container.name === newContainer
