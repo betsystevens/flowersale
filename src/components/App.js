@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Nav from "./Nav";
 import Hero from "./Hero";
@@ -60,6 +60,9 @@ function App() {
     console.log(`remove ${name}, ${variety}, ${container}, ${qty}`);
   };
   const HomePage = () => {
+    useEffect(() => {
+      document.title = "Flower Sale - Home";
+    });
     return (
       <div>
         <Hero />

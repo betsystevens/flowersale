@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FlowerCards from "./FlowerCards";
 import AddedToCartModal from "./AddedToCartModal";
 
@@ -8,7 +8,6 @@ function FlowerCardsContainer({ updateCart, path }) {
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
-  // const [container, setContainer] = useState(flowerGroup);
   const [container, setContainer] = useState("");
   const flowerInfo = {
     image,
@@ -16,6 +15,15 @@ function FlowerCardsContainer({ updateCart, path }) {
     variety,
     container,
   };
+  let pageNames = new Map();
+  pageNames.set("hb", "Hanging Baskets");
+  pageNames.set("flat", "Flats");
+  pageNames.set("pot", "Potted Plants");
+  pageNames.set("herbTomato", "Herbs & Tomatoes");
+  useEffect(() => {
+    let page = pageNames.get(flowerGroup);
+    document.title = `Flower Sale - ${page}`;
+  });
   function updateAddedModalState(image, name, variety, container) {
     setImage(image);
     setName(name);
