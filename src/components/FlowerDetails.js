@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import BigImage from "./BigImage";
@@ -64,7 +64,10 @@ export default function FlowerDetails(props) {
   const [hoverVariety, setHoverVariety] = useState("");
   const [selectedVariety, setSelectedVariety] = useState("");
   const [quantity, setQuantity] = useState(1);
-
+  useEffect(() => {
+    // let page = pageNames.get(flowerGroup);
+    document.title = `${name} - Details`;
+  });
   const imageHandlers = {
     handleMouseEnter(index) {
       const varietyName = variety[index].name;
