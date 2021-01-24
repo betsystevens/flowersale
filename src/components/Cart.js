@@ -51,7 +51,9 @@ function CartBody({
       <button
         className="text-xs text-left underline "
         // is quantity needed?
-        onClick={() => removeFlowerFromCart(name, variety, container, quantity)}
+        onClick={(e) =>
+          removeFlowerFromCart(e, name, variety, container, quantity)
+        }
       >
         Remove
       </button>
