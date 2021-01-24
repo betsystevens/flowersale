@@ -22,12 +22,25 @@ function App() {
     );
     return flower;
   };
-  const updateFlowerInCart = (name, variety, container, quantity) => {
-    // filter out flower to update
-    let flowersNotChanging = cart.filter(
+
+  const itemsNotChanging = (name, variety, container) => {
+    let x = cart.filter(
       (item) =>
         !(item.name === name && item.variety === variety && item.container)
     );
+  };
+  const updateFlowerInCart = (name, variety, container, quantity) => {
+    // filter out flower to update
+    console.log(name, variety, container, quantity);
+    let flowersNotChanging = cart.filter(
+      (item) =>
+        !(
+          item.name === name &&
+          item.variety === variety &&
+          item.container === container
+        )
+    );
+    console.log(flowersNotChanging);
     // add back in flower with updated properties
     setCart(
       flowersNotChanging.concat({

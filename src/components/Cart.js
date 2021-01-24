@@ -3,8 +3,11 @@ import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
 
-function CartImage({ name, variety }) {
-  let flower = ALLFLOWERS.filter((flower) => flower.name === name)[0];
+function CartImage({ name, variety, container }) {
+  let flower = ALLFLOWERS.filter(
+    (flower) => flower.name === name && flower.container === container
+  )[0];
+
   let image = flower.variety.filter((flower) => flower.name === variety)[0]
     .image;
   return (
@@ -37,6 +40,7 @@ function CartBody({
   let price = (group.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
+    console.log(name, variety, container, qty);
     updateFlowerInCart(name, variety, container, qty);
     if (qty) setQuantity(qty);
   }
@@ -46,7 +50,8 @@ function CartBody({
       <Title name={name} variety={variety} />
       <button
         className="text-xs text-left underline "
-        onClick={() => removeFlowerFromCart(name, variety, quantity)}
+        // is quantity needed?
+        onClick={() => removeFlowerFromCart(name, variety, container, quantity)}
       >
         Remove
       </button>
@@ -98,11 +103,15 @@ function Cart(props) {
   }
 
   cart.sort((a, b) =>
-    a.name < b.name
+    a.container < b.container
       ? -1
-      : a.name === b.name
-      ? a.variety < b.variety
+      : a.container === b.container
+      ? a.name < b.name
         ? -1
+        : a.name === b.name
+        ? a.variety < b.variety
+          ? -1
+          : 1
         : 1
       : 1
   );
@@ -112,7 +121,11 @@ function Cart(props) {
         key={key}
         className="pl-8 py-8 mb-2 shadow-lg flex items-center bg-white"
       >
-        <CartImage name={flower.name} variety={flower.variety} />
+        <CartImage
+          name={flower.name}
+          variety={flower.variety}
+          container={flower.container}
+        />
         <CartBody
           name={flower.name}
           variety={flower.variety}
