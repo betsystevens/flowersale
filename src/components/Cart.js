@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
@@ -87,6 +87,9 @@ function getSubtotal(cart) {
 }
 function Cart(props) {
   const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
+  useEffect(() => {
+    document.title = `Flower Sale - Cart`;
+  });
   let qtySum = 0;
   let subTotal = 0;
   if (cart.length) {
