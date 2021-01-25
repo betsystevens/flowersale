@@ -9,12 +9,6 @@ function FlowerCardsContainer({ updateCart, path }) {
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
   const [container, setContainer] = useState("");
-  const flowerInfo = {
-    image,
-    name,
-    variety,
-    container,
-  };
   let pageNames = new Map();
   pageNames.set("hb", "Hanging Baskets");
   pageNames.set("flat", "Flats");

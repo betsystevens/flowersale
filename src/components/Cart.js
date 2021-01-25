@@ -24,9 +24,9 @@ function computeSubtotal(cart) {
   return subTotal;
 }
 function comparator(a, b) {
-  return a.container < b.container
+  return a.group < b.group
     ? -1
-    : a.container === b.container
+    : a.group === b.group
     ? a.name < b.name
       ? -1
       : a.name === b.name
@@ -70,13 +70,14 @@ function ItemBody({
   removeFlowerFromCart,
 }) {
   const [quantity, setQuantity] = useState(orderQuantity);
-  let group = PRICING.filter((obj) => obj.container.name === container)[0];
-  let price = (group.container.price / 100).toFixed(2);
+  let flowerGroup = PRICING.filter((obj) => obj.container.name === container)[0]
+    .group;
+  let priceGroup = PRICING.filter((obj) => obj.container.name === container)[0];
+  let price = (priceGroup.container.price / 100).toFixed(2);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
-    console.log(name, variety, container, qty);
     if (qty) {
-      updateFlowerInCart(name, variety, container, qty);
+      updateFlowerInCart(name, variety, container, flowerGroup, qty);
       setQuantity(qty);
     }
   }
@@ -182,7 +183,7 @@ function Cart(props) {
     );
   } else
     return (
-      <div className="mt-12 w-1/2t py-16 mx-auto shadow-lg text-bold text-4xl text-center bg-gray-50">
+      <div className="mt-12 w-1/2 py-16 mx-auto shadow-lg text-bold text-4xl text-center bg-gray-50">
         <p>Your Cart is Empty</p>
       </div>
     );

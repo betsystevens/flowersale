@@ -25,8 +25,14 @@ function ActionButton(props) {
     );
   }
 }
-function FlowerCards(props) {
-  const containerGroup = props.flowerGroup;
+// function FlowerCards(props) {
+function FlowerCards({
+  flowerGroup,
+  toggleModal,
+  updateCart,
+  updateAddedModalState,
+}) {
+  const containerGroup = flowerGroup;
 
   const flowerFile = ALLFLOWERS.filter(
     (flower) => flower.group === containerGroup
@@ -42,9 +48,10 @@ function FlowerCards(props) {
     const varietyCountOrName =
       varietyCount === 1 ? variety : `${varietyCount} varieties`;
     const addToCart = () => {
-      props.updateAddedModalState(image, name, varietyCountOrName, container);
-      props.updateCart(name, variety, container, 1);
-      props.toggleModal();
+      updateAddedModalState(image, name, varietyCountOrName, container);
+      // updateCart(name, variety, container, 1);
+      updateCart(name, variety, container, flowerGroup, 1);
+      toggleModal();
     };
     return (
       <div key={flower.id}>
