@@ -3,7 +3,41 @@ import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
 
-function CartImage({ name, variety, container }) {
+// helper functions
+function getPrice(container) {
+  let price = PRICING.filter((obj) => obj.container.name === container)[0]
+    .container.price;
+  return price;
+}
+function getItemsCount(cart) {
+  let count = cart.reduce((accumulator, item) => {
+    return accumulator + item.quantity;
+  }, 0);
+  return count;
+}
+function computeSubtotal(cart) {
+  let subTotal = 0;
+  cart.forEach((flower) => {
+    let price = getPrice(flower.container);
+    subTotal = subTotal + flower.quantity * price;
+  });
+  return subTotal;
+}
+function comparator(a, b) {
+  return a.container < b.container
+    ? -1
+    : a.container === b.container
+    ? a.name < b.name
+      ? -1
+      : a.name === b.name
+      ? a.variety < b.variety
+        ? -1
+        : 1
+      : 1
+    : 1;
+}
+// Components
+function ItemImage({ name, variety, container }) {
   let flower = ALLFLOWERS.filter(
     (flower) => flower.name === name && flower.container === container
   )[0];
@@ -18,7 +52,16 @@ function CartImage({ name, variety, container }) {
     ></img>
   );
 }
-function CartBody({
+function ItemTitle({ name, variety }) {
+  return (
+    <div className="col-span-2 flex items-center">
+      <p className="text-xl">
+        {name}: {variety}
+      </p>
+    </div>
+  );
+}
+function ItemBody({
   name,
   variety,
   container,
@@ -26,15 +69,6 @@ function CartBody({
   updateFlowerInCart,
   removeFlowerFromCart,
 }) {
-  function Title({ name, variety }) {
-    return (
-      <div className="col-span-2 flex items-center">
-        <p className="text-xl">
-          {name}: {variety}
-        </p>
-      </div>
-    );
-  }
   const [quantity, setQuantity] = useState(orderQuantity);
   let group = PRICING.filter((obj) => obj.container.name === container)[0];
   let price = (group.container.price / 100).toFixed(2);
@@ -49,7 +83,7 @@ function CartBody({
 
   return (
     <div className="mx-8 cartGrid">
-      <Title name={name} variety={variety} />
+      <ItemTitle name={name} variety={variety} />
       <button
         className="text-xs text-left underline "
         // is quantity needed?
@@ -75,25 +109,7 @@ function CartQuantity({ quantity, quantityHandler }) {
     </div>
   );
 }
-function getPrice(container) {
-  let price = PRICING.filter((obj) => obj.container.name === container)[0]
-    .container.price;
-  return price;
-}
-function getItemsCount(cart) {
-  let count = cart.reduce((accumulator, item) => {
-    return accumulator + item.quantity;
-  }, 0);
-  return count;
-}
-function computeSubtotal(cart) {
-  let subTotal = 0;
-  cart.forEach((flower) => {
-    let price = getPrice(flower.container);
-    subTotal = subTotal + flower.quantity * price;
-  });
-  return subTotal;
-}
+
 function CartSubtotal({ cart }) {
   let qtySum = 0;
   let subTotal = 0;
@@ -118,37 +134,19 @@ function CartSubtotal({ cart }) {
     </div>
   );
 }
-function Cart(props) {
-  const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
-  useEffect(() => {
-    document.title = `Flower Sale - Cart`;
-  });
-
-  cart.sort((a, b) =>
-    a.container < b.container
-      ? -1
-      : a.container === b.container
-      ? a.name < b.name
-        ? -1
-        : a.name === b.name
-        ? a.variety < b.variety
-          ? -1
-          : 1
-        : 1
-      : 1
-  );
+function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
   const items = cart.map((flower, key) => {
     return (
       <div
         key={key}
         className="pl-8 py-8 mb-2 shadow-lg flex items-center bg-white"
       >
-        <CartImage
+        <ItemImage
           name={flower.name}
           variety={flower.variety}
           container={flower.container}
         />
-        <CartBody
+        <ItemBody
           name={flower.name}
           variety={flower.variety}
           container={flower.container}
@@ -160,16 +158,33 @@ function Cart(props) {
       </div>
     );
   });
-  return (
-    <div className="bg-gray-100 h-screen pt-12">
-      <div className="m-auto w-11/12 flex flex-col">
-        {/* cards */}
-        <div className="flex justify-between ">
-          <div>{items}</div>
-          <CartSubtotal cart={cart} />
+  return items;
+}
+function Cart(props) {
+  const { cart, updateFlowerInCart, removeFlowerFromCart } = props;
+  useEffect(() => {
+    document.title = `Flower Sale - Cart`;
+  });
+
+  // check for empty cart
+  if (cart.length) {
+    cart.sort(comparator);
+    const items = getItems(cart, updateFlowerInCart, removeFlowerFromCart);
+    return (
+      <div className="bg-gray-100 h-screen pt-12">
+        <div className="m-auto w-11/12 flex flex-col">
+          <div className="flex justify-between ">
+            <div>{items}</div>
+            <CartSubtotal cart={cart} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else
+    return (
+      <div className="mt-12 w-1/2t py-16 mx-auto shadow-lg text-bold text-4xl text-center bg-gray-50">
+        <p>Your Cart is Empty</p>
+      </div>
+    );
 }
 export default Cart;
