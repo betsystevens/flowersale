@@ -61,8 +61,6 @@ export default function FlowerDetails(props) {
 
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
-  // const [hoverVariety, setHoverVariety] = useState("");
-  // const [selectedVariety, setSelectedVariety] = useState("");
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
     // let page = pageNames.get(flowerGroup);
@@ -70,17 +68,12 @@ export default function FlowerDetails(props) {
   });
   const imageHandlers = {
     handleMouseEnter(index) {
-      // const varietyName = variety[index].name;
-      // setHoverVariety(varietyName);
       setHoverId(index);
     },
     handleMouseLeave() {
-      // setHoverVariety(selectedVariety);
       setHoverId(selectedId);
     },
     handleClick(index) {
-      // const varietyName = variety[index].name;
-      // setSelectedVariety(varietyName);
       setSelectedId(index);
     },
   };
