@@ -35,35 +35,34 @@ function App() {
     return keepers;
   };
 
-  const updateFlowerInCart = (name, variety, container, quantity) => {
-    // comes from cart, quantity is overwritten
+  const updateFlowerInCart = (name, variety, container, group, quantity) => {
+    // comes from cart, flower exists, quantity is overwritten
     // filter out flower to update
-    console.log(name, variety, container, quantity);
     let flowersNotChanging = itemsNotChanging(name, variety, container);
-    console.log(flowersNotChanging);
     // add back in flower with updated properties
     setCart(
       flowersNotChanging.concat({
         name: name,
         variety: variety,
         container: container,
+        group: group,
         quantity: quantity,
       })
     );
   };
-  const updateCart = (name, variety, container, quantity) => {
-    // comes from flower cards and detail, quantity is added if flower exists
+  const updateCart = (name, variety, container, group, quantity) => {
+    // comes from flower cards and detail, if flower exists, quantity is added
     const flower = getFlowerFromCart(name, variety, container);
     // flower is in cart, update it
     if (flower.length) {
       const newQuantity = flower[0].quantity + quantity;
-      // updateFlowerInCart(name, variety, container, newQuantity);
       let flowersNotChanging = itemsNotChanging(name, variety, container);
       setCart(
         flowersNotChanging.concat({
           name: name,
           variety: variety,
           container: container,
+          group: group,
           quantity: newQuantity,
         })
       );
@@ -74,6 +73,7 @@ function App() {
           name: name,
           variety: variety,
           container: container,
+          group: group,
           quantity: quantity,
         })
       );
@@ -81,7 +81,6 @@ function App() {
   };
   const removeFlowerFromCart = (e, name, variety, container, quantity) => {
     e.target.blur();
-    console.log(`remove ${name}, ${variety}, ${container}, ${quantity}`);
     let flowersNotChanging = itemsNotChanging(name, variety, container);
     setCart(flowersNotChanging);
   };

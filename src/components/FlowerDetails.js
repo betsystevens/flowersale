@@ -48,6 +48,11 @@ function AddToCartButton({ toggleModal }) {
     </div>
   );
 }
+/**
+ * * todo: rename 'newContainer' to something meaningfull
+ * * todo: look at references to 'container',
+ * * todo: need some clarification on what these variable names refer to
+ */
 export default function FlowerDetails(props) {
   const { flowerId, path } = props;
   const flowerGroup = path.match(/[a-z]+/)[0];
@@ -63,7 +68,6 @@ export default function FlowerDetails(props) {
   const [selectedId, setSelectedId] = useState(0);
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
-    // let page = pageNames.get(flowerGroup);
     document.title = `${name} - Details`;
   });
   const imageHandlers = {
@@ -92,7 +96,13 @@ export default function FlowerDetails(props) {
   const toggleModal = (e) => {
     e.target.blur();
     if (!open) {
-      props.updateCart(name, variety[selectedId].name, newContainer, quantity);
+      props.updateCart(
+        name,
+        variety[selectedId].name,
+        newContainer,
+        flowerGroup,
+        quantity
+      );
     }
     setOpen(!open);
   };
