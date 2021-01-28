@@ -10,7 +10,7 @@ export const GROUPS = [
     // image: "assets/images/flats/dianthusRed512x384.jpg",
     // image: "assets/images/flats/impatiensPink512x384.jpg",
     description:
-      "A variety of annuals that are guaranteed to get your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom all summer.",
+      "A variety of annuals that are guaranteed to get your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom for you all summer.",
   },
   {
     id: 1,
@@ -34,6 +34,6 @@ export const GROUPS = [
     group: "herbTomato",
     image: "assets/images/pots/basilHerb720x480.jpg",
     description:
-      "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious homegrown tomatoes, we offer several varieties in 4-inch pots.",
+      "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious homegrown tomatoes, we offer several reliable varieties in 4-inch pots.",
   },
 ];
