@@ -25,9 +25,17 @@ function FlowerCardsContainer({ updateCart, path }) {
     setVariety(variety);
     setContainer(container);
   }
-
+  function closeAddToCartModal(e) {
+    if (!(e.target.id === "addtocart")) {
+      setOpen(false);
+      window.removeEventListener("click", closeAddToCartModal);
+    }
+  }
   function toggleModal() {
-    setOpen(!open);
+    if (!open) {
+      setOpen(true);
+      window.addEventListener("click", closeAddToCartModal);
+    }
   }
   return (
     <div>
@@ -47,8 +55,6 @@ function FlowerCardsContainer({ updateCart, path }) {
         name={name}
         variety={variety}
         container={container}
-        foo={console.log(container)}
-        foo1={console.log(name)}
       />
     </div>
   );

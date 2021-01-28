@@ -8,6 +8,7 @@ function ActionButton(props) {
     return (
       <div>
         <button
+          id="addtocart"
           className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button"
           onClick={() => props.addToCart()}
         >

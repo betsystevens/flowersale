@@ -33,6 +33,7 @@ function AddToCartButton({ toggleModal }) {
   return (
     <div className="inline-block relative">
       <button
+        id="addtocart2"
         onClick={(e) => toggleModal(e)}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 ml-6 text-sm
@@ -96,6 +97,11 @@ export default function FlowerDetails(props) {
   const toggleModal = (e) => {
     e.target.blur();
     if (!open) {
+      console.log("opening modal");
+      console.log(e.target);
+      console.log(e.target.id);
+      setOpen(true);
+      window.addEventListener("click", closeModal);
       props.updateCart(
         name,
         variety[selectedId].name,
@@ -104,8 +110,13 @@ export default function FlowerDetails(props) {
         quantity
       );
     }
-    setOpen(!open);
   };
+  function closeModal(e) {
+    if (!(e.target.id === "addtocart2")) {
+      setOpen(false);
+      window.removeEventListener("click", closeModal);
+    }
+  }
   return (
     <div className="mt-16 ml-16">
       <div className={opacity}>
