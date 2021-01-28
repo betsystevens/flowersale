@@ -6,6 +6,7 @@ import FlowerGroups from "./FlowerGroups";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
+import PrintOrder from "./PrintOrder";
 import "../App.css";
 import "tailwindcss/tailwind.css";
 
@@ -135,6 +136,11 @@ function App() {
                 path={match.path}
               />
             )}
+          />
+          <Route
+            exact
+            path="/printOrder"
+            render={() => <PrintOrder cart={cart} foo={"hello foo"} />}
           />
           <Redirect to="/home" />
         </Switch>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
@@ -125,13 +126,15 @@ function CartSubtotal({ cart }) {
         Subtotal ({qtySum} items):{" "}
         <span className="font-semibold">${subTotal}</span>
       </p>
-      <button
-        className="border-2 border-gray-200 bg-gray-100 rounded 
+      <Link to={`/printOrder`}>
+        <button
+          className="border-2 border-gray-200 bg-gray-100 rounded 
               h-8 px-2 ml-6 text-sm
               hover:text-purple-500"
-      >
-        Checkout
-      </button>
+        >
+          Printer Friendly Order
+        </button>
+      </Link>
     </div>
   );
 }
