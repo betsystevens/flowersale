@@ -45,16 +45,16 @@ function AddedToCartModal(props) {
           <p className="py-1 mb-3 text-lg">${total}</p>
 
           <Link to="/cart">
-            <p className="py-1 px-4 text-sm rounded border-2 border-purple-500 hover:bg-purple-500">
+            <p className="py-1 px-4 text-sm rounded border-2 border-purple-500 hover:text-gray-50 hover:bg-purple-500">
               Checkout
             </p>
           </Link>
 
           <button
             onClick={props.toggleModal}
-            className="py-1 hover:text-purple-500"
+            className="mt-4 py-1 px-4 rounded border-2 border-purple-400 hover:text-gray-50 hover:bg-purple-500"
           >
-            continue shopping
+            Continue Shopping
           </button>
         </div>
       </div>
