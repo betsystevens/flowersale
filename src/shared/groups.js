@@ -4,13 +4,8 @@ export const GROUPS = [
     name: "Flats",
     group: "flat",
     image: "assets/images/flats/dahliaMixed512x384.jpg",
-    // image: "assets/images/flats/begoniaPinkBronzeLeaf512x384.jpg",
-    // image: "assets/images/flats/petuniaMixed512x384.jpg",
-    // image: "assets/images/flats/zinniaMixed512x384.jpg",
-    // image: "assets/images/flats/dianthusRed512x384.jpg",
-    // image: "assets/images/flats/impatiensPink512x384.jpg",
     description:
-      "A variety of annuals that are guaranteed to get your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom for you all summer.",
+      "A variety of annuals that are guaranteed to start your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom for you all summer.",
   },
   {
     id: 1,
