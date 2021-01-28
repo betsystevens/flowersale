@@ -6,7 +6,7 @@ export const PRICING = [
     group: "hb",
     container: {
       name: "hb",
-      description: "10-inch green basket",
+      description: "10 inch hanging basket",
       price: 2400,
       wholesale: 1500,
     },
@@ -30,7 +30,7 @@ export const PRICING = [
     group: "hb",
     container: {
       name: "combo hb",
-      description: "12-inch green basket",
+      description: "12 inch hanging basket",
       price: 3000,
       wholesale: 2000,
     },
@@ -95,7 +95,7 @@ export const PRICING = [
     group: "pot",
     container: {
       name: "grass gallon",
-      description: "6 inch pot",
+      description: "1 gallon pot",
       price: 900,
       wholesale: 600,
     },
@@ -134,7 +134,7 @@ export const PRICING = [
     group: "herbTomato",
     container: {
       name: "tomato gallon",
-      description: "12 inch patio pot",
+      description: "1 gallon pot",
       price: 600,
       wholesale: 400,
     },

@@ -452,7 +452,7 @@ export const ALLFLOWERS = [
     group: "herbTomato",
     description: "One gallon patio pot",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/superSteak512x384.jpg" },
+      { name: "tomato", image: "/assets/images/pots/tomatoGallon512x384.jpg" },
     ],
   },
   {
