@@ -8,7 +8,7 @@ function ActionButton(props) {
     return (
       <div>
         <button
-          className="px-8 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button"
+          className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button"
           onClick={() => props.addToCart()}
         >
           Add to Cart
@@ -18,7 +18,7 @@ function ActionButton(props) {
   } else {
     return (
       <Link to={`/${props.flowerGroup}/${props.flowerId}`}>
-        <button className="px-8 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
+        <button className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
           View Options
         </button>
       </Link>
