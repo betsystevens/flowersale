@@ -10,7 +10,7 @@ export const GROUPS = [
     // image: "assets/images/flats/dianthusRed512x384.jpg",
     // image: "assets/images/flats/impatiensPink512x384.jpg",
     description:
-      "A variety of annuals that our guaranteed to get you garden blooming. Choose from an assorment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom all summer.",
+      "A variety of annuals that are guaranteed to get your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom all summer.",
   },
   {
     id: 1,
@@ -26,7 +26,7 @@ export const GROUPS = [
     group: "pot",
     image: "assets/images/pots/margueriteDaisy512x384.jpg",
     description:
-      "Annuals available in 4-inch, 6-inch and gallon sized pots. As always we offer the eternally popular zonal geraniums. The purple annual fountain grass is always a hit and by fall it will be the star of your garden. Accent plants and ready to go patio pots are the best and so easy.",
+      "Annuals available in 4-inch, 6-inch and gallon sized pots. As always, we offer the eternally popular zonal geraniums. The purple annual fountain grass is always a hit and by fall it will be the star of your garden. Accent plants and ready to go patio pots are the best and so easy.",
   },
   {
     id: 3,
@@ -34,6 +34,6 @@ export const GROUPS = [
     group: "herbTomato",
     image: "assets/images/pots/basilHerb720x480.jpg",
     description:
-      "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious home-grown tomatoes, we offer several varieties in 4-inch pots.",
+      "Choose from our selection of popular herbs: basil, oregano, parsley, rosemary, chives, and cilantro. For the crown jewel of the home vegetable garden, delicious homegrown tomatoes, we offer several varieties in 4-inch pots.",
   },
 ];
