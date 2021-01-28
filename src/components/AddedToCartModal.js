@@ -39,7 +39,7 @@ function AddedToCartModal(props) {
             className="my-4 w-40 shadow-lg border-4 border-white"
           />
           <p className="mt-1 text-2xl">{props.name}</p>
-          <p className="mt-1.5 text-sm">Variety: {props.variety}</p>
+          <p className="mt-1.5 text-sm">{props.variety}</p>
           <p className="mt-1 text-sm">${price} per flat</p>
           <p className="mt-5 text-lg">Quantity: {props.quantity}</p>
           <p className="py-1 mb-3 text-lg">${total}</p>
