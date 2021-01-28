@@ -25,7 +25,6 @@ function AddedToCartModal(props) {
       <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">
         <div className="flex justify-end m-auto">
           <img
-            onClick={props.toggleModal}
             src="/assets/icons/cross3px.svg"
             alt="close icon"
             className="w-6 h-6 pt-1 cursor-pointer"
@@ -50,10 +49,7 @@ function AddedToCartModal(props) {
             </p>
           </Link>
 
-          <button
-            onClick={props.toggleModal}
-            className="mt-4 py-1 px-4 rounded border-2 border-purple-400 hover:text-gray-50 hover:bg-purple-500"
-          >
+          <button className="mt-4 py-1 px-4 rounded border-2 border-purple-400 hover:text-gray-50 hover:bg-purple-500">
             Continue Shopping
           </button>
         </div>

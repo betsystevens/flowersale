@@ -29,12 +29,12 @@ function CheckoutOrContinue(props) {
     </div>
   );
 }
-function AddToCartButton({ toggleModal }) {
+function AddToCartButton({ openAddedToCartModal }) {
   return (
     <div className="inline-block relative">
       <button
         id="addtocart2"
-        onClick={(e) => toggleModal(e)}
+        onClick={(e) => openAddedToCartModal(e)}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 ml-6 text-sm
                         hover:text-purple-500"
@@ -94,12 +94,9 @@ export default function FlowerDetails(props) {
   const opacity = open
     ? "gridDetailWrapper opacity-50"
     : "gridDetailWrapper opacity-100";
-  const toggleModal = (e) => {
+  const openAddedToCartModal = (e) => {
     e.target.blur();
     if (!open) {
-      console.log("opening modal");
-      console.log(e.target);
-      console.log(e.target.id);
       setOpen(true);
       window.addEventListener("click", closeModal);
       props.updateCart(
@@ -133,13 +130,12 @@ export default function FlowerDetails(props) {
           />
           <div className="flex pt-6">
             <Quantity quantity={quantity} callback={quantityHandler} />
-            <AddToCartButton toggleModal={toggleModal} />
+            <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
           </div>
         </div>
       </div>
       <AddedToCartModal
         open={open}
-        toggleModal={(e) => toggleModal(e)}
         quantity={quantity}
         image={variety[selectedId].image}
         name={name}

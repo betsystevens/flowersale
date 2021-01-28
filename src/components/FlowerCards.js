@@ -29,7 +29,7 @@ function ActionButton(props) {
 // function FlowerCards(props) {
 function FlowerCards({
   flowerGroup,
-  toggleModal,
+  openAddedToCartModal,
   updateCart,
   updateAddedModalState,
   opacity,
@@ -52,10 +52,9 @@ function FlowerCards({
     const addToCart = () => {
       updateAddedModalState(image, name, varietyCountOrName, container);
       updateCart(name, variety, container, flowerGroup, 1);
-      toggleModal();
+      openAddedToCartModal();
     };
     return (
-      // <div key={flower.id} className={opacity}>
       <div key={flower.id}>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <div>

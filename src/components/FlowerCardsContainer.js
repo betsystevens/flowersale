@@ -31,7 +31,7 @@ function FlowerCardsContainer({ updateCart, path }) {
       window.removeEventListener("click", closeAddToCartModal);
     }
   }
-  function toggleModal() {
+  function openAddedToCartModal() {
     if (!open) {
       setOpen(true);
       window.addEventListener("click", closeAddToCartModal);
@@ -43,13 +43,12 @@ function FlowerCardsContainer({ updateCart, path }) {
         flowerGroup={flowerGroup}
         updateAddedModalState={updateAddedModalState}
         updateCart={updateCart}
-        toggleModal={() => toggleModal()}
+        openAddedToCartModal={() => openAddedToCartModal()}
         opacity={opacity}
       />
       {/* modal initially hidden */}
       <AddedToCartModal
         open={open}
-        toggleModal={() => toggleModal()}
         quantity={1}
         image={image}
         name={name}
