@@ -12,7 +12,7 @@ export const FLATS = [
     ],
     container: "flat",
     description:
-      "Lorem ipsum dolor dolor dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "Carefree, low, spreading plants grown for their flowers and are useful in containers or for edging flower beds. Sweet Alyssum thrives in full sun or partial shade and prefers consistently moist, well-drained soil. Water regularly, especially if grown in hanging baskets or containers.",
   },
   {
     id: 1,
@@ -40,7 +40,7 @@ export const FLATS = [
     name: "Coleus",
     container: "flat",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+      "Versatile plants to grow in containers and flower beds. These are loved for their colorful foliage and leaf shapes. They grow fast and fill space quickly, adding interest wherever they are placed.",
     variety: [
       {
         name: "mixed",

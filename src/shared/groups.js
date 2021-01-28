@@ -1,6 +1,19 @@
 export const GROUPS = [
   {
     id: 0,
+    name: "Flats",
+    group: "flat",
+    image: "assets/images/flats/dahliaMixed512x384.jpg",
+    // image: "assets/images/flats/begoniaPinkBronzeLeaf512x384.jpg",
+    // image: "assets/images/flats/petuniaMixed512x384.jpg",
+    // image: "assets/images/flats/zinniaMixed512x384.jpg",
+    // image: "assets/images/flats/dianthusRed512x384.jpg",
+    // image: "assets/images/flats/impatiensPink512x384.jpg",
+    description:
+      "A variety of annuals that our guaranteed to get you garden blooming. Choose from an assorment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom all summer.",
+  },
+  {
+    id: 1,
     name: "Hanging Baskets",
     group: "hb",
     image: "assets/images/hb/petuniaPinkPurpleHB750x500.jpg",
@@ -8,20 +21,12 @@ export const GROUPS = [
       "Our 10-inch flower baskets are of unbeatable quality. They regularly sell out every year. Never disappointing, these spectacular baskets keep customers coming back year after year. The wave petunias and ivy geraniums are unrivaled in their beauty and quality.",
   },
   {
-    id: 1,
-    name: "Flats",
-    group: "flat",
-    image: "assets/images/flats/alyssumMixed750x563.jpg",
-    description:
-      "Carefree, low, spreading plants grown for their flowers and are useful in containers or for edging flower beds. Sweet Alyssum thrives in full sun or partial shade and prefers consistently moist, well-drained soil. Water regularly, especially if grown in hanging baskets or containers.",
-  },
-  {
     id: 2,
     name: "Potted Plants",
     group: "pot",
-    image: "assets/images/pots/potatoVine750x499.jpg",
+    image: "assets/images/pots/margueriteDaisy512x384.jpg",
     description:
-      "Versatile plants to grow in containers and flower beds. These are loved for their colorful foliage and leaf shapes. They grow fast and fill space quickly, adding interest wherever they are placed.",
+      "Annuals available in 4-inch, 6-inch and gallon sized pots. As always we offer the eternally popular zonal geraniums. The purple annual fountain grass is always a hit and by fall it will be the star of your garden. Accent plants and ready to go patio pots are the best and so easy.",
   },
   {
     id: 3,
