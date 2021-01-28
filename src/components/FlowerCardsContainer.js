@@ -9,6 +9,7 @@ function FlowerCardsContainer({ updateCart, path }) {
   const [name, setName] = useState("");
   const [variety, setVariety] = useState("");
   const [container, setContainer] = useState("");
+  const opacity = open ? "opacity-50" : "opacity-100";
   let pageNames = new Map();
   pageNames.set("hb", "Hanging Baskets");
   pageNames.set("flat", "Flats");
@@ -24,6 +25,7 @@ function FlowerCardsContainer({ updateCart, path }) {
     setVariety(variety);
     setContainer(container);
   }
+
   function toggleModal() {
     setOpen(!open);
   }
@@ -34,6 +36,7 @@ function FlowerCardsContainer({ updateCart, path }) {
         updateAddedModalState={updateAddedModalState}
         updateCart={updateCart}
         toggleModal={() => toggleModal()}
+        opacity={opacity}
       />
       {/* modal initially hidden */}
       <AddedToCartModal

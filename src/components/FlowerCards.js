@@ -31,6 +31,7 @@ function FlowerCards({
   toggleModal,
   updateCart,
   updateAddedModalState,
+  opacity,
 }) {
   const containerGroup = flowerGroup;
 
@@ -49,11 +50,11 @@ function FlowerCards({
       varietyCount === 1 ? variety : `${varietyCount} varieties`;
     const addToCart = () => {
       updateAddedModalState(image, name, varietyCountOrName, container);
-      // updateCart(name, variety, container, 1);
       updateCart(name, variety, container, flowerGroup, 1);
       toggleModal();
     };
     return (
+      // <div key={flower.id} className={opacity}>
       <div key={flower.id}>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <div>
@@ -77,7 +78,8 @@ function FlowerCards({
       </div>
     );
   });
-  return <div className="flex-center">{cards}</div>;
+  // return <div className="flex-center">{cards}</div>;
+  return <div className={"flex-center " + opacity}>{cards}</div>;
 }
 
 export default FlowerCards;
