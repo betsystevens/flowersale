@@ -11,7 +11,7 @@ function NameDescription({ name, description }) {
   return (
     <div>
       <p className="font-extrabold text-lg">{name}</p>
-      <p className="pt-2">{`Flat - ${description}`}</p>
+      <p className="pt-2">{`${description}`}</p>
     </div>
   );
 }
