@@ -1,5 +1,4 @@
 import { PRICING } from "../shared/pricing";
-// const { FLOWERS } = require("../shared/flowers");
 import { FLATS } from "../shared/flats";
 import { HB } from "../shared/hb";
 

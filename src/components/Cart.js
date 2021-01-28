@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
 import { ALLFLOWERS } from "../shared/allFlowers";
+import { getContainerDescription } from "../utils/utilities";
 
 // helper functions
 function getPrice(container) {
@@ -75,6 +76,7 @@ function ItemBody({
     .group;
   let priceGroup = PRICING.filter((obj) => obj.container.name === container)[0];
   let price = (priceGroup.container.price / 100).toFixed(2);
+  let containerDescription = getContainerDescription(container);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
     if (qty) {
@@ -85,7 +87,7 @@ function ItemBody({
 
   return (
     <div className="mx-8 cartGrid">
-      <ItemTitle name={name} variety={variety} />
+      <ItemTitle name={name} variety={variety} container={container} />
       <button
         className="text-xs text-left underline "
         // is quantity needed?
@@ -95,6 +97,7 @@ function ItemBody({
       >
         Remove
       </button>
+      <p className="text-sm col-span-3 self-start">{containerDescription}</p>
       <p className="text-xs self-end"> Price</p>
       <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
       <p className="text-xs self-end">Total</p>

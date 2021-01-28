@@ -189,12 +189,12 @@ nav li.logo a:hover {
   grid-column: 3;
   grid-row: 1 / 4;
 }
-
+/* Cart Grid */
 .cartGrid {
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 0.3rem;
   grid-template-columns: 60px 220px 80px;
-  grid-template-rows: 30px 40px 25px;
+  grid-template-rows: 30px 25px 30px 25px;
 }
 
 /* quantity styles */

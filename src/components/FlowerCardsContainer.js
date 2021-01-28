@@ -47,6 +47,8 @@ function FlowerCardsContainer({ updateCart, path }) {
         name={name}
         variety={variety}
         container={container}
+        foo={console.log(container)}
+        foo1={console.log(name)}
       />
     </div>
   );
