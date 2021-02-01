@@ -44,17 +44,6 @@ nav li.logo a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-}
 /* band  (what bootstrap calls media)
  ======*/
 .band {
@@ -72,7 +61,7 @@ nav li.logo a:hover {
   /* style below may be a desired alternative */
   /* border-image: url('./shared/border-diamond-lilac.png') 30 repeat; */
 }
-
+/* grid for FlowerDetails */
 .gridDetailWrapper {
   display: grid;
   grid-gap: 2rem;

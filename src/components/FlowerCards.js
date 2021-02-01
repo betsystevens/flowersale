@@ -78,8 +78,9 @@ function FlowerCards({
       </div>
     );
   });
-  // return <div className="flex-center">{cards}</div>;
-  return <div className={"flex-center " + opacity}>{cards}</div>;
+  return (
+    <div className={"flex justify-center flex-wrap " + opacity}>{cards}</div>
+  );
 }
 
 export default FlowerCards;

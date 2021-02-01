@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 function Nav(props) {
   return (
     <div>
-      <nav className="flex-between">
+      {/* <nav className="flex-between"> */}
+      <nav className="flex justify-between">
         <ul className="flex">
           <li className="logo">
             <NavLink to="/" exact>
