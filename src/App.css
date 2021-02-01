@@ -1,44 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-/* Scaffolding
-  =============== */
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont,
-    Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-}
-
 body {
   margin: 0;
   color: #404040;
   background: white;
   font-size: 1rem;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-p,
-ol,
-ul,
-dl,
-table {
-  margin: 0 0 1.5rem 0;
-}
-
-ul li ul {
-  margin-bottom: 0;
-}
-
-ol li ol {
-  margin-bottom: 0;
-}
-
-ul {
-  list-style-type: none;
 }
 
 a:link,
@@ -46,44 +10,6 @@ a:visited {
   color: #222;
   text-decoration: none;
 }
-a:hover {
-  /* color: floralwhite; */
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 0 0 1.5rem 0;
-  font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  line-height: 1.2;
-  color: #404040;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-}
-
-h4 {
-  font-size: 1.1rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
 /* nav
    ===*/
 
@@ -118,52 +44,19 @@ nav li.logo a:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.hero h1 {
-  color: floralwhite;
-}
-/* margins
-  ========*/
-.mb-1 {
-  margin-bottom: 1rem;
-}
 
-/* flex 
-   =====*/
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.flex-evenly {
-  display: flex;
-  justify-content: space-evenly;
-}
 .flex-between {
   display: flex;
   justify-content: space-between;
 }
-.flex-right {
-  display: flex;
-  justify-content: flex-end;
-}
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 /* band  (what bootstrap calls media)
  ======*/
-/* not sur if using, X-out and wait for problems */
-/* .outer { */
-.Xouter {
-  margin: 50px 75px;
-}
 .band {
   display: flex;
   padding: 20px;
@@ -214,13 +107,13 @@ nav li.logo a:hover {
   width: 50%;
   height: 50%;
 }
-/* remove spinner */
+/* remove spinner on input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* remove spinner */
+/* remove spinner on input */
 input[type="number"] {
   -moz-appearance: textfield;
 }
