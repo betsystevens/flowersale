@@ -15,13 +15,13 @@ function Nav(props) {
         </ul>
         <ul className="flex">
           <li>
-            <NavLink to="/hb" exact className="hover:text-gray-50">
-              Hanging Baskets
+            <NavLink to="/flat" exact className="hover:text-gray-50">
+              Flats
             </NavLink>
           </li>
           <li>
-            <NavLink to="/flat" exact className="hover:text-gray-50">
-              Flats
+            <NavLink to="/hb" exact className="hover:text-gray-50">
+              Hanging Baskets
             </NavLink>
           </li>
           <li>
