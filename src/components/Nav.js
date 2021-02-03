@@ -3,13 +3,14 @@ import { NavLink } from "react-router-dom";
 
 function Nav(props) {
   return (
-    <div>
-      {/* <nav className="flex-between"> */}
-      <nav className="flex justify-between">
-        <ul className="flex">
-          <li className="logo">
+    <div className="sticky top-0">
+      <nav className="flex justify-between items-center">
+        <ul>
+          <li>
             <NavLink to="/" exact>
-              BS Plant Sale
+              <svg className="pt-1 w-12 h-12 fill-current text-indigo-100">
+                <use xlinkHref="/assets/icons/noun_flowers_ext.svg#icon-flowers" />
+              </svg>
             </NavLink>
           </li>
         </ul>
