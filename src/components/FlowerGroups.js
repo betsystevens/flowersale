@@ -6,11 +6,8 @@ import { GROUPS } from "../shared/groups";
 function FlowerGroups() {
   const group = GROUPS.map((flower) => {
     return (
-      <Link to={`/${flower.group}`}>
-        <div
-          key={flower.id}
-          className="flex flex-nowrap p-5 mx-20 my-12 shadow"
-        >
+      <Link to={`/${flower.group}`} key={flower.id}>
+        <div className="flex flex-nowrap p-5 mx-20 my-12 shadow">
           <div className="flex-shrink-0">
             <img src={flower.image} alt={flower.name} className="w-56 h-36" />
           </div>

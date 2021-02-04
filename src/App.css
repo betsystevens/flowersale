@@ -23,7 +23,7 @@ nav * {
 }
 nav li {
   padding: 0.5rem 2rem;
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
   color: floralwhite;
 }
 nav li.logo a:link,
