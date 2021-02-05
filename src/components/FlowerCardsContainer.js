@@ -25,16 +25,16 @@ function FlowerCardsContainer({ updateCart, path }) {
     setVariety(variety);
     setContainer(container);
   }
-  function closeAddToCartModal(e) {
-    if (!(e.target.id === "addtocart")) {
-      setOpen(false);
-      window.removeEventListener("click", closeAddToCartModal);
-    }
-  }
   function openAddedToCartModal() {
     if (!open) {
       setOpen(true);
       window.addEventListener("click", closeAddToCartModal);
+    }
+  }
+  function closeAddToCartModal(e) {
+    if (!(e.target.id === "addtocart")) {
+      setOpen(false);
+      window.removeEventListener("click", closeAddToCartModal);
     }
   }
   return (
@@ -49,11 +49,11 @@ function FlowerCardsContainer({ updateCart, path }) {
       {/* modal initially hidden */}
       <AddedToCartModal
         open={open}
-        quantity={1}
         image={image}
         name={name}
         variety={variety}
         container={container}
+        quantity={1}
       />
     </div>
   );
