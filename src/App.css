@@ -61,7 +61,7 @@ nav li.logo a:hover {
   /* border-image: url('./shared/border-diamond-lilac.png') 30 repeat; */
 }
 /* grid for FlowerDetails */
-.gridDetailWrapper {
+.detailsGrid {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 300px 275px 150px;

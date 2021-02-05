@@ -1,6 +1,5 @@
 import React from "react";
 
-// function Thumbnails({ flowerId, flowerFile, imageHandlers }) {
 function Thumbnails({ flower, imageHandlers }) {
   const onClick = (index) => {
     imageHandlers.handleClick(index);
@@ -11,7 +10,6 @@ function Thumbnails({ flower, imageHandlers }) {
   const mouseLeave = () => {
     imageHandlers.handleMouseLeave();
   };
-  // const thumbnails = flowerFile[flowerId].variety.map((variety, index) => {
   const thumbnails = flower.variety.map((variety, index) => {
     return (
       <div
@@ -28,11 +26,7 @@ function Thumbnails({ flower, imageHandlers }) {
       </div>
     );
   });
-  return (
-    <div className="pt-4 h-65 grid grid-rows-2 grid-cols-3 gap-2">
-      {thumbnails}
-    </div>
-  );
+  return <div className="grid grid-cols-3 gap-2">{thumbnails}</div>;
 }
 
 export default Thumbnails;

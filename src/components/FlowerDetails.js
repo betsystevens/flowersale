@@ -113,59 +113,62 @@ export default function FlowerDetails(props) {
     }
   }
   return (
-    <div className="mt-16 ml-16">
-      <div
-        className={"gridDetailWrapper " + (open ? "opacity-50" : "opacity-100")}
-      >
-        <NameDescription
-          name={name}
-          containerDescription={containerDescription}
-        />
-        <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
-        <CheckoutOrContinue breadCrumb={"/" + flowerGroup} />
-        <BigImage image={variety[hoverId].image} name={name} />
-        <div>
-          <p className="topRow">{`Variety: ${variety[hoverId].name}`}</p>
-          <Thumbnails
-            flowerId={flowerId}
-            flower={flower}
-            imageHandlers={imageHandlers}
+    <div className="mt-16 flex flex-col items-center">
+      {/* wide details */}
+      <div className="hidden md:block">
+        <div className={"detailsGrid " + (open ? "opacity-50" : "opacity-100")}>
+          <NameDescription
+            name={name}
+            containerDescription={containerDescription}
           />
-          <div className="flex pt-6">
-            <Quantity quantity={quantity} callback={quantityHandler} />
-            <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
+          <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
+          <CheckoutOrContinue breadCrumb={"/" + flowerGroup} />
+          <BigImage image={variety[hoverId].image} name={name} />
+          <div>
+            <p>{`Variety: ${variety[hoverId].name}`}</p>
+            <div className="pt-1 h-65">
+              <Thumbnails
+                flowerId={flowerId}
+                flower={flower}
+                imageHandlers={imageHandlers}
+              />
+            </div>
+            <div className="flex pt-6">
+              <Quantity quantity={quantity} callback={quantityHandler} />
+              <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
+            </div>
           </div>
         </div>
       </div>
       {/* stacked details */}
-      <div className="mb-20 flex w-72 flex-col items-center border-2 border-green-500">
-        <NameDescription
-          name={name}
-          containerDescription={containerDescription}
-        />
-        {/* <div className="w-72"> */}
-        <div className="">
-          <BigImage image={variety[hoverId].image} name={name} />
-        </div>
-        <div className="w-64 border-2 border-red-400">
-          <Thumbnails
-            flowerId={flowerId}
-            flower={flower}
-            imageHandlers={imageHandlers}
-          />
-        </div>
-        <div className="flex pt-6">
-          <Quantity quantity={quantity} callback={quantityHandler} />
-          <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
-        </div>
-        <div className="flex justify-between w-64 border-2 border-red-100">
-          <Link to={`/cart`}>
-            <p className="underline hover:text-purple-500">Checkout</p>
-          </Link>
-          {/* <Link to={breadCrumb}> */}
-          <Link to={"/" + flowerGroup}>
-            <p className="underline hover:text-purple-500">Continue Shopping</p>
-          </Link>
+      <div className="block md:hidden">
+        <div className="mb-20 p-2 flex w-72 flex-col items-center shadow-md rounded-md">
+          <p className="mb-2 font-extrabold text-lg">{name}</p>
+          <p className="mb-2">{`${containerDescription}`}</p>
+          <div className="mb-4">
+            <BigImage image={variety[hoverId].image} name={name} />
+          </div>
+          <div className="mb-2 w-64">
+            <Thumbnails
+              flowerId={flowerId}
+              flower={flower}
+              imageHandlers={imageHandlers}
+            />
+          </div>
+          <div className="flex py-6">
+            <Quantity quantity={quantity} callback={quantityHandler} />
+            <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
+          </div>
+          <div className="flex justify-evenly w-64">
+            <Link to={`/cart`}>
+              <p className="underline hover:text-purple-500">Checkout</p>
+            </Link>
+            <Link to={"/" + flowerGroup}>
+              <p className="underline hover:text-purple-500">
+                Continue Shopping
+              </p>
+            </Link>
+          </div>
         </div>
       </div>
       <AddedToCartModal
