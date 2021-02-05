@@ -72,7 +72,6 @@ export default function FlowerDetails(props) {
   const { name, variety, container } = flower;
   const [price, containerDescription] = getPricing(container);
   const flowerGroup = getGroup(path);
-  const breadCrumb = "/" + flowerGroup;
 
   useEffect(() => {
     document.title = `${name} - Details`;
@@ -123,7 +122,7 @@ export default function FlowerDetails(props) {
           containerDescription={containerDescription}
         />
         <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
-        <CheckoutOrContinue breadCrumb={breadCrumb} />
+        <CheckoutOrContinue breadCrumb={"/" + flowerGroup} />
         <BigImage image={variety[hoverId].image} name={name} />
         <div>
           <p className="topRow">{`Variety: ${variety[hoverId].name}`}</p>
@@ -163,7 +162,8 @@ export default function FlowerDetails(props) {
           <Link to={`/cart`}>
             <p className="underline hover:text-purple-500">Checkout</p>
           </Link>
-          <Link to={props.breadCrumb}>
+          {/* <Link to={breadCrumb}> */}
+          <Link to={"/" + flowerGroup}>
             <p className="underline hover:text-purple-500">Continue Shopping</p>
           </Link>
         </div>

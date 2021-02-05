@@ -5,20 +5,20 @@ import { PRICING } from "../shared/pricing";
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity
 // toggle from hidden and not hidden in parent state variable
-function AddedToCartModal(props) {
+function AddedToCartModal({ open, image, name, variety, container, quantity }) {
   let display = "";
-  if (!props.open) {
+  if (!open) {
     display = "hidden";
   }
 
   let price;
   let total;
-  if (props.name) {
+  if (name) {
     let group = PRICING.filter(
-      (group) => group.container.name === props.container
+      (group) => group.container.name === container
     )[0];
     price = (group.container.price / 100).toFixed(2);
-    total = (props.quantity * price).toFixed(2);
+    total = (quantity * price).toFixed(2);
   }
   return (
     <div className={display}>
@@ -33,14 +33,13 @@ function AddedToCartModal(props) {
         <div className="m-auto py-4 flex flex-col items-center">
           <p className="font-medium text-2xl">Added to Cart!</p>
           <img
-            src={props.image}
-            alt={props.name}
+            src={image}
+            alt={name}
             className="my-4 w-40 shadow-lg border-4 border-white"
           />
-          <p className="mt-1 text-2xl">{props.name}</p>
-          <p className="mt-1.5 text-sm">{props.variety}</p>
-          {/* <p className="mt-1 text-sm">${price} per flat</p> */}
-          <p className="mt-5 text-lg">Quantity: {props.quantity}</p>
+          <p className="mt-1 text-2xl">{name}</p>
+          <p className="mt-1.5 text-sm">{variety}</p>
+          <p className="mt-5 text-lg">Quantity: {quantity}</p>
           <p className="py-1 mb-3 text-lg">${total}</p>
 
           <Link to="/cart">
