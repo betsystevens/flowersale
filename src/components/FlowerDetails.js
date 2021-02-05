@@ -93,9 +93,6 @@ export default function FlowerDetails(props) {
     if (qty) setQuantity(qty);
   }
 
-  const gridOpacity = open
-    ? "gridDetailWrapper opacity-50"
-    : "gridDetailWrapper opacity-100";
   const openAddedToCartModal = (e) => {
     e.target.blur();
     if (!open) {
@@ -118,8 +115,9 @@ export default function FlowerDetails(props) {
   }
   return (
     <div className="mt-16 ml-16">
-      {/* wide details */}
-      <div className={gridOpacity}>
+      <div
+        className={"gridDetailWrapper " + (open ? "opacity-50" : "opacity-100")}
+      >
         <NameDescription
           name={name}
           containerDescription={containerDescription}
