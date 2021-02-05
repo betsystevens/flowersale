@@ -15,14 +15,14 @@ function NameDescription({ name, containerDescription }) {
     </div>
   );
 }
-function CheckoutOrContinue(props) {
+function CheckoutOrContinue({ breadCrumb }) {
   return (
     <div className="spanRows">
       <div className="flex flex-col">
         <Link to={`/cart`} className="mt-36">
           <p className="underline hover:text-purple-500">Checkout</p>
         </Link>
-        <Link to={props.breadCrumb} className="mt-16">
+        <Link to={breadCrumb} className="mt-16">
           <p className="underline hover:text-purple-500">Continue Shopping</p>
         </Link>
       </div>
@@ -33,7 +33,7 @@ function AddToCartButton({ openAddedToCartModal }) {
   return (
     <div className="inline-block relative">
       <button
-        id="addtocart2"
+        id="addtocart"
         onClick={(e) => openAddedToCartModal(e)}
         className="border-2 border-gray-200 bg-gray-100 rounded 
                         h-7 pr-2 ml-6 text-sm
@@ -49,40 +49,51 @@ function AddToCartButton({ openAddedToCartModal }) {
     </div>
   );
 }
-export default function FlowerDetails(props) {
-  const { flowerId, path } = props;
-  const flowerGroup = path.match(/[a-z]+/)[0];
-  const breadCrumb = "/" + flowerGroup;
-  // const all = ALLFLOWERS;
+const getPricing = (container) => {
+  const pot = PRICING.filter((flower) => flower.container.name === container)[0]
+    .container;
+  return [pot.price, pot.description];
+};
+const getFlower = (flowerId) => {
   const flower = FLOWERS.filter((flower) => flower.id === Number(flowerId))[0];
-  const { name, variety, container } = flower;
+  return flower;
+};
+const getGroup = (path) => {
+  return path.match(/[a-z]+/)[0];
+};
+export default function FlowerDetails(props) {
   const [hoverId, setHoverId] = useState(0);
-  const [selectedId, setSelectedId] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [selectedVariety, setSelectedVariety] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const { flowerId, path } = props;
+  const flower = getFlower(flowerId);
+  const { name, variety, container } = flower;
+  const [price, containerDescription] = getPricing(container);
+  const flowerGroup = getGroup(path);
+  const breadCrumb = "/" + flowerGroup;
+
   useEffect(() => {
     document.title = `${name} - Details`;
   });
+
   const imageHandlers = {
     handleMouseEnter(index) {
       setHoverId(index);
     },
     handleMouseLeave() {
-      setHoverId(selectedId);
+      setHoverId(selectedVariety);
     },
     handleClick(index) {
-      setSelectedId(index);
+      setSelectedVariety(index);
     },
   };
   function quantityHandler(qty) {
     if (qty) setQuantity(qty);
   }
-  const pricingContainer = PRICING.filter(
-    (flower) => flower.container.name === container
-  )[0].container;
-  const price = pricingContainer.price;
 
-  const [open, setOpen] = useState(false);
-  const opacity = open
+  const gridOpacity = open
     ? "gridDetailWrapper opacity-50"
     : "gridDetailWrapper opacity-100";
   const openAddedToCartModal = (e) => {
@@ -92,7 +103,7 @@ export default function FlowerDetails(props) {
       window.addEventListener("click", closeModal);
       props.updateCart(
         name,
-        variety[selectedId].name,
+        variety[selectedVariety].name,
         container,
         flowerGroup,
         quantity
@@ -100,17 +111,18 @@ export default function FlowerDetails(props) {
     }
   };
   function closeModal(e) {
-    if (!(e.target.id === "addtocart2")) {
+    if (!(e.target.id === "addtocart")) {
       setOpen(false);
       window.removeEventListener("click", closeModal);
     }
   }
   return (
     <div className="mt-16 ml-16">
-      <div className={opacity}>
+      {/* wide details */}
+      <div className={gridOpacity}>
         <NameDescription
           name={name}
-          containerDescription={pricingContainer.description}
+          containerDescription={containerDescription}
         />
         <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
         <CheckoutOrContinue breadCrumb={breadCrumb} />
@@ -128,12 +140,42 @@ export default function FlowerDetails(props) {
           </div>
         </div>
       </div>
+      {/* stacked details */}
+      <div className="mb-20 flex w-72 flex-col items-center border-2 border-green-500">
+        <NameDescription
+          name={name}
+          containerDescription={containerDescription}
+        />
+        {/* <div className="w-72"> */}
+        <div className="">
+          <BigImage image={variety[hoverId].image} name={name} />
+        </div>
+        <div className="w-64 border-2 border-red-400">
+          <Thumbnails
+            flowerId={flowerId}
+            flower={flower}
+            imageHandlers={imageHandlers}
+          />
+        </div>
+        <div className="flex pt-6">
+          <Quantity quantity={quantity} callback={quantityHandler} />
+          <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
+        </div>
+        <div className="flex justify-between w-64 border-2 border-red-100">
+          <Link to={`/cart`}>
+            <p className="underline hover:text-purple-500">Checkout</p>
+          </Link>
+          <Link to={props.breadCrumb}>
+            <p className="underline hover:text-purple-500">Continue Shopping</p>
+          </Link>
+        </div>
+      </div>
       <AddedToCartModal
         open={open}
         quantity={quantity}
-        image={variety[selectedId].image}
+        image={variety[selectedVariety].image}
         name={name}
-        variety={variety[selectedId].name}
+        variety={variety[selectedVariety].name}
         container={container}
       />
     </div>
