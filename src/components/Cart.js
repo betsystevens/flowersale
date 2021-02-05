@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Quantity from "./Quantity";
 import { PRICING } from "../shared/pricing";
-import { ALLFLOWERS } from "../shared/allFlowers";
+import { FLOWERS } from "../shared/flowers";
 import { getContainerDescription } from "../utils/utilities";
 
 // helper functions
@@ -40,7 +40,7 @@ function comparator(a, b) {
 }
 // Components
 function ItemImage({ name, variety, container }) {
-  let flower = ALLFLOWERS.filter(
+  let flower = FLOWERS.filter(
     (flower) => flower.name === name && flower.container === container
   )[0];
 

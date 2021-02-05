@@ -1,4 +1,4 @@
-export const ALLFLOWERS = [
+export const FLOWERS = [
   {
     id: 0,
     name: "Alyssum",

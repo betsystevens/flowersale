@@ -5,13 +5,13 @@ import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
 import { PRICING } from "../shared/pricing";
-import { ALLFLOWERS } from "../shared/allFlowers";
+import { FLOWERS } from "../shared/flowers";
 
-function NameDescription({ name, description }) {
+function NameDescription({ name, containerDescription }) {
   return (
     <div>
       <p className="font-extrabold text-lg">{name}</p>
-      <p className="pt-2">{`${description}`}</p>
+      <p className="pt-2">{`${containerDescription}`}</p>
     </div>
   );
 }
@@ -49,22 +49,13 @@ function AddToCartButton({ openAddedToCartModal }) {
     </div>
   );
 }
-/**
- * * todo: rename 'newContainer' to something meaningfull
- * * todo: look at references to 'container',
- * * todo: need some clarification on what these variable names refer to
- */
 export default function FlowerDetails(props) {
   const { flowerId, path } = props;
   const flowerGroup = path.match(/[a-z]+/)[0];
   const breadCrumb = "/" + flowerGroup;
-  const all = ALLFLOWERS;
-  const flower = all.filter((flower) => flower.id === Number(flowerId))[0];
-
-  const variety = flower.variety;
-  const name = flower.name;
-  const newContainer = flower.container;
-
+  // const all = ALLFLOWERS;
+  const flower = FLOWERS.filter((flower) => flower.id === Number(flowerId))[0];
+  const { name, variety, container } = flower;
   const [hoverId, setHoverId] = useState(0);
   const [selectedId, setSelectedId] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -85,10 +76,10 @@ export default function FlowerDetails(props) {
   function quantityHandler(qty) {
     if (qty) setQuantity(qty);
   }
-  const container = PRICING.filter(
-    (flower) => flower.container.name === newContainer
+  const pricingContainer = PRICING.filter(
+    (flower) => flower.container.name === container
   )[0].container;
-  const price = container.price;
+  const price = pricingContainer.price;
 
   const [open, setOpen] = useState(false);
   const opacity = open
@@ -102,7 +93,7 @@ export default function FlowerDetails(props) {
       props.updateCart(
         name,
         variety[selectedId].name,
-        newContainer,
+        container,
         flowerGroup,
         quantity
       );
@@ -117,7 +108,10 @@ export default function FlowerDetails(props) {
   return (
     <div className="mt-16 ml-16">
       <div className={opacity}>
-        <NameDescription name={name} description={container.description} />
+        <NameDescription
+          name={name}
+          containerDescription={pricingContainer.description}
+        />
         <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
         <CheckoutOrContinue breadCrumb={breadCrumb} />
         <BigImage image={variety[hoverId].image} name={name} />
@@ -140,7 +134,7 @@ export default function FlowerDetails(props) {
         image={variety[selectedId].image}
         name={name}
         variety={variety[selectedId].name}
-        container={newContainer}
+        container={container}
       />
     </div>
   );

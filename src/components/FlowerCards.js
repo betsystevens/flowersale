@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ALLFLOWERS } from "../shared/allFlowers";
+import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
 
 function ActionButton(props) {
@@ -36,7 +36,7 @@ function FlowerCards({
 }) {
   const containerGroup = flowerGroup;
 
-  const flowerFile = ALLFLOWERS.filter(
+  const flowerFile = FLOWERS.filter(
     (flower) => flower.group === containerGroup
   );
   const cards = flowerFile.map((flower) => {
