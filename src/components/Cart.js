@@ -53,7 +53,7 @@ function ItemImage({ name, variety, container }) {
     .image;
   return (
     <img
-      className="w-48 border-8 border-gray-50 shadow-2xl"
+      className="mb-4 sm:mb-0 w-48 border-8 border-gray-50 shadow-2xl"
       src={image}
       alt={name}
     ></img>
@@ -126,9 +126,14 @@ function CartSubtotal({ cart }) {
     subTotal = (computeSubtotal(cart) / 100).toFixed(2);
   }
   return (
-    <div className="flex flex-col justify-around items-center w-1/4 h-52 bg-white shadow-lg">
+    <div
+      className="order-first mdlg:order-last mdlg:w-1/4 h-36 mdlg:h-52 
+                mb-2 mdlg:mb-0 mdlg:mt-0.5 pb-2 flex-grow
+                  flex mdlg:flex-col justify-around items-center
+                  bg-white shadow-lg"
+    >
       <img
-        className="pt-6 px-4 h-16"
+        className="mdlg:pt-6 px-4 h-12 mdlg:h-16"
         src="/assets/icons/Cart64x40.svg"
         alt="cart"
       />
@@ -156,7 +161,8 @@ function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
     return (
       <div
         key={key}
-        className="pl-8 py-8 mb-2 shadow-lg flex items-center bg-white"
+        className="pl-8 py-8 mb-2 shadow-lg bg-white
+        flex flex-col sm:flex-row items-center "
       >
         <ItemImage
           name={flower.name}
@@ -190,7 +196,7 @@ function Cart(props) {
       <div className="bg-gray-100 min-h-screen pt-12">
         <div className="m-auto w-11/12 flex flex-col">
           <div className="flex flex-wrap justify-evenly ">
-            <div className="mb-2 mr-2">{items}</div>
+            <div className="mb-2 mdlg:mr-2">{items}</div>
             <CartSubtotal cart={cart} />
           </div>
         </div>
