@@ -61,8 +61,8 @@ function ItemImage({ name, variety, container }) {
 }
 function ItemTitle({ name, variety }) {
   return (
-    <div className="col-span-2 flex items-center">
-      <p className="text-xl">
+    <div className="col-span-4 flex items-center">
+      <p className="text-lg lg:text-xl mdlg:text-red-400">
         {name}: {variety}
       </p>
     </div>
@@ -78,7 +78,7 @@ function ItemBody({
 }) {
   const [quantity, setQuantity] = useState(orderQuantity);
   const flowerGroup = getGroup(container);
-  let price = (getPrice(container) / 100).toFixed(2);
+  const price = (getPrice(container) / 100).toFixed(2);
   const containerDescription = getContainerDescription(container);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
@@ -89,7 +89,7 @@ function ItemBody({
   }
 
   return (
-    <div className="mx-8 cartGrid">
+    <div className="mx-7 gap-y-1.5 gap-x-4 grid grid-cols-cart-5 grid-rows-4">
       <ItemTitle name={name} variety={variety} container={container} />
       <button
         className="text-xs text-left underline "
@@ -100,19 +100,19 @@ function ItemBody({
       >
         Remove
       </button>
-      <p className="text-sm col-span-3 self-start">{containerDescription}</p>
+      <p className="text-sm col-span-5 self-start">{containerDescription}</p>
       <p className="text-xs self-end"> Price</p>
       <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
       <p className="text-xs self-end">Total</p>
-      <p className="text-xl">${price}</p>
-      <p className="text-xl">${total}</p>
+      <p className="text-lg lg:text-xl">${price}</p>
+      <p className="text-lg lg:text-xl">${total}</p>
     </div>
   );
 }
 function CartQuantity({ quantity, quantityHandler }) {
   return (
-    <div className="row-span-2 justify-self-center self-end flex">
-      <p className="text-xl pr-4">Qty:</p>
+    <div className="col-span-3 row-span-2 justify-self-center self-end flex">
+      <p className="text-lg lg:text-xl pr-4">Qty:</p>
       <Quantity quantity={quantity} callback={quantityHandler} />
     </div>
   );
@@ -126,21 +126,23 @@ function CartSubtotal({ cart }) {
     subTotal = (computeSubtotal(cart) / 100).toFixed(2);
   }
   return (
-    <div className="flex flex-col justify-around items-center w-1/3 h-52 bg-white shadow-lg">
+    <div className="flex flex-col justify-around items-center w-1/4 h-52 bg-white shadow-lg">
       <img
         className="pt-6 px-4 h-16"
         src="/assets/icons/Cart64x40.svg"
         alt="cart"
       />
-      <p className="text-xl text-center">
-        Subtotal ({qtySum} items):{" "}
-        <span className="font-semibold">${subTotal}</span>
+      <p className="text-base md:text-lg lg:text-xl text-center">
+        Subtotal: <span className="font-semibold">${subTotal}</span>
+        <p className="text-lg">
+          {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
+        </p>
       </p>
 
       <Link to={`/printOrder`}>
         <button
           className="border-2 border-gray-200 bg-gray-100 rounded 
-              h-8 px-2 ml-6 text-sm
+              h-8 px-2 mx-auto text-sm
               hover:text-purple-500"
         >
           Printer Friendly Order
@@ -187,7 +189,7 @@ function Cart(props) {
     return (
       <div className="bg-gray-100 min-h-screen pt-12">
         <div className="m-auto w-11/12 flex flex-col">
-          <div className="flex flex-wrap justify-between ">
+          <div className="flex flex-wrap justify-evenly ">
             <div className="mb-2 mr-2">{items}</div>
             <CartSubtotal cart={cart} />
           </div>
