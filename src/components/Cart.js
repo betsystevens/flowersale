@@ -17,6 +17,11 @@ function getItemsCount(cart) {
   }, 0);
   return count;
 }
+function getGroup(container) {
+  let group = PRICING.filter((obj) => obj.container.name === container)[0]
+    .group;
+  return group;
+}
 function computeSubtotal(cart) {
   let subTotal = 0;
   cart.forEach((flower) => {
@@ -72,11 +77,9 @@ function ItemBody({
   removeFlowerFromCart,
 }) {
   const [quantity, setQuantity] = useState(orderQuantity);
-  let flowerGroup = PRICING.filter((obj) => obj.container.name === container)[0]
-    .group;
-  let priceGroup = PRICING.filter((obj) => obj.container.name === container)[0];
-  let price = (priceGroup.container.price / 100).toFixed(2);
-  let containerDescription = getContainerDescription(container);
+  const flowerGroup = getGroup(container);
+  let price = (getPrice(container) / 100).toFixed(2);
+  const containerDescription = getContainerDescription(container);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {
     if (qty) {
@@ -123,12 +126,17 @@ function CartSubtotal({ cart }) {
     subTotal = (computeSubtotal(cart) / 100).toFixed(2);
   }
   return (
-    <div className="flex flex-col justify-around items-center w-1/3 h-60 text-center text-xl bg-white">
-      <img className="pt-6 h-16" src="/assets/icons/Cart64x40.svg" alt="cart" />
-      <p>
+    <div className="flex flex-col justify-around items-center w-1/3 h-52 bg-white shadow-lg">
+      <img
+        className="pt-6 px-4 h-16"
+        src="/assets/icons/Cart64x40.svg"
+        alt="cart"
+      />
+      <p className="text-xl text-center">
         Subtotal ({qtySum} items):{" "}
         <span className="font-semibold">${subTotal}</span>
       </p>
+
       <Link to={`/printOrder`}>
         <button
           className="border-2 border-gray-200 bg-gray-100 rounded 
@@ -161,7 +169,6 @@ function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
           updateFlowerInCart={updateFlowerInCart}
           removeFlowerFromCart={removeFlowerFromCart}
         />
-        <hr></hr>
       </div>
     );
   });
@@ -178,10 +185,10 @@ function Cart(props) {
     cart.sort(comparator);
     const items = getItems(cart, updateFlowerInCart, removeFlowerFromCart);
     return (
-      <div className="bg-gray-100 h-screen pt-12">
+      <div className="bg-gray-100 min-h-screen pt-12">
         <div className="m-auto w-11/12 flex flex-col">
-          <div className="flex justify-between ">
-            <div>{items}</div>
+          <div className="flex flex-wrap justify-between ">
+            <div className="mb-2 mr-2">{items}</div>
             <CartSubtotal cart={cart} />
           </div>
         </div>
