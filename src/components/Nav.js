@@ -21,7 +21,7 @@ function Nav() {
   };
   const [display, setDisplay] = useState("hidden");
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 z-10">
       <nav className="flex justify-between items-center">
         {/* wide nav - row */}
         <div className="hidden sm:block">
