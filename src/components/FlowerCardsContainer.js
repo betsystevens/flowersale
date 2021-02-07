@@ -33,6 +33,8 @@ function FlowerCardsContainer({ updateCart, path }) {
   }
   function closeAddToCartModal(e) {
     if (!(e.target.id === "addtocart")) {
+      // this is an asynchronous action, causing error about memory leak
+      // need to remove listener in the useEffect cleanup (return) function
       setOpen(false);
       window.removeEventListener("click", closeAddToCartModal);
     }

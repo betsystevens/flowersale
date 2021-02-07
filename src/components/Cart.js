@@ -62,7 +62,7 @@ function ItemImage({ name, variety, container }) {
 function ItemTitle({ name, variety }) {
   return (
     <div className="col-span-4 flex items-center">
-      <p className="text-lg lg:text-xl mdlg:text-red-400">
+      <p className="text-xl">
         {name}: {variety}
       </p>
     </div>
@@ -89,30 +89,52 @@ function ItemBody({
   }
 
   return (
-    <div className="mx-7 gap-y-1.5 gap-x-4 grid grid-cols-cart-5 grid-rows-4">
-      <ItemTitle name={name} variety={variety} container={container} />
-      <button
-        className="text-xs text-left underline "
-        // is quantity needed?
-        onClick={(e) =>
-          removeFlowerFromCart(e, name, variety, container, quantity)
-        }
-      >
-        Remove
-      </button>
-      <p className="text-sm col-span-5 self-start">{containerDescription}</p>
-      <p className="text-xs self-end"> Price</p>
-      <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
-      <p className="text-xs self-end">Total</p>
-      <p className="text-lg lg:text-xl">${price}</p>
-      <p className="text-lg lg:text-xl">${total}</p>
+    /* wide body */
+    <div>
+      <div className="hidden sm:grid mx-7 gap-y-1.5 gap-x-4 grid grid-cols-cart-5 grid-rows-4">
+        <ItemTitle name={name} variety={variety} container={container} />
+        <button
+          className="text-xs text-left underline "
+          // is quantity needed?
+          onClick={(e) =>
+            removeFlowerFromCart(e, name, variety, container, quantity)
+          }
+        >
+          Remove
+        </button>
+        <p className="text-sm col-span-5 self-start">{containerDescription}</p>
+        <p className="text-xs self-end"> Price</p>
+        <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
+        <p className="text-xs self-end">Total</p>
+        <p className="text-lg lg:text-xl">${price}</p>
+        <p className="text-lg lg:text-xl">${total}</p>
+      </div>
+
+      {/* stacked body */}
+      <div className="block sm:hidden mx-7 flex flex-col justify-evenly items-center">
+        <p className="font-extrabold text-lg">{name}</p>
+        <p className="mb-2">{variety}</p>
+        <p className="mb-2">{containerDescription}</p>
+        <p className="mb-8">{`Price - $${price}`}</p>
+        <CartQuantity quantity={quantity} quantityHandler={quantityHandler} />
+        <p className="mt-4">{`Total - $${total}`}</p>
+        <button
+          className="mt-8 mb-3 text-xs text-left underline hover:purple-500"
+          onClick={(e) =>
+            removeFlowerFromCart(e, name, variety, container, quantity)
+          }
+        >
+          Remove
+        </button>
+      </div>
     </div>
   );
 }
 function CartQuantity({ quantity, quantityHandler }) {
   return (
-    <div className="col-span-3 row-span-2 justify-self-center self-end flex">
-      <p className="text-lg lg:text-xl pr-4">Qty:</p>
+    // <div className="flex col-span-3 row-span-2 justify-self-center self-end ">
+    <div className="flex items-center sm:col-span-3 sm:row-span-2 sm:justify-self-center sm:self-end">
+      <p className="text-sm pr-2 sm:pr-4">Qty:</p>
       <Quantity quantity={quantity} callback={quantityHandler} />
     </div>
   );
@@ -139,9 +161,9 @@ function CartSubtotal({ cart }) {
       />
       <p className="text-base md:text-lg lg:text-xl text-center">
         Subtotal: <span className="font-semibold">${subTotal}</span>
-        <p className="text-lg">
-          {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
-        </p>
+      </p>
+      <p className="text-lg">
+        {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
       </p>
 
       <Link to={`/printOrder`}>
@@ -161,7 +183,7 @@ function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
     return (
       <div
         key={key}
-        className="pl-8 py-8 mb-2 shadow-lg bg-white
+        className="pl-4 sm:pl-8 pr-4 sm:pr-0 sm:py-8 mb-2 shadow-lg bg-white
         flex flex-col sm:flex-row items-center "
       >
         <ItemImage
