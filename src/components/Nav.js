@@ -14,10 +14,8 @@ function NavItem({ location, label }) {
     </li>
   );
 }
-function Nav(props) {
-  console.log(window.innerWidth);
+function Nav() {
   const handleClick = () => {
-    console.log("menu icon clicked");
     let value = display === "hidden" ? "block" : "hidden";
     setDisplay(value);
   };
@@ -61,13 +59,15 @@ function Nav(props) {
               </button>
             </li>
 
-            <div className={display}>
-              <NavItem location="/" label="Home" />
-              <NavItem location="/flat" label="Flats" />
-              <NavItem location="/hb" label="Hanging Baskets" />
-              <NavItem location="/pot" label="Potted Plants" />
-              <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
-              <NavItem location="/cart" label="Cart" />
+            <div className="w-screen">
+              <div className={display} onClick={handleClick}>
+                <NavItem location="/" label="Home" />
+                <NavItem location="/flat" label="Flats" />
+                <NavItem location="/hb" label="Hanging Baskets" />
+                <NavItem location="/pot" label="Potted Plants" />
+                <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
+                <NavItem location="/cart" label="Cart" />
+              </div>
             </div>
           </ul>
         </div>
