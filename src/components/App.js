@@ -12,6 +12,13 @@ import "tailwindcss/tailwind.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [dropDownDisplay, setDropDownDisplay] = useState("hidden");
+
+  const toggleDropDown = () => {
+    console.log(`toggleDropDown ${dropDownDisplay}`);
+    let value = dropDownDisplay === "hidden" ? "block" : "hidden";
+    setDropDownDisplay(value);
+  };
 
   // flower to update
   const getFlowerFromCart = (name, variety, container) => {
@@ -100,7 +107,10 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Nav />
+        <Nav
+          toggleDropDown={toggleDropDown}
+          dropDownDisplay={dropDownDisplay}
+        />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route

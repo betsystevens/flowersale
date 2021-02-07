@@ -14,12 +14,7 @@ function NavItem({ location, label }) {
     </li>
   );
 }
-function Nav() {
-  const handleClick = () => {
-    let value = display === "hidden" ? "block" : "hidden";
-    setDisplay(value);
-  };
-  const [display, setDisplay] = useState("hidden");
+function Nav({ toggleDropDown, dropDownDisplay }) {
   return (
     <div className="sticky top-0 z-10">
       <nav className="flex justify-between items-center">
@@ -43,14 +38,13 @@ function Nav() {
             </div>
           </ul>
         </div>
-        {/* end of wide nav - row */}
 
         {/* mobile nav - column */}
         <div className="flex sm:hidden">
           <ul className="flex flex-col text-base">
             <li className="flex justify-between">
               <button
-                onClick={handleClick}
+                onClick={toggleDropDown}
                 className="px-1 rounded ring-2 ring-opacity-10 ring-gray-50 "
               >
                 <svg className="w-4 h-4 mx-auto fill-current text-indigo-100">
@@ -59,6 +53,7 @@ function Nav() {
               </button>
               <NavLink to="/cart" exact>
                 <img
+                  onClick={toggleDropDown}
                   className="h-6 cursor-pointer"
                   src="/assets/icons/CartWhite.svg"
                   alt="cart"
@@ -67,7 +62,7 @@ function Nav() {
             </li>
 
             <div className="w-screen">
-              <div className={display} onClick={handleClick}>
+              <div className={dropDownDisplay} onClick={toggleDropDown}>
                 <NavItem location="/" label="Home" />
                 <NavItem location="/flat" label="Flats" />
                 <NavItem location="/hb" label="Hanging Baskets" />
