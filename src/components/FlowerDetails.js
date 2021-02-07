@@ -108,6 +108,7 @@ export default function FlowerDetails(props) {
   };
   function closeModal(e) {
     if (!(e.target.id === "addtocart")) {
+      // warning memory leak, cancel all subscriptions ...
       setOpen(false);
       window.removeEventListener("click", closeModal);
     }

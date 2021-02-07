@@ -46,17 +46,24 @@ function Nav() {
         {/* end of wide nav - row */}
 
         {/* mobile nav - column */}
-        <div className="block sm:hidden">
+        <div className="flex sm:hidden">
           <ul className="flex flex-col text-base">
-            <li className="block">
+            <li className="flex justify-between">
               <button
                 onClick={handleClick}
-                className="block py-0.5 px-1 rounded ring-2 ring-opacity-10 ring-gray-50 "
+                className="px-1 rounded ring-2 ring-opacity-10 ring-gray-50 "
               >
                 <svg className="w-4 h-4 mx-auto fill-current text-indigo-100">
                   <use xlinkHref="/assets/icons/menu.svg#icon-menu" />
                 </svg>
               </button>
+              <NavLink to="/cart" exact>
+                <img
+                  className="h-6 cursor-pointer"
+                  src="/assets/icons/CartWhite.svg"
+                  alt="cart"
+                />
+              </NavLink>
             </li>
 
             <div className="w-screen">
@@ -66,7 +73,6 @@ function Nav() {
                 <NavItem location="/hb" label="Hanging Baskets" />
                 <NavItem location="/pot" label="Potted Plants" />
                 <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
-                <NavItem location="/cart" label="Cart" />
               </div>
             </div>
           </ul>
