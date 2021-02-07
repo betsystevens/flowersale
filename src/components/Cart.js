@@ -132,7 +132,6 @@ function ItemBody({
 }
 function CartQuantity({ quantity, quantityHandler }) {
   return (
-    // <div className="flex col-span-3 row-span-2 justify-self-center self-end ">
     <div className="flex items-center sm:col-span-3 sm:row-span-2 sm:justify-self-center sm:self-end">
       <p className="text-sm pr-2 sm:pr-4">Qty:</p>
       <Quantity quantity={quantity} callback={quantityHandler} />
