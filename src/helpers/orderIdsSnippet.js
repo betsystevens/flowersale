@@ -7,7 +7,7 @@
 // write to file given in command
 // usage: node orderIdsSnippet <someFileName>
 
-const { idArray } = require("./allFlowers_bak.js");
+const { idArray } = require("../shared/flowers_bak.js");
 const process = require("process");
 const fs = require("fs");
 

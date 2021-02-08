@@ -143,7 +143,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 43,
+    id: 8,
     name: "Moss Rose",
     container: "flat",
     group: "flat",
@@ -153,9 +153,8 @@ export const FLOWERS = [
       { name: "mixed", image: "/assets/images/flats/mossRoseMixed512x384.jpg" },
     ],
   },
-
   {
-    id: 8,
+    id: 9,
     name: "Petunia",
     container: "flat",
     group: "flat",
@@ -177,7 +176,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     name: "Salvia",
     container: "flat",
     group: "flat",
@@ -192,7 +191,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     name: "Snap Dragons",
     container: "flat",
     group: "flat",
@@ -210,7 +209,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 44,
+    id: 12,
     name: "Verbena",
     container: "flat",
     group: "flat",
@@ -221,7 +220,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 11,
+    id: 13,
     name: "Vinca",
     container: "flat",
     group: "flat",
@@ -238,7 +237,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 12,
+    id: 14,
     name: "Zinnia",
     container: "flat",
     group: "flat",
@@ -249,7 +248,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 13,
+    id: 15,
     name: "Combo Basket",
     container: "combo hb",
     group: "hb",
@@ -271,7 +270,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 14,
+    id: 16,
     name: "Dbl Rosebud Impatiens",
     container: "hb",
     group: "hb",
@@ -284,7 +283,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 15,
+    id: 17,
     name: "Dragon Wing Begonia",
     container: "hb",
     group: "hb",
@@ -296,7 +295,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 16,
+    id: 18,
     name: "Fuschia",
     container: "hb",
     group: "hb",
@@ -313,7 +312,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 17,
+    id: 19,
     name: "Illumination Begonia",
     container: "hb",
     group: "hb",
@@ -326,7 +325,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 18,
+    id: 20,
     name: "Impatiens",
     container: "hb",
     group: "hb",
@@ -338,7 +337,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 19,
+    id: 21,
     name: "Ivy Geranium",
     container: "hb",
     group: "hb",
@@ -353,7 +352,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 20,
+    id: 22,
     name: "Million Bells",
     container: "hb",
     group: "hb",
@@ -375,7 +374,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 21,
+    id: 23,
     name: "Petunia",
     container: "hb",
     group: "hb",
@@ -402,7 +401,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 22,
+    id: 24,
     name: "Better Boy",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -412,7 +411,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 23,
+    id: 25,
     name: "Cherry",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -422,7 +421,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 24,
+    id: 26,
     name: "Early Girl",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -432,7 +431,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 25,
+    id: 27,
     name: "Grape",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -442,7 +441,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 26,
+    id: 28,
     name: "Roma",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -450,7 +449,7 @@ export const FLOWERS = [
     variety: [{ name: "tomato", image: "/assets/images/pots/roma512x384.jpg" }],
   },
   {
-    id: 27,
+    id: 29,
     name: "Super Steak",
     container: "tomato 4 inch",
     group: "herbTomato",
@@ -460,7 +459,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 28,
+    id: 30,
     name: "Gallon Patio Pot",
     container: "tomato gallon",
     group: "herbTomato",
@@ -470,7 +469,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 29,
+    id: 31,
     name: "Basil",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -478,7 +477,7 @@ export const FLOWERS = [
     variety: [{ name: "Herb", image: "/assets/images/pots/basil512x384.jpg" }],
   },
   {
-    id: 30,
+    id: 32,
     name: "Chives",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -486,7 +485,7 @@ export const FLOWERS = [
     variety: [{ name: "Herb", image: "/assets/images/pots/chives512x384.jpg" }],
   },
   {
-    id: 31,
+    id: 33,
     name: "Cilantro",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -496,7 +495,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 32,
+    id: 34,
     name: "Oregano",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -506,7 +505,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 33,
+    id: 35,
     name: "Parsley",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -516,7 +515,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 34,
+    id: 36,
     name: "Rosemary",
     container: "herb 4 inch",
     group: "herbTomato",
@@ -526,7 +525,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 35,
+    id: 37,
     name: "Marguerite Daisy",
     container: "flower 6 inch",
     group: "pot",
@@ -539,17 +538,14 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 36,
+    id: 38,
     name: "Geranium",
     container: "flower 4.5 inch",
     group: "pot",
     description: "red, white, pink, salmon, violet/fuschia",
     variety: [
       { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
-      {
-        name: "white",
-        image: "/assets/images/pots/geraniumWhite512x384.jpg",
-      },
+      { name: "white", image: "/assets/images/pots/geraniumWhite512x384.jpg" },
       { name: "pink", image: "/assets/images/pots/geraniumPink512x384.jpg" },
       {
         name: "salmon",
@@ -562,7 +558,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 37,
+    id: 39,
     name: "Purple Fountain Grass",
     container: "grass gallon",
     group: "pot",
@@ -576,7 +572,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 38,
+    id: 40,
     name: "Patio Pots",
     container: "patio pot",
     group: "pot",
@@ -595,7 +591,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 39,
+    id: 41,
     name: "Sweet Potato Vine",
     container: "accent 4 inch",
     group: "pot",
@@ -606,7 +602,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 40,
+    id: 42,
     name: "Vinca Vine",
     container: "accent 4 inch",
     group: "pot",
@@ -619,7 +615,7 @@ export const FLOWERS = [
     ],
   },
   {
-    id: 41,
+    id: 43,
     name: "Spikes",
     container: "accent 4 inch",
     group: "pot",
