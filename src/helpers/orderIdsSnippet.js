@@ -1,4 +1,12 @@
 "use strict";
+// input file - array of objects with 'id' property
+// id's maybe be duplicates, skipped, out of order
+// require input file
+// assign sequential values to id
+// no duplicates, ordered beginning at 0
+// write to file given in command
+// usage: node orderIdsSnippet <someFileName>
+
 const { idArray } = require("./allFlowers_bak.js");
 const process = require("process");
 const fs = require("fs");

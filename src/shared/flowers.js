@@ -98,7 +98,7 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "mixed",
+        name: "dazzler mixed",
         image: "/assets/images/flats/impatiensPastelMix512x384.jpg",
       },
       {
@@ -143,6 +143,18 @@ export const FLOWERS = [
     ],
   },
   {
+    id: 43,
+    name: "Moss Rose",
+    container: "flat",
+    group: "flat",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    variety: [
+      { name: "mixed", image: "/assets/images/flats/mossRoseMixed512x384.jpg" },
+    ],
+  },
+
+  {
     id: 8,
     name: "Petunia",
     container: "flat",
@@ -173,7 +185,7 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "Blue",
+        name: "Victoria Blue",
         image: "/assets/images/flats/salviaVictoriaBlue512x384.jpg",
       },
       { name: "Red", image: "/assets/images/flats/salviaRed512x384.jpg" },
@@ -195,6 +207,17 @@ export const FLOWERS = [
         name: "tall mixed",
         image: "/assets/images/flats/snapDragonsTall512x384.jpg",
       },
+    ],
+  },
+  {
+    id: 44,
+    name: "Verbena",
+    container: "flat",
+    group: "flat",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    variety: [
+      { name: "mixed", image: "/assets/images/flats/verbenaMixed512x384.jpg" },
     ],
   },
   {
@@ -238,7 +261,7 @@ export const FLOWERS = [
       },
       { name: "pink", image: "/assets/images/hb/comboPinkComp512x384.jpg" },
       {
-        name: "red whit blue",
+        name: "red white blue",
         image: "/assets/images/hb/comboRedWhiteBlue512x384.jpg",
       },
       {
@@ -254,7 +277,6 @@ export const FLOWERS = [
     group: "hb",
     description: "Lorem ipsum",
     variety: [
-      { name: "pink", image: "/assets/images/hb/dblRosebudPinkHB512x384.jpg" },
       {
         name: "sparkler hot pink",
         image: "/assets/images/hb/dblRosebudSparklerHotPinkHB512x384.jpg",
@@ -298,7 +320,7 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "apricot",
+        name: "yellow peach",
         image: "/assets/images/hb/illuminationBegoniaApricot512x384.jpg",
       },
     ],
@@ -327,10 +349,6 @@ export const FLOWERS = [
       {
         name: "lavender",
         image: "/assets/images/hb/ivyGeraniumLavenderHB512x384.jpg",
-      },
-      {
-        name: "salmon",
-        image: "/assets/images/hb/ivyGeraniumSalmonHB512x384.jpg",
       },
     ],
   },
@@ -375,16 +393,12 @@ export const FLOWERS = [
         name: "midnight blue",
         image: "/assets/images/hb/petuniaMidnightBlueHB512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/hb/petuniaPinkHB512x384.jpg" },
-      {
-        name: "pink purple",
-        image: "/assets/images/hb/petuniaPinkPurpleHB512x384.jpg",
-      },
       { name: "purple", image: "/assets/images/hb/petuniaPurpleHB512x384.jpg" },
       {
         name: "sky blue",
         image: "/assets/images/hb/petuniaSkyBlueHB512x384.jpg",
       },
+      { name: "pink", image: "/assets/images/hb/petuniaPinkHB512x384.jpg" },
     ],
   },
   {
