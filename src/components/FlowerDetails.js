@@ -149,6 +149,7 @@ export default function FlowerDetails(props) {
           <div className="mb-4">
             <BigImage image={variety[hoverId].image} name={name} />
           </div>
+          <p className="mb-2">{`Variety: ${variety[hoverId].name}`}</p>
           <div className="mb-2 w-64">
             <Thumbnails
               flowerId={flowerId}

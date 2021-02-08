@@ -25,42 +25,34 @@ function Nav() {
     <div className="sticky top-0 z-10">
       <nav className="">
         {/* wide nav - row */}
-        <div className="hidden sm:block">
-          <ul className="flex justify-evenly items-center text-lg">
-            <li className="">
-              <NavLink to="/" exact>
-                <svg className="py-1 w-12 h-12 fill-current text-indigo-100">
-                  <use xlinkHref="/assets/icons/noun_flowers_short.svg#icon-flowers" />
-                </svg>
-              </NavLink>
-            </li>
-            {/* <li className="flex flex-wrap border-2 border-white-100"> */}
-            <li>
-              <ul className="flex flex-wrap">
-                {/* <ul className="flex justify-between flex-wrap border-2 border-white-100"> */}
-                <NavItem location="/flat" label="Flats" />
-                <NavItem location="/hb" label="Hanging Baskets" />
-              </ul>
-            </li>
-            {/* <li className="flex flex-wrap border-2 border-white-100"> */}
-            <li>
-              <ul className="flex flex-wrap">
-                {/* <ul className="flex flex-wrap border-2 border-white-100"> */}
-                <NavItem location="/pot" label="Potted Plants" />
-                <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
-              </ul>
-            </li>
-            <div className="mr-2">
-              <NavLink to="/cart" exact>
-                <img
-                  onClick={() => setOpen(false)}
-                  className="h-7 cursor-pointer flex-shrink-0"
-                  src="/assets/icons/CartWhite.svg"
-                  alt="cart"
-                />
-              </NavLink>
-            </div>
+        <div className="hidden sm:flex justify-evenly sm:items-center">
+          <ul className="text-lg">
+            <NavLink to="/" exact>
+              <svg className="py-1 w-12 h-12 fill-current text-indigo-100">
+                <use xlinkHref="/assets/icons/noun_flowers_short.svg#icon-flowers" />
+              </svg>
+            </NavLink>
           </ul>
+          <div className="flex">
+            <ul className="flex justify-between flex-wrap">
+              <NavItem location="/flat" label="Flats" />
+              <NavItem location="/hb" label="Hanging Baskets" />
+            </ul>
+            <ul className="flex flex-wrap">
+              <NavItem location="/pot" label="Potted Plants" />
+              <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
+            </ul>
+          </div>
+          <div className="mr-2">
+            <NavLink to="/cart" exact>
+              <img
+                onClick={() => setOpen(false)}
+                className="h-7 cursor-pointer flex-shrink-0"
+                src="/assets/icons/CartWhite.svg"
+                alt="cart"
+              />
+            </NavLink>
+          </div>
         </div>
 
         {/* mobile nav - column */}
