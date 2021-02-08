@@ -23,7 +23,6 @@ nav * {
 }
 nav li {
   padding: 0.5rem 2rem;
-  /* font-size: 1.1rem; */
   color: floralwhite;
 }
 nav li.logo a:link,
@@ -45,15 +44,32 @@ nav li.logo a:hover {
 }
 /* band  (what bootstrap calls media)
  ======*/
-.band {
+.xband {
   display: flex;
   padding: 20px;
   margin: 30px;
 }
-.band.shadow {
+.xband.shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+/* center modal */
+.xaddedToCart {
+  top: 50%;
+  left: 50%;
+  margin-left: -128px;
+  margin-top: -256px;
+  width: 256px;
+  height: 512px;
+}
+.xaddedToCartWide {
+  top: 50%;
+  left: 50%;
+  margin-left: -192;
+  margin-top: -256px;
+  width: 384px;
+  height: 512px;
+}
 .fancy-button {
   border: 10px solid transparent;
   border-image: url("./shared/assets/border-diamond-lilac.png") 22 stretch;
