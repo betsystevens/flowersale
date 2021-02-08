@@ -8,11 +8,13 @@ import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
 import PrintOrder from "./PrintOrder";
 import "../App.css";
-import "tailwindcss/tailwind.css";
+// import "tailwindcss/tailwind.css";
+import "../index.css";
 
 function App() {
   const [cart, setCart] = useState([]);
   const [dropDownDisplay, setDropDownDisplay] = useState("hidden");
+  // useOnClickOutside(ref, () => setDropDownDisplay("hidden"));
 
   const toggleDropDown = () => {
     console.log(`toggleDropDown ${dropDownDisplay}`);

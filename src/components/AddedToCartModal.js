@@ -22,7 +22,12 @@ function AddedToCartModal({ open, image, name, variety, container, quantity }) {
   }
   return (
     <div className={display}>
-      <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4">
+      {/* <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4"> */}
+      <div
+        className="fixed addedToCart md:addedToCartWide 
+                      px-8 py-4
+                      shadow bg-gray-50"
+      >
         <div className="flex justify-end m-auto">
           <img
             src="/assets/icons/cross3px.svg"

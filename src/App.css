@@ -23,7 +23,6 @@ nav * {
 }
 nav li {
   padding: 0.5rem 2rem;
-  /* font-size: 1.1rem; */
   color: floralwhite;
 }
 nav li.logo a:link,
@@ -42,16 +41,6 @@ nav li.logo a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-}
-/* band  (what bootstrap calls media)
- ======*/
-.band {
-  display: flex;
-  padding: 20px;
-  margin: 30px;
-}
-.band.shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .fancy-button {
