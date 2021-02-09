@@ -16,6 +16,34 @@ function computeSubtotal(cart) {
   });
   return subTotal;
 }
+function CartImage() {
+  return <img className="h-12" src="/assets/icons/Cart64x40.svg" alt="cart" />;
+}
+function Subtotals({ subTotal, qtySum }) {
+  return (
+    <div className="flex flex-col items-center">
+      <p className="text-lg">
+        Subtotal: <span className="font-semibold">${subTotal}</span>
+      </p>
+      <p className="text-lg">
+        {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
+      </p>
+    </div>
+  );
+}
+function CompleteOrderBtn() {
+  return (
+    <Link to={`/printOrder`}>
+      <button
+        className="border-2 border-gray-200 bg-gray-100 rounded
+                h-8 px-2 text-sm
+                hover:text-purple-500"
+      >
+        Complete Order
+      </button>
+    </Link>
+  );
+}
 function CartSubtotal({ cart }) {
   let qtySum = 0;
   let subTotal = 0;
@@ -34,55 +62,21 @@ function CartSubtotal({ cart }) {
                     bg-white shadow-lg
                     mdlg:h-52"
       >
-        <img
-          className="sm:pt-4 h-12 md:h-16"
-          src="/assets/icons/Cart64x40.svg"
-          alt="cart"
-        />
-        <p className="text-base md:text-lg lg:text-xl">
-          Subtotal: <span className="font-semibold">${subTotal}</span>
-        </p>
-        <p className="text-lg">
-          {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
-        </p>
-        <Link to={`/printOrder`}>
-          <button
-            className="border-2 border-gray-200 bg-gray-100 rounded
-                h-8 px-2 text-sm
-                hover:text-purple-500"
-          >
-            Printer Friendly Order
-          </button>
-        </Link>
+        <CartImage />
+        <Subtotals subTotal={subTotal} qtySum={qtySum} />
+        <CompleteOrderBtn />
       </div>
 
       {/* mobile stacked */}
       <div
-        className="bg-white shadow-lg h-80 w-60 mx-auto
+        className="bg-white shadow-lg h-64 w-60 mx-auto
                    flex flex-col justify-evenly items-center
-                   sm:flex-row sm:h-32 sm:w-96 flex-wrap justify-evenly items-center
+                    sm:flex-row sm:h-32 sm:w-96 flex-wrap justify-evenly items-center
                    mdlg:hidden"
       >
-        <img
-          className="sm:pt-4 h-12 sm:h-16"
-          src="/assets/icons/Cart64x40.svg"
-          alt="cart"
-        />
-        <p className="text-lg">
-          Subtotal: <span className="font-semibold">${subTotal}</span>
-        </p>
-        <p className="text-lg">
-          {qtySum} {qtySum === 1 ? " item" : " items"}{" "}
-        </p>
-        <Link to={`/printOrder`}>
-          <button
-            className="border-2 border-gray-200 bg-gray-100 rounded
-                h-8 px-2 text-sm
-                hover:text-purple-500"
-          >
-            Printer Friendly Order
-          </button>
-        </Link>
+        <CartImage />
+        <Subtotals subTotal={subTotal} qtySum={qtySum} />
+        <CompleteOrderBtn />
       </div>
     </div>
   );

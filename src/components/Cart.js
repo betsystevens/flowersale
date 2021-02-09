@@ -76,7 +76,7 @@ function ItemBody({ flower, updateFlowerInCart, removeFlowerFromCart }) {
     /* wide body */
     <div>
       <div className="hidden sm:grid mx-7 gap-y-1.5 gap-x-4 grid grid-cols-cart-5 grid-rows-cart-4">
-        <ItemTitle name={name} variety={variety} container={container} />
+        <ItemTitle name={name} variety={variety} />
         <RemoveBtn
           flower={flower}
           removeFlowerFromCart={removeFlowerFromCart}
