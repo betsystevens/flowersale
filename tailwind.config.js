@@ -30,7 +30,9 @@ module.exports = {
         // Complex site-specific column configuration
         // footer: "200px minmax(900px, 1fr) 100px",
 
-        "cart-5": "repeat(4, minmax(0, 1fr)) 70px",
+        // "cart-5": "repeat(4, minmax(0, 1fr)) 70px",
+        "cart-5": "repeat(4, minmax(0, 50px)) 70px",
+        "cart-4": "repeat(4, minmax(0, 50px))",
       },
     },
   },

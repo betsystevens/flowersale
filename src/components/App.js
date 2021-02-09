@@ -7,20 +7,22 @@ import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
 import PrintOrder from "./PrintOrder";
+import CustomerForm from "./CustomerForm";
 import "../App.css";
 // import "tailwindcss/tailwind.css";
 import "../index.css";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [dropDownDisplay, setDropDownDisplay] = useState("hidden");
+  const [customer, setCustomer] = useState([]);
+  // const [dropDownDisplay, setDropDownDisplay] = useState("hidden");
   // useOnClickOutside(ref, () => setDropDownDisplay("hidden"));
 
-  const toggleDropDown = () => {
-    console.log(`toggleDropDown ${dropDownDisplay}`);
-    let value = dropDownDisplay === "hidden" ? "block" : "hidden";
-    setDropDownDisplay(value);
-  };
+  // const toggleDropDown = () => {
+  // console.log(`toggleDropDown ${dropDownDisplay}`);
+  // let value = dropDownDisplay === "hidden" ? "block" : "hidden";
+  // setDropDownDisplay(value);
+  // };
 
   // flower to update
   const getFlowerFromCart = (name, variety, container) => {
@@ -89,7 +91,7 @@ function App() {
       );
     }
   };
-  const removeFlowerFromCart = (e, name, variety, container, quantity) => {
+  const removeFlowerFromCart = (e, name, variety, container) => {
     e.target.blur();
     let flowersNotChanging = itemsNotChanging(name, variety, container);
     setCart(flowersNotChanging);
@@ -110,8 +112,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Nav
-          toggleDropDown={toggleDropDown}
-          dropDownDisplay={dropDownDisplay}
+        // toggleDropDown={toggleDropDown}
+        // dropDownDisplay={dropDownDisplay}
         />
         <Switch>
           <Route path="/home" component={HomePage} />
@@ -123,6 +125,8 @@ function App() {
                 cart={cart}
                 updateFlowerInCart={updateFlowerInCart}
                 removeFlowerFromCart={removeFlowerFromCart}
+                // customer={customer}
+                // setCustomer={setCustomer}
               />
             )}
           />
