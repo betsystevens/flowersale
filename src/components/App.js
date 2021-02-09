@@ -7,22 +7,13 @@ import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
 import PrintOrder from "./PrintOrder";
-import CustomerForm from "./CustomerForm";
+import UserContact from "./UserContact";
 import "../App.css";
-// import "tailwindcss/tailwind.css";
 import "../index.css";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [customer, setCustomer] = useState([]);
-  // const [dropDownDisplay, setDropDownDisplay] = useState("hidden");
-  // useOnClickOutside(ref, () => setDropDownDisplay("hidden"));
-
-  // const toggleDropDown = () => {
-  // console.log(`toggleDropDown ${dropDownDisplay}`);
-  // let value = dropDownDisplay === "hidden" ? "block" : "hidden";
-  // setDropDownDisplay(value);
-  // };
+  const [user, setUser] = useState({});
 
   // flower to update
   const getFlowerFromCart = (name, variety, container) => {
@@ -96,6 +87,7 @@ function App() {
     let flowersNotChanging = itemsNotChanging(name, variety, container);
     setCart(flowersNotChanging);
   };
+
   const HomePage = () => {
     useEffect(() => {
       document.title = "Flower Sale - Home";
@@ -111,10 +103,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Nav
-        // toggleDropDown={toggleDropDown}
-        // dropDownDisplay={dropDownDisplay}
-        />
+        <Nav />
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route
@@ -157,6 +146,13 @@ function App() {
             exact
             path="/printOrder"
             render={() => <PrintOrder cart={cart} foo={"hello foo"} />}
+          />
+          <Route
+            exact
+            path="/userContact"
+            render={() => (
+              <UserContact cart={cart} user={user} setUser={setUser} />
+            )}
           />
           <Redirect to="/home" />
         </Switch>

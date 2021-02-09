@@ -33,7 +33,8 @@ function Subtotals({ subTotal, qtySum }) {
 }
 function CompleteOrderBtn() {
   return (
-    <Link to={`/printOrder`}>
+    // <Link to={`/printOrder`}>
+    <Link to={`/userContact`}>
       <button
         className="border-2 border-gray-200 bg-gray-100 rounded
                 h-8 px-2 text-sm
