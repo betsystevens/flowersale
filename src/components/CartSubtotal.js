@@ -53,10 +53,12 @@ function CartSubtotal({ cart }) {
   }
   return (
     <div
-      className="order-first mdlg:order-last
-                  w-3/4 mdlg:w-1/4
-                  mb-2 mdlg:mb-0 mdlg:mt-0.5 pb-2"
+      className="order-first 
+                  mdlg:order-last
+                  w-3/4 mb-2 pb-2
+                  mdlg:w-1/4 mdlg:mb-0 mdlg:mt-0.5 "
     >
+      {/* large screens */}
       <div
         className="hidden mdlg:flex flex-col justify-evenly items-center
                     bg-white shadow-lg
@@ -67,11 +69,12 @@ function CartSubtotal({ cart }) {
         <CompleteOrderBtn />
       </div>
 
-      {/* mobile stacked */}
+      {/* small screens */}
       <div
         className="bg-white shadow-lg h-64 w-60 mx-auto
                    flex flex-col justify-evenly items-center
-                    sm:flex-row sm:h-32 sm:w-96 flex-wrap justify-evenly items-center
+                   sm:h-32 sm:w-96
+                   sm:flex-row
                    mdlg:hidden"
       >
         <CartImage />
