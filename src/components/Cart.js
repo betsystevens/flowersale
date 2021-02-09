@@ -114,7 +114,7 @@ function CartQuantity({ quantity, quantityHandler }) {
   );
 }
 
-function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
+function CartItems({ cart, updateFlowerInCart, removeFlowerFromCart }) {
   const items = cart.map((flower, key) => {
     return (
       <div
@@ -131,7 +131,7 @@ function getItems(cart, updateFlowerInCart, removeFlowerFromCart) {
       </div>
     );
   });
-  return items;
+  return <div className="mb-2 mdlg:mr-2">{items}</div>;
 }
 function Cart({ cart, updateFlowerInCart, removeFlowerFromCart }) {
   useEffect(() => {
@@ -141,12 +141,15 @@ function Cart({ cart, updateFlowerInCart, removeFlowerFromCart }) {
   // check for empty cart
   if (cart.length) {
     cart.sort(comparator);
-    const items = getItems(cart, updateFlowerInCart, removeFlowerFromCart);
     return (
       <div className="bg-gray-100 min-h-screen pt-12">
         <div className="m-auto w-11/12 flex flex-col">
           <div className="flex flex-wrap justify-evenly ">
-            <div className="mb-2 mdlg:mr-2">{items}</div>
+            <CartItems
+              cart={cart}
+              updateFlowerInCart={updateFlowerInCart}
+              removeFlowerFromCart={removeFlowerFromCart}
+            />
             <CartSubtotal cart={cart} />
           </div>
         </div>
