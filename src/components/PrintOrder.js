@@ -56,7 +56,7 @@ function Body({ cart, user }) {
   });
   return (
     <div className="flex flex-col items-center">
-      <table className="text-left mb-12 bg-gray-100">
+      <table className="text-left mb-12 p-2 border-2 border-gray-50">
         <thead>
           <tr className="">
             <th className="w-16 text-center">Qty</th>
@@ -67,7 +67,7 @@ function Body({ cart, user }) {
         </thead>
         <tbody>
           {tableBody}
-          <tr>
+          <tr className="border-t-2">
             <td className="text-center">{sumOfItems}</td>
             <td></td>
             <td></td>
@@ -76,7 +76,7 @@ function Body({ cart, user }) {
         </tbody>
       </table>
 
-      <table className="w-200 mb-12 text-xl bg-gray-100">
+      <table className="w-200 mb-12 p-2 text-xl border-2 border-gray-50">
         <tbody>
           <tr className="h-10">
             <td className="w-36 font-medium">Name</td>

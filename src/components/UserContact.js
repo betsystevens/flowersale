@@ -11,7 +11,7 @@ const UserContact = ({ user, setUser }) => {
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
-    setUser({ first, last, email, address, tel });
+    setUser({ first, last, email, address, tel, scout });
     setSaved(true);
   };
 
