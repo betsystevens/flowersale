@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import ReactToPrint from "react-to-print";
+import { computeSubtotal, getItemsCount } from "../utils/utilities";
 
 const containerNameMap = (() => {
   let nameMap = new Map();
@@ -20,17 +21,22 @@ const containerNameMap = (() => {
 export class ComponentToPrint extends React.PureComponent {
   render() {
     const { cart, user } = this.props;
+    let qtySum = 0;
+    let subTotal = 0;
+    if (cart.length) {
+      qtySum = getItemsCount(cart);
+      subTotal = (computeSubtotal(cart) / 100).toFixed(2);
+      console.log(`subTotal = ${subTotal}`);
+    }
     const tableBody = cart.map((flower, id) => {
       let container = containerNameMap.get(flower.container);
       return (
-        <tbody>
-          <tr style={{ height: "50px" }}>
-            <td className="text-center">{flower.quantity}</td>
-            <td>{flower.name}</td>
-            <td>{flower.variety}</td>
-            <td>{container}</td>
-          </tr>
-        </tbody>
+        <tr style={{ height: "50px" }}>
+          <td className="text-center">{flower.quantity}</td>
+          <td>{flower.name}</td>
+          <td>{flower.variety}</td>
+          <td>{container}</td>
+        </tr>
       );
     });
     return (
@@ -38,21 +44,48 @@ export class ComponentToPrint extends React.PureComponent {
         <div className="py-4 px-6 my-12 text-4xl shadow-lg">
           Flowers to Order
         </div>
-        <div>{`${user.first} ${user.last} ${user.email} ${user.tel}`}</div>
-        <div className="">
-          <table className="text-left">
-            {/* <table> */}
-            <thead>
-              <tr>
-                <th className="w-16 text-center">Qty</th>
-                <th className="w-28">Flower</th>
-                <th className="w-28">Variety</th>
-                <th className="w-32">Container</th>
-              </tr>
-            </thead>
+        <table className="text-left mb-12 bg-blue-100">
+          <thead>
+            <tr className="">
+              <th className="w-16 text-center">Qty</th>
+              <th className="w-28">Flower</th>
+              <th className="w-28">Variety</th>
+              <th className="w-32">Container</th>
+            </tr>
+          </thead>
+          <tbody>
             {tableBody}
-          </table>
-        </div>
+            <tr>
+              <td className="text-center">{qtySum}</td>
+              <td></td>
+              <td></td>
+              <td>{`${subTotal}`}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table className="w-200 text-xl bg-gray-50">
+          <tbody>
+            <tr className="h-10">
+              <td className="w-36 font-medium">Name</td>
+              <td>
+                {user.first} {user.last}
+              </td>
+            </tr>
+            <tr className="h-10">
+              <td className="w-44 font-medium">Email</td>
+              <td>{user.email}</td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Address</td>
+              <td>{user.address}</td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Telephone</td>
+              <td>{user.tel}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
