@@ -5,11 +5,12 @@ const CustomerForm = ({ user, setUser }) => {
   const [first, setFirst] = useState(user ? user.first : "");
   const [last, setLast] = useState(user ? user.last : "");
   const [email, setEmail] = useState(user ? user.email : "");
+  const [address, setAddress] = useState(user ? user.address : "");
   const [tel, setTel] = useState(user ? user.tel : "");
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
-    setUser({ first, last, email, tel });
+    setUser({ first, last, email, address, tel });
     setSaved(true);
   };
 
@@ -40,7 +41,6 @@ const CustomerForm = ({ user, setUser }) => {
             value={last || ""}
             onChange={(e) => setLast(e.target.value)}
           />
-          {/* </label> */}
         </div>
         <div className="flex flex-col mb-4 font-medium text-lg">
           <p>Email</p>
@@ -52,6 +52,18 @@ const CustomerForm = ({ user, setUser }) => {
             id="email"
             value={email || ""}
             onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="flex flex-col mb-4 font-medium text-lg">
+          <p>Address</p>
+          <input
+            className="border py-2 px-3 text-grey-darkest"
+            size="40"
+            type="text"
+            name="address"
+            id="address"
+            value={address || ""}
+            onChange={(e) => setAddress(e.target.value)}
           />
         </div>
         <div className="flex flex-col mb-4 font-medium text-lg">
