@@ -1,21 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getPrice } from "../utils/utilities";
+import { computeSubtotal, getItemsCount } from "../utils/utilities";
 
-function getItemsCount(cart) {
-  let count = cart.reduce((accumulator, item) => {
-    return accumulator + item.quantity;
-  }, 0);
-  return count;
-}
-function computeSubtotal(cart) {
-  let subTotal = 0;
-  cart.forEach((flower) => {
-    let price = getPrice(flower.container);
-    subTotal = subTotal + flower.quantity * price;
-  });
-  return subTotal;
-}
 function CartImage() {
   return <img className="h-12" src="/assets/icons/Cart64x40.svg" alt="cart" />;
 }
