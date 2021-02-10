@@ -145,7 +145,7 @@ function App() {
           <Route
             exact
             path="/printOrder"
-            render={() => <PrintOrder cart={cart} foo={"hello foo"} />}
+            render={() => <PrintOrder cart={cart} user={user} />}
           />
           <Route
             exact
