@@ -18,8 +18,9 @@ const UserContact = ({ user, setUser }) => {
   if (saved) return <Redirect to="/printOrder" />;
   else {
     return (
-      <div className="min-h-screen p-8 flex flex-col justify-center items-center h-screen">
-        <div className="flex flex-col mt-20 mb-4 font-medium">
+      <div className="min-h-screen p-8 mb-20 flex flex-col justify-center items-center">
+        <p>Customer and Scout Information</p>
+        <div className="flex flex-col mt-16 mb-4 font-medium">
           <p>First Name</p>
           <input
             className="border rounded py-2 px-3"
@@ -92,13 +93,6 @@ const UserContact = ({ user, setUser }) => {
           />
         </div>
         <div className="w-full flex justify-evenly mt-12">
-          <button
-            className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
-            type="button"
-            onClick={handleSave}
-          >
-            Save
-          </button>
           <Link to={"/printOrder"}>
             <button
               className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
@@ -107,6 +101,13 @@ const UserContact = ({ user, setUser }) => {
               Cancel
             </button>
           </Link>
+          <button
+            className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
+            type="button"
+            onClick={handleSave}
+          >
+            Save
+          </button>
         </div>
       </div>
     );

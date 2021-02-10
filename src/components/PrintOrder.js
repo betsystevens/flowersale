@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import ReactToPrint from "react-to-print";
 import { computeSubtotal, getItemsCount } from "../utils/utilities";
 
@@ -41,9 +42,9 @@ function Header() {
     </div>
   );
 }
-function Body({ cart, user }) {
+function Flowers({ cart }) {
   const [sumOfItems, subTotal] = totals(cart);
-  const tableBody = cart.map((flower, id) => {
+  const orderedFlowers = cart.map((flower, id) => {
     let container = containerNameMap.get(flower.container);
     return (
       <tr style={{ height: "50px" }}>
@@ -66,7 +67,7 @@ function Body({ cart, user }) {
           </tr>
         </thead>
         <tbody>
-          {tableBody}
+          {orderedFlowers}
           <tr className="border-t-2">
             <td className="text-center">{sumOfItems}</td>
             <td></td>
@@ -75,42 +76,56 @@ function Body({ cart, user }) {
           </tr>
         </tbody>
       </table>
-
-      <table className="w-200 mb-12 p-2 text-xl border-2 border-gray-50">
-        <tbody>
-          <tr className="h-10">
-            <td className="w-36 font-medium">Name</td>
-            <td>
-              {user.first} {user.last}
-            </td>
-          </tr>
-          <tr className="h-10">
-            <td className="font-medium">Email</td>
-            <td>{user.email}</td>
-          </tr>
-          <tr className="h-10">
-            <td className="font-medium">Address</td>
-            <td>{user.address}</td>
-          </tr>
-          <tr className="h-10">
-            <td className="font-medium">Telephone</td>
-            <td>{user.tel}</td>
-          </tr>
-          <tr className="h-10">
-            <td className="font-medium">Scout</td>
-            <td>{user.scout}</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   );
 }
+function User({ user }) {
+  return (
+    <div className="flex flex-col items-center mb-12">
+      <div className="mb-2 border-2 border-gray-50 p-2">
+        <table className="w-200 text-xl">
+          <tbody>
+            <tr className="h-10">
+              <td className="w-36 font-medium">Name</td>
+              <td>
+                {user.first} {user.last}
+              </td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Email</td>
+              <td>{user.email}</td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Address</td>
+              <td>{user.address}</td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Telephone</td>
+              <td>{user.tel}</td>
+            </tr>
+            <tr className="h-10">
+              <td className="font-medium">Scout</td>
+              <td>{user.scout}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <Link to={"/userContact"}>
+        <button className="mb-8 px-3 py-1 border-2 border-gray-100 rounded hover:bg-purple-200">
+          Edit
+        </button>
+      </Link>
+    </div>
+  );
+}
+
 export class ComponentToPrint extends React.PureComponent {
   render() {
     return (
       <div className="flex flex-col items-center mt-16">
         <Header />
-        <Body user={this.props.user} cart={this.props.cart} />
+        <User user={this.props.user} />
+        <Flowers cart={this.props.cart} />
       </div>
     );
   }
@@ -124,12 +139,14 @@ const PrintOrder = ({ cart, user }) => {
       <ComponentToPrint ref={componentRef} cart={cart} user={user} />
       <ReactToPrint
         trigger={() => (
-          <button className="mt-12 mb-8 px-6 text-3xl border-2 border-gray-100 hover:bg-purple-200">
+          <button className="mb-8 px-3 py-1 border-2 border-gray-100 rounded hover:bg-purple-200">
             Print
           </button>
         )}
         // pageStyle="@page { size: auto; margin: 0mm; } @media print { body { -webkit-print-color-adjust: exact; padding: 40px !important; } }"
-        pageStyle="@page { size: auto; margin: 0mm; } @media print { body { color: red; padding: 40px !important; } }"
+        pageStyle="@page { size: auto; margin: 0mm; } 
+                    @media print { body { padding: 40px !important; } 
+                                   button { display: none}}"
         content={() => componentRef.current}
       />
     </div>
