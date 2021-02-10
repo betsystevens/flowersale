@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 
-const CustomerForm = ({ user, setUser }) => {
+const UserContact = ({ user, setUser }) => {
   const [first, setFirst] = useState(user ? user.first : "");
   const [last, setLast] = useState(user ? user.last : "");
   const [email, setEmail] = useState(user ? user.email : "");
   const [address, setAddress] = useState(user ? user.address : "");
   const [tel, setTel] = useState(user ? user.tel : "");
+  const [scout, setScout] = useState(user ? user.scout : "");
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -17,11 +18,11 @@ const CustomerForm = ({ user, setUser }) => {
   if (saved) return <Redirect to="/printOrder" />;
   else {
     return (
-      <div className="bg-blue-100 p-8 flex flex-col justify-center items-center h-screen">
-        <div className="flex flex-col mb-4 font-medium text-lg">
+      <div className="min-h-screen p-8 flex flex-col justify-center items-center h-screen">
+        <div className="flex flex-col mt-20 mb-4 font-medium">
           <p>First Name</p>
           <input
-            className="border py-2 px-3 text-grey-darkest"
+            className="border rounded py-2 px-3"
             size="40"
             type="text"
             name="first"
@@ -30,10 +31,10 @@ const CustomerForm = ({ user, setUser }) => {
             onChange={(e) => setFirst(e.target.value)}
           />
         </div>
-        <div className="flex flex-col mb-4 font-medium text-lg">
+        <div className="flex flex-col mb-4 font-medium">
           <p>Last Name</p>
           <input
-            className="border py-2 px-3 text-grey-darkest"
+            className="border rounded py-2 px-3"
             size="40"
             type="text"
             name="last"
@@ -42,10 +43,10 @@ const CustomerForm = ({ user, setUser }) => {
             onChange={(e) => setLast(e.target.value)}
           />
         </div>
-        <div className="flex flex-col mb-4 font-medium text-lg">
+        <div className="flex flex-col mb-4 font-medium">
           <p>Email</p>
           <input
-            className="border py-2 px-3 text-grey-darkest"
+            className="border rounded py-2 px-3"
             size="40"
             type="email"
             name="email"
@@ -54,10 +55,10 @@ const CustomerForm = ({ user, setUser }) => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="flex flex-col mb-4 font-medium text-lg">
+        <div className="flex flex-col mb-4 font-medium">
           <p>Address</p>
           <input
-            className="border py-2 px-3 text-grey-darkest"
+            className="border rounded py-2 px-3"
             size="40"
             type="text"
             name="address"
@@ -66,16 +67,28 @@ const CustomerForm = ({ user, setUser }) => {
             onChange={(e) => setAddress(e.target.value)}
           />
         </div>
-        <div className="flex flex-col mb-4 font-medium text-lg">
+        <div className="flex flex-col mb-4 font-medium">
           <p>Telephone</p>
           <input
-            className="border py-2 px-3 text-grey-darkest"
+            className="border rounded py-2 px-3"
             size="40"
             type="tel"
             name="tel"
             id="tel"
             value={tel || ""}
             onChange={(e) => setTel(e.target.value)}
+          />
+        </div>
+        <div className="flex flex-col mb-4 font-medium">
+          <p>Scout Name</p>
+          <input
+            className="border rounded py-2 px-3"
+            size="40"
+            type="scout"
+            name="scouttel"
+            id="scouttel"
+            value={scout || ""}
+            onChange={(e) => setScout(e.target.value)}
           />
         </div>
         <div className="w-full flex justify-evenly mt-12">
@@ -100,4 +113,4 @@ const CustomerForm = ({ user, setUser }) => {
   }
 };
 
-export default CustomerForm;
+export default UserContact;

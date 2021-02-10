@@ -18,74 +18,99 @@ const containerNameMap = (() => {
   return nameMap;
 })();
 
+const totals = (cart) => {
+  let qtySum = 0;
+  let subTotal = 0;
+  if (cart.length) {
+    qtySum = getItemsCount(cart);
+    subTotal = (computeSubtotal(cart) / 100).toFixed(2);
+    console.log(`subTotal = ${subTotal}`);
+  }
+  return [qtySum, subTotal];
+};
+function Header() {
+  return (
+    <div className="flex flex-col items-center mb-12 py-4 px-6">
+      <p className="mb-2 text-xl font-semibold">
+        Boy Scout Troop 34 - 2021 Spring Plant Sale
+      </p>
+      <p>Orders and Payments are due no later than Saturday March 6th</p>
+      <p>Plants will be delivered on Friday, May 7th</p>
+      <p>Please make checks out to Troop 34</p>
+      <p>(no tax, we are non-profit organization)</p>
+    </div>
+  );
+}
+function Body({ cart, user }) {
+  const [sumOfItems, subTotal] = totals(cart);
+  const tableBody = cart.map((flower, id) => {
+    let container = containerNameMap.get(flower.container);
+    return (
+      <tr style={{ height: "50px" }}>
+        <td className="text-center">{flower.quantity}</td>
+        <td>{flower.name}</td>
+        <td>{flower.variety}</td>
+        <td>{container}</td>
+      </tr>
+    );
+  });
+  return (
+    <div className="flex flex-col items-center">
+      <table className="text-left mb-12 bg-gray-100">
+        <thead>
+          <tr className="">
+            <th className="w-16 text-center">Qty</th>
+            <th className="w-28">Flower</th>
+            <th className="w-28">Variety</th>
+            <th className="w-32">Container</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableBody}
+          <tr>
+            <td className="text-center">{sumOfItems}</td>
+            <td></td>
+            <td></td>
+            <td>{`$${subTotal}`}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table className="w-200 mb-12 text-xl bg-gray-100">
+        <tbody>
+          <tr className="h-10">
+            <td className="w-36 font-medium">Name</td>
+            <td>
+              {user.first} {user.last}
+            </td>
+          </tr>
+          <tr className="h-10">
+            <td className="font-medium">Email</td>
+            <td>{user.email}</td>
+          </tr>
+          <tr className="h-10">
+            <td className="font-medium">Address</td>
+            <td>{user.address}</td>
+          </tr>
+          <tr className="h-10">
+            <td className="font-medium">Telephone</td>
+            <td>{user.tel}</td>
+          </tr>
+          <tr className="h-10">
+            <td className="font-medium">Scout</td>
+            <td>{user.scout}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
 export class ComponentToPrint extends React.PureComponent {
   render() {
-    const { cart, user } = this.props;
-    let qtySum = 0;
-    let subTotal = 0;
-    if (cart.length) {
-      qtySum = getItemsCount(cart);
-      subTotal = (computeSubtotal(cart) / 100).toFixed(2);
-      console.log(`subTotal = ${subTotal}`);
-    }
-    const tableBody = cart.map((flower, id) => {
-      let container = containerNameMap.get(flower.container);
-      return (
-        <tr style={{ height: "50px" }}>
-          <td className="text-center">{flower.quantity}</td>
-          <td>{flower.name}</td>
-          <td>{flower.variety}</td>
-          <td>{container}</td>
-        </tr>
-      );
-    });
     return (
-      <div className="flex flex-col items-center">
-        <div className="py-4 px-6 my-12 text-4xl shadow-lg">
-          Flowers to Order
-        </div>
-        <table className="text-left mb-12 bg-blue-100">
-          <thead>
-            <tr className="">
-              <th className="w-16 text-center">Qty</th>
-              <th className="w-28">Flower</th>
-              <th className="w-28">Variety</th>
-              <th className="w-32">Container</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableBody}
-            <tr>
-              <td className="text-center">{qtySum}</td>
-              <td></td>
-              <td></td>
-              <td>{`${subTotal}`}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table className="w-200 text-xl bg-gray-50">
-          <tbody>
-            <tr className="h-10">
-              <td className="w-36 font-medium">Name</td>
-              <td>
-                {user.first} {user.last}
-              </td>
-            </tr>
-            <tr className="h-10">
-              <td className="w-44 font-medium">Email</td>
-              <td>{user.email}</td>
-            </tr>
-            <tr className="h-10">
-              <td className="font-medium">Address</td>
-              <td>{user.address}</td>
-            </tr>
-            <tr className="h-10">
-              <td className="font-medium">Telephone</td>
-              <td>{user.tel}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="flex flex-col items-center mt-16">
+        <Header />
+        <Body user={this.props.user} cart={this.props.cart} />
       </div>
     );
   }
@@ -99,10 +124,12 @@ const PrintOrder = ({ cart, user }) => {
       <ComponentToPrint ref={componentRef} cart={cart} user={user} />
       <ReactToPrint
         trigger={() => (
-          <button className="mt-24 mb-8 px-6 text-3xl border-2 border-gray-100 hover:bg-purple-200">
+          <button className="mt-12 mb-8 px-6 text-3xl border-2 border-gray-100 hover:bg-purple-200">
             Print
           </button>
         )}
+        // pageStyle="@page { size: auto; margin: 0mm; } @media print { body { -webkit-print-color-adjust: exact; padding: 40px !important; } }"
+        pageStyle="@page { size: auto; margin: 0mm; } @media print { body { color: red; padding: 40px !important; } }"
         content={() => componentRef.current}
       />
     </div>
