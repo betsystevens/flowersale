@@ -8,7 +8,12 @@ function NavItem({ location, label }) {
       <NavLink
         to={location}
         activeClassName="current"
-        activeStyle={{ fontStyle: "italic", textDecoration: "underline" }}
+        activeStyle={{
+          padding: "6px 8px",
+          color: "rgba(249, 250, 251)",
+          border: "2px solid rgba(224, 231, 255, 0.6)",
+          borderRadius: "5px",
+        }}
         exact
         className="hover:text-gray-50 whitespace-nowrap"
       >
