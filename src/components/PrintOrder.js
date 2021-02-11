@@ -61,8 +61,8 @@ function Flowers({ cart }) {
         <thead>
           <tr className="">
             <th className="w-16 text-center">Qty</th>
-            <th className="w-28">Flower</th>
-            <th className="w-28">Variety</th>
+            <th className="w-48">Flower</th>
+            <th className="w-36">Variety</th>
             <th className="w-32">Container</th>
           </tr>
         </thead>
@@ -83,28 +83,28 @@ function User({ user }) {
   return (
     <div className="flex flex-col items-center mb-12">
       <div className="mb-2 border-2 border-gray-50 p-2">
-        <table className="w-200 text-xl">
+        <table className="w-200">
           <tbody>
             <tr className="h-10">
-              <td className="w-36 font-medium">Name</td>
+              <td className="w-36 font-semibold">Name</td>
               <td>
                 {user.first} {user.last}
               </td>
             </tr>
             <tr className="h-10">
-              <td className="font-medium">Email</td>
+              <td className="font-semibold">Email</td>
               <td>{user.email}</td>
             </tr>
             <tr className="h-10">
-              <td className="font-medium">Address</td>
+              <td className="font-semibold">Address</td>
               <td>{user.address}</td>
             </tr>
             <tr className="h-10">
-              <td className="font-medium">Telephone</td>
+              <td className="font-semibold">Telephone</td>
               <td>{user.tel}</td>
             </tr>
             <tr className="h-10">
-              <td className="font-medium">Scout</td>
+              <td className="font-semibold">Scout</td>
               <td>{user.scout}</td>
             </tr>
           </tbody>
