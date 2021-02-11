@@ -10,7 +10,7 @@ const UserContact = ({ user, setUser }) => {
   const [scout, setScout] = useState(user ? user.scout : "");
   const [saved, setSaved] = useState(false);
 
-  const handleSave = () => {
+  const handleContinue = () => {
     setUser({ first, last, email, address, tel, scout });
     setSaved(true);
   };
@@ -93,7 +93,7 @@ const UserContact = ({ user, setUser }) => {
           />
         </div>
         <div className="w-full flex justify-evenly mt-12">
-          <Link to={"/printOrder"}>
+          <Link to={"/cart"}>
             <button
               className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
               type="reset"
@@ -104,9 +104,9 @@ const UserContact = ({ user, setUser }) => {
           <button
             className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
             type="button"
-            onClick={handleSave}
+            onClick={handleContinue}
           >
-            Save
+            Continue
           </button>
         </div>
       </div>
