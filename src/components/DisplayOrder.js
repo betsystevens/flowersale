@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import ReactToPrint from "react-to-print";
+import { Test } from "./Test";
 import { computeSubtotal, getItemsCount } from "../utils/utilities";
 
 const containerNameMap = (() => {
@@ -53,6 +53,40 @@ function Header() {
     </div>
   );
 }
+
+function Flowers2({ cart }) {
+  const [sumOfItems, subTotal] = totals(cart);
+  console.log(cart);
+  const orderedFlowers = cart.map((flower, id) => {
+    let container = containerNameMap.get(flower.container);
+    return (
+      <div className="grid grid-cols-order my-2">
+        <p className="text-center">{flower.quantity}</p>
+        <p>{flower.name}</p>
+        <p>{flower.variety}</p>
+        <p>{container}</p>
+      </div>
+    );
+  });
+  console.log(orderedFlowers);
+  return (
+    <div className="flex flex-col items-center">
+      <div className="grid grid-cols-order text-left font-semibold border-2 border-gray-50">
+        <p className="text-center">Qty</p>
+        <p>Flower</p>
+        <p>Variety</p>
+        <p>Container</p>
+      </div>
+      <div className="border-2 border-gray-50">{orderedFlowers}</div>
+      <div className="grid grid-cols-order text-left border-2 border-gray-50">
+        <p className="text-center">{sumOfItems}</p>
+        <p></p>
+        <p></p>
+        <p>{`$${subTotal}`}</p>
+      </div>
+    </div>
+  );
+}
 function Flowers({ cart }) {
   const [sumOfItems, subTotal] = totals(cart);
   const orderedFlowers = cart.map((flower, id) => {
@@ -70,7 +104,7 @@ function Flowers({ cart }) {
     <div className="flex flex-col items-center">
       <table className="text-left mb-12 p-2 border-2 border-gray-50">
         <thead>
-          <tr className="">
+          <tr style={{ paddingBottom: "8px" }}>
             <th className="w-16 text-center">Qty</th>
             <th className="w-48">Flower</th>
             <th className="w-36">Variety</th>
@@ -121,8 +155,8 @@ function User({ user }) {
           </tbody>
         </table>
       </div>
-      <Link to={"/userContact"}>
-        <button className="mb-8 px-3 py-1 border-2 border-purple-100 rounded hover:bg-purple-200">
+      <Link to={"/userContact"} className="editLink">
+        <button className="mb-8 px-3 py-1 border-2 border-purple-100 rounded hover:bg-purple-200 print:hidden">
           Edit
         </button>
       </Link>
@@ -130,38 +164,15 @@ function User({ user }) {
   );
 }
 
-export class ComponentToPrint extends React.PureComponent {
-  render() {
-    return (
-      <div className="flex flex-col items-center mt-16">
-        <Header />
-        <User user={this.props.user} />
-        <Flowers cart={this.props.cart} />
-      </div>
-    );
-  }
-}
-
-const PrintOrder = ({ cart, user }) => {
-  const componentRef = useRef();
-
+const DisplayOrder = ({ cart, user }) => {
   return (
-    <div className="flex flex-col items-center">
-      <ComponentToPrint ref={componentRef} cart={cart} user={user} />
-      <ReactToPrint
-        trigger={() => (
-          <button className="mb-8 px-3 py-1 border-2 border-purple-100 rounded hover:bg-purple-200">
-            Print
-          </button>
-        )}
-        // pageStyle="@page { size: auto; margin: 0mm; } @media print { body { -webkit-print-color-adjust: exact; padding: 40px !important; } }"
-        pageStyle="@page { size: auto; margin: 0mm; } 
-                    @media print { body { padding: 40px !important; } 
-                                   button { display: none}}"
-        content={() => componentRef.current}
-      />
+    <div className="flex flex-col items-center mb-12">
+      <Header />
+      <User user={user} />
+      <Flowers cart={cart} />
+      <Flowers2 cart={cart} />
     </div>
   );
 };
 
-export default PrintOrder;
+export { DisplayOrder };

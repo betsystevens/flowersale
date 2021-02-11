@@ -6,7 +6,7 @@ import HomePage from "./HomePage";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
-import { DisplayOrder, PrintOrder } from "./PrintOrder";
+import { DisplayOrder } from "./DisplayOrder";
 import UserContact from "./UserContact";
 import "../App.css";
 import "../index.css";

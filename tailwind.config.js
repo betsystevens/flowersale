@@ -34,9 +34,14 @@ module.exports = {
         // Complex site-specific column configuration
         // footer: "200px minmax(900px, 1fr) 100px",
 
-        // "cart-5": "repeat(4, minmax(0, 1fr)) 70px",
+        // grid-cols-cart-5
         "cart-5": "repeat(4, minmax(0, 50px)) 70px",
+
+        // grid-cols-cart-4
         "cart-4": "repeat(4, minmax(0, 50px))",
+
+        // grid-cols-order
+        order: "64px 192px 144px 128px",
       },
     },
   },
