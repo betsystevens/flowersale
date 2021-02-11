@@ -6,7 +6,7 @@ import HomePage from "./HomePage";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
-import PrintOrder from "./PrintOrder";
+import { DisplayOrder, PrintOrder } from "./PrintOrder";
 import UserContact from "./UserContact";
 import "../App.css";
 import "../index.css";
@@ -131,8 +131,8 @@ function App() {
           />
           <Route
             exact
-            path="/printOrder"
-            render={() => <PrintOrder cart={cart} user={user} />}
+            path="/displayOrder"
+            render={() => <DisplayOrder cart={cart} user={user} />}
           />
           <Route
             exact

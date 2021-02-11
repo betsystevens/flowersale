@@ -15,7 +15,7 @@ const UserContact = ({ user, setUser }) => {
     setSaved(true);
   };
 
-  if (saved) return <Redirect to="/printOrder" />;
+  if (saved) return <Redirect to="/displayOrder" />;
   else {
     return (
       <div className="min-h-screen p-8 mb-20 flex flex-col justify-center items-center">
