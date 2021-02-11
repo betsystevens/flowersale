@@ -32,12 +32,23 @@ const totals = (cart) => {
 function Header() {
   return (
     <div className="flex flex-col items-center mb-12 py-4 px-6">
-      <p className="mb-2 text-xl font-semibold">
+      <p className="hidden sm:block mb-2 text-xl font-semibold">
         Boy Scout Troop 34 - 2021 Spring Plant Sale
       </p>
-      <p>Orders and Payments are due no later than Saturday, March 6th</p>
+      <div className="sm:hidden flex flex-col items-center text-xl font-semibold">
+        <p className="mb-2">Boy Scout Troop 34</p>
+        <p className="mb-2">Spring Plant Sale</p>
+        <p className="mb-2">2021</p>
+      </div>
+      <p className="hidden sm:block">
+        Orders and Payments are due no later than Saturday, March 6th
+      </p>
+      <div className="block sm:hidden flex flex-col items-center">
+        <p>Orders and Payments are due no</p>
+        <p>later than Saturday, March 6th</p>
+      </div>
       <p>Plants will be delivered on Friday, May 7th</p>
-      <p>Please make checks out to Troop 34</p>
+      <p>Please make checks payable to Troop 34</p>
       <p>(no tax, we are non-profit organization)</p>
     </div>
   );
