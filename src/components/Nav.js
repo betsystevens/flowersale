@@ -27,7 +27,7 @@ function Nav() {
   const ref = useRef();
   useOnClickOutside(ref, () => setOpen(false));
   return (
-    <div className="sticky top-0 z-10">
+    <div className="sticky top-0 z-10 print:hidden">
       <nav className="">
         {/* wide nav - row */}
         <div className="hidden sm:flex justify-evenly sm:items-center">
