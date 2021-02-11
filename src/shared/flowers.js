@@ -277,7 +277,7 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "sparkler hot pink",
+        name: "sparkler pink",
         image: "/assets/images/hb/dblRosebudSparklerHotPinkHB512x384.jpg",
       },
     ],
