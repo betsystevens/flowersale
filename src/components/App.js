@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import Nav from "./Nav";
-import Hero from "./Hero";
-import FlowerGroups from "./FlowerGroups";
+import HomePage from "./HomePage";
 import FlowerCardsContainer from "./FlowerCardsContainer";
 import FlowerDetails from "./FlowerDetails";
 import Cart from "./Cart";
@@ -87,18 +86,6 @@ function App() {
     e.target.blur();
     let flowersNotChanging = itemsNotChanging(name, variety, container);
     setCart(flowersNotChanging);
-  };
-
-  const HomePage = () => {
-    useEffect(() => {
-      document.title = "Flower Sale - Home";
-    });
-    return (
-      <div>
-        <Hero />
-        <FlowerGroups />
-      </div>
-    );
   };
 
   return (
