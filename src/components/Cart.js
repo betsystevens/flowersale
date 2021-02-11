@@ -4,7 +4,6 @@ import CartSubtotal from "./CartSubtotal";
 import { PRICING } from "../shared/pricing";
 import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
-// import CustomerForm from "./CustomerForm";
 
 function getGroup(container) {
   let group = PRICING.filter((obj) => obj.container.name === container)[0]

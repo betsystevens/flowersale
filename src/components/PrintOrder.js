@@ -35,7 +35,7 @@ function Header() {
       <p className="mb-2 text-xl font-semibold">
         Boy Scout Troop 34 - 2021 Spring Plant Sale
       </p>
-      <p>Orders and Payments are due no later than Saturday March 6th</p>
+      <p>Orders and Payments are due no later than Saturday, March 6th</p>
       <p>Plants will be delivered on Friday, May 7th</p>
       <p>Please make checks out to Troop 34</p>
       <p>(no tax, we are non-profit organization)</p>
@@ -111,7 +111,7 @@ function User({ user }) {
         </table>
       </div>
       <Link to={"/userContact"}>
-        <button className="mb-8 px-3 py-1 border-2 border-gray-100 rounded hover:bg-purple-200">
+        <button className="mb-8 px-3 py-1 border-2 border-purple-100 rounded hover:bg-purple-200">
           Edit
         </button>
       </Link>
@@ -139,7 +139,7 @@ const PrintOrder = ({ cart, user }) => {
       <ComponentToPrint ref={componentRef} cart={cart} user={user} />
       <ReactToPrint
         trigger={() => (
-          <button className="mb-8 px-3 py-1 border-2 border-gray-100 rounded hover:bg-purple-200">
+          <button className="mb-8 px-3 py-1 border-2 border-purple-100 rounded hover:bg-purple-200">
             Print
           </button>
         )}
