@@ -24,3 +24,8 @@
     height: 512px;
   }
 }
+
+@page {
+  size: auto;
+  margin: 2cm;
+}

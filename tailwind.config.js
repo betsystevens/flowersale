@@ -23,6 +23,10 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      screens: {
+        print: { raw: "print" },
+        // => @media print { ... }
+      },
       gridTemplateColumns: {
         // Simple 16 column grid
         "16": "repeat(16, minmax(0, 1fr))",
