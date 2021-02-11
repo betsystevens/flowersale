@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 import Nav from "./Nav";
 import Hero from "./Hero";
 import FlowerGroups from "./FlowerGroups";
@@ -103,6 +104,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Nav />
         <Switch>
           <Route path="/home" component={HomePage} />
@@ -114,8 +116,6 @@ function App() {
                 cart={cart}
                 updateFlowerInCart={updateFlowerInCart}
                 removeFlowerFromCart={removeFlowerFromCart}
-                // customer={customer}
-                // setCustomer={setCustomer}
               />
             )}
           />
