@@ -290,13 +290,16 @@ export const FLOWERS = [
         name: "blue purple",
         image: "/assets/images/hb/comboBluePurple512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/hb/comboPinkComp512x384.jpg" },
       {
-        name: "red white blue",
+        name: "pink and colors",
+        image: "/assets/images/hb/comboPinkComp512x384.jpg",
+      },
+      {
+        name: "red and colors",
         image: "/assets/images/hb/comboRedWhiteBlue512x384.jpg",
       },
       {
-        name: "yellow blue",
+        name: "yellow and colors",
         image: "/assets/images/hb/comboRedYellowBlue512x384.jpg",
       },
     ],
