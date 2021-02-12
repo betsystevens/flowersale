@@ -3,6 +3,7 @@ export const FLOWERS = [
     id: 0,
     name: "Alyssum",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     variety: [
       { name: "mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },
@@ -19,6 +20,7 @@ export const FLOWERS = [
     id: 1,
     name: "Begonia",
     container: "flat",
+    sun: "partial sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -41,6 +43,7 @@ export const FLOWERS = [
     id: 2,
     name: "Coleus",
     container: "flat",
+    sun: "shade",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -59,6 +62,7 @@ export const FLOWERS = [
     id: 3,
     name: "Dahlia",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -70,6 +74,7 @@ export const FLOWERS = [
     id: 4,
     name: "Dianthus",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -82,6 +87,7 @@ export const FLOWERS = [
     id: 5,
     name: "Dusty Miller",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -93,6 +99,7 @@ export const FLOWERS = [
     id: 6,
     name: "Impatiens",
     container: "flat",
+    sun: "shade",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -124,6 +131,7 @@ export const FLOWERS = [
     id: 7,
     name: "Marigold",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -146,6 +154,7 @@ export const FLOWERS = [
     id: 8,
     name: "Moss Rose",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -157,6 +166,7 @@ export const FLOWERS = [
     id: 9,
     name: "Petunia",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -179,6 +189,7 @@ export const FLOWERS = [
     id: 10,
     name: "Salvia",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -194,6 +205,7 @@ export const FLOWERS = [
     id: 11,
     name: "Snap Dragons",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -212,6 +224,7 @@ export const FLOWERS = [
     id: 12,
     name: "Verbena",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -223,6 +236,7 @@ export const FLOWERS = [
     id: 13,
     name: "Vinca",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -240,6 +254,7 @@ export const FLOWERS = [
     id: 14,
     name: "Zinnia",
     container: "flat",
+    sun: "full sun",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
