@@ -4,19 +4,19 @@ import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
 
 function emojiColor(sun) {
-  let color = "text-yellow-400";
+  let color = "text-yellow-500";
   switch (sun) {
     case "sun":
-      color = "text-yellow-400";
+      color = "text-yellow-500";
       break;
-    case "shade":
-      color = "text-indigo-600";
+    case "filtered sun":
+      color = "text-yellow-300";
       break;
     case "part shade":
       color = "text-indigo-400";
       break;
-    case "filtered sun":
-      color = "text-yellow-200";
+    case "shade":
+      color = "text-indigo-600";
       break;
     default:
       break;
