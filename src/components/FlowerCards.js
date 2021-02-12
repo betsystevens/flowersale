@@ -26,7 +26,6 @@ function ActionButton(props) {
     );
   }
 }
-// function FlowerCards(props) {
 function FlowerCards({
   flowerGroup,
   openAddedToCartModal,
@@ -44,6 +43,7 @@ function FlowerCards({
     const containerDescription = getContainerDescription(flower.container);
     const container = flower.container;
     const name = flower.name;
+    const sun = flower.sunCode ?? "";
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
     const varietyCount = flower.variety.length;
@@ -57,9 +57,11 @@ function FlowerCards({
     return (
       <div key={flower.id}>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
-          <div>
-            <img className="px-4 pt-4 pb-6" src={image} alt={name} />
-          </div>
+          <figure className="flex flex-col px-4 pb-2 items-center">
+            <img className="pt-4 pb-1" src={image} alt={name} />
+            <figcaption>{sun}</figcaption>
+          </figure>
+
           <div className="p-2 flex flex-col items-center">
             <p className="font-extrabold text-lg">{name}</p>
             <p className="pt-1">{`${varietyCountOrName}`}</p>
