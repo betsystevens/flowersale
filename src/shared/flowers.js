@@ -5,6 +5,8 @@ export const FLOWERS = [
     container: "flat",
     sun: "sun",
     sunCode: "\u2600",
+    // sunCode: "☀",
+    // emoji: "☀",
     group: "flat",
     variety: [
       { name: "mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },

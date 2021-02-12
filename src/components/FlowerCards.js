@@ -3,6 +3,26 @@ import { Link } from "react-router-dom";
 import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
 
+function emojiColor(sun) {
+  let color = "yellow-400";
+  switch (sun) {
+    case "sun":
+      color = "yellow-400";
+      break;
+    case "shade":
+      color = "indigo-600";
+      break;
+    case "part shade":
+      color = "indigo-400";
+      break;
+    case "filtered sun":
+      color = "yellow-200";
+      break;
+    default:
+      break;
+  }
+  return color;
+}
 function ActionButton(props) {
   if (props.varietyCount === 1) {
     return (
@@ -43,7 +63,9 @@ function FlowerCards({
     const containerDescription = getContainerDescription(flower.container);
     const container = flower.container;
     const name = flower.name;
-    const sun = flower.sunCode ?? "";
+    const emojiCode = flower.sunCode ?? "";
+    const sunShade = flower.sun ?? "";
+    const color = emojiColor(sunShade);
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
     const varietyCount = flower.variety.length;
@@ -59,7 +81,10 @@ function FlowerCards({
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <figure className="flex flex-col px-4 pb-2 items-center">
             <img className="pt-4 pb-1" src={image} alt={name} />
-            <figcaption>{sun}</figcaption>
+            {/* <figcaption className="text-yellow-500">sun {emojiCode}</figcaption> */}
+            <figcaption className={`text-${color}`}>
+              {sunShade} {emojiCode}
+            </figcaption>
           </figure>
 
           <div className="p-2 flex flex-col items-center">
