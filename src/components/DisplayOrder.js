@@ -25,38 +25,48 @@ const totals = (cart) => {
   if (cart.length) {
     qtySum = getItemsCount(cart);
     subTotal = (computeSubtotal(cart) / 100).toFixed(2);
-    console.log(`subTotal = ${subTotal}`);
   }
   return [qtySum, subTotal];
 };
 function Header() {
   return (
-    <div className="flex flex-col items-center mb-12 py-4 px-6">
-      <p className="hidden sm:block mb-2 text-xl font-semibold">
-        Boy Scout Troop 34 - 2021 Spring Plant Sale
-      </p>
-      <div className="sm:hidden flex flex-col items-center text-xl font-semibold">
-        <p className="mb-2">Boy Scout Troop 34</p>
-        <p className="mb-2">Spring Plant Sale</p>
-        <p className="mb-2">2021</p>
+    <div>
+      <div className="hidden sm:flex flex-col items-center mb-12 py-4 px-6">
+        {/* bold does not work in pdfs */}
+        <p className="hidden text-xl print:block">
+          Boy Scout Troop 34 - 2021 Spring Plant Sale
+        </p>
+        <p className="text-xl font-semibold print:hidden">
+          Boy Scout Troop 34 - 2021 Spring Plant Sale
+        </p>
+        <p>Orders and Payments are due no later than Saturday, March 6th.</p>
+        <p>
+          Print this page or attach to an email and return it to your scout.
+        </p>
+        <p>Plants will be delivered on Friday, May 7th.</p>
+        <p>Please make checks payable to Troop 34.</p>
+        <p>(no tax, we are non-profit organization)</p>
       </div>
-      <p className="hidden sm:block">
-        Orders and Payments are due no later than Saturday, March 6th
-      </p>
-      <div className="block sm:hidden flex flex-col items-center">
+      <div className="sm:hidden flex flex-col items-center">
+        <p className="text-xl font-semibold mb-2">Boy Scout Troop 34</p>
+        <p className="text-xl font-semibold mb-2">Spring Plant Sale</p>
+        <p className="text-xl font-semibold mb-2">2021</p>
         <p>Orders and Payments are due no</p>
-        <p>later than Saturday, March 6th</p>
+        <p>later than Saturday, March 6th.</p>
+        <p>Print this page or attach to an email</p>{" "}
+        <p>and return it to your scout.</p>
+        <p>Plants will be delivered</p>
+        <p>on Friday, May 7th.</p>
+        <p>Please make checks</p>
+        <p> payable to Troop 34.</p>
+        <p>(no tax, we are non-profit organization)</p>
       </div>
-      <p>Plants will be delivered on Friday, May 7th</p>
-      <p>Please make checks payable to Troop 34</p>
-      <p>(no tax, we are non-profit organization)</p>
     </div>
   );
 }
 
-function Flowers2({ cart }) {
+function Flowers({ cart }) {
   const [sumOfItems, subTotal] = totals(cart);
-  console.log(cart);
   const orderedFlowers = cart.map((flower, id) => {
     let container = containerNameMap.get(flower.container);
     return (
@@ -68,67 +78,64 @@ function Flowers2({ cart }) {
       </div>
     );
   });
-  console.log(orderedFlowers);
   return (
     <div className="flex flex-col items-center">
-      <div className="grid grid-cols-order text-left font-semibold border-2 border-gray-50">
+      <div className="grid grid-cols-order print:hidden text-left font-semibold border-2 border-gray-50">
         <p className="text-center">Qty</p>
         <p>Flower</p>
         <p>Variety</p>
         <p>Container</p>
       </div>
+      {/* pdf cannot display bold, remove for print */}
+      <div className="hidden print:grid grid-cols-order text-left border-2 border-gray-50">
+        <p className="text-center">Qty</p>
+        <p>Flower</p>
+        <p>Variety</p>
+        <p>Container</p>
+      </div>
+      {/* flowers */}
       <div className="border-2 border-gray-50">{orderedFlowers}</div>
-      <div className="grid grid-cols-order text-left border-2 border-gray-50">
+      {/* screen */}
+      <div className="grid grid-cols-order print:hidden text-left border-2 border-t-4 border-gray-50">
+        <p className="font-semibold text-center">{sumOfItems}</p>
+        <p></p>
+        <p></p>
+        <p className="font-semibold">${subTotal}</p>
+      </div>
+      {/* print - remove semibold */}
+      <div className="hidden print:grid grid-cols-order text-left border-2 border-t-4 border-gray-50">
         <p className="text-center">{sumOfItems}</p>
         <p></p>
         <p></p>
-        <p>{`$${subTotal}`}</p>
+        <p>${subTotal}</p>
       </div>
     </div>
   );
 }
-function Flowers({ cart }) {
-  const [sumOfItems, subTotal] = totals(cart);
-  const orderedFlowers = cart.map((flower, id) => {
-    let container = containerNameMap.get(flower.container);
-    return (
-      <tr style={{ height: "50px" }}>
-        <td className="text-center">{flower.quantity}</td>
-        <td>{flower.name}</td>
-        <td>{flower.variety}</td>
-        <td>{container}</td>
-      </tr>
-    );
-  });
-  return (
-    <div className="flex flex-col items-center">
-      <table className="text-left mb-12 p-2 border-2 border-gray-50">
-        <thead>
-          <tr style={{ paddingBottom: "8px" }}>
-            <th className="w-16 text-center">Qty</th>
-            <th className="w-48">Flower</th>
-            <th className="w-36">Variety</th>
-            <th className="w-32">Container</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orderedFlowers}
-          <tr className="border-t-2">
-            <td className="text-center">{sumOfItems}</td>
-            <td></td>
-            <td></td>
-            <td>{`$${subTotal}`}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-}
+
 function User({ user }) {
   return (
     <div className="flex flex-col items-center mb-12">
       <div className="mb-2 border-2 border-gray-50 p-2">
-        <table className="w-200">
+        {/* printer  */}
+        <div className="hidden print:block">
+          <div className="grid grid-cols-user grid-rows-3">
+            <div>Name: </div>
+            <div>
+              {user.first} {user.last}
+            </div>
+            <div>Tel: </div>
+            <div>{user.tel}</div>
+            <div>Email: </div>
+            <div className="col-span-3">{user.email}</div>
+            <div>Address: </div>
+            <div className="col-span-3">{user.address}</div>
+            <div>Scout: </div>
+            <div className="col-span-3">{user.scout}</div>
+          </div>
+        </div>
+        {/* screen */}
+        <table className="w-200 print:hidden">
           <tbody>
             <tr className="h-10">
               <td className="w-36 font-semibold">Name</td>
@@ -170,7 +177,6 @@ const DisplayOrder = ({ cart, user }) => {
       <Header />
       <User user={user} />
       <Flowers cart={cart} />
-      <Flowers2 cart={cart} />
     </div>
   );
 };

@@ -40,8 +40,11 @@ module.exports = {
         // grid-cols-cart-4
         "cart-4": "repeat(4, minmax(0, 50px))",
 
-        // grid-cols-order
+        // grid-cols-order  (64 + 192 + 144 + 128 = 528)
         order: "64px 192px 144px 128px",
+
+        // grid-cols-user
+        user: "80px 280px 40px 128px",
       },
     },
   },
