@@ -4,6 +4,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      xs: "550px",
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
@@ -23,6 +24,12 @@ module.exports = {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      spacing: {
+        "72": "18rem",
+        "84": "21rem",
+        "96": "24rem",
+        "108": "27rem",
+      },
       screens: {
         print: { raw: "print" },
         // => @media print { ... }
