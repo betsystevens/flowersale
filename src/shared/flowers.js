@@ -685,7 +685,7 @@ export const FLOWERS = [
     description: "Foilage plants to add interest to your garden",
     variety: [
       { name: "blackie", image: "/assets/images/pots/potatoVine512x384.jpg" },
-      { name: "lime", image: "/assets/images/pots/potatoVine512x384.jpg" },
+      { name: "lime", image: "/assets/images/pots/potatoVineLime512x384.jpg" },
     ],
   },
   {
