@@ -36,16 +36,16 @@ function AddedToCartModal({ open, image, name, variety, container, quantity }) {
           />
         </div>
         <div className="m-auto py-4 flex flex-col items-center">
-          <p className="font-medium text-2xl">Added to Cart!</p>
+          <p className="font-medium text-lg md:text-2xl">Added to Cart!</p>
           <img
             src={image}
             alt={name}
-            className="my-4 w-40 shadow-lg border-4 border-white"
+            className="my-1 md:my-4 w-40 shadow-lg border-4 border-white"
           />
-          <p className="mt-1 text-2xl">{name}</p>
-          <p className="mt-1.5 text-sm">{variety}</p>
-          <p className="mt-5 text-lg">Quantity: {quantity}</p>
-          <p className="py-1 mb-3 text-lg">${total}</p>
+          <p className="mt-1 text-lg md:text-2xl">{name}</p>
+          <p className="mt-0.5 md:mt-1.5 text-sm">{variety}</p>
+          <p className="mt-5 md:text-lg">Quantity: {quantity}</p>
+          <p className="py-1 mb-3 md:text-lg">${total}</p>
 
           <Link to="/cart">
             <p className="py-1 px-4 text-sm rounded border-2 border-purple-500 hover:text-gray-50 hover:bg-purple-500">

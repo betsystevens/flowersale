@@ -8,10 +8,10 @@
   .addedToCart {
     top: 50%;
     left: 50%;
-    margin-left: -148px;
-    margin-top: -256px;
-    width: 296px;
-    height: 512px;
+    margin-left: -140px;
+    margin-top: -232px;
+    width: 280px;
+    height: 454px;
   }
 }
 @responsive {
