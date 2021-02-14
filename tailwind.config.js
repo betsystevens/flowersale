@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     screens: {
       xs: "550px",
+      // => @media (min-width: 550px) { ... }
+
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
@@ -49,6 +51,9 @@ module.exports = {
 
         // grid-cols-order  (64 + 192 + 144 + 128 = 528)
         order: "64px 192px 144px 128px",
+
+        // grid-cols-order-xs  (64 + 192 + 144 + 128 = 528)
+        "order-xxs": "40px 96px 96px 80px",
 
         // grid-cols-user
         user: "80px 280px 40px 128px",

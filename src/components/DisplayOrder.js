@@ -69,11 +69,17 @@ function OrderedFlowers({ cart }) {
   const orderedFlowers = cart.map((flower, id) => {
     let container = containerNameMap.get(flower.container);
     return (
-      <div className="grid grid-cols-order my-2">
+      // <div className="grid grid-cols-order my-2">
+      <div
+        className="grid grid-cols-order-xxs
+                   my-2 text-sm
+                      xs:grid-cols-order
+                      xs:text-base"
+      >
         <p className="text-center">{flower.quantity}</p>
-        <p>{flower.name}</p>
-        <p>{flower.variety}</p>
-        <p>{container}</p>
+        <p className="px-1 xs:px-0">{flower.name}</p>
+        <p className="px-1 xs:px-0">{flower.variety}</p>
+        <p className="px-1 xs:px-0">{container}</p>
       </div>
     );
   });
@@ -84,7 +90,14 @@ function Flowers({ cart }) {
   const [sumOfItems, subTotal] = totals(cart);
   return (
     <div className="flex flex-col items-center">
-      <div className="grid grid-cols-order print:hidden text-left font-semibold border-2 border-gray-50">
+      <div
+        className="text-left font-semibold border-2 border-gray-50
+                      grid grid-cols-order-xxs
+                      text-sm
+                      xs:grid-cols-order
+                      xs:text-base
+                      print:hidden"
+      >
         <p className="text-center">Qty</p>
         <p>Flower</p>
         <p>Variety</p>
@@ -102,11 +115,16 @@ function Flowers({ cart }) {
         <OrderedFlowers cart={cart} />
       </div>
       {/* screen */}
-      <div className="grid grid-cols-order print:hidden text-left border-2 border-t-4 border-gray-50">
-        <p className="font-semibold text-center">{sumOfItems}</p>
+      <div
+        className="border-2 border-t-4 border-gray-50
+                      grid grid-cols-order-xxs text-sm
+                      xs:grid-cols-order xs:text-base
+                      print:hidden text-left "
+      >
+        <p className="font-semibold text-center px-1 xs:px-0">{sumOfItems}</p>
         <p></p>
         <p></p>
-        <p className="font-semibold">${subTotal}</p>
+        <p className="font-semibold px-1 xs:px-0">${subTotal}</p>
       </div>
       {/* print - remove semibold */}
       <div className="hidden print:grid grid-cols-order text-left border-2 border-t-4 border-gray-50">
