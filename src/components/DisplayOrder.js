@@ -65,8 +65,7 @@ function Header() {
   );
 }
 
-function Flowers({ cart }) {
-  const [sumOfItems, subTotal] = totals(cart);
+function OrderedFlowers({ cart }) {
   const orderedFlowers = cart.map((flower, id) => {
     let container = containerNameMap.get(flower.container);
     return (
@@ -78,6 +77,11 @@ function Flowers({ cart }) {
       </div>
     );
   });
+  return <div>{orderedFlowers}</div>;
+}
+
+function Flowers({ cart }) {
+  const [sumOfItems, subTotal] = totals(cart);
   return (
     <div className="flex flex-col items-center">
       <div className="grid grid-cols-order print:hidden text-left font-semibold border-2 border-gray-50">
@@ -94,7 +98,9 @@ function Flowers({ cart }) {
         <p>Container</p>
       </div>
       {/* flowers */}
-      <div className="border-2 border-gray-50">{orderedFlowers}</div>
+      <div className="border-2 border-gray-50">
+        <OrderedFlowers cart={cart} />
+      </div>
       {/* screen */}
       <div className="grid grid-cols-order print:hidden text-left border-2 border-t-4 border-gray-50">
         <p className="font-semibold text-center">{sumOfItems}</p>
