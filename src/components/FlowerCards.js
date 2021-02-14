@@ -66,8 +66,6 @@ function FlowerCards({
     const emojiCode = flower.sunCode ?? "";
     const sunShade = flower.sun ?? "";
     const color = emojiColor(sunShade);
-    console.log(sunShade);
-    console.log(color);
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
     const varietyCount = flower.variety.length;
