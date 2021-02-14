@@ -17,11 +17,20 @@ function Thumbnails({ flower, imageHandlers }) {
         onClick={() => onClick(index)}
         onMouseEnter={() => mouseEnter(index)}
         onMouseLeave={mouseLeave}
+        onTouchStart={() => {}}
+        onTouchEnd={() => {}}
+        onTouchCancel={() => {}}
+        onTouchMove={() => {}}
+
+        // container.addEventListener('touchstart', () => {});
+        // container.addEventListener('touchend', () => {});
+        // container.addEventListener('touchcancel', () => {});
+        // container.addEventListener('touchmove', () => {});
       >
         <img
           src={variety.image}
           alt={variety.name}
-          className="shadow-md rounded-md p-1 w-20"
+          className="shadow-md rounded-md p-1 w-20 cursor-pointer"
         />
       </div>
     );
