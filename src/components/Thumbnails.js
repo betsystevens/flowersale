@@ -15,17 +15,11 @@ function Thumbnails({ flower, imageHandlers }) {
       <div
         key={index}
         onClick={() => onClick(index)}
+        onTouchStart={() => onClick(index)}
         onMouseEnter={() => mouseEnter(index)}
+        onTouchEnd={() => mouseEnter(index)}
         onMouseLeave={mouseLeave}
-        onTouchStart={() => {}}
-        onTouchEnd={() => {}}
-        onTouchCancel={() => {}}
-        onTouchMove={() => {}}
-
-        // container.addEventListener('touchstart', () => {});
-        // container.addEventListener('touchend', () => {});
-        // container.addEventListener('touchcancel', () => {});
-        // container.addEventListener('touchmove', () => {});
+        onTouchLeave={mouseLeave}
       >
         <img
           src={variety.image}
