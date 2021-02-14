@@ -4,24 +4,31 @@ import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
 
 function emojiColor(sun) {
-  let color = "text-yellow-500";
+  let color;
+  let emoji;
   switch (sun) {
-    case "sun":
+    case "full sun":
       color = "text-yellow-500";
+      emoji = "\u2600";
       break;
     case "filtered sun":
       color = "text-yellow-300";
+      emoji = "\u26C5";
       break;
     case "part shade":
       color = "text-indigo-400";
+      emoji = "\u26C5";
       break;
     case "shade":
       color = "text-indigo-600";
+      emoji = "\u2601";
       break;
     default:
+      color = "";
+      emoji = "";
       break;
   }
-  return color;
+  return [color, emoji];
 }
 function ActionButton(props) {
   if (props.varietyCount === 1) {
@@ -63,9 +70,8 @@ function FlowerCards({
     const containerDescription = getContainerDescription(flower.container);
     const container = flower.container;
     const name = flower.name;
-    const emojiCode = flower.sunCode ?? "";
     const sunShade = flower.sun ?? "";
-    const color = emojiColor(sunShade);
+    const [color, emoji] = emojiColor(sunShade);
     const image = flower.variety[0].image;
     const variety = flower.variety[0].name;
     const varietyCount = flower.variety.length;
@@ -81,9 +87,7 @@ function FlowerCards({
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <figure className="flex flex-col px-4 pb-2 items-center">
             <img className="pt-4 pb-1" src={image} alt={name} />
-            <figcaption className={color}>
-              {`${sunShade} ${emojiCode}`}
-            </figcaption>
+            <figcaption className={color}>{`${sunShade} ${emoji}`}</figcaption>
           </figure>
 
           <div className="p-2 flex flex-col items-center">

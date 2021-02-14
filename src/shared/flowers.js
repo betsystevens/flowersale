@@ -4,7 +4,6 @@ export const FLOWERS = [
     name: "Alyssum",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     variety: [
       { name: "mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },
@@ -22,7 +21,6 @@ export const FLOWERS = [
     name: "Begonia",
     container: "flat",
     sun: "part shade",
-    sunCode: "\u26C5",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -46,7 +44,6 @@ export const FLOWERS = [
     name: "Coleus",
     container: "flat",
     sun: "shade",
-    sunCode: "\u2601",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -66,7 +63,6 @@ export const FLOWERS = [
     name: "Dahlia",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -79,7 +75,6 @@ export const FLOWERS = [
     name: "Dianthus",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -93,7 +88,6 @@ export const FLOWERS = [
     name: "Dusty Miller",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -106,7 +100,6 @@ export const FLOWERS = [
     name: "Impatiens",
     container: "flat",
     sun: "shade",
-    sunCode: "\u2601",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -139,7 +132,6 @@ export const FLOWERS = [
     name: "Marigold",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -163,7 +155,6 @@ export const FLOWERS = [
     name: "Moss Rose",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -176,7 +167,6 @@ export const FLOWERS = [
     name: "Petunia",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -200,7 +190,6 @@ export const FLOWERS = [
     name: "Salvia",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -217,7 +206,6 @@ export const FLOWERS = [
     name: "Snap Dragons",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -237,7 +225,6 @@ export const FLOWERS = [
     name: "Verbena",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -250,7 +237,6 @@ export const FLOWERS = [
     name: "Vinca",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -269,7 +255,6 @@ export const FLOWERS = [
     name: "Zinnia",
     container: "flat",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "flat",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -282,7 +267,6 @@ export const FLOWERS = [
     name: "Combo Basket",
     container: "combo hb",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -309,7 +293,6 @@ export const FLOWERS = [
     name: "Dbl Rosebud Impatiens",
     container: "hb",
     sun: "filtered sun",
-    sunCode: "\u26C5",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -324,7 +307,6 @@ export const FLOWERS = [
     name: "Dragon Wing Begonia",
     container: "hb",
     sun: "part shade",
-    sunCode: "\u26C5",
     group: "hb",
     variety: [
       {
@@ -338,7 +320,6 @@ export const FLOWERS = [
     name: "Fuschia",
     container: "hb",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -357,7 +338,6 @@ export const FLOWERS = [
     name: "Illumination Begonia",
     container: "hb",
     sun: "part shade",
-    sunCode: "\u26C5",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -372,7 +352,6 @@ export const FLOWERS = [
     name: "Impatiens",
     container: "hb",
     sun: "shade",
-    sunCode: "\u2601",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -386,7 +365,6 @@ export const FLOWERS = [
     name: "Ivy Geranium",
     container: "hb",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -403,7 +381,6 @@ export const FLOWERS = [
     name: "Million Bells",
     container: "hb",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -427,7 +404,6 @@ export const FLOWERS = [
     name: "Petunia",
     container: "hb",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "hb",
     description: "Lorem ipsum",
     variety: [
@@ -456,7 +432,6 @@ export const FLOWERS = [
     name: "Better Boy",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
@@ -468,7 +443,6 @@ export const FLOWERS = [
     name: "Cherry",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
@@ -480,7 +454,6 @@ export const FLOWERS = [
     name: "Early Girl",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
@@ -492,7 +465,6 @@ export const FLOWERS = [
     name: "Grape",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
@@ -504,7 +476,6 @@ export const FLOWERS = [
     name: "Roma",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [{ name: "tomato", image: "/assets/images/pots/roma512x384.jpg" }],
@@ -514,7 +485,6 @@ export const FLOWERS = [
     name: "Super Steak",
     container: "tomato 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
@@ -526,7 +496,6 @@ export const FLOWERS = [
     name: "Gallon Patio Pot",
     container: "tomato gallon",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "One gallon patio pot",
     variety: [
@@ -538,7 +507,6 @@ export const FLOWERS = [
     name: "Basil",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [{ name: "Herb", image: "/assets/images/pots/basil512x384.jpg" }],
@@ -548,7 +516,6 @@ export const FLOWERS = [
     name: "Chives",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [{ name: "Herb", image: "/assets/images/pots/chives512x384.jpg" }],
@@ -558,7 +525,6 @@ export const FLOWERS = [
     name: "Cilantro",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
@@ -570,7 +536,6 @@ export const FLOWERS = [
     name: "Oregano",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
@@ -582,7 +547,6 @@ export const FLOWERS = [
     name: "Parsley",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
@@ -594,7 +558,6 @@ export const FLOWERS = [
     name: "Rosemary",
     container: "herb 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
@@ -606,7 +569,6 @@ export const FLOWERS = [
     name: "Marguerite Daisy",
     container: "flower 6 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "Foilage plants to accent your flowering plants",
     variety: [
@@ -621,7 +583,6 @@ export const FLOWERS = [
     name: "Geranium",
     container: "flower 4.5 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "red, white, pink, salmon, violet/fuschia",
     variety: [
@@ -643,7 +604,6 @@ export const FLOWERS = [
     name: "Purple Fountain Grass",
     container: "grass gallon",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, odit?",
@@ -659,7 +619,6 @@ export const FLOWERS = [
     name: "Patio Pots",
     container: "patio pot",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "Geraniums, Spikes and Two Trailing Proven Winners",
     variety: [
@@ -680,7 +639,6 @@ export const FLOWERS = [
     name: "Sweet Potato Vine",
     container: "accent 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "Foilage plants to add interest to your garden",
     variety: [
@@ -693,7 +651,6 @@ export const FLOWERS = [
     name: "Vinca Vine",
     container: "accent 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "Foilage plants to accent your flowering plants",
     variety: [
@@ -708,7 +665,6 @@ export const FLOWERS = [
     name: "Spikes",
     container: "accent 4 inch",
     sun: "full sun",
-    sunCode: "\u2600",
     group: "pot",
     description: "Foilage plants to accent your flowering plants",
     variety: [
