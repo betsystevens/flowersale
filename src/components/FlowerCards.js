@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
@@ -62,7 +63,11 @@ function FlowerCards({
   opacity,
 }) {
   const containerGroup = flowerGroup;
-
+  const history = useHistory();
+  console.log(`in cards ${history.action}`);
+  useEffect(() => {
+    if (history.action === "PUSH") window.scrollTo(0, 0);
+  });
   const flowerFile = FLOWERS.filter(
     (flower) => flower.group === containerGroup
   );
