@@ -15,7 +15,7 @@ function NameDescription({ name, containerDescription }) {
     </div>
   );
 }
-function CheckoutOrContinue({ flowerId }) {
+function CheckoutOrContinue() {
   const history = useHistory();
   return (
     <div className="spanRows">
@@ -82,6 +82,7 @@ function FlowerDetails(props) {
   useEffect(() => {
     document.title = `${name} - Details`;
   });
+  const history = useHistory();
 
   const imageHandlers = {
     handleMouseEnter(index) {
@@ -171,11 +172,15 @@ function FlowerDetails(props) {
             <Link to={`/cart`}>
               <p className="underline hover:text-purple-500">Checkout</p>
             </Link>
-            <Link to={"/" + flowerGroup}>
+            <button
+              onClick={() => {
+                history.goBack();
+              }}
+            >
               <p className="underline hover:text-purple-500">
                 Continue Shopping
               </p>
-            </Link>
+            </button>
           </div>
         </div>
       </div>
