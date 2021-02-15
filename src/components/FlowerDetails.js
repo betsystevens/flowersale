@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Quantity from "./Quantity";
 import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
@@ -15,16 +15,22 @@ function NameDescription({ name, containerDescription }) {
     </div>
   );
 }
-function CheckoutOrContinue({ breadCrumb }) {
+function CheckoutOrContinue({ flowerId }) {
+  const history = useHistory();
   return (
     <div className="spanRows">
       <div className="flex flex-col">
         <Link to={`/cart`} className="mt-36">
           <p className="underline hover:text-purple-500">Checkout</p>
         </Link>
-        <Link to={breadCrumb} className="mt-16">
+        <button
+          className="mt-16"
+          onClick={() => {
+            history.goBack();
+          }}
+        >
           <p className="underline hover:text-purple-500">Continue Shopping</p>
-        </Link>
+        </button>
       </div>
     </div>
   );
@@ -61,7 +67,7 @@ const getFlower = (flowerId) => {
 const getGroup = (path) => {
   return path.match(/[a-z]+/)[0];
 };
-export default function FlowerDetails(props) {
+function FlowerDetails(props) {
   const [hoverId, setHoverId] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariety, setSelectedVariety] = useState(0);
@@ -123,7 +129,7 @@ export default function FlowerDetails(props) {
             containerDescription={containerDescription}
           />
           <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
-          <CheckoutOrContinue breadCrumb={"/" + flowerGroup} />
+          <CheckoutOrContinue flowerId={flowerId} />
           <BigImage image={variety[hoverId].image} name={name} />
           <div>
             <p>{`Variety: ${variety[hoverId].name}`}</p>
@@ -184,3 +190,5 @@ export default function FlowerDetails(props) {
     </div>
   );
 }
+// export default withRouter(FlowerDetails);
+export default FlowerDetails;
