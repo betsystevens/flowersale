@@ -30,14 +30,15 @@ function emojiColor(sun) {
   }
   return [color, emoji];
 }
-function ActionButton(props) {
-  if (props.varietyCount === 1) {
+// function ActionButton(props) {
+function ActionButton({ varietyCount, addToCart, flowerGroup, flowerId }) {
+  if (varietyCount === 1) {
     return (
       <div>
         <button
           id="addtocart"
           className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button"
-          onClick={() => props.addToCart()}
+          onClick={() => addToCart()}
         >
           Add to Cart
         </button>
@@ -45,7 +46,7 @@ function ActionButton(props) {
     );
   } else {
     return (
-      <Link to={`/${props.flowerGroup}/${props.flowerId}`}>
+      <Link to={`/${flowerGroup}/${flowerId}`}>
         <button className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
           View Options
         </button>
@@ -83,7 +84,7 @@ function FlowerCards({
       openAddedToCartModal();
     };
     return (
-      <div key={flower.id}>
+      <div key={flower.id} id={`flower${flower.id}`}>
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <figure className="flex flex-col px-4 pb-2 items-center">
             <img className="pt-4 pb-1" src={image} alt={name} />
