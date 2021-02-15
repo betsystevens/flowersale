@@ -86,6 +86,8 @@ function OrderedFlowers({ cart }) {
       <div
         className="grid grid-cols-order-xxs
                    my-2 text-sm
+                      print:grid-cols-order
+                      print:text-base
                       xs:grid-cols-order
                       xs:text-base"
       >
@@ -98,54 +100,67 @@ function OrderedFlowers({ cart }) {
   });
   return <div>{orderedFlowers}</div>;
 }
-
-function Flowers({ cart }) {
-  const [sumOfItems, subTotal] = totals(cart);
+function OrderedFlowersHeader() {
   return (
-    <div className="flex flex-col items-center">
+    <div>
+      {/* screen */}
       <div
         className="text-left font-semibold border-2 border-gray-50
-                      grid grid-cols-order-xxs
-                      text-sm
-                      xs:grid-cols-order
-                      xs:text-base
-                      print:hidden"
+                        grid grid-cols-order-xxs text-sm
+                        xs:grid-cols-order xs:text-base
+                        print:hidden"
       >
         <p className="text-center">Qty</p>
         <p>Flower</p>
         <p>Variety</p>
         <p>Container</p>
       </div>
-      {/* pdf cannot display bold, remove for print */}
+      {/* print - no bold */}
       <div className="hidden print:grid grid-cols-order text-left border-2 border-gray-50">
         <p className="text-center">Qty</p>
         <p>Flower</p>
         <p>Variety</p>
         <p>Container</p>
       </div>
-      {/* flowers */}
-      <div className="border-2 border-gray-50">
-        <OrderedFlowers cart={cart} />
-      </div>
+    </div>
+  );
+}
+function OrderedFlowersSummary({ sumOfItems, subTotal }) {
+  return (
+    <div>
       {/* screen */}
       <div
         className="border-2 border-t-4 border-gray-50
-                      grid grid-cols-order-xxs text-sm
-                      xs:grid-cols-order xs:text-base
-                      print:hidden text-left "
+                        grid grid-cols-order-xxs text-sm
+                        xs:grid-cols-order xs:text-base
+                        print:hidden text-left "
       >
         <p className="font-semibold text-center px-1 xs:px-0">{sumOfItems}</p>
         <p></p>
         <p></p>
         <p className="font-semibold px-1 xs:px-0">${subTotal}</p>
       </div>
-      {/* print - remove semibold */}
+      {/* print - no semibold */}
       <div className="hidden print:grid grid-cols-order text-left border-2 border-t-4 border-gray-50">
-        <p className="text-center">{sumOfItems}</p>
+        <p className="text-center">${sumOfItems}</p>
         <p></p>
         <p></p>
-        <p>${subTotal}</p>
+        <p>{subTotal}</p>
       </div>
+    </div>
+  );
+}
+
+function Flowers({ cart }) {
+  const [sumOfItems, subTotal] = totals(cart);
+  return (
+    <div className="flex flex-col items-center">
+      <OrderedFlowersHeader />
+      {/* flowers */}
+      <div className="border-2 border-gray-50">
+        <OrderedFlowers cart={cart} />
+      </div>
+      <OrderedFlowersSummary sumOfItems={sumOfItems} subTotal={subTotal} />
     </div>
   );
 }
