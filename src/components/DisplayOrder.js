@@ -28,17 +28,32 @@ const totals = (cart) => {
   }
   return [qtySum, subTotal];
 };
+function Hero() {
+  return (
+    <div className="flex flex-cols items-center">
+      {/* wide screen - bold */}
+      <p className="hidden print:hidden sm:block text-xl font-semibold ">
+        Boy Scout Troop 34 - 2021 Spring Plant Sale
+      </p>
+      {/* wide screen - print - no bold */}
+      <p className="hidden print:block text-xl">
+        Boy Scout Troop 34 - 2021 Spring Plant Sale
+      </p>
+      {/* mobile screen - bold */}
+      <div className="sm:hidden print:hidden flex flex-col items-center">
+        <p className="text-xl font-semibold mb-2">Boy Scout Troop 34</p>
+        <p className="text-xl font-semibold mb-2">Spring Plant Sale</p>
+        <p className="text-xl font-semibold mb-2">2021</p>
+      </div>
+    </div>
+  );
+}
 function Header() {
   return (
     <div>
-      <div className="hidden sm:flex flex-col items-center mb-12 py-4 px-6">
-        {/* bold does not work in pdfs */}
-        <p className="hidden text-xl print:block">
-          Boy Scout Troop 34 - 2021 Spring Plant Sale
-        </p>
-        <p className="text-xl font-semibold print:hidden">
-          Boy Scout Troop 34 - 2021 Spring Plant Sale
-        </p>
+      {/* wide screen & print */}
+      <div className="hidden sm:flex print:flex flex-col items-center mb-12 py-4 px-6">
+        <Hero />
         <p>Orders and Payments are due no later than Saturday, March 6th.</p>
         <p>
           Print this page or attach to an email and return it to your scout.
@@ -47,19 +62,17 @@ function Header() {
         <p>Please make checks payable to Troop 34.</p>
         <p>(no tax, we are non-profit organization)</p>
       </div>
-      <div className="sm:hidden flex flex-col items-center">
-        <p className="text-xl font-semibold mb-2">Boy Scout Troop 34</p>
-        <p className="text-xl font-semibold mb-2">Spring Plant Sale</p>
-        <p className="text-xl font-semibold mb-2">2021</p>
+      {/* mobile */}
+      <div className="sm:hidden print:hidden flex flex-col items-center">
+        <Hero />
+        {/* Info  */}
         <p>Orders and Payments are due no</p>
         <p>later than Saturday, March 6th.</p>
         <p>Print this page or attach to an email</p>{" "}
         <p>and return it to your scout.</p>
-        <p>Plants will be delivered</p>
-        <p>on Friday, May 7th.</p>
-        <p>Please make checks</p>
-        <p> payable to Troop 34.</p>
-        <p>(no tax, we are non-profit organization)</p>
+        <p>Plants will be delivered on Friday, May 7th.</p>
+        <p>Please make checks payable to Troop 34.</p>
+        <p>(no tax, we are a non-profit organization)</p>
       </div>
     </div>
   );
