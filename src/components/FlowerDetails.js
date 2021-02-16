@@ -195,5 +195,4 @@ function FlowerDetails(props) {
     </div>
   );
 }
-// export default withRouter(FlowerDetails);
 export default FlowerDetails;
