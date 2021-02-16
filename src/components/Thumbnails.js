@@ -19,7 +19,6 @@ function Thumbnails({ flower, imageHandlers }) {
         onMouseEnter={() => mouseEnter(index)}
         onTouchEnd={() => mouseEnter(index)}
         onMouseLeave={mouseLeave}
-        onTouchLeave={mouseLeave}
       >
         <img
           src={variety.image}
