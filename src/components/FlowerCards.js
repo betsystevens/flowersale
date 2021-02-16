@@ -101,9 +101,9 @@ function FlowerCards({
   updateAddedModalState,
   opacity,
 }) {
-  const flowerFile = FLOWERS.filter((flower) => flower.group === flowerGroup);
+  const flowers = FLOWERS.filter((flower) => flower.group === flowerGroup);
 
-  const cards = flowerFile.map((flower) => {
+  const cards = flowers.map((flower) => {
     const [container, price, containerDescription] = containerInfo(flower);
     const [name, variety, image] = flowerInfo(flower);
     const [sunShade, color, emoji] = sunInfo(flower);
