@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { PRICING } from "../shared/pricing";
+import { currency } from "../utils/utilities";
 
 // modal component when 'add to cart' is clicked
 // displays selected flower and quantity
@@ -17,12 +18,11 @@ function AddedToCartModal({ open, image, name, variety, container, quantity }) {
     let group = PRICING.filter(
       (group) => group.container.name === container
     )[0];
-    price = (group.container.price / 100).toFixed(2);
+    price = currency(group.container.price);
     total = (quantity * price).toFixed(2);
   }
   return (
     <div className={display}>
-      {/* <div className="fixed left-1/3 top-20 m-auto w-1/3 h-auto shadow bg-gray-50 px-8 py-4"> */}
       <div
         className="fixed addedToCart md:addedToCartWide 
                       px-8 py-4

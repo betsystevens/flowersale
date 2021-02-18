@@ -3,7 +3,11 @@ import Quantity from "./Quantity";
 import CartSubtotal from "./CartSubtotal";
 import { PRICING } from "../shared/pricing";
 import { FLOWERS } from "../shared/flowers";
-import { getPrice, getContainerDescription } from "../utils/utilities";
+import {
+  getPrice,
+  currency,
+  getContainerDescription,
+} from "../utils/utilities";
 
 function getGroup(container) {
   let group = PRICING.filter((obj) => obj.container.name === container)[0]
@@ -61,7 +65,7 @@ function ItemBody({ flower, updateFlowerInCart, removeFlowerFromCart }) {
   const { name, variety, container } = flower;
   const [quantity, setQuantity] = useState(flower.quantity);
   const flowerGroup = getGroup(container);
-  const price = (getPrice(container) / 100).toFixed(2);
+  const price = currency(getPrice(container));
   const containerDescription = getContainerDescription(container);
   const total = (quantity * price).toFixed(2);
   function quantityHandler(qty) {

@@ -2,7 +2,11 @@ import React, { useEffect, useRef } from "react";
 // import { Link, useHistory, useLocation } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import { FLOWERS } from "../shared/flowers";
-import { getPrice, getContainerDescription } from "../utils/utilities";
+import {
+  getPrice,
+  currency,
+  getContainerDescription,
+} from "../utils/utilities";
 
 function flowerInfo(flower) {
   const name = flower.name;
@@ -12,7 +16,7 @@ function flowerInfo(flower) {
 }
 function containerInfo(flower) {
   const container = flower.container;
-  const price = (getPrice(flower.container) / 100).toFixed(2);
+  const price = currency(getPrice(flower.container));
   const containerDescription = getContainerDescription(flower.container);
   return [container, price, containerDescription];
 }
