@@ -112,7 +112,6 @@ function FlowerCards({
   const refArr = Array(FLOWERS.length);
   const cardRef = useRef(refArr);
   useEffect(() => {
-    let mountOrUpdate = cardId ? "mount" : "update";
     if (cardId && cardRef.current && cardRef.current[cardId]) {
       cardRef.current[cardId].scrollIntoView();
     }
