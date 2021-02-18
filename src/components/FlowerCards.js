@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+// import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FLOWERS } from "../shared/flowers";
 import { getPrice, getContainerDescription } from "../utils/utilities";
 
@@ -93,7 +94,7 @@ function CardImage({ name, image, color, sunShade, emoji }) {
     </figure>
   );
 }
-
+// **** the MAIN component *****
 function FlowerCards({
   flowerGroup,
   openAddedToCartModal,
@@ -102,6 +103,20 @@ function FlowerCards({
   opacity,
 }) {
   const flowers = FLOWERS.filter((flower) => flower.group === flowerGroup);
+
+  // const history = useHistory();
+  const location = useLocation();
+  const cardId = location.state && location.state.flowerId;
+
+  // ref created here
+  const refArr = Array(FLOWERS.length);
+  const cardRef = useRef(refArr);
+  useEffect(() => {
+    let mountOrUpdate = cardId ? "mount" : "update";
+    if (cardId && cardRef.current && cardRef.current[cardId]) {
+      cardRef.current[cardId].scrollIntoView();
+    }
+  }, [cardId]);
 
   const cards = flowers.map((flower) => {
     const [container, price, containerDescription] = containerInfo(flower);
@@ -114,7 +129,13 @@ function FlowerCards({
       openAddedToCartModal();
     };
     return (
-      <div key={flower.id} id={`{flower.id}`}>
+      // <div key={flower.id} id={`${flower.id}`} ref={cardRef}>
+      <div
+        key={flower.id}
+        id={`${flower.id}`}
+        ref={(element) => (cardRef.current[flower.id] = element)}
+      >
+        {/* <p key={item} ref={(element) => itemEls.current.push(element)}></p> */}
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <CardImage
             name={name}

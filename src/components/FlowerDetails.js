@@ -15,8 +15,8 @@ function NameDescription({ name, containerDescription }) {
     </div>
   );
 }
-function CheckoutOrContinue() {
-  const history = useHistory();
+
+function CheckoutOrContinue({ goBack }) {
   return (
     <div className="spanRows">
       <div className="flex flex-col">
@@ -26,7 +26,7 @@ function CheckoutOrContinue() {
         <button
           className="mt-16"
           onClick={() => {
-            history.goBack();
+            goBack();
           }}
         >
           <p className="underline hover:text-purple-500">Continue Shopping</p>
@@ -79,10 +79,17 @@ function FlowerDetails(props) {
   const [price, containerDescription] = getPricing(container);
   const flowerGroup = getGroup(path);
 
+  const history = useHistory();
+
+  function goBack() {
+    history.push({
+      pathname: `/${flowerGroup}`,
+      state: { flowerId: flowerId },
+    });
+  }
   useEffect(() => {
     document.title = `${name} - Details`;
   });
-  const history = useHistory();
 
   const imageHandlers = {
     handleMouseEnter(index) {
@@ -130,7 +137,7 @@ function FlowerDetails(props) {
             containerDescription={containerDescription}
           />
           <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
-          <CheckoutOrContinue flowerId={flowerId} />
+          <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
           <BigImage image={variety[hoverId].image} name={name} />
           <div>
             <p>{`Variety: ${variety[hoverId].name}`}</p>
@@ -172,15 +179,17 @@ function FlowerDetails(props) {
             <Link to={`/cart`}>
               <p className="underline hover:text-purple-500">Checkout</p>
             </Link>
-            <button
-              onClick={() => {
-                history.goBack();
-              }}
-            >
+            <button onClick={() => goBack()}>
               <p className="underline hover:text-purple-500">
                 Continue Shopping
               </p>
             </button>
+
+            {/* <NavLink to={`/flat`} id="9"> */}
+            {/* <p className="underline hover:text-purple-500"> */}
+            {/* Continue Shopping */}
+            {/* </p> */}
+            {/* </NavLink> */}
           </div>
         </div>
       </div>
