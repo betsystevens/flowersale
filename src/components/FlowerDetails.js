@@ -5,7 +5,11 @@ import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
 import { FLOWERS } from "../shared/flowers";
-import { getPrice, getContainerDescription } from "../utils/utilities";
+import {
+  getPrice,
+  currency,
+  getContainerDescription,
+} from "../utils/utilities";
 
 function NameDescription({ name, containerDescription }) {
   return (
@@ -132,7 +136,7 @@ function FlowerDetails(props) {
             name={name}
             containerDescription={containerDescription}
           />
-          <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
+          <p className="pt-10">{`Price: $${currency(price)}`}</p>
           <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
           <BigImage image={variety[hoverId].image} name={name} />
           <div>

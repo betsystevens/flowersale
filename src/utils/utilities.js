@@ -6,6 +6,10 @@ export const getPrice = (container) => {
   )[0].container.price;
 };
 
+export const currency = (price) => {
+  // <p className="pt-10">{`Price: $${(price / 100).toFixed(2)}`}</p>
+  return (price / 100).toFixed(2);
+};
 export const getContainerDescription = (container) => {
   return PRICING.filter(
     (flowerGroup) => flowerGroup.container.name === container
