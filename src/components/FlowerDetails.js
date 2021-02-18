@@ -184,12 +184,6 @@ function FlowerDetails(props) {
                 Continue Shopping
               </p>
             </button>
-
-            {/* <NavLink to={`/flat`} id="9"> */}
-            {/* <p className="underline hover:text-purple-500"> */}
-            {/* Continue Shopping */}
-            {/* </p> */}
-            {/* </NavLink> */}
           </div>
         </div>
       </div>
