@@ -24,8 +24,8 @@ function NavItem({ location, label }) {
 }
 function Nav() {
   const [isOpen, setOpen] = useState(false);
-  const ref = useRef();
-  useOnClickOutside(ref, () => setOpen(false));
+  const mobileRef = useRef();
+  useOnClickOutside(mobileRef, () => setOpen(false));
   return (
     <div className="sticky top-0 z-10 print:hidden">
       <nav className="">
@@ -66,7 +66,7 @@ function Nav() {
             <li className="flex justify-between">
               {isOpen ? (
                 <ul
-                  ref={ref}
+                  ref={mobileRef}
                   className="flex flex-col w-screen"
                   onClick={() => setOpen(false)}
                 >
