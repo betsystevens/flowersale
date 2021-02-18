@@ -4,8 +4,8 @@ import Quantity from "./Quantity";
 import BigImage from "./BigImage";
 import Thumbnails from "./Thumbnails";
 import AddedToCartModal from "./AddedToCartModal";
-import { PRICING } from "../shared/pricing";
 import { FLOWERS } from "../shared/flowers";
+import { getPrice, getContainerDescription } from "../utils/utilities";
 
 function NameDescription({ name, containerDescription }) {
   return (
@@ -55,11 +55,6 @@ function AddToCartButton({ openAddedToCartModal }) {
     </div>
   );
 }
-const getPricing = (container) => {
-  const pot = PRICING.filter((flower) => flower.container.name === container)[0]
-    .container;
-  return [pot.price, pot.description];
-};
 const getFlower = (flowerId) => {
   const flower = FLOWERS.filter((flower) => flower.id === Number(flowerId))[0];
   return flower;
@@ -76,7 +71,8 @@ function FlowerDetails(props) {
   const { flowerId, path } = props;
   const flower = getFlower(flowerId);
   const { name, variety, container } = flower;
-  const [price, containerDescription] = getPricing(container);
+  const price = getPrice(container);
+  const containerDescription = getContainerDescription(container);
   const flowerGroup = getGroup(path);
 
   const history = useHistory();
