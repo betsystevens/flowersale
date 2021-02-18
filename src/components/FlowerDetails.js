@@ -24,7 +24,7 @@ function CheckoutOrContinue({ goBack }) {
           <p className="underline hover:text-purple-500">Checkout</p>
         </Link>
         <button
-          className="mt-16"
+          className="mt-16 self-start"
           onClick={() => {
             goBack();
           }}
