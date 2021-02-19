@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { computeSubtotal, getItemsCount } from "../utils/utilities";
+import {
+  getPrice,
+  currency,
+  computeSubtotal,
+  getItemsCount,
+} from "../utils/utilities";
 
 const containerNameMap = (() => {
   let nameMap = new Map();
@@ -81,10 +86,9 @@ function OrderedFlowers({ cart }) {
   const orderedFlowers = cart.map((flower, id) => {
     let container = containerNameMap.get(flower.container);
     return (
-      // <div className="grid grid-cols-order my-2">
       <div
-        className="grid grid-cols-order-xxs
-                   my-2 text-sm
+        className="grid grid-cols-order-xxs1
+                   my-2 text-xs
                       print:grid-cols-order
                       print:text-base
                       xs:grid-cols-order
@@ -94,6 +98,9 @@ function OrderedFlowers({ cart }) {
         <p className="px-1 xs:px-0">{flower.name}</p>
         <p className="px-1 xs:px-0">{flower.variety}</p>
         <p className="px-1 xs:px-0">{container}</p>
+        <p className="text-right px-1 xs:px-0">
+          ${currency(getPrice(flower.container))}
+        </p>
       </div>
     );
   });
@@ -105,14 +112,15 @@ function OrderedFlowersHeader() {
       {/* screen */}
       <div
         className="text-left font-semibold border-2 border-gray-50
-                        grid grid-cols-order-xxs text-sm
+                        grid grid-cols-order-xxs1 text-xs
                         xs:grid-cols-order xs:text-base
                         print:hidden"
       >
         <p className="text-center">Qty</p>
-        <p>Flower</p>
-        <p>Variety</p>
-        <p>Container</p>
+        <p className="px-1 xs:px-0">Flower</p>
+        <p className="px-1 xs:px-0">Variety</p>
+        <p className="px-1 xs:px-0">Container</p>
+        <p className="text-right px-1 xs:px-0">Price</p>
       </div>
       {/* print - no bold */}
       <div className="hidden print:grid grid-cols-order text-left border-2 border-gray-50">
@@ -120,6 +128,7 @@ function OrderedFlowersHeader() {
         <p>Flower</p>
         <p>Variety</p>
         <p>Container</p>
+        <p className="text-right">Price</p>
       </div>
     </div>
   );
@@ -130,21 +139,23 @@ function OrderedFlowersSummary({ sumOfItems, subTotal }) {
       {/* screen */}
       <div
         className="border-2 border-t-4 border-gray-50
-                        grid grid-cols-order-xxs text-sm
+                        grid grid-cols-order-xxs1 text-sm
                         xs:grid-cols-order xs:text-base
                         print:hidden text-left "
       >
         <p className="font-semibold text-center px-1 xs:px-0">{sumOfItems}</p>
         <p></p>
         <p></p>
-        <p className="font-semibold px-1 xs:px-0">${subTotal}</p>
+        <p></p>
+        <p className="text-right font-semibold px-1 xs:px-0">${subTotal}</p>
       </div>
       {/* print - no semibold */}
       <div className="hidden print:grid grid-cols-order text-left border-2 border-t-4 border-gray-50">
         <p className="text-center">${sumOfItems}</p>
         <p></p>
         <p></p>
-        <p>{subTotal}</p>
+        <p></p>
+        <p className="text-right">{subTotal}</p>
       </div>
     </div>
   );
