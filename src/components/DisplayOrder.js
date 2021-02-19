@@ -139,7 +139,7 @@ function OrderedFlowersSummary({ sumOfItems, subTotal }) {
       {/* screen */}
       <div
         className="border-2 border-t-4 border-gray-50
-                        grid grid-cols-order-xxs1 text-sm
+                        grid grid-cols-order-xxs1 text-xs
                         xs:grid-cols-order xs:text-base
                         print:hidden text-left "
       >
@@ -164,7 +164,7 @@ function OrderedFlowersSummary({ sumOfItems, subTotal }) {
 function Flowers({ cart }) {
   const [sumOfItems, subTotal] = totals(cart);
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col pr-2 items-center">
       <OrderedFlowersHeader />
       {/* flowers */}
       <div className="border-2 border-gray-50">
