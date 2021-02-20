@@ -64,7 +64,7 @@ const getFlower = (flowerId) => {
   return flower;
 };
 const getGroup = (path) => {
-  return path.match(/[a-z]+/)[0];
+  return path.match(/[a-zA-Z]+/)[0];
 };
 function FlowerDetails(props) {
   const [hoverId, setHoverId] = useState(0);
@@ -78,10 +78,13 @@ function FlowerDetails(props) {
   const price = getPrice(container);
   const containerDescription = getContainerDescription(container);
   const flowerGroup = getGroup(path);
+  console.log(path);
+  console.log(flowerGroup);
 
   const history = useHistory();
 
   function goBack() {
+    console.log(`${flowerGroup} ${flowerId}`);
     history.push({
       pathname: `/${flowerGroup}`,
       state: { flowerId: flowerId },

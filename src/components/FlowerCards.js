@@ -9,15 +9,13 @@ import {
 
 function flowerInfo(flower) {
   const name = flower.name;
-  const variety = flower.variety[0].name;
   const image = flower.variety[0].image;
-  return [name, variety, image];
+  return [name, image];
 }
 function containerInfo(flower) {
-  const container = flower.container;
   const price = currency(getPrice(flower.container));
   const containerDescription = getContainerDescription(flower.container);
-  return [container, price, containerDescription];
+  return [price, containerDescription];
 }
 function sunInfo(flower) {
   let color;
@@ -51,42 +49,25 @@ function varietyInfo(flower) {
   const variety = flower.variety[0].name;
   const varietyCountOrName =
     varietyCount === 1 ? variety : `${varietyCount} varieties`;
-  return [varietyCount, varietyCountOrName];
+  return [varietyCountOrName];
 }
-function ActionButton({ varietyCount, addToCart, flowerGroup, flowerId }) {
-  if (varietyCount === 1) {
-    return (
-      // <div>
-      <div className="flex flex-col items-center w-full p-4 pb-7">
-        <button
-          id="addtocart"
-          className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button"
-          onClick={() => addToCart()}
-        >
-          Add to Cart
-        </button>
-      </div>
-    );
-  } else {
-    return (
-      <div className="flex flex-col items-center w-full p-4 pb-7">
-        <Link to={`/${flowerGroup}/${flowerId}`}>
-          <button className="px-8 pt-1 pb-2 hover:bg-purple-100 hover:text-gray-700 fancy-button">
-            View Options
-          </button>
-        </Link>
-      </div>
-    );
-  }
-}
-function CardBody({ name, price, containerDescription, varietyCountOrName }) {
+function CardBody({
+  flowerGroup,
+  flowerId,
+  name,
+  price,
+  containerDescription,
+  varietyCountOrName,
+}) {
   return (
-    <div className="p-2 flex flex-col items-center">
-      <p className="font-extrabold text-lg">{name}</p>
-      <p className="pt-1">{`${varietyCountOrName}`}</p>
-      <p className="pt-1">{`Price - $${price}`}</p>
-      <p className="pt-1">{`${containerDescription}`}</p>
-    </div>
+    <Link to={`/${flowerGroup}/${flowerId}`}>
+      <div className="p-2 flex flex-col items-center cursor-pointer">
+        <p className="font-extrabold text-lg">{name}</p>
+        <p className="pt-1">{`${varietyCountOrName}`}</p>
+        <p className="pt-1">{`Price - $${price}`}</p>
+        <p className="pt-1 pb-3">{`${containerDescription}`}</p>
+      </div>
+    </Link>
   );
 }
 function CardImage({ name, image, color, sunShade, emoji }) {
@@ -100,14 +81,13 @@ function CardImage({ name, image, color, sunShade, emoji }) {
 // **** the MAIN component *****
 function FlowerCards({
   flowerGroup,
-  openAddedToCartModal,
-  updateCart,
-  updateAddedModalState,
+  // openAddedToCartModal,
+  // updateCart,
+  // updateAddedModalState,
   opacity,
 }) {
   const flowers = FLOWERS.filter((flower) => flower.group === flowerGroup);
 
-  // const history = useHistory();
   const location = useLocation();
   const cardId = location.state && location.state.flowerId;
 
@@ -121,23 +101,16 @@ function FlowerCards({
   }, [cardId]);
 
   const cards = flowers.map((flower) => {
-    const [container, price, containerDescription] = containerInfo(flower);
-    const [name, variety, image] = flowerInfo(flower);
+    const [price, containerDescription] = containerInfo(flower);
+    const [name, image] = flowerInfo(flower);
     const [sunShade, color, emoji] = sunInfo(flower);
-    const [varietyCount, varietyCountOrName] = varietyInfo(flower);
-    const addToCart = () => {
-      updateAddedModalState(image, name, varietyCountOrName, container);
-      updateCart(name, variety, container, flowerGroup, 1);
-      openAddedToCartModal();
-    };
+    const [varietyCountOrName] = varietyInfo(flower);
     return (
-      // <div key={flower.id} id={`${flower.id}`} ref={cardRef}>
       <div
         key={flower.id}
         id={`${flower.id}`}
         ref={(element) => (cardRef.current[flower.id] = element)}
       >
-        {/* <p key={item} ref={(element) => itemEls.current.push(element)}></p> */}
         <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
           <CardImage
             name={name}
@@ -147,16 +120,12 @@ function FlowerCards({
             emoji={emoji}
           />
           <CardBody
+            flowerId={flower.id}
+            flowerGroup={flowerGroup}
             name={name}
             varietyCountOrName={varietyCountOrName}
             price={price}
             containerDescription={containerDescription}
-          />
-          <ActionButton
-            varietyCount={varietyCount}
-            addToCart={addToCart}
-            flowerId={flower.id}
-            flowerGroup={flowerGroup}
           />
         </div>
       </div>
