@@ -99,7 +99,7 @@ function OrderedFlowers({ cart }) {
         <p className="px-1 xs:px-0">{flower.variety}</p>
         <p className="px-1 xs:px-0">{container}</p>
         <p className="text-right px-1 xs:px-0">
-          ${currency(getPrice(flower.container))}
+          {currency(getPrice(flower.container) * flower.quantity)}
         </p>
       </div>
     );
