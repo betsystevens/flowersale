@@ -87,7 +87,7 @@ function OrderedFlowers({ cart }) {
     let container = containerNameMap.get(flower.container);
     return (
       <div
-        className="grid grid-cols-order-xxs1
+        className="grid grid-cols-order-xxs
                    my-2 text-xs
                       print:grid-cols-order
                       print:text-base
@@ -112,7 +112,7 @@ function OrderedFlowersHeader() {
       {/* screen */}
       <div
         className="text-left font-semibold border-2 border-gray-50
-                        grid grid-cols-order-xxs1 text-xs
+                        grid grid-cols-order-xxs text-xs
                         xs:grid-cols-order xs:text-base
                         print:hidden"
       >
@@ -139,7 +139,7 @@ function OrderedFlowersSummary({ sumOfItems, subTotal }) {
       {/* screen */}
       <div
         className="border-2 border-t-4 border-gray-50
-                        grid grid-cols-order-xxs1 text-xs
+                        grid grid-cols-order-xxs text-xs
                         xs:grid-cols-order xs:text-base
                         print:hidden text-left "
       >
@@ -243,4 +243,5 @@ const DisplayOrder = ({ cart, user }) => {
   );
 };
 
-export { DisplayOrder };
+// export { DisplayOrder };
+export default DisplayOrder;

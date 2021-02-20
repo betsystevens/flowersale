@@ -49,14 +49,11 @@ module.exports = {
         // grid-cols-cart-4
         "cart-4": "repeat(4, minmax(0, 50px))",
 
-        // grid-cols-order  (64 + 192 + 144 + 128 + 72 = 528)
+        // grid-cols-order  (64 + 192 + 144 + 128 + 72 = 600)
         order: "64px 192px 144px 128px 72px",
 
-        // grid-cols-order-xxs  (40 + 96 + 96 + 80 = 312)
-        "order-xxs": "40px 96px 96px 80px",
-
-        // grid-cols-order-xxs1  (40 + 80 + 76 + 70 + 50 = )
-        "order-xxs1": "40px 80px 76px 70px 50px",
+        // grid-cols-order-xxs  (40 + 80 + 76 + 70 + 50 = 316)
+        "order-xxs": "40px 80px 76px 70px 50px",
 
         // grid-cols-user
         user: "80px 280px 40px 128px",
