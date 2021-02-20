@@ -46,16 +46,6 @@ function AddedToCartModal({ open, image, name, variety, container, quantity }) {
           <p className="mt-0.5 md:mt-1.5 text-sm">{variety}</p>
           <p className="mt-5 md:text-lg">Quantity: {quantity}</p>
           <p className="py-1 mb-3 md:text-lg">${total}</p>
-
-          <Link to="/cart">
-            <p className="py-1 px-4 text-sm rounded border-2 border-purple-500 hover:text-gray-50 hover:bg-purple-500">
-              Checkout
-            </p>
-          </Link>
-
-          <button className="mt-4 py-1 px-4 rounded border-2 border-purple-400 hover:text-gray-50 hover:bg-purple-500">
-            Continue Shopping
-          </button>
         </div>
       </div>
     </div>

@@ -9,19 +9,19 @@
     top: 50%;
     left: 50%;
     margin-left: -140px;
-    margin-top: -232px;
+    margin-top: -190px;
     width: 280px;
-    height: 454px;
+    height: 380px;
   }
 }
 @responsive {
   .addedToCartWide {
     top: 50%;
     left: 50%;
-    margin-left: -192;
-    margin-top: -256px;
-    width: 384px;
-    height: 512px;
+    margin-left: -162;
+    margin-top: -210px;
+    width: 324px;
+    height: 420px;
   }
 }
 
