@@ -6,10 +6,10 @@ export const FLOWERS = [
     sun: "full sun",
     group: "flat",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },
-      { name: "white", image: "/assets/images/flats/alyssumWhite512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/alyssumMixed512x138.jpg" },
+      { name: "White", image: "/assets/images/flats/alyssumWhite512x384.jpg" },
       {
-        name: "purple",
+        name: "Purple",
         image: "/assets/images/flats/allysumPurple512x384.jpg",
       },
     ],
@@ -25,16 +25,16 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/begoniaMixed512x384.jpg" },
-      { name: "white", image: "/assets/images/flats/begoniaWhite512x384.jpg" },
-      { name: "pink", image: "/assets/images/flats/begoniaPink512x384.jpg" },
-      { name: "red", image: "/assets/images/flats/begoniaRed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/begoniaMixed512x384.jpg" },
+      { name: "White", image: "/assets/images/flats/begoniaWhite512x384.jpg" },
+      { name: "Pink", image: "/assets/images/flats/begoniaPink512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/begoniaRed512x384.jpg" },
       {
-        name: "pink bronze leaf",
+        name: "Pink bronze leaf",
         image: "/assets/images/flats/begoniaPinkBronzeLeaf512x384.jpg",
       },
       {
-        name: "red bronze leaf",
+        name: "Red bronze leaf",
         image: "/assets/images/flats/begoniaRedBronzeLeaf512x384.jpg",
       },
     ],
@@ -49,11 +49,11 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "mixed",
+        name: "Mixed",
         image: "/assets/images/flats/coleusWizardMix512x384.jpg",
       },
       {
-        name: "scarlet",
+        name: "Scarlet",
         image: "/assets/images/flats/coleusScarlet512x384.jpg",
       },
     ],
@@ -67,7 +67,7 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/dahliaMixed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/dahliaMixed512x384.jpg" },
     ],
   },
   {
@@ -79,8 +79,8 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/dianthusMixed512x384.jpg" },
-      { name: "red", image: "/assets/images/flats/dianthusRed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/dianthusMixed512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/dianthusRed512x384.jpg" },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "silver", image: "/assets/images/flats/dustyMiller512x384.jpg" },
+      { name: "Silver", image: "/assets/images/flats/dustyMiller512x384.jpg" },
     ],
   },
   {
@@ -105,24 +105,24 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "dazzler mixed",
+        name: "Dazzler mixed",
         image: "/assets/images/flats/impatiensPastelMix512x384.jpg",
       },
       {
-        name: "white",
+        name: "White",
         image: "/assets/images/flats/impatiensWhite512x384.jpg",
       },
-      { name: "red", image: "/assets/images/flats/impatiensRed512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/impatiensRed512x384.jpg" },
       {
-        name: "salmom",
+        name: "Salmom",
         image: "/assets/images/flats/impatiensSalmon512x384.jpg",
       },
       {
-        name: "violet",
+        name: "Violet",
         image: "/assets/images/flats/impatiensViolet512x384.jpg",
       },
       {
-        name: "hot pink",
+        name: "Hot pink",
         image: "/assets/images/flats/impatiensPink512x384.jpg",
       },
     ],
@@ -137,15 +137,15 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "bi-color",
+        name: "Bi-color",
         image: "/assets/images/flats/marigoldMixed512x384.jpg",
       },
       {
-        name: "yellow",
+        name: "Yellow",
         image: "/assets/images/flats/marigoldYellow512x384.jpg",
       },
       {
-        name: "orange",
+        name: "Orange",
         image: "/assets/images/flats/marigoldOrange512x384.jpg",
       },
     ],
@@ -159,7 +159,7 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/mossRoseMixed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/mossRoseMixed512x384.jpg" },
     ],
   },
   {
@@ -171,16 +171,16 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/petuniaMixed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/petuniaMixed512x384.jpg" },
       {
-        name: "midnight blue",
+        name: "Midnight blue",
         image: "/assets/images/flats/petuniaMidnight512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/flats/petuniaPink512x384.jpg" },
-      { name: "red", image: "/assets/images/flats/petuniaRed512x384.jpg" },
-      { name: "white", image: "/assets/images/flats/petuniaWhite512x384.jpg" },
+      { name: "Pink", image: "/assets/images/flats/petuniaPink512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/petuniaRed512x384.jpg" },
+      { name: "White", image: "/assets/images/flats/petuniaWhite512x384.jpg" },
       {
-        name: "yellow",
+        name: "Yellow",
         image: "/assets/images/flats/petuniaYellow512x384.jpg",
       },
     ],
@@ -195,10 +195,10 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "victoria blue",
+        name: "Victoria blue",
         image: "/assets/images/flats/salviaVictoriaBlue512x384.jpg",
       },
-      { name: "red", image: "/assets/images/flats/salviaRed512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/salviaRed512x384.jpg" },
     ],
   },
   {
@@ -211,11 +211,11 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
       {
-        name: "dwarf mixed",
+        name: "Dwarf mixed",
         image: "/assets/images/flats/snapDragonMix512x384.jpg",
       },
       {
-        name: "tall mixed",
+        name: "Tall mixed",
         image: "/assets/images/flats/snapDragonsTall512x384.jpg",
       },
     ],
@@ -229,7 +229,7 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/verbenaMixed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/verbenaMixed512x384.jpg" },
     ],
   },
   {
@@ -241,11 +241,11 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/vincaMixed512x384.jpg" },
-      { name: "red", image: "/assets/images/flats/vincaRed512x384.jpg" },
-      { name: "white", image: "/assets/images/flats/vincaWhite512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/vincaMixed512x384.jpg" },
+      { name: "Red", image: "/assets/images/flats/vincaRed512x384.jpg" },
+      { name: "White", image: "/assets/images/flats/vincaWhite512x384.jpg" },
       {
-        name: "lavender",
+        name: "Lavender",
         image: "/assets/images/flats/vincaLavender512x384.jpg",
       },
     ],
@@ -259,7 +259,7 @@ export const FLOWERS = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
     variety: [
-      { name: "mixed", image: "/assets/images/flats/zinniaMixed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/flats/zinniaMixed512x384.jpg" },
     ],
   },
   {
@@ -271,19 +271,19 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "blue purple",
+        name: "Blue purple",
         image: "/assets/images/hb/comboBluePurple512x384.jpg",
       },
       {
-        name: "pink and colors",
+        name: "Pink and colors",
         image: "/assets/images/hb/comboPinkComp512x384.jpg",
       },
       {
-        name: "red and colors",
+        name: "Red and colors",
         image: "/assets/images/hb/comboRedWhiteBlue512x384.jpg",
       },
       {
-        name: "yellow and colors",
+        name: "Yellow and colors",
         image: "/assets/images/hb/comboRedYellowBlue512x384.jpg",
       },
     ],
@@ -297,7 +297,7 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "sparkler pink",
+        name: "Sparkler pink",
         image: "/assets/images/hb/dblRosebudSparklerHotPinkHB512x384.jpg",
       },
     ],
@@ -310,7 +310,7 @@ export const FLOWERS = [
     group: "hb",
     variety: [
       {
-        name: "red",
+        name: "Red",
         image: "/assets/images/hb/dragonWingBegoniaRed512x384.jpg",
       },
     ],
@@ -324,11 +324,11 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "red purple",
+        name: "Red purple",
         image: "/assets/images/hb/fuschiaRedPurple512x384.jpg",
       },
       {
-        name: "red white",
+        name: "Red white",
         image: "/assets/images/hb/fuschiaRedWhite512x384.jpg",
       },
     ],
@@ -342,7 +342,7 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "yellow peach",
+        name: "Yellow peach",
         image: "/assets/images/hb/illuminationBegoniaApricot512x384.jpg",
       },
     ],
@@ -355,9 +355,9 @@ export const FLOWERS = [
     group: "hb",
     description: "Lorem ipsum",
     variety: [
-      { name: "mixed", image: "/assets/images/hb/impatiensMixedHB512x384.jpg" },
-      { name: "pink", image: "/assets/images/hb/impatiensPinkHB512x384.jpg" },
-      { name: "red", image: "/assets/images/hb/impatiensRed512x384.jpg" },
+      { name: "Mixed", image: "/assets/images/hb/impatiensMixedHB512x384.jpg" },
+      { name: "Pink", image: "/assets/images/hb/impatiensPinkHB512x384.jpg" },
+      { name: "Red", image: "/assets/images/hb/impatiensRed512x384.jpg" },
     ],
   },
   {
@@ -368,10 +368,10 @@ export const FLOWERS = [
     group: "hb",
     description: "Lorem ipsum",
     variety: [
-      { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
-      { name: "pink", image: "/assets/images/hb/ivyGeraniumPinkHB512x384.jpg" },
+      { name: "Red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
+      { name: "Pink", image: "/assets/images/hb/ivyGeraniumPinkHB512x384.jpg" },
       {
-        name: "lavender",
+        name: "Lavender",
         image: "/assets/images/hb/ivyGeraniumLavenderHB512x384.jpg",
       },
     ],
@@ -385,16 +385,16 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "blue",
+        name: "Blue",
         image: "/assets/images/hb/millionBellsBlueHB512x384.jpg",
       },
       {
-        name: "pink",
+        name: "Pink",
         image: "/assets/images/hb/millionBellsPinkHB512x384.jpg",
       },
-      { name: "red", image: "/assets/images/hb/millionBellsRedHB512x384.jpg" },
+      { name: "Red", image: "/assets/images/hb/millionBellsRedHB512x384.jpg" },
       {
-        name: "yellow",
+        name: "Yellow",
         image: "/assets/images/hb/millionBellsYellowHB512x384.jpg",
       },
     ],
@@ -408,23 +408,23 @@ export const FLOWERS = [
     description: "Lorem ipsum",
     variety: [
       {
-        name: "bordeaux",
+        name: "Bordeaux",
         image: "/assets/images/hb/petuniaBordeauxHB512x384.jpg",
       },
       {
-        name: "burgundy star",
+        name: "Burgundy star",
         image: "/assets/images/hb/petuniaBurgundyStarHB512x384.jpg",
       },
       {
-        name: "midnight blue",
+        name: "Midnight blue",
         image: "/assets/images/hb/petuniaMidnightBlueHB512x384.jpg",
       },
-      { name: "purple", image: "/assets/images/hb/petuniaPurpleHB512x384.jpg" },
+      { name: "Purple", image: "/assets/images/hb/petuniaPurpleHB512x384.jpg" },
       {
-        name: "sky blue",
+        name: "Sky blue",
         image: "/assets/images/hb/petuniaSkyBlueHB512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/hb/petuniaPinkHB512x384.jpg" },
+      { name: "Pink", image: "/assets/images/hb/petuniaPinkHB512x384.jpg" },
     ],
   },
   {
@@ -435,7 +435,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/betterBoy512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/betterBoy512x384.jpg" },
     ],
   },
   {
@@ -446,7 +446,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/cherry512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/cherry512x384.jpg" },
     ],
   },
   {
@@ -457,7 +457,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/earlyGirl512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/earlyGirl512x384.jpg" },
     ],
   },
   {
@@ -468,7 +468,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/grape512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/grape512x384.jpg" },
     ],
   },
   {
@@ -478,7 +478,7 @@ export const FLOWERS = [
     sun: "full sun",
     group: "herbTomato",
     description: "The crown jewel of any home garden",
-    variety: [{ name: "tomato", image: "/assets/images/pots/roma512x384.jpg" }],
+    variety: [{ name: "Tomato", image: "/assets/images/pots/roma512x384.jpg" }],
   },
   {
     id: 29,
@@ -488,7 +488,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "The crown jewel of any home garden",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/superSteak512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/superSteak512x384.jpg" },
     ],
   },
   {
@@ -499,7 +499,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "One gallon patio pot",
     variety: [
-      { name: "tomato", image: "/assets/images/pots/tomatoGallon512x384.jpg" },
+      { name: "Tomato", image: "/assets/images/pots/tomatoGallon512x384.jpg" },
     ],
   },
   {
@@ -509,7 +509,7 @@ export const FLOWERS = [
     sun: "full sun",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
-    variety: [{ name: "herb", image: "/assets/images/pots/basil512x384.jpg" }],
+    variety: [{ name: "Herb", image: "/assets/images/pots/basil512x384.jpg" }],
   },
   {
     id: 32,
@@ -518,7 +518,7 @@ export const FLOWERS = [
     sun: "full sun",
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
-    variety: [{ name: "herb", image: "/assets/images/pots/chives512x384.jpg" }],
+    variety: [{ name: "Herb", image: "/assets/images/pots/chives512x384.jpg" }],
   },
   {
     id: 33,
@@ -528,7 +528,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      { name: "herb", image: "/assets/images/pots/cilantro512x384.jpg" },
+      { name: "Herb", image: "/assets/images/pots/cilantro512x384.jpg" },
     ],
   },
   {
@@ -539,7 +539,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      { name: "herb", image: "/assets/images/pots/oregano512x384.jpg" },
+      { name: "Herb", image: "/assets/images/pots/oregano512x384.jpg" },
     ],
   },
   {
@@ -550,7 +550,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      { name: "herb", image: "/assets/images/pots/parsley512x384.jpg" },
+      { name: "Herb", image: "/assets/images/pots/parsley512x384.jpg" },
     ],
   },
   {
@@ -561,7 +561,7 @@ export const FLOWERS = [
     group: "herbTomato",
     description: "Fresh herbs grown in your own garden is heaven on earth",
     variety: [
-      { name: "herb", image: "/assets/images/pots/rosemary512x384.jpg" },
+      { name: "Herb", image: "/assets/images/pots/rosemary512x384.jpg" },
     ],
   },
   {
@@ -573,7 +573,7 @@ export const FLOWERS = [
     description: "Foilage plants to accent your flowering plants",
     variety: [
       {
-        name: "yellow",
+        name: "Yellow",
         image: "/assets/images/pots/margueriteDaisy512x384.jpg",
       },
     ],
@@ -586,15 +586,15 @@ export const FLOWERS = [
     group: "pot",
     description: "red, white, pink, salmon, violet/fuschia",
     variety: [
-      { name: "red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
-      { name: "white", image: "/assets/images/pots/geraniumWhite512x384.jpg" },
-      { name: "pink", image: "/assets/images/pots/geraniumPink512x384.jpg" },
+      { name: "Red", image: "/assets/images/hb/ivyGeraniumRedHB512x384.jpg" },
+      { name: "White", image: "/assets/images/pots/geraniumWhite512x384.jpg" },
+      { name: "Pink", image: "/assets/images/pots/geraniumPink512x384.jpg" },
       {
-        name: "salmon",
+        name: "Salmon",
         image: "/assets/images/hb/ivyGeraniumSalmonHB512x384.jpg",
       },
       {
-        name: "violet/fuschia",
+        name: "Violet/fuschia",
         image: "/assets/images/pots/geraniumVioletFuschia512x384.jpg",
       },
     ],
@@ -609,7 +609,7 @@ export const FLOWERS = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, odit?",
     variety: [
       {
-        name: "purple",
+        name: "Purple",
         image: "/assets/images/pots/fountainGrassPurple512x384.jpg",
       },
     ],
@@ -623,13 +623,13 @@ export const FLOWERS = [
     description: "Geraniums, Spikes and Two Trailing Proven Winners",
     variety: [
       {
-        name: "salmon",
+        name: "Salmon",
         image: "/assets/images/pots/patioPotSalmon512x384.jpg",
       },
-      { name: "pink", image: "/assets/images/pots/patioPotPink512x384.jpg" },
-      { name: "red", image: "/assets/images/pots/patioPotRed512x384.jpg" },
+      { name: "Pink", image: "/assets/images/pots/patioPotPink512x384.jpg" },
+      { name: "Red", image: "/assets/images/pots/patioPotRed512x384.jpg" },
       {
-        name: "violet",
+        name: "Violet",
         image: "/assets/images/pots/patioPotViolet512x384.jpg",
       },
     ],
@@ -642,8 +642,8 @@ export const FLOWERS = [
     group: "pot",
     description: "Foilage plants to add interest to your garden",
     variety: [
-      { name: "blackie", image: "/assets/images/pots/potatoVine512x384.jpg" },
-      { name: "lime", image: "/assets/images/pots/potatoVineLime512x384.jpg" },
+      { name: "Blackie", image: "/assets/images/pots/potatoVine512x384.jpg" },
+      { name: "Lime", image: "/assets/images/pots/potatoVineLime512x384.jpg" },
     ],
   },
   {
@@ -655,7 +655,7 @@ export const FLOWERS = [
     description: "Foilage plants to accent your flowering plants",
     variety: [
       {
-        name: "vinca vine",
+        name: "Accent plant",
         image: "/assets/images/pots/vincaVine512x384.jpg",
       },
     ],
@@ -668,7 +668,7 @@ export const FLOWERS = [
     group: "pot",
     description: "Foilage plants to accent your flowering plants",
     variety: [
-      { name: "spikes", image: "/assets/images/pots/spikes512x384.jpg" },
+      { name: "Accent plant", image: "/assets/images/pots/spikes512x384.jpg" },
     ],
   },
 ];
