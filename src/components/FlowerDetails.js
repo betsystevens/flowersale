@@ -88,7 +88,6 @@ function FlowerDetails({ flowerId, path, updateCart }) {
   const history = useHistory();
 
   const goBack = () => {
-    console.log(`${flowerGroup} ${flowerId}`);
     history.push({
       pathname: `/${flowerGroup}`,
       state: { flowerId: flowerId },
@@ -149,9 +148,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
           </div>
           <BigImage image={variety[hoverId].image} name={name} />
           <div>
-            <p>{`Variety: ${variety[hoverId].name}`}</p>
             <div className="pt-1 h-65">
               <Thumbnails
+                hoverId={hoverId}
                 flowerId={flowerId}
                 flower={flower}
                 imageHandlers={imageHandlers}
@@ -174,9 +173,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
           <div className="mb-4">
             <BigImage image={variety[hoverId].image} name={name} />
           </div>
-          <p className="mb-2">{`Variety: ${variety[hoverId].name}`}</p>
           <div className="mb-2 w-64">
             <Thumbnails
+              hoverId={hoverId}
               flowerId={flowerId}
               flower={flower}
               imageHandlers={imageHandlers}

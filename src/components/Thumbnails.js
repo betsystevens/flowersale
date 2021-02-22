@@ -1,6 +1,6 @@
 import React from "react";
 
-function Thumbnails({ flower, imageHandlers }) {
+function Thumbnails({ hoverId, flower, imageHandlers }) {
   const onClick = (index) => {
     imageHandlers.handleClick(index);
   };
@@ -28,7 +28,12 @@ function Thumbnails({ flower, imageHandlers }) {
       </div>
     );
   });
-  return <div className="grid grid-cols-3 gap-2">{thumbnails}</div>;
+  return (
+    <div className="flex flex-col items-center">
+      <p>{`Variety: ${flower.variety[hoverId || 0].name}`}</p>
+      <div className="grid grid-cols-3 gap-2">{thumbnails}</div>
+    </div>
+  );
 }
 
 export default Thumbnails;
