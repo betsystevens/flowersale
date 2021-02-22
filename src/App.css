@@ -47,10 +47,6 @@ nav li.logo a:hover {
   grid-gap: 1rem 2rem;
   grid-template-columns: 300px 275px 150px;
 }
-.spanRows {
-  grid-column: 3;
-  grid-row: 1 / 4;
-}
 
 /* quantity styles */
 .minus {

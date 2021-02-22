@@ -31,20 +31,19 @@ function NameDescription({ name, containerDescription, price }) {
 
 function CheckoutOrContinue({ goBack }) {
   return (
-    <div className="mb-3">
-      <div className="flex justify-evenly w-64 md:flex-col md:w-auto">
-        <Link to={`/cart`} className="md:mt-36">
-          <p className="underline hover:text-purple-500">Checkout</p>
-        </Link>
-        <button
-          className="md:mt-16 md:self-start"
-          onClick={() => {
-            goBack();
-          }}
-        >
-          <p className="underline hover:text-purple-500">Continue Shopping</p>
-        </button>
-      </div>
+    <div className="flex justify-evenly w-64 md:flex-col md:justify-start md:w-auto">
+      <Link to={`/cart`}>
+        <p className="md:mt-10 underline hover:text-purple-500">Checkout</p>
+      </Link>
+      <button
+        // className="md:mt-16 md:self-start"
+        className="cursor-pointer md:self-start md:mt-10"
+        onClick={() => {
+          goBack();
+        }}
+      >
+        <p className="underline hover:text-purple-500">Continue Shopping</p>
+      </button>
     </div>
   );
 }
@@ -147,11 +146,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
             price={price}
           />
           <p></p>
-          <div className="spanRows">
-            <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
-          </div>
+          <p></p>
           <BigImage image={variety[hoverId].image} name={name} />
-          <div>
+          <div className="flex flex-col items-center">
             <div className="pt-1 h-65">
               <Thumbnails
                 hoverId={hoverId}
@@ -160,11 +157,12 @@ function FlowerDetails({ flowerId, path, updateCart }) {
                 imageHandlers={imageHandlers}
               />
             </div>
-            <div className="flex justify-around pt-6">
+            <div className="flex justify-between pt-6">
               <Quantity quantity={quantity} callback={quantityHandler} />
               <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
             </div>
           </div>
+          <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
         </div>
       </div>
       {/* stacked details */}
