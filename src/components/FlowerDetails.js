@@ -14,21 +14,27 @@ import {
 function NameDescription({ name, containerDescription }) {
   return (
     <div>
-      <p className="font-extrabold text-lg">{name}</p>
-      <p className="pt-2">{`${containerDescription}`}</p>
+      <p
+        className="font-extrabold text-lg 
+                    text-center  md:text-left 
+                    mb-2 md:mb-0 "
+      >
+        {name}
+      </p>
+      <p className="mb-2 md:mb-0 md:pt-2">{`${containerDescription}`}</p>
     </div>
   );
 }
 
 function CheckoutOrContinue({ goBack }) {
   return (
-    <div className="spanRows">
-      <div className="flex flex-col">
-        <Link to={`/cart`} className="mt-36">
+    <div className="mb-3">
+      <div className="flex justify-evenly w-64 md:flex-col md:w-auto">
+        <Link to={`/cart`} className="md:mt-36">
           <p className="underline hover:text-purple-500">Checkout</p>
         </Link>
         <button
-          className="mt-16 self-start"
+          className="md:mt-16 md:self-start"
           onClick={() => {
             goBack();
           }}
@@ -80,13 +86,13 @@ function FlowerDetails({ flowerId, path, updateCart }) {
 
   const history = useHistory();
 
-  function goBack() {
+  const goBack = () => {
     console.log(`${flowerGroup} ${flowerId}`);
     history.push({
       pathname: `/${flowerGroup}`,
       state: { flowerId: flowerId },
     });
-  }
+  };
   useEffect(() => {
     document.title = `${name} - Details`;
   });
@@ -102,9 +108,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
       setSelectedVariety(index);
     },
   };
-  function quantityHandler(qty) {
+  const quantityHandler = (qty) => {
     if (qty) setQuantity(qty);
-  }
+  };
 
   const openAddedToCartModal = (e) => {
     e.target.blur();
@@ -120,13 +126,13 @@ function FlowerDetails({ flowerId, path, updateCart }) {
       );
     }
   };
-  function closeModal(e) {
+  const closeModal = (e) => {
     if (!(e.target.id === "addtocart")) {
       // warning memory leak, cancel all subscriptions ...
       setOpen(false);
       window.removeEventListener("click", closeModal);
     }
-  }
+  };
   return (
     <div className="mt-16 flex flex-col items-center">
       {/* wide details */}
@@ -137,7 +143,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
             containerDescription={containerDescription}
           />
           <p className="pt-10">{`Price: $${currency(price)}`}</p>
-          <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
+          <div className="spanRows">
+            <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
+          </div>
           <BigImage image={variety[hoverId].image} name={name} />
           <div>
             <p>{`Variety: ${variety[hoverId].name}`}</p>
@@ -158,8 +166,10 @@ function FlowerDetails({ flowerId, path, updateCart }) {
       {/* stacked details */}
       <div className="block md:hidden">
         <div className="mb-20 p-2 flex w-72 flex-col items-center shadow-md rounded-md">
-          <p className="mb-2 font-extrabold text-lg">{name}</p>
-          <p className="mb-2">{`${containerDescription}`}</p>
+          <NameDescription
+            name={name}
+            containerDescription={containerDescription}
+          />
           <div className="mb-4">
             <BigImage image={variety[hoverId].image} name={name} />
           </div>
@@ -175,16 +185,7 @@ function FlowerDetails({ flowerId, path, updateCart }) {
             <Quantity quantity={quantity} callback={quantityHandler} />
             <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
           </div>
-          <div className="flex justify-evenly w-64">
-            <Link to={`/cart`}>
-              <p className="underline hover:text-purple-500">Checkout</p>
-            </Link>
-            <button onClick={() => goBack()}>
-              <p className="underline hover:text-purple-500">
-                Continue Shopping
-              </p>
-            </button>
-          </div>
+          <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
         </div>
       </div>
       <AddedToCartModal
