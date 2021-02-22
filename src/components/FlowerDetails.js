@@ -11,9 +11,9 @@ import {
   getContainerDescription,
 } from "../utils/utilities";
 
-function NameDescription({ name, containerDescription }) {
+function NameDescription({ name, containerDescription, price }) {
   return (
-    <div>
+    <div className="flex flex-col px-1.5 min-w-full">
       <p
         className="font-extrabold text-lg 
                     text-center  md:text-left 
@@ -21,7 +21,10 @@ function NameDescription({ name, containerDescription }) {
       >
         {name}
       </p>
-      <p className="mb-2 md:mb-0 md:pt-2">{`${containerDescription}`}</p>
+      <div className="flex justify-between">
+        <p>{containerDescription}</p>
+        <p>${currency(price)}</p>
+      </div>
     </div>
   );
 }
@@ -141,8 +144,9 @@ function FlowerDetails({ flowerId, path, updateCart }) {
           <NameDescription
             name={name}
             containerDescription={containerDescription}
+            price={price}
           />
-          <p className="pt-10">{`Price: $${currency(price)}`}</p>
+          <p></p>
           <div className="spanRows">
             <CheckoutOrContinue flowerId={flowerId} goBack={goBack} />
           </div>
@@ -156,7 +160,7 @@ function FlowerDetails({ flowerId, path, updateCart }) {
                 imageHandlers={imageHandlers}
               />
             </div>
-            <div className="flex pt-6">
+            <div className="flex justify-around pt-6">
               <Quantity quantity={quantity} callback={quantityHandler} />
               <AddToCartButton openAddedToCartModal={openAddedToCartModal} />
             </div>
@@ -169,6 +173,7 @@ function FlowerDetails({ flowerId, path, updateCart }) {
           <NameDescription
             name={name}
             containerDescription={containerDescription}
+            price={price}
           />
           <div className="mb-4">
             <BigImage image={variety[hoverId].image} name={name} />

@@ -30,7 +30,7 @@ function Thumbnails({ hoverId, flower, imageHandlers }) {
   });
   return (
     <div className="flex flex-col items-center">
-      <p>{`Variety: ${flower.variety[hoverId || 0].name}`}</p>
+      <p className="self-start pl-3">{flower.variety[hoverId || 0].name}</p>
       <div className="grid grid-cols-3 gap-2">{thumbnails}</div>
     </div>
   );
