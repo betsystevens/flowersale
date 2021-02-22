@@ -66,20 +66,17 @@ const getFlower = (flowerId) => {
 const getGroup = (path) => {
   return path.match(/[a-zA-Z]+/)[0];
 };
-function FlowerDetails(props) {
+function FlowerDetails({ flowerId, path, updateCart }) {
   const [hoverId, setHoverId] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedVariety, setSelectedVariety] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const { flowerId, path } = props;
   const flower = getFlower(flowerId);
   const { name, variety, container } = flower;
   const price = getPrice(container);
   const containerDescription = getContainerDescription(container);
   const flowerGroup = getGroup(path);
-  console.log(path);
-  console.log(flowerGroup);
 
   const history = useHistory();
 
@@ -114,7 +111,7 @@ function FlowerDetails(props) {
     if (!open) {
       setOpen(true);
       window.addEventListener("click", closeModal);
-      props.updateCart(
+      updateCart(
         name,
         variety[selectedVariety].name,
         container,
