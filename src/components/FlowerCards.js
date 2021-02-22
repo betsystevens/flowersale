@@ -79,13 +79,7 @@ function CardImage({ name, image, color, sunShade, emoji }) {
   );
 }
 // **** the MAIN component *****
-function FlowerCards({
-  flowerGroup,
-  // openAddedToCartModal,
-  // updateCart,
-  // updateAddedModalState,
-  opacity,
-}) {
+function FlowerCards({ flowerGroup, opacity }) {
   const flowers = FLOWERS.filter((flower) => flower.group === flowerGroup);
 
   const location = useLocation();
