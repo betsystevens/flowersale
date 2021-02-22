@@ -58,7 +58,8 @@ function AddToCartButton({ openAddedToCartModal }) {
         <img
           src="/assets/icons/Cart64x40.svg"
           alt="shopping cart"
-          className="inline-block m-auto px-2 mr-1 h-3/4 "
+          className="inline-block m-auto px-2 mr-1 h-3/4 
+                      pointer-events-none"
         ></img>
         Add To Cart
       </button>
