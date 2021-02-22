@@ -7,7 +7,7 @@ export const GROUPS = [
     description:
       "A variety of annuals that are guaranteed to start your garden blooming. Choose from an assortment of colors and sizes to create your own personal floral masterpiece. Thirty six plants per flat that were given the best of care and are ready to bloom for you all summer.",
     shortDescription:
-      "A variety of annuals that are guaranteed to start your garden blooming. There are 36 plants per flat",
+      "A variety of annuals that are guaranteed to start your garden blooming. There are 36 plants per flat.",
   },
   {
     id: 1,

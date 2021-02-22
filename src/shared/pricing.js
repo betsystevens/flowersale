@@ -17,8 +17,7 @@ export const PRICING = [
     group: "flat",
     container: {
       name: "flat",
-      // description: "36 plants per flat",
-      description: "flat - 36 plants",
+      description: "Flat - 36 plants",
       price: 1700,
       wholesale: 1200,
     },
