@@ -36,7 +36,6 @@ function CheckoutOrContinue({ goBack }) {
         <p className="md:mt-10 underline hover:text-purple-500">Checkout</p>
       </Link>
       <button
-        // className="md:mt-16 md:self-start"
         className="cursor-pointer md:self-start md:mt-10"
         onClick={() => {
           goBack();
@@ -77,8 +76,8 @@ const getGroup = (path) => {
 };
 function FlowerDetails({ flowerId, path, updateCart }) {
   const [hoverId, setHoverId] = useState(0);
-  const [quantity, setQuantity] = useState(1);
   const [selectedVariety, setSelectedVariety] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
 
   const flower = getFlower(flowerId);
@@ -147,15 +146,10 @@ function FlowerDetails({ flowerId, path, updateCart }) {
           />
           <p></p>
           <p></p>
-          <BigImage image={variety[hoverId].image} name={name} />
+          <BigImage variety={variety[hoverId]} name={name} />
           <div className="flex flex-col items-center">
             <div className="pt-1 h-65">
-              <Thumbnails
-                hoverId={hoverId}
-                flowerId={flowerId}
-                flower={flower}
-                imageHandlers={imageHandlers}
-              />
+              <Thumbnails flower={flower} imageHandlers={imageHandlers} />
             </div>
             <div className="flex justify-between pt-6">
               <Quantity quantity={quantity} callback={quantityHandler} />
@@ -174,15 +168,10 @@ function FlowerDetails({ flowerId, path, updateCart }) {
             price={price}
           />
           <div className="mb-4">
-            <BigImage image={variety[hoverId].image} name={name} />
+            <BigImage variety={variety[hoverId]} name={name} />
           </div>
           <div className="mb-2 w-64">
-            <Thumbnails
-              hoverId={hoverId}
-              flowerId={flowerId}
-              flower={flower}
-              imageHandlers={imageHandlers}
-            />
+            <Thumbnails flower={flower} imageHandlers={imageHandlers} />
           </div>
           <div className="flex py-6">
             <Quantity quantity={quantity} callback={quantityHandler} />
