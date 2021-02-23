@@ -1,5 +1,18 @@
 import { PRICING } from "../shared/pricing";
 
+export const pageNames = () => {
+  let pageNames = new Map();
+  pageNames.set("hb", "Hanging Baskets");
+  pageNames.set("flat", "Flats");
+  pageNames.set("pot", "Potted Plants");
+  pageNames.set("herbTomato", "Herbs & Tomatoes");
+  pageNames.set("cart", "Cart");
+  pageNames.set("userContact", "User");
+  pageNames.set("displayOrder", "Order");
+  pageNames.set("home", "Home");
+  return pageNames;
+};
+
 export const getPrice = (container) => {
   return PRICING.filter(
     (flowerGroup) => flowerGroup.container.name === container

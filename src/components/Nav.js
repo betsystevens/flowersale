@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useOnClickOutside } from "./hooks";
+import { pageNames } from "../utils/utilities";
 
 function NavItem({ location, label }) {
   return (
@@ -25,6 +26,11 @@ function NavItem({ location, label }) {
 function Nav() {
   const [isOpen, setOpen] = useState(false);
   const mobileRef = useRef();
+
+  const location = useLocation();
+  const path = location.pathname.match(/[a-zA-Z]+/);
+  const page = path ? pageNames().get(path[0]) || "" : "";
+
   useOnClickOutside(mobileRef, () => setOpen(false));
   return (
     <div className="sticky top-0 z-10 print:hidden">
@@ -63,7 +69,7 @@ function Nav() {
         {/* mobile nav - column */}
         <div className="sm:hidden">
           <ul>
-            <li className="flex justify-between">
+            <li className="flex justify-between items-center">
               {isOpen ? (
                 <ul
                   ref={mobileRef}
@@ -77,14 +83,17 @@ function Nav() {
                   <NavItem location="/herbTomato" label="Herbs & Tomatoes" />
                 </ul>
               ) : (
-                <button
-                  onClick={() => setOpen(true)}
-                  className="px-1 rounded ring-2 ring-opacity-10 ring-gray-50 "
-                >
-                  <svg className="w-4 h-4 mx-auto fill-current text-indigo-100">
-                    <use xlinkHref="/assets/icons/menu.svg#icon-menu" />
-                  </svg>
-                </button>
+                <ul className="flex w-screen">
+                  <button
+                    onClick={() => setOpen(true)}
+                    className="px-1 rounded ring-2 ring-opacity-10 ring-gray-50 "
+                  >
+                    <svg className="w-4 h-4 mx-auto fill-current text-indigo-100">
+                      <use xlinkHref="/assets/icons/menu.svg#icon-menu" />
+                    </svg>
+                  </button>
+                  <div className="pl-12">{page}</div>
+                </ul>
               )}
               <div className="mr-2">
                 <NavLink to="/cart" exact>

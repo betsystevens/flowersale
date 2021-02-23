@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import FlowerCards from "./FlowerCards";
+import { pageNames } from "../utils/utilities";
 
 function FlowerCardsContainer({ path }) {
   let flowerGroup = path.substring(1);
-  let pageNames = new Map();
-  pageNames.set("hb", "Hanging Baskets");
-  pageNames.set("flat", "Flats");
-  pageNames.set("pot", "Potted Plants");
-  pageNames.set("herbTomato", "Herbs & Tomatoes");
+
+  let pages = pageNames();
+
   useEffect(() => {
-    let page = pageNames.get(flowerGroup);
+    let page = pages.get(flowerGroup);
     document.title = `Flower Sale - ${page}`;
   });
   return (
