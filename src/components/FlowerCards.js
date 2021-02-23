@@ -51,23 +51,14 @@ function varietyInfo(flower) {
     varietyCount === 1 ? variety : `${varietyCount} varieties`;
   return [varietyCountOrName];
 }
-function CardBody({
-  flowerGroup,
-  flowerId,
-  name,
-  price,
-  containerDescription,
-  varietyCountOrName,
-}) {
+function CardBody({ name, price, containerDescription, varietyCountOrName }) {
   return (
-    <Link to={`/${flowerGroup}/${flowerId}`}>
-      <div className="p-2 flex flex-col items-center cursor-pointer">
-        <p className="font-extrabold text-lg">{name}</p>
-        <p className="pt-1">{`${varietyCountOrName}`}</p>
-        <p className="pt-1">{`Price - $${price}`}</p>
-        <p className="pt-1 pb-3">{`${containerDescription}`}</p>
-      </div>
-    </Link>
+    <div className="p-2 flex flex-col items-center cursor-pointer">
+      <p className="font-extrabold text-lg">{name}</p>
+      <p className="pt-1">{`${varietyCountOrName}`}</p>
+      <p className="pt-1">{`Price - $${price}`}</p>
+      <p className="pt-1 pb-3">{`${containerDescription}`}</p>
+    </div>
   );
 }
 function CardImage({ name, image, color, sunShade, emoji }) {
@@ -105,23 +96,23 @@ function FlowerCards({ flowerGroup, opacity }) {
         id={`${flower.id}`}
         ref={(element) => (cardRef.current[flower.id] = element)}
       >
-        <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
-          <CardImage
-            name={name}
-            image={image}
-            color={color}
-            sunShade={sunShade}
-            emoji={emoji}
-          />
-          <CardBody
-            flowerId={flower.id}
-            flowerGroup={flowerGroup}
-            name={name}
-            varietyCountOrName={varietyCountOrName}
-            price={price}
-            containerDescription={containerDescription}
-          />
-        </div>
+        <Link to={`/${flowerGroup}/${flower.id}`}>
+          <div className="m-5 w-60 shadow-lg border border-white hover:border-purple-200">
+            <CardImage
+              name={name}
+              image={image}
+              color={color}
+              sunShade={sunShade}
+              emoji={emoji}
+            />
+            <CardBody
+              name={name}
+              varietyCountOrName={varietyCountOrName}
+              price={price}
+              containerDescription={containerDescription}
+            />
+          </div>
+        </Link>
       </div>
     );
   });
