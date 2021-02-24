@@ -35,7 +35,7 @@ function ItemImage({ flower }) {
   )[0].variety.filter((v) => v.name === variety)[0].image;
   return (
     <img
-      className="mb-4 sm:mb-0 w-48 border-8 border-gray-50 shadow-2xl"
+      className="mb-4 sm:mb-0 w-56 border-8 border-gray-50 shadow-2xl"
       src={image}
       alt={name}
     ></img>
@@ -78,7 +78,7 @@ function ItemBody({ flower, updateFlowerInCart, removeFlowerFromCart }) {
   return (
     /* wide body */
     <div>
-      <div className="hidden sm:grid mx-7 gap-y-1.5 gap-x-4 grid grid-cols-cart-5 grid-rows-cart-4">
+      <div className="hidden sm:grid mx-7 gap-y-1.5 gap-x-4 sm:grid-cols-cart-5 grid-rows-cart-4">
         <ItemTitle name={name} variety={variety} />
         <RemoveBtn
           flower={flower}
@@ -93,7 +93,7 @@ function ItemBody({ flower, updateFlowerInCart, removeFlowerFromCart }) {
       </div>
 
       {/* stacked body */}
-      <div className="block sm:hidden mx-7 pb-8 flex flex-col justify-evenly items-center">
+      <div className="sm:hidden mx-7 pb-8 flex flex-col justify-evenly items-center">
         <p className="font-extrabold text-lg">{name}</p>
         <p className="mb-2">{variety}</p>
         <p className="mb-2">{containerDescription}</p>
@@ -122,7 +122,7 @@ function CartItems({ cart, updateFlowerInCart, removeFlowerFromCart }) {
     return (
       <div
         key={key}
-        className="pl-4 sm:pl-8 pr-4 sm:pr-0 sm:py-8 mb-2 shadow-lg bg-white
+        className="pl-4 pr-4 pt-2 sm:pl-8 sm:pr-0 sm:py-8 mb-2 shadow-lg bg-white
         flex flex-col sm:flex-row items-center "
       >
         <ItemImage flower={flower} />

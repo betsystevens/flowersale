@@ -57,7 +57,7 @@ function CartSubtotal({ cart }) {
 
       {/* small screens */}
       <div
-        className="bg-white shadow-lg h-64 w-60 mx-auto
+        className="bg-white shadow-lg h-64 w-64 mx-auto
                    flex flex-col justify-evenly items-center
                    sm:h-32 sm:w-96
                    sm:flex-row
