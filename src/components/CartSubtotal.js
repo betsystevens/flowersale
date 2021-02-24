@@ -40,7 +40,7 @@ function CartSubtotal({ cart }) {
   return (
     <div
       className="order-first 
-                  mdlg:order-last
+                  lg:order-last
                   sm:w-3/4 mb-2 pb-2
                   mdlg:w-1/4 mdlg:mb-0 mdlg:mt-0.5 "
     >
@@ -48,7 +48,7 @@ function CartSubtotal({ cart }) {
       <div
         className="hidden mdlg:flex flex-col justify-evenly items-center
                     bg-white shadow-lg
-                    mdlg:h-52"
+                    mdlg:h-56"
       >
         <CartImage />
         <Subtotals subTotal={subTotal} qtySum={qtySum} />

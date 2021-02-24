@@ -122,7 +122,7 @@ function CartItems({ cart, updateFlowerInCart, removeFlowerFromCart }) {
     return (
       <div
         key={key}
-        className="pl-4 pr-4 pt-2 sm:pl-8 sm:pr-0 sm:py-8 mb-2 shadow-lg bg-white
+        className="px-4 pt-2 sm:pl-8 sm:pr-0 sm:py-7 mb-2 shadow-lg bg-white
         flex flex-col sm:flex-row items-center "
       >
         <ItemImage flower={flower} />
