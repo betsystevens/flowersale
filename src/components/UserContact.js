@@ -47,7 +47,6 @@ const UserContact = ({ user, setUser }) => {
             <p>Email</p>
             <input
               className="border rounded py-2 px-3"
-              // size="40"
               type="email"
               name="email"
               id="email"
@@ -59,7 +58,6 @@ const UserContact = ({ user, setUser }) => {
             <p>Address</p>
             <input
               className="border rounded py-2 px-3"
-              // size="20"
               type="text"
               name="address"
               id="address"
@@ -71,7 +69,6 @@ const UserContact = ({ user, setUser }) => {
             <p>Telephone</p>
             <input
               className="border rounded py-2 px-3"
-              // size="40"
               type="tel"
               name="tel"
               id="tel"
@@ -83,7 +80,6 @@ const UserContact = ({ user, setUser }) => {
             <p>Scout Name</p>
             <input
               className="border rounded py-2 px-3"
-              // size="40"
               type="scout"
               name="scouttel"
               id="scouttel"
@@ -93,13 +89,11 @@ const UserContact = ({ user, setUser }) => {
           </div>
         </div>
         <div className="w-full flex justify-evenly mt-12">
-          <Link to={"/cart"}>
-            <button
-              className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
-              type="reset"
-            >
-              Cancel
-            </button>
+          <Link
+            to={"/cart"}
+            className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
+          >
+            Cancel
           </Link>
           <button
             className="bg-gray-100 hover:bg-purple-100 text-lg py-2 px-4 rounded"
