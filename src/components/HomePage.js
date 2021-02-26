@@ -7,9 +7,9 @@ export default function HomePage() {
     document.title = "Flower Sale - Home";
   });
   return (
-    <div>
+    <>
       <Hero />
       <FlowerGroups />
-    </div>
+    </>
   );
 }

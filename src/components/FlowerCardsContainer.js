@@ -11,10 +11,6 @@ function FlowerCardsContainer({ path }) {
     let page = pages.get(flowerGroup);
     document.title = `Flower Sale - ${page}`;
   });
-  return (
-    <div>
-      <FlowerCards flowerGroup={flowerGroup} />
-    </div>
-  );
+  return <FlowerCards flowerGroup={flowerGroup} />;
 }
 export default FlowerCardsContainer;

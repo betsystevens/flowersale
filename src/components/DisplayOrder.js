@@ -54,7 +54,7 @@ function Hero() {
 }
 function Header() {
   return (
-    <div>
+    <>
       {/* wide screen & print */}
       <div className="hidden sm:flex print:flex flex-col items-center mb-12 py-4 px-6">
         <Hero />
@@ -78,7 +78,7 @@ function Header() {
         <p>Please make checks payable to Troop 34.</p>
         <p>(no tax, we are a non-profit organization)</p>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -108,7 +108,7 @@ function OrderedFlowers({ cart }) {
 }
 function OrderedFlowersHeader() {
   return (
-    <div>
+    <>
       {/* screen */}
       <div
         className="text-left font-semibold border-2 border-gray-50
@@ -130,12 +130,12 @@ function OrderedFlowersHeader() {
         <p>Container</p>
         <p className="text-right">Price</p>
       </div>
-    </div>
+    </>
   );
 }
 function OrderedFlowersSummary({ sumOfItems, subTotal }) {
   return (
-    <div>
+    <>
       {/* screen */}
       <div
         className="border-2 border-t-4 border-gray-50
@@ -157,7 +157,7 @@ function OrderedFlowersSummary({ sumOfItems, subTotal }) {
         <p></p>
         <p className="text-right">{subTotal}</p>
       </div>
-    </div>
+    </>
   );
 }
 
