@@ -20,13 +20,20 @@ function Quantity({ quantity, callback }) {
       callback(Number(quantity) - 1);
     }
   };
+  function Container({ handler, children }) {
+    return (
+      <div onClick={handler} className="relative h-full w-1/3">
+        {children}
+      </div>
+    );
+  }
   return (
-    <div className="">
+    <>
       <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
-        <div onClick={handleMinus} className="relative h-full w-1/3">
-          <div className="minus absolute"></div>
-        </div>
-        <div className="relative h-full w-1/3">
+        <Container handler={handleMinus}>
+          <div className="minus"></div>
+        </Container>
+        <Container>
           <input
             className="w-full h-full bg-gray-50 text-center font-mono font-thin text-sm"
             type="number"
@@ -35,12 +42,12 @@ function Quantity({ quantity, callback }) {
             onChange={handleOnChange}
             value={quantity}
           ></input>
-        </div>
-        <div onClick={handlePlus} className="relative h-full w-1/3">
-          <div className="plus absolute"></div>
-        </div>
+        </Container>
+        <Container handler={handlePlus}>
+          <div className="plus"></div>
+        </Container>
       </div>
-    </div>
+    </>
   );
 }
 export default Quantity;

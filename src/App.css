@@ -50,6 +50,7 @@ nav li.logo a:hover {
 
 /* quantity styles */
 .minus {
+  position: absolute;
   background-image: url(/assets/icons/minus.svg);
   background-position: center;
   top: 45%;
@@ -58,6 +59,7 @@ nav li.logo a:hover {
   height: 10%;
 }
 .plus {
+  position: absolute;
   background-image: url(/assets/icons/plus.svg);
   background-position: center;
   top: 25%;
