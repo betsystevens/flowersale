@@ -175,11 +175,13 @@ function Flowers({ cart }) {
   );
 }
 
-function TableRow({ label, inputValue }) {
+function TableRow({ label, value, value2 = "" }) {
   return (
     <tr className="h-10">
-      <td className="font-semibold">{label}</td>
-      <td>{inputValue}</td>
+      <td className="w-36 font-semibold">{label}</td>
+      <td>
+        {value} {value2}
+      </td>
     </tr>
   );
 }
@@ -207,16 +209,11 @@ function User({ user }) {
         {/* screen */}
         <table className="w-200 print:hidden">
           <tbody>
-            <tr className="h-10">
-              <td className="w-36 font-semibold">Name</td>
-              <td>
-                {user.first} {user.last}
-              </td>
-            </tr>
-            <TableRow label="Email" inputValue={user.email} />
-            <TableRow label="Address" inputValue={user.address} />
-            <TableRow label="Telephone" inputValue={user.tel} />
-            <TableRow label="Scout" inputValue={user.scout} />
+            <TableRow label="Name" value={user.first} value2={user.last} />
+            <TableRow label="Email" value={user.email} />
+            <TableRow label="Address" value={user.address} />
+            <TableRow label="Telephone" value={user.tel} />
+            <TableRow label="Scout" value={user.scout} />
           </tbody>
         </table>
       </div>
