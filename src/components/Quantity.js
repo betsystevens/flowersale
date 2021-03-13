@@ -28,26 +28,24 @@ function Quantity({ quantity, callback }) {
     );
   }
   return (
-    <>
-      <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
-        <Container handler={handleMinus}>
-          <div className="minus"></div>
-        </Container>
-        <Container>
-          <input
-            className="w-full h-full bg-gray-50 text-center font-mono font-thin text-sm"
-            type="number"
-            min="1"
-            max="99"
-            onChange={handleOnChange}
-            value={quantity}
-          ></input>
-        </Container>
-        <Container handler={handlePlus}>
-          <div className="plus"></div>
-        </Container>
-      </div>
-    </>
+    <div className="flex cursor-pointer border-2 border-gray-200 bg-gray-100 rounded relative h-7 w-20">
+      <Container handler={handleMinus}>
+        <div className="minus"></div>
+      </Container>
+      <Container>
+        <input
+          className="w-full h-full bg-gray-50 text-center font-mono font-thin text-sm"
+          type="number"
+          min="1"
+          max="99"
+          onChange={handleOnChange}
+          value={quantity}
+        ></input>
+      </Container>
+      <Container handler={handlePlus}>
+        <div className="plus"></div>
+      </Container>
+    </div>
   );
 }
 export default Quantity;
