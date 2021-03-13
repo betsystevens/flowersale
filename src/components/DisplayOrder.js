@@ -175,6 +175,14 @@ function Flowers({ cart }) {
   );
 }
 
+function TableRow({ label, inputValue }) {
+  return (
+    <tr className="h-10">
+      <td className="font-semibold">{label}</td>
+      <td>{inputValue}</td>
+    </tr>
+  );
+}
 function User({ user }) {
   return (
     <div className="flex flex-col items-center mb-12">
@@ -205,22 +213,10 @@ function User({ user }) {
                 {user.first} {user.last}
               </td>
             </tr>
-            <tr className="h-10">
-              <td className="font-semibold">Email</td>
-              <td>{user.email}</td>
-            </tr>
-            <tr className="h-10">
-              <td className="font-semibold">Address</td>
-              <td>{user.address}</td>
-            </tr>
-            <tr className="h-10">
-              <td className="font-semibold">Telephone</td>
-              <td>{user.tel}</td>
-            </tr>
-            <tr className="h-10">
-              <td className="font-semibold">Scout</td>
-              <td>{user.scout}</td>
-            </tr>
+            <TableRow label="Email" inputValue={user.email} />
+            <TableRow label="Address" inputValue={user.address} />
+            <TableRow label="Telephone" inputValue={user.tel} />
+            <TableRow label="Scout" inputValue={user.scout} />
           </tbody>
         </table>
       </div>
