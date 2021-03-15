@@ -1,1 +1,0 @@
-export const plantSaleYear = '2021';
